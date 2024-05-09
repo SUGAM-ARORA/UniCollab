@@ -34,7 +34,7 @@ function TopContainer() {
         <div className="profileImage">
           <img src={women} alt="" />
         </div>
-        <p className="profileName">Smart Bhartiya</p>
+        <p className="profileName">Sugam Arora</p>
         <i className="menuChevron" id="menuChevron">
           <FaChevronDown />
         </i>
