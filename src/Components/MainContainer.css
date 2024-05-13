@@ -101,7 +101,13 @@
   align-items: center;
   flex-wrap: wrap;
 }
-
+.card_main{
+  height: 365px;
+}
+.card_main_img{
+  width: 100%;
+  height: 200px;
+}
 .maincontainer .left .cards main .card_main {
   background: #252041;
   border-radius: 10px;
