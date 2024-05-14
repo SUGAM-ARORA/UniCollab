@@ -16,7 +16,7 @@
   position: relative;
 }
 .inputBox #search_results {
-    max-height: 24rem;
+    height: 30rem;
     min-width: 20rem;
     background-color: #19162c;
     position: absolute;
