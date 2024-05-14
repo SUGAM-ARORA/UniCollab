@@ -293,7 +293,9 @@
   margin-left: auto;
   font-size: 10px;
 }
-
+.topSeller a{
+  cursor: pointer;
+}
 @media screen and (max-width: 525px) {
   .maincontainer {
     flex-direction: column;
