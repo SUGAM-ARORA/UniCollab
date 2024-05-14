@@ -24,15 +24,47 @@ UniCollab is more than just a platform; it's a gateway to a world where students
 
 ## 🖌️ Scope of the Project 
 
-- **User-friendly Website:** A user-friendly website where students from various universities and colleges can easily log in and share comprehensive details about their academic projects.
-- **Personalized Profiles:** Students and users begin by creating a personalized profile on the website. Users can create posts that contain in-depth descriptions of their academic projects.
-- **Knowledge Sharing:** Users can also share research materials, references, and datasets associated with their projects, enhancing the educational aspect of the platform.
-- **Seamless Experience:** This platform provides a seamless experience for students to showcase their academic work, offers valuable resources for those seeking inspiration, and encourages knowledge sharing and collaboration among the academic community.
-- **Search and Recommendation Algorithms:** Implementing more search and recommendation algorithms can help users find projects that align with their interests and needs more effectively.
-- **Mentorship and Peer Review:** Incorporating mentorship programs and peer review processes to provide constructive feedback and guidance to students working on projects.
-- **User Feedback and Continuous Improvement:** Continuously gathering feedback from users to make improvements and enhancements to the platform based on their needs and suggestions.
-- **Enhanced Plagiarism Detection:** Expanding the platform's plagiarism-checking capabilities by integrating plagiarism detection tools and algorithms.
-- **Industry Collaboration for Talent Scouting:** Partnering with industry leaders to grant them access to student profiles and project portfolios, facilitating the identification of promising candidates for job opportunities.
+To actively contribute to UniCollab, I encourage you to delve into the [PROPOSED-AIM](AIM_OF_THIS_PROJECT.md) file which provides a comprehensive outline of our project's overarching goals and feature set. If you identify features that are needed but not yet implemented(as mostly are), please create an issue outlining the feature request for discussion and implementation. Your input will drive UniCollab's evolution as a dynamic and impactful platform for student collaboration.
+
+## 🔄 Tech Stack
+
+Proposed tech stack for project(although you are free to use any other stack outside of these):
+
+1. **Backend:**
+   - Node.js with Express.js for the server 💻
+   - MongoDB for the database (using Mongoose for object modeling) 📊
+   - Firebase Authentication for user authentication and authorization 🔐
+   - Firebase Cloud Functions for serverless backend logic ☁️
+
+2. **Frontend:**
+   - React.js for a dynamic and responsive user interface ⚛️
+   - HTML5, CSS3, JavaScript for elegant and modern design 🎨
+   - Firebase Hosting for fast and secure web hosting 🚀
+   - Firebase Realtime Database for real-time data synchronization 🔥
+
+3. **DevOps & Deployment:**
+   - Continuous Integration/Continuous Deployment (CI/CD): GitLab CI/CD for automated testing and deployment 🔄
+   - Containerization: Docker for efficient and scalable deployment 🐳
+   - Orchestration: Kubernetes for managing containerized applications ⚙️
+
+4. **Cloud Platform:**
+   - Hosting: AWS (Amazon Web Services) for reliable and scalable hosting ☁️
+   - Serverless Computing: AWS Lambda for cost-effective and scalable backend services 🚀
+   - Storage: AWS S3 for secure and scalable storage solutions 📦
+
+5. **Machine Learning & AI:**
+   - Frameworks: TensorFlow and PyTorch for advanced machine learning capabilities 🧠
+   - Libraries: scikit-learn, pandas, NumPy for data manipulation and analysis 📊
+   - Deployment: Docker containers for easy deployment of machine learning models 🐳
+
+6. **Database:**
+   - MongoDB for flexible and scalable NoSQL database solutions 📊
+
+7. **Other Tools and Technologies:**
+   - Websockets for real-time communication and collaboration features 🔄
+   - Security: JWT (JSON Web Tokens) for secure authentication and authorization 🔒
+   - Data Visualization: D3.js or Chart.js for interactive and visually appealing data representation 📊
+   - Testing: Jest for React.js unit testing, Selenium for end-to-end testing 🧪
 
 ## ✔ Key Features
 
@@ -49,37 +81,11 @@ UniCollab is more than just a platform; it's a gateway to a world where students
 
 ## 🛠️ Available Scripts
 
-In the project directory, you can run:
+All contributors should look for [LEARN](LEARN.md). This file provides detailed instructions on how to build the project locally and contains other essential information. Whether you're new to the project or a seasoned contributor, the [LEARN](LEARN.md) file is a valuable resource for understanding the project's structure and requirements. 
 
-### `npm start`
+## 📄 Documentation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.
-
-### `npm build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-### `npm eject`
-
-**Note: This is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single-build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point, you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However, we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Explore our comprehensive documentation in the [DOCUMENTATION](Documentation.md) file, which serves as a detailed guide to understanding and contributing to UniCollab. This document covers various aspects of the project, including setup instructions, architecture overview, and contribution guidelines. We recommend referring to this documentation to gain a deeper insight into UniCollab and make meaningful contributions to its development.
 
 ## 🛡️ License
 
