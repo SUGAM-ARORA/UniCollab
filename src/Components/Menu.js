@@ -30,16 +30,16 @@ function Menu() {
       <img src={logo} alt="" />
 
       <ul id="mainMenu">
-        <Icon icon={<FaDelicious />} />
-        <Icon icon={<FaShoppingCart />} />
-        <Icon icon={<FaWallet />} />
-        <Icon icon={<FaChartLine />} />
-        <Icon icon={<FaRegClock />} />
+        <Icon icon={<FaDelicious />} href = "/"/>
+        <Icon icon={<FaShoppingCart />} href = "/" />
+        <Icon icon={<FaWallet />} href = "/"/>
+        <Icon icon={<FaChartLine />} href = "/"/>
+        <Icon icon={<FaRegClock />} href = "/"/>
       </ul>
 
       <ul className="lastMenu">
-        <Icon icon={<FaCog />} />
-        <Icon icon={<FaSignOutAlt />} />
+        <Icon icon={<FaCog />} href = "/"/>
+        <Icon icon={<FaSignOutAlt />} href = "/"/>
       </ul>
     </menu>
   );
