@@ -15,7 +15,26 @@
   height: 45px;
   position: relative;
 }
-
+.inputBox #search_results {
+    max-height: 24rem;
+    min-width: 20rem;
+    background-color: #19162c;
+    position: absolute;
+    z-index: 2;
+    color: white;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.inputBox #search_results div{
+  padding: 0.5rem 1rem;
+  border-bottom: 0.1rem solid #ffffff59;
+}
+.inputBox #search_results div p{
+  font-size: 1.5rem;
+}
+.inputBox #search_results div span{
+  font-size: 0.8rem;
+}
 .topContainer .inputBox input {
   width: 100%;
   height: 100%;
