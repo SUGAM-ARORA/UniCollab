@@ -95,6 +95,13 @@
   align-items: center;
 }
 
+#menu,#options{
+  background-color:#19162c;
+  color: #f1f1f1;
+  margin: 5px;
+  padding: 5px;
+}
+
 .maincontainer .left .cards main {
   display: flex;
   justify-content: space-between;

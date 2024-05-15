@@ -1,9 +1,9 @@
 import React from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 
-function CardMain({ imgSrc, title, hearts }) {
+function CardMain({ id, imgSrc, title, hearts }) {
   return (
-    <div className="card_main">
+    <div className="card_main" id={id}>
       <img src={imgSrc} alt="" className="card_main_img" />
       <div className="card_main_name">
         <h2>{title}</h2>
