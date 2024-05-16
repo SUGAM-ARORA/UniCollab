@@ -28,12 +28,12 @@ npm install
 Launch the development server and explore UniCollab:
 
 ```bash
-npm start
+npm run dev
 ```
 
-Open your browser and visit [http://localhost:3000](http://localhost:3000) to experience UniCollab firsthand.
+Open your browser and visit [http://localhost:5173](http://localhost:5173) to experience UniCollab firsthand.
 
-### 4. Test the app 
+### 4. Test the app
 
 Launch the test runner in the interactive watch mode:
 
@@ -41,25 +41,27 @@ Launch the test runner in the interactive watch mode:
 npm test
 ```
 
-### 5. Build the app 
+### 5. Build the app
 
 Build the app for production to the build folder:
 
 ```bash
-npm build
+npm run build
 ```
 
 This command builds the app for production, bundling React in production mode and optimizing the build for the best performance. The build is minified and the filenames include hashes. Your app is now ready to be deployed!
 
-### 6. Eject the app
+### 6. Preview the Build
 
-If you're not satisfied with the build tool and configuration choices and want full control over them, you can eject at any time:
+To preview the production build locally, you can use the following command:
 
 ```bash
-npm eject
+npm run serve
 ```
 
-Note: This is a one-way operation. Once you eject, you can't go back. This command will remove the single-build dependency from your project, copying all the configuration files and transitive dependencies (webpack, Babel, ESLint, etc.) right into your project so you have full control over them. All commands except eject will still work, but they will point to the copied scripts so you can tweak them. It's important to note that you don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However, we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### 7. Configuration
+
+If you need to customize the build tool and configuration choices, you can edit the vite.config.js file. Vite offers a more flexible and easier-to-configure setup compared to CRA.
 
 ## Key Features
 
