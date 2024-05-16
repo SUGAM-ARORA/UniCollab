@@ -26,7 +26,7 @@ UniCollab is more than just a platform; it's a gateway to a world where students
 
 To actively contribute to UniCollab, I encourage you to delve into the [PROPOSED-AIM](AIM_OF_THIS_PROJECT.md) file which provides a comprehensive outline of our project's overarching goals and feature set. If you identify features that are needed but not yet implemented(as mostly are), please create an issue outlining the feature request for discussion and implementation. Your input will drive UniCollab's evolution as a dynamic and impactful platform for student collaboration.
 
-## Getting Started
+## Get Started by following the below steps
 
 ### 1. Clone the Repository
 
