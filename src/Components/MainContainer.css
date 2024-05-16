@@ -101,13 +101,7 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.card_main{
-  height: 365px;
-}
-.card_main_img{
-  width: 100%;
-  height: 200px;
-}
+
 .maincontainer .left .cards main .card_main {
   background: #252041;
   border-radius: 10px;
@@ -293,9 +287,7 @@
   margin-left: auto;
   font-size: 10px;
 }
-.topSeller a{
-  cursor: pointer;
-}
+
 @media screen and (max-width: 525px) {
   .maincontainer {
     flex-direction: column;
