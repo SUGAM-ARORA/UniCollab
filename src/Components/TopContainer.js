@@ -1,22 +1,32 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 
 function TopContainer() {
-  useEffect(() => {
-    const mouseTarget = document.getElementById("menuChevron");
-    const menuContainer = document.getElementById("menuContainer");
-    mouseTarget.addEventListener("mouseenter", () => {
-      mouseTarget.style.transform = "rotate(180deg)";
-      menuContainer.style.transform = "translateX(0px)";
-    });
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
-    menuContainer.addEventListener("mouseleave", () => {
-      mouseTarget.style.transform = "rotate(0deg)";
-      menuContainer.style.transform = "translateX(300px)";
-    });
+  useEffect(() => {
+    // Add event listener to detect clicks anywhere on the page
+    window.addEventListener("click", handleOutsideClick);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      window.removeEventListener("click", handleOutsideClick);
+    };
   }, []);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  const handleOutsideClick = (event) => {
+    // Check if the clicked element is outside the dropdown content
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      setIsDropdownOpen(false);
+    }
+  };
 
   return (
     <div className="topContainer">
@@ -28,12 +38,44 @@ function TopContainer() {
       </div>
 
       <div className="profileContainer">
-        <i className="profileIcon">
-          <FaBell />
-        </i>
+        <div className="notification-container" ref={dropdownRef}>
+          <div className="profileIcon" onClick={toggleDropdown}>
+            <FaBell />
+          </div>
+          {isDropdownOpen && (
+            <div className="dropdown-content">
+              {/* Notification items */}
+              <div className="notification-item">
+                User "JohnDoe" has uploaded a new project titled "Introduction
+                to Machine Learning." Check it out now!
+              </div>
+              <div className="notification-item">
+                User "JaneSmith" has commented on your project "Data
+                Visualization with D3.js." View the comment now.
+              </div>
+              <div className="notification-item">
+                User "TechMaster" has updated the project "Web Development with
+                React.js" with bug fixes. Explore the updated version.
+              </div>
+              <div className="notification-item">
+                Congratulations! Your project "Artificial Intelligence in
+                Robotics" has been approved by the moderators. It's now live on
+                the platform.
+              </div>
+              <div className="notification-item">
+                User "CodeNinja" has sent you a collaboration request for the
+                project "Cybersecurity Best Practices." Accept or decline the
+                request.
+              </div>
+              <p className="seeAll">See all notifications</p>
+            </div>
+          )}
+        </div>
+
         <div className="profileImage">
           <img src={women} alt="" />
         </div>
+
         <p className="profileName">Sugam Arora</p>
         <i className="menuChevron" id="menuChevron">
           <FaChevronDown />
