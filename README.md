@@ -98,7 +98,7 @@ We believe in the power of collaboration. If you have ideas to improve UniCollab
 ## 🤝 Contributors 
 
 <a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/Unicollab" />
+  <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
 </a>
 
 ## 📬 Contact Details
