@@ -26,6 +26,63 @@ UniCollab is more than just a platform; it's a gateway to a world where students
 
 To actively contribute to UniCollab, I encourage you to delve into the [PROPOSED-AIM](AIM_OF_THIS_PROJECT.md) file which provides a comprehensive outline of our project's overarching goals and feature set. If you identify features that are needed but not yet implemented(as mostly are), please create an issue outlining the feature request for discussion and implementation. Your input will drive UniCollab's evolution as a dynamic and impactful platform for student collaboration.
 
+## Getting Started
+
+### 1. Clone the Repository
+
+First, clone the UniCollab repository to your local machine:
+
+```bash
+git clone https://github.com/SUGAM-ARORA/UniCollab.git
+```
+
+### 2. Install Dependencies
+
+Navigate to the project directory and install the necessary dependencies:
+
+```bash
+cd UniCollab
+npm install
+```
+
+### 3. Start the Development Server
+
+Launch the development server and explore UniCollab:
+
+```bash
+npm start
+```
+
+Open your browser and visit [http://localhost:3000](http://localhost:3000) to experience UniCollab firsthand.
+
+### 4. Test the app 
+
+Launch the test runner in the interactive watch mode:
+
+```bash
+npm test
+```
+
+### 5. Build the app 
+
+Build the app for production to the build folder:
+
+```bash
+npm build
+```
+
+This command builds the app for production, bundling React in production mode and optimizing the build for the best performance. The build is minified and the filenames include hashes. Your app is now ready to be deployed!
+
+### 6. Eject the app
+
+If you're not satisfied with the build tool and configuration choices and want full control over them, you can eject at any time:
+
+```bash
+npm eject
+```
+
+Note: This is a one-way operation. Once you eject, you can't go back. This command will remove the single-build dependency from your project, copying all the configuration files and transitive dependencies (webpack, Babel, ESLint, etc.) right into your project so you have full control over them. All commands except eject will still work, but they will point to the copied scripts so you can tweak them. It's important to note that you don’t have to ever use eject. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However, we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
 ## 🔄 Tech Stack
 
 Proposed tech stack for project(although you are free to use any other stack outside of these):
@@ -115,3 +172,9 @@ Don't forget to leave a star ⭐
 
 
 <p align="right">{<a href="#top">Back to top</a>}</p>
+
+## Feedback and Support
+
+Your feedback is invaluable to me as I strive to improve UniCollab. Whether you have suggestions, bug reports, or just want to say hello, feel free to reach out to @SUGAM-ARORA or open an issue on GitHub.
+
+Start your journey with UniCollab today and be part of a vibrant community that celebrates innovation!
