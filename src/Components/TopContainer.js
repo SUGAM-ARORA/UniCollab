@@ -8,10 +8,8 @@ function TopContainer() {
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    // Add event listener to detect clicks anywhere on the page
     window.addEventListener("click", handleOutsideClick);
 
-    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener("click", handleOutsideClick);
     };
@@ -22,7 +20,6 @@ function TopContainer() {
   };
 
   const handleOutsideClick = (event) => {
-    // Check if the clicked element is outside the dropdown content
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsDropdownOpen(false);
     }
