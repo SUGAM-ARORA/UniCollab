@@ -18,31 +18,28 @@ function MainContainer() {
     const clickedButton = event.target;
     const buttonContainer = clickedButton.parentElement;
   
-    // Handle "options" click based on element type
     if (clickedButton.tagName === 'SELECT') { // Check if it's a select element
       const selectedOption = clickedButton.value;
   
-      // Deactivate all other buttons (excluding clicked select)
+      // Deactivate all other buttons
       buttonContainer.querySelectorAll('.button2, .button').forEach(button => {
         if (button !== clickedButton) {
           button.classList.remove('button');
         }
       });
   
-      // Highlight the selected option visually (optional)
       for (let i = 0; i < clickedButton.options.length; i++) {
         const option = clickedButton.options[i];
         if (option.value === selectedOption) {
-          option.classList.add('button'); // Add "selected" class for highlighting
+          option.classList.add('button'); 
         } else {
-          option.classList.remove('button'); // Remove "selected" class from others
+          option.classList.remove('button'); 
         }
       }
     } else {
-      // Handle other button clicks (toggle "active")
       clickedButton.classList.toggle('button');
   
-      // Optionally, remove "active" from siblings (improves UX)/
+      // Optionally, remove "active" from siblings
       if (buttonContainer.classList.contains('filter_buttons')) {
         buttonContainer.querySelectorAll('.button2, .button').forEach(button => {
           if (button !== clickedButton) {
