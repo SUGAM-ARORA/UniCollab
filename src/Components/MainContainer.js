@@ -1,40 +1,62 @@
-import React from "react";
-import "./MainContainer.css";
-import Banner from "../img/1.jpg";
-import CardMain from "./CardMain";
+import React, { useRef, useState } from "react";
+import DefaultBanner from "../img/1.jpg";
 import Card1 from "../img/card1.jpg";
 import Card2 from "../img/card2.jpg";
 import Card3 from "../img/card3.jpg";
 import Card4 from "../img/card4.jpg";
 import Card5 from "../img/card5.jpg";
 import Card6 from "../img/card6.jpg";
-import MainRightTopCard from "./MainRightTopCard";
+import CardMain from "./CardMain";
+import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
+import MainRightTopCard from "./MainRightTopCard";
 
 function MainContainer() {
+  const imageUploadInputRef = useRef(null);
+
+  const [banner, setBanner] = useState(DefaultBanner);
+
+  const uploadImageHandler = () => {
+    imageUploadInputRef?.current?.click();
+  };
+
+  const selectImageHandler = (e) => {
+    if (e.target.files && e?.target?.files[0]?.size < 2185200) {
+      setBanner(URL.createObjectURL(e?.target?.files[0]));
+    } else {
+      console.error("Image size should be less than 2MB!");
+    }
+  };
+
   return (
     <div className="maincontainer">
       <div className="left">
         <div
           className="banner"
           style={{
-            background: `url(${Banner})`,
-            backgroundRepeat: "no-repeat",
+            background: `url(${banner}) center center no-repeat`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         >
           <div className="textContainer">
-            <h1>UniCollab</h1>
-            
-            <br></br> 
             <div className="bid">
-              <a href="#" className="button">
+              <button
+                type="button"
+                className="button"
+                onClick={uploadImageHandler}
+              >
                 Upload
-              </a>
-              
+              </button>
             </div>
           </div>
+
+          <input
+            type="file"
+            accept="image/png, image/jpeg, image/jpg"
+            ref={imageUploadInputRef}
+            onChange={selectImageHandler}
+            hidden
+          />
         </div>
 
         <div className="cards">
@@ -50,7 +72,7 @@ function MainContainer() {
                 All
               </a>
               <a href="#" className="button2">
-                Type 
+                Type
               </a>
               <a href="#" className="button2">
                 Sort By
