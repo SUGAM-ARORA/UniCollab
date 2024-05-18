@@ -362,6 +362,10 @@
   }
 }
 .card_main:hover{
-  transform: scale(1.04);
+  transform: scale(1.04);;
+  transition: 0.35s ease-in-out;
+}
+.maincontainer .left .cards main .card_main:hover{
+  background-color: #0e0832;
   transition: 0.35s ease-in-out;
 }
