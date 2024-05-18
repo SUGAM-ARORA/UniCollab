@@ -361,3 +361,7 @@
     font-size: 8px;
   }
 }
+.card_main:hover{
+  transform: scale(1.04);
+  transition: 0.35s ease-in-out;
+}
