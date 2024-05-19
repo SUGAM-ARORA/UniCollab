@@ -31,6 +31,13 @@ code {
     inset -5px -10px 10px #0db5cb;
   margin-right: 10px;
   cursor: pointer;
+  transition: background-color 0.3 sec;
+}
+
+.button:hover{
+  background-color: #fff;
+  border-color: #b21783;
+
 }
 
 .button2 {
@@ -42,4 +49,11 @@ code {
   padding: 5px 15px;
   border-radius: 10px;
   margin: 0px 5px;
+  transition: background-color 0.3 sec;
+}
+
+.button2:hover{
+  background-color: #fff;
+  border-color: #b21783;
+
 }
