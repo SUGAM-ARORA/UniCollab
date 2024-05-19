@@ -5,14 +5,14 @@ const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth", 
+      behavior: "smooth",
     });
   };
 
   return (
     <div className="footer">
       <div className="footer-content">
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 UniCollab. All rights reserved.</p>
         <ul className="footer-links">
           <li>
             <a href="#home">Home</a>
