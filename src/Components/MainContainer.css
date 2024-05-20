@@ -61,6 +61,11 @@
 .maincontainer .left .banner .textContainer .bid p span {
   display: block;
   color: #0db5cb;
+ transition: color 0.3 sec;
+}
+.maincontainer .left .banner .textContainer .bid p span :hover{
+ 
+  color: white;
 }
 
 .maincontainer .left .cards {
@@ -187,10 +192,18 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
+transition: background-color 0.3;
 }
+  .maincontainer .left .cards main .card_main .card_main_button:hover {
+    background-color:#e9e9ec
+  }
 
 .maincontainer .left .cards main .card_main .card_main_button .btn {
   font-size: 10px !important;
+transition: background-color 0.3;
+}
+.maincontainer .left .cards main .card_main .card_main_button .btn :hover{
+  background-color: #d34eb6;
 }
 
 .maincontainer .right {
@@ -292,7 +305,11 @@
 .maincontainer .right .bottom_card .topSeller .button {
   margin-left: auto;
   font-size: 10px;
+ transition: text-decoration-color 0.3 sec ;
 }
+.maincontainer .right .bottom_card .topSeller .button :hover{
+  text-decoration-color: #f1f1f1;
+} 
 .topSeller a{
   cursor: pointer;
 }
@@ -315,6 +332,10 @@
 
   .maincontainer .left .cards .filters .filter_buttons {
     display: none;
+  transition: background-color 0.3 sec;
+  }
+  .maincontainer .left .cards .filters .filter_buttons :hover{
+    background-color: white;
   }
 
   .maincontainer .right {
@@ -359,5 +380,18 @@
 
   .maincontainer .right .bottom_card .topSeller .button {
     font-size: 8px;
+    transition: background-color 0.3 sec ;
   }
+ .maincontainer .right .bottom_card .topSeller .button :hover{
+    background-color: #e9e9ec;
+  }
+  
+}
+.card_main:hover{
+  transform: scale(1.04);;
+  transition: 0.35s ease-in-out;
+}
+.maincontainer .left .cards main .card_main:hover{
+  background-color: #0e0832;
+  transition: 0.35s ease-in-out;
 }
