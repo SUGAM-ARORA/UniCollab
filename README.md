@@ -96,7 +96,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 We believe in the power of collaboration. If you have ideas to improve UniCollab, feel free to contribute! Check out our [Contribution Guidelines](CONTRIBUTING.md) to get started.
 
 ## 🤝 Contributors 
-Kudos to you wonderful and dedicated contributors
+Kudos to you wonderful and dedicated contributors <br>
 <a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
 </a>
