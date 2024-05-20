@@ -1,0 +1,171 @@
+.settings {
+  display: flex;
+  flex-direction: column;
+  background: #121026;
+  color: #ffffff;
+  padding: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.settings-tabs {
+  display: flex;
+  flex-wrap: nowrap; 
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto; 
+  position: sticky;
+  top: 0;
+  background: #121026;
+  z-index: 1000;
+  padding: 10px 0;
+}
+
+.settings-tabs button {
+  background: #19162c;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  white-space: nowrap; 
+}
+
+.settings-tabs button:hover {
+  background: #443b78;
+}
+
+.settings-tabs button.active {
+  background: #7567c5;
+}
+
+.settings-content {
+  background: #19162c;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  margin: 0 auto; 
+  max-width: 800px; 
+  min-height: 500px;
+  box-sizing: border-box;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left; 
+}
+
+.form-group label {
+  display: block; 
+  margin-bottom: 5px; 
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #444;
+  background: #121026;
+  color: #ffffff;
+}
+
+.form-group input[type="checkbox"] {
+  margin-left: 10px; 
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="password"]:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #7567c5;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-group label {
+  margin-bottom: 0; 
+  margin-right: 10px; 
+}
+
+button {
+  background: #574d91;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background: #252041;
+}
+
+.profile-settings h2,
+.account-settings h2,
+.notification-settings h2,
+.privacy-settings h2,
+.collaboration-settings h2,
+.application-settings h2,
+.help-support h2,
+.legal-settings h2 {
+  margin-bottom: 20px;
+}
+
+.help-support ul,
+.legal-settings ul {
+  list-style: none;
+  padding: 0;
+}
+
+.help-support ul li,
+.legal-settings ul li {
+  margin-bottom: 10px;
+}
+
+.help-support-list {
+  font-weight: bold;
+}
+
+.help-support-content {
+  font-size: small;
+}
+
+.help-support ul li:hover,
+.legal-settings ul li:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.form-group select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 10px center;
+  background-color: #121026;
+  padding-right: 30px;
+}
+
+@media (max-width: 768px) {
+  .settings-tabs {
+    flex-direction: row;
+    overflow-x: auto; 
+    gap: 5px;
+  }
+
+  .settings-tabs button {
+    flex: 1 0 auto; 
+    text-align: center;
+  }
+
+  .settings-content {
+    width: 100%; 
+  }
+}
