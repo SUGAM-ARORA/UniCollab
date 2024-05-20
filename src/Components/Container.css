@@ -11,9 +11,10 @@
 }
 
 .topContainer .inputBox {
-  width: 350px;
+  width: 690px;
   height: 45px;
   position: relative;
+  margin-left: 40px;
 }
 
 .topContainer .inputBox input {
