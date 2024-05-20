@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
+import { useNavigate } from "react-router-dom";
 import {
   FaDelicious,
   FaShoppingCart,
@@ -12,6 +13,8 @@ import {
 } from "react-icons/fa";
 
 function Menu() {
+  const navigate = useNavigate();
+
   useEffect(() => {
     const mainMenuLi = document
       .getElementById("mainMenu")
@@ -27,26 +30,26 @@ function Menu() {
 
   return (
     <menu>
-      <img src={logo} alt="" />
+      <img src={logo} alt="logo" />
 
       <ul id="mainMenu">
-        <Icon icon={<FaDelicious />} />
-        <Icon icon={<FaShoppingCart />} />
-        <Icon icon={<FaWallet />} />
-        <Icon icon={<FaChartLine />} />
-        <Icon icon={<FaRegClock />} />
+        <Icon icon={<FaDelicious />} onClick={() => navigate('/delicious')} />
+        <Icon icon={<FaShoppingCart />} onClick={() => navigate('/cart')} />
+        <Icon icon={<FaWallet />} onClick={() => navigate('/wallet')} />
+        <Icon icon={<FaChartLine />} onClick={() => navigate('/chart')} />
+        <Icon icon={<FaRegClock />} onClick={() => navigate('/clock')} />
       </ul>
 
       <ul className="lastMenu">
-        <Icon icon={<FaCog />} />
-        <Icon icon={<FaSignOutAlt />} />
+        <Icon icon={<FaCog />} onClick={() => navigate('/settings')} />
+        <Icon icon={<FaSignOutAlt />} onClick={() => navigate('/logout')} />
       </ul>
     </menu>
   );
 }
 
-const Icon = ({ icon }) => (
-  <li>
+const Icon = ({ icon, onClick }) => (
+  <li onClick={onClick}>
     <a href="#">{icon}</a>
   </li>
 );
