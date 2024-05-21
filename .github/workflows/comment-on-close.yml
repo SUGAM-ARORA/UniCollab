@@ -1,0 +1,19 @@
+name: Comment on Closed PR
+
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Add a comment
+      uses: peter-evans/close-pull-request@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        pull-request-number: ${{ github.event.pull_request.number }}
+        comment: |
+          Thank you for your contribution! This PR is now closed.
