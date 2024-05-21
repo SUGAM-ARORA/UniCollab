@@ -24,7 +24,7 @@ function Wallet() {
         id: transactions.length + 1,
         description: description || "Added Points",
         amount: parseInt(amount),
-        date: new Date().toISOString().split('T')[0], // Current date
+        date: new Date().toISOString().split('T')[0],
       };
       setBalance(balance + newTransaction.amount);
       setTransactions([...transactions, newTransaction]);
@@ -39,7 +39,7 @@ function Wallet() {
         ...currentTransaction,
         description: description || "Updated Transaction",
         amount: parseInt(pointsToAdd),
-        date: new Date().toISOString().split('T')[0], // Current date
+        date: new Date().toISOString().split('T')[0],
       };
       const updatedTransactions = transactions.map((transaction) =>
         transaction.id === currentTransaction.id ? updatedTransaction : transaction
@@ -126,8 +126,13 @@ function Wallet() {
   };
 
   const handleTransferPoints = (amount) => {
-    // Implement transfer points logic here
-    // For now, we'll just treat it as adding points to the balance for demonstration purposes
+    if (!isNaN(amount) && amount > 0 && amount <= balance) {
+      const newTransaction = {
+        id: transactions.length + 1,
+        description: description || "Transfer Points",
+        amount: -parseInt(amount),
+        date: new Date().toISOString().split('T')[0], 
+      };
     handleAddPoints(amount);
   };
 
@@ -258,6 +263,6 @@ function Wallet() {
       {toastMessage && <div className="toast">{toastMessage}</div>}
     </div>
   );
-}
+} }
 
 export default Wallet;
