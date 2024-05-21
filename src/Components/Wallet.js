@@ -126,13 +126,7 @@ function Wallet() {
   };
 
   const handleTransferPoints = (amount) => {
-    if (!isNaN(amount) && amount > 0 && amount <= balance) {
-      const newTransaction = {
-        id: transactions.length + 1,
-        description: description || "Transfer Points",
-        amount: -parseInt(amount),
-        date: new Date().toISOString().split('T')[0], 
-      };
+    
     handleAddPoints(amount);
   };
 
@@ -263,6 +257,6 @@ function Wallet() {
       {toastMessage && <div className="toast">{toastMessage}</div>}
     </div>
   );
-} }
+}
 
 export default Wallet;
