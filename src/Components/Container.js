@@ -2,12 +2,16 @@ import React from "react";
 import "./Container.css";
 import TopContainer from "./TopContainer";
 import MainContainer from "./MainContainer";
+import Menu from "./Menu";
 
 function Container() {
   return (
     <div className="container">
-      <TopContainer />
-      <MainContainer />
+      <Menu />
+      <div className="content">
+        <TopContainer />
+        <MainContainer />
+      </div>
     </div>
   );
 }
