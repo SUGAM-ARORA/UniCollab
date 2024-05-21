@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Line } from "react-chartjs-2";
+import "chart.js/auto"; 
 import "./Wallet.css";
 
 function Wallet() {
@@ -14,7 +16,7 @@ function Wallet() {
   const [description, setDescription] = useState('');
   const [filter, setFilter] = useState("all");
   const [sortOrder, setSortOrder] = useState("date");
-  const [modalType, setModalType] = useState(""); // new state for modal type
+  const [modalType, setModalType] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
 
@@ -116,7 +118,7 @@ function Wallet() {
         id: transactions.length + 1,
         description: description || "Withdraw Points",
         amount: -parseInt(amount),
-        date: new Date().toISOString().split('T')[0], // Current date
+        date: new Date().toISOString().split('T')[0],
       };
       setBalance(balance - amount);
       setTransactions([...transactions, newTransaction]);
@@ -126,7 +128,6 @@ function Wallet() {
   };
 
   const handleTransferPoints = (amount) => {
-    
     handleAddPoints(amount);
   };
 
@@ -142,6 +143,21 @@ function Wallet() {
     if (sortOrder === "amount") return b.amount - a.amount;
     return 0;
   });
+
+  const chartData = {
+    labels: transactions.map((transaction) => transaction.date),
+    datasets: [
+      {
+        label: "Transaction History",
+        data: transactions.map((transaction) => transaction.amount),
+        fill: false,
+        backgroundColor: "red",
+        borderColor: "red",
+        pointBorderColor: "balck",
+        pointBackgroundColor: "black",
+      },
+    ],
+  };
 
   return (
     <div className="wallet-container">
@@ -196,6 +212,11 @@ function Wallet() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="wallet-chart">
+        <h3>Expenditure Graph</h3>
+        <Line data={chartData} />
       </div>
 
       {isModalOpen && (
