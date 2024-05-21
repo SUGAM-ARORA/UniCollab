@@ -1,9 +1,6 @@
 import React, { useEffect } from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
-import React, { useEffect } from "react";
-import "./Menu.css";
-import logo from "../img/logo.png";
 import { useNavigate } from "react-router-dom";
 import {
   FaDelicious,
@@ -32,7 +29,7 @@ function Menu() {
   }, []);
 
   return (
-   <menu>
+    <menu>
       <img src={logo} alt="logo" />
 
       <ul id="mainMenu">
