@@ -194,9 +194,6 @@
   padding: 5px 20px;
 transition: background-color 0.3;
 }
-  .maincontainer .left .cards main .card_main .card_main_button:hover {
-    background-color:#e9e9ec
-  }
 
 .maincontainer .left .cards main .card_main .card_main_button .btn {
   font-size: 10px !important;
