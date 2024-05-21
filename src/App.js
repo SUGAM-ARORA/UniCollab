@@ -12,9 +12,11 @@ function App() {
         <div className="App">
        <div className="App-content">
          <Menu />
+         
          <Routes>
            <Route path="/wallet" element={<Wallet />} />
            </Routes>
+
          <Container />
        </div>
        <Footer />
