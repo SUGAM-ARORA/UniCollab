@@ -8,7 +8,7 @@ function MainRightTopCard() {
         <a href="#">View More</a>
       </div>
 
-      <div className="earning">
+      <div className="earning fromTop">
         <p>
           Projects Uploaded <span>185</span>
         </p>
