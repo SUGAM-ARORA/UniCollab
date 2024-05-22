@@ -28,7 +28,10 @@ function Menu() {
 
   return (
     <menu>
-      <img src={logo} alt="" />
+      <Link to="/" >
+        <img className="logo" src={logo} alt="" />
+      </Link>
+      
 
       <ul id="mainMenu">
         <Icon icon={<FaDelicious />} href = "/"/>
