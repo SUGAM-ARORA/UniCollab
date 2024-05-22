@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./MainContainer.css";
 import Banner from "../img/1.jpg";
 import CardMain from "./CardMain";
@@ -12,6 +12,26 @@ import MainRightTopCard from "./MainRightTopCard";
 import MainRightBottomCard from "./MainRightBottomCard";
 
 function MainContainer() {
+  const [uploadedImage, setUploadedImage] = useState(null);
+  const [isUploaded, setIsUploaded] = useState(false);
+
+  const handleUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setUploadedImage(reader.result);
+        setIsUploaded(true);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUnupload = () => {
+    setUploadedImage(null);
+    setIsUploaded(false);
+  };
+
   return (
     <div className="maincontainer">
       <div className="left">
@@ -29,9 +49,21 @@ function MainContainer() {
             
             <br></br> 
             <div className="bid">
-              <a href="#" className="button">
-                Upload
-              </a>
+            {!isUploaded ? (
+                <label className="button" htmlFor="uploadInput">
+                  Upload
+                  <input
+                    id="uploadInput"
+                    type="file"
+                    onChange={handleUpload}
+                    style={{ display: "none" }}
+                  />
+                </label>
+              ) : (
+                <button className="button" onClick={handleUnupload}>
+                  Unupload
+                </button>
+              )}
               
             </div>
           </div>

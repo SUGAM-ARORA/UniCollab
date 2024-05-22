@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import TopSeller from "./TopSeller";
 
 function MainRightBottomCard() {
+  // Initialize follow state for each seller
+  const [followState, setFollowState] = useState({});
+
+  const changeFollowing = (sellerId) => {
+    // Toggle follow state for the clicked seller
+    setFollowState(prevState => ({
+      ...prevState,
+      [sellerId]: !prevState[sellerId]
+    }));
+  };
+
   return (
     <div className="bottom_card">
       <div className="bottomCard_name">
@@ -20,9 +31,10 @@ function MainRightBottomCard() {
                 {seller?.seller_name} <span>{seller?.username}</span>
               </p>
             </div>
-            <a href="#" className="button">
-              Follow
-            </a>
+            <div onClick={() => changeFollowing(seller.id)} className="button">
+              {/* Check follow state for the current seller */}
+              {followState[seller.id] ? 'Following' : 'Follow'}
+            </div>
           </div>
         ))}
     </div>
