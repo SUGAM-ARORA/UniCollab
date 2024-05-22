@@ -11,6 +11,19 @@ menu {
   
 }
 
+menu .logo
+{
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+menu .logo:hover
+{
+  opacity: 0.7;
+  transition: all 0.4s ease-in-out;
+}
+
 menu img {
   width: 3em;
   padding-top: 30px;

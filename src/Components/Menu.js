@@ -27,9 +27,10 @@ function Menu() {
   }, []);
 
   return (
+
     <menu className="fromLeft">
       <img src={logo} alt="" />
-
+    
       <ul className="fromTop" id="mainMenu">
         <Icon icon={<FaDelicious />} href = "/"/>
         <Icon icon={<FaShoppingCart />} href = "/" />
