@@ -26,7 +26,7 @@ function TopContainer() {
   };
 
   return (
-    <div className="topContainer">
+    <div className="topContainer fromTop">
       <label className="inputBox">
         <input type="text" placeholder="Search projects, users" />
         <i className="searchIcon">

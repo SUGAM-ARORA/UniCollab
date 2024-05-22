@@ -27,13 +27,11 @@ function Menu() {
   }, []);
 
   return (
-    <menu>
-      <Link to="/" >
-        <img className="logo" src={logo} alt="" />
-      </Link>
-      
 
-      <ul id="mainMenu">
+    <menu className="fromLeft">
+      <img src={logo} alt="" />
+    
+      <ul className="fromTop" id="mainMenu">
         <Icon icon={<FaDelicious />} href = "/"/>
         <Icon icon={<FaShoppingCart />} href = "/" />
         <Icon icon={<FaWallet />} href = "/"/>
