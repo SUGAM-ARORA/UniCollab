@@ -116,7 +116,6 @@
 .maincontainer .left .cards main .card_main {
   background: #252041;
   border-radius: 10px;
-  overflow: hidden;
   max-width: 260px;
   padding-bottom: 20px;
   margin: 15px 10px;
@@ -407,4 +406,83 @@ transition: background-color 0.3;
 #author_name:hover{
   cursor: pointer;
   text-decoration: underline;
+}
+
+.contBox {
+  position: relative;
+  top: -54px;
+  left: -13px;
+  width: 280px;
+  height: auto;
+  border: 2px solid;
+  background-color: #241b44;
+  color: white;
+  border-radius: 15px;
+  z-index: 100;
+  padding: 15px;
+  margin-top: 20px;
+  visibility: hidden;
+}
+.contBox.visible {
+  visibility: visible;
+}
+
+.contBox.hidden {
+  visibility: hidden;
+}
+.heading {
+  display: flex;
+  height: 50px;
+  align-items: center; 
+}
+
+.dp {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.details1 {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#name {
+  margin: 0;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#occupation {
+  margin: 0;
+  font-size: small;
+}
+
+.details2 {
+  font-size: 14px;
+  color: rgb(194, 193, 193);
+  margin-top: 10px;
+}
+
+.btnnn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.btnnn button {
+  background-color: #0db5cb;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+.btnnn button:hover {
+  background-color: #0a8ba3;
 }
