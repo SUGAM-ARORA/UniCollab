@@ -31,26 +31,29 @@ function Menu() {
       <img src={logo} alt="" />
 
       <ul id="mainMenu">
-        <Icon icon={<FaDelicious />} />
-        <Icon icon={<FaShoppingCart />} />
-        <Icon icon={<FaWallet />} />
-        <Icon icon={<FaChartLine />} />
-        <Icon icon={<FaRegClock />} />
+        <Icon icon={<FaDelicious />} tooltip="Delicious" />
+        <Icon icon={<FaShoppingCart />} tooltip="Cart" />
+        <Icon icon={<FaWallet />} tooltip="Wallet" />
+        <Icon icon={<FaChartLine />} tooltip="Chart" />
+        <Icon icon={<FaRegClock />} tooltip="Clock" />
       </ul>
 
       <ul className="lastMenu">
         <Link to="/settings">
-          <Icon icon={<FaCog />} />
+          <Icon icon={<FaCog />} tooltip="Settings" />
         </Link>
-        <Icon icon={<FaSignOutAlt />} />
+        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" />
       </ul>
     </menu>
   );
 }
 
-const Icon = ({ icon }) => (
+const Icon = ({ icon, tooltip }) => (
   <li>
-    <a href="#">{icon}</a>
+    <a href="#">
+      {icon}
+      <span className="tooltip">{tooltip}</span>
+    </a>
   </li>
 );
 
