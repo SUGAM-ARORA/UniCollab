@@ -132,7 +132,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 20px;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .maincontainer .left .cards main .card_main .card_main_name h2 {
@@ -174,7 +174,7 @@
   padding: 5px 10px;
   text-align: center;
   column-rule: 1px solid #adabb8;
-  margin: 15px 0;
+  margin: 6px 0;
 }
 .maincontainer .left .cards main .card_main .stat p {
   font-size: 12px;
@@ -391,4 +391,20 @@ transition: background-color 0.3;
 .maincontainer .left .cards main .card_main:hover{
   background-color: #0e0832;
   transition: 0.35s ease-in-out;
+}
+.author{
+  margin: 5px 0px;
+  width: 260px;
+  height: 25px;
+}
+.nameAuthor{
+  margin: auto;
+  width: 215px;
+  display: flex;
+  color: #e9e9ec;
+  font-weight: bold;
+}
+#author_name:hover{
+  cursor: pointer;
+  text-decoration: underline;
 }

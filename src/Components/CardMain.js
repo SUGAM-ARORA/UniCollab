@@ -26,7 +26,12 @@ function CardMain({ imgSrc, title, hearts }) {
           </p>
         </div>
       </div>
-
+      <div className="author">
+        <div className="nameAuthor">
+          <p>By : &nbsp; </p>
+          <p id="author_name">Abc</p>
+        </div>
+      </div>
       <div className="card_main_button">
         <a href="#" className="button btn">
           Read More
