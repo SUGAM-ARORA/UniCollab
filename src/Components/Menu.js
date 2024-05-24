@@ -34,8 +34,8 @@ function Menu() {
         <Icon icon={<FaDelicious />} tooltip="Delicious" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" />
         <Icon icon={<FaWallet />} tooltip="Wallet" />
-        <Icon icon={<FaChartLine />} tooltip="Chart" />
-        <Icon icon={<FaRegClock />} tooltip="Clock" />
+        <Icon icon={<FaChartLine />} tooltip="Trending" />
+        <Icon icon={<FaRegClock />} tooltip="Speed" />
       </ul>
 
       <ul className="lastMenu">
