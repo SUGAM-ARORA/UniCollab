@@ -28,10 +28,10 @@ jobs:
                 -d '{"state":"closed"}' \
                 "https://api.github.com/repos/${{ github.repository }}/issues/$issue"
               
-              # Add a comment explaining when the issue will be closed
+              # Add a comment mentioning the repository owner
               curl -s -X POST -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                 -H "Accept: application/vnd.github.v3+json" \
-                -d '{"body":"This issue has been automatically closed because it has been inactive for more than 30 days. If you believe this is still relevant, feel free to reopen it or create a new one. Thank you!"}' \
+                -d "{\"body\":\"@${{ github.repository_owner }} This issue has been automatically closed because it has been inactive for more than 30 days. If you believe this is still relevant, feel free to reopen it or create a new one. Thank you!\"}" \
                 "https://api.github.com/repos/${{ github.repository }}/issues/$issue/comments"
             fi
           done
