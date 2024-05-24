@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 
 function CardMain({ imgSrc, title, hearts }) {
-
   const [isVisible, setIsVisible] = useState(false);
+  let hideTimeout;
 
   const handleMouseOver = () => {
+    clearTimeout(hideTimeout);
     setIsVisible(true);
   };
 
   const handleMouseOut = () => {
-    setIsVisible(false);
+    hideTimeout = setTimeout(() => {
+      setIsVisible(false);
+    }, 200);
   };
 
   return (
@@ -57,7 +60,11 @@ function CardMain({ imgSrc, title, hearts }) {
           Source Code
         </a>
       </div>
-      <div className={`contBox ${isVisible ? 'visible' : 'hidden'}`}>
+      <div
+        className={`contBox ${isVisible ? "visible" : "hidden"}`}
+        onMouseOver={handleMouseOver}
+        onMouseOut={handleMouseOut}
+      >
         <div className="heading">
           <div className="dp"></div>
           <div className="details1">
@@ -82,3 +89,4 @@ function CardMain({ imgSrc, title, hearts }) {
 }
 
 export default CardMain;
+

@@ -403,6 +403,9 @@ transition: background-color 0.3;
   color: #e9e9ec;
   font-weight: bold;
 }
+#author_name{
+  color: #0db5cb;
+}
 #author_name:hover{
   cursor: pointer;
   text-decoration: underline;
@@ -410,7 +413,7 @@ transition: background-color 0.3;
 
 .contBox {
   position: relative;
-  top: -54px;
+  top: -290px;
   left: -13px;
   width: 280px;
   height: auto;
@@ -422,6 +425,7 @@ transition: background-color 0.3;
   padding: 15px;
   margin-top: 20px;
   visibility: hidden;
+  margin-bottom: 15px;
 }
 .contBox.visible {
   visibility: visible;
@@ -440,7 +444,8 @@ transition: background-color 0.3;
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: red;
+  background-image: url(../img/Avatar.png);
+  background-size: 100%;
 }
 
 .details1 {
@@ -480,6 +485,7 @@ transition: background-color 0.3;
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer; 
+  font-weight: bold;
   transition: background-color 0.3s;
 }
 
