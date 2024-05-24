@@ -1,0 +1,29 @@
+.about{
+    background-color: #0cb2cf;
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    position: relative;
+    bottom: 15rem;
+}
+
+
+.links{
+    display: flex;
+    gap: 2rem;
+    
+}
+
+a:link , a:visited{
+    color: #fff;
+}
+
+.us{
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    text-align: center;
+    word-wrap: wrap;
+}

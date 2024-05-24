@@ -26,13 +26,13 @@ function TopContainer() {
   };
 
   return (
-    <div className="topContainer">
-      <div className="inputBox">
+    <div className="topContainer fromTop">
+      <label className="inputBox">
         <input type="text" placeholder="Search projects, users" />
-        <i>
+        <i className="searchIcon">
           <BiSearchAlt />
         </i>
-      </div>
+      </label>
 
       <div className="profileContainer">
         <div className="notification-container" ref={dropdownRef}>

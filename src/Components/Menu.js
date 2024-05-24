@@ -27,30 +27,30 @@ function Menu() {
   }, []);
 
   return (
-    <menu>
+    <menu className="fromLeft">
       <img src={logo} alt="" />
-
-      <ul id="mainMenu">
-        <Icon icon={<FaDelicious />} tooltip="Delicious" />
-        <Icon icon={<FaShoppingCart />} tooltip="Cart" />
-        <Icon icon={<FaWallet />} tooltip="Wallet" />
-        <Icon icon={<FaChartLine />} tooltip="Trending" />
-        <Icon icon={<FaRegClock />} tooltip="Speed" />
+    
+      <ul className="fromTop" id="mainMenu">
+        <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
+        <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
+        <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
+        <Icon icon={<FaChartLine />} tooltip="Trending" href="/" />
+        <Icon icon={<FaRegClock />} tooltip="Speed" href="/" />
       </ul>
 
       <ul className="lastMenu">
         <Link to="/settings">
           <Icon icon={<FaCog />} tooltip="Settings" />
         </Link>
-        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" />
+        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
       </ul>
     </menu>
   );
 }
 
-const Icon = ({ icon, tooltip }) => (
+const Icon = ({ icon, tooltip, href }) => (
   <li>
-    <a href="#">
+    <a href={href}>
       {icon}
       <span className="tooltip">{tooltip}</span>
     </a>
