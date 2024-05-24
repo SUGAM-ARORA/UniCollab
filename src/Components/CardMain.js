@@ -4,7 +4,7 @@ import { BsFillHeartFill } from "react-icons/bs";
 function CardMain({ imgSrc, title, hearts }) {
   return (
     <div className="card_main">
-      <img src={imgSrc} alt="" className="card_main_img" />
+      <img src={imgSrc} alt="" className="card_main_img" title={title} />
       <div className="card_main_name">
         <h2>{title}</h2>
         <div className="card_main_icon">

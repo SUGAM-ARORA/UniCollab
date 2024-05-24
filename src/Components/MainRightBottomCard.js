@@ -11,7 +11,7 @@ function MainRightBottomCard() {
 
       {TopSeller &&
         TopSeller.map((seller) => (
-          <div className="topSeller" key={seller.id}>
+          <div className="topSeller fromTop" key={seller.id}>
             <div className="topSellerImg">
               <img src={seller?.imgSrc} alt="" />
             </div>
