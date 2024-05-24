@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
+import { Link } from "react-router-dom";
 import {
   FaDelicious,
   FaShoppingCart,
@@ -26,20 +27,23 @@ function Menu() {
   }, []);
 
   return (
-    <menu>
-      <img src={logo} alt="" />
 
-      <ul id="mainMenu">
-        <Icon icon={<FaDelicious />} />
-        <Icon icon={<FaShoppingCart />} />
-        <Icon icon={<FaWallet />} />
-        <Icon icon={<FaChartLine />} />
-        <Icon icon={<FaRegClock />} />
+    <menu className="fromLeft">
+      <img src={logo} alt="" />
+    
+      <ul className="fromTop" id="mainMenu">
+        <Icon icon={<FaDelicious />} href = "/"/>
+        <Icon icon={<FaShoppingCart />} href = "/" />
+        <Icon icon={<FaWallet />} href = "/"/>
+        <Icon icon={<FaChartLine />} href = "/"/>
+        <Icon icon={<FaRegClock />} href = "/"/>
       </ul>
 
       <ul className="lastMenu">
-        <Icon icon={<FaCog />} />
-        <Icon icon={<FaSignOutAlt />} />
+        <Icon icon={<FaCog />} href = "/"/>
+        <Icon icon={<FaSignOutAlt />} href = "/"/>
+
+
       </ul>
     </menu>
   );

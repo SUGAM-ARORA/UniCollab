@@ -32,7 +32,7 @@ function MainContainer() {
     <div className="maincontainer">
       <div className="left">
         <div
-          className="banner"
+          className="banner zoomIn"
           style={{
             background: `url(${banner}) center center no-repeat`,
             backgroundSize: "cover",
@@ -59,7 +59,7 @@ function MainContainer() {
           />
         </div>
 
-        <div className="cards">
+        <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
               <h2>Feed</h2>
@@ -80,7 +80,7 @@ function MainContainer() {
             </div>
           </div>
 
-          <main>
+          <main className="fromBottom">
             <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
             <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
             <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
@@ -90,7 +90,7 @@ function MainContainer() {
           </main>
         </div>
       </div>
-      <div className="right">
+      <div className="right fromRight">
         <MainRightTopCard />
         <MainRightBottomCard />
       </div>
