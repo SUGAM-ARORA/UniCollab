@@ -1,11 +1,14 @@
 .about{
-    background-color: #0cb2cf;
-    color:#fff;
+    background-color: #b2a4e1;
+    color:#070a00;
     display: flex;
     align-items: center;
     justify-content: center;   
     position: relative;
     bottom: 15rem;
+    font-style: italic;
+    font-size: 20px ;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 
@@ -16,11 +19,11 @@
 }
 
 a:link , a:visited{
-    color: #fff;
+    color: #f2e3e3;
 }
 
 .us{
-    padding-top:1rem;
+    padding-top:0rem;
     padding-bottom: 1rem;
     padding-left: 5rem;
     padding-right: 5rem;

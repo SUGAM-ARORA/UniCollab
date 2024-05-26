@@ -1,0 +1,53 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Services Page Styles */
+.services-header {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #37a7ab;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+
+}
+
+.service {
+    background-color: #847272;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+.service-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #360210;
+
+}
+
+.service-description {
+    font-size: 16px;
+    color: #0a0909;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+}
+
+.links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
