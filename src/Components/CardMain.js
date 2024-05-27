@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BsFillHeartFill } from "react-icons/bs";
 
 function CardMain({ imgSrc, title, hearts }) {
   const [isVisible, setIsVisible] = useState(false);
   let hideTimeout;
+
+  useEffect(() => {
+    return () => {
+      clearTimeout(hideTimeout);
+    };
+  }, []);
 
   const handleMouseOver = () => {
     clearTimeout(hideTimeout);
