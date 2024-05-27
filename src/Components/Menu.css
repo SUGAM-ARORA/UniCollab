@@ -8,7 +8,19 @@ menu {
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   position: sticky;
   top: 0;
-  
+}
+
+menu .logo
+{
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.4s ease-in-out;
+}
+
+menu .logo:hover
+{
+  opacity: 0.7;
+  transition: all 0.4s ease-in-out;
 }
 
 menu img {
@@ -38,6 +50,7 @@ menu ul li a {
   color: #8c8a95;
   text-decoration: none;
   transition: all 0.3s;
+  position: relative;
 }
 
 menu ul li a::before {
@@ -67,6 +80,40 @@ menu ul li.active a {
 
 menu ul li:hover a {
   color: #0db5cb;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 80px;
+  background-color: #2e2758;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 8px;
+  font-size: 15px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -30px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #231e42 transparent transparent transparent;
+}
+
+menu ul li:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
 }
 
 .lastMenu {
