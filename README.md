@@ -1,7 +1,12 @@
 <p align="center">
-  <img src="Unicollab.png">
+  <img src="UniCollab-Top.png">
 </p>
-<h1><p align="center">UniCollab: Unleashing Collaborative Learning</p></h1>
+<p align="center">
+  <img src="UniCollab-Bottom.png">
+</p>
+<center>
+<img src = "https://readme-typing-svg.herokuapp.com/?color=00FFFF&size=40&width=900&height=80&lines=UniCollab:%20Unleashing%20Collaborative%20Learning"> 
+</center>
 <h3><p align="center">Welcome to UniCollab, where knowledge knows no boundaries</h3></p>
 
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-cyan.svg?style=badge&color=cyan&logo=openai)
@@ -21,6 +26,12 @@
 UniCollab is more than just a platform; it's a gateway to a world where students from different universities/colleges converge to collaborate, innovate, and elevate their projects. Imagine a space where ideas flow freely, where knowledge is shared effortlessly, and where learning transcends classrooms. That's UniCollab for you.
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=SUGAM-ARORA/Unicollab%20&style=badge&logo=openai)
+
+## 🏅 Featured in 
+
+<p align="center">
+  <img src="gssoc-banner.png">
+</p>
 
 ## 🖌️ Scope of the Project 
 
@@ -83,9 +94,49 @@ Proposed tech stack for project(although you are free to use any other stack out
 
 All contributors should look for [LEARN](LEARN.md). This file provides detailed instructions on how to build the project locally and contains other essential information. Whether you're new to the project or a seasoned contributor, the [LEARN](LEARN.md) file is a valuable resource for understanding the project's structure and requirements. 
 
+## 👀 Vision 
+
+#### Mission 📚
+To create a dynamic platform where students from diverse universities collaborate, innovate, and showcase their projects, driving learning and recognition.
+
+#### Core Objectives 👥
+1. **Foster Collaboration**: Enable seamless teamwork on projects.
+2. **Enhance Learning**: Provide resources and a community for mutual learning.
+3. **Showcase Projects**: Offer a stage for students to display their work and talents.
+4. **Inspire Innovation**: Encourage creative and impactful projects.
+5. **Build Community**: Cultivate a supportive network for feedback and growth.
+
+#### Long-Term Goals 🔄
+1. **Global Reach**: Expand to more universities worldwide.
+2. **Industry Partnerships**: Collaborate with tech companies and institutions.
+3. **Professional Integration**: Connect with LinkedIn and GitHub.
+4. **Continuous Evolution**: Regular updates based on feedback and trends.
+
+#### Success Metrics 📈
+1. **User Engagement**: Activity levels and collaboration rates.
+2. **Growth**: Increase in users and projects.
+3. **Satisfaction**: Regular feedback and user satisfaction surveys.
+4. **Learning Impact**: User testimonials and success stories.
+5. **Community Activity**: Discussions, contributions, and events.
+
+By embracing these goals, UniCollab aims to be the premier platform for student collaboration and innovation.
+
 ## 📄 Documentation
 
 Explore our comprehensive documentation in the [DOCUMENTATION](Documentation.md) file, which serves as a detailed guide to understanding and contributing to UniCollab. This document covers various aspects of the project, including setup instructions, architecture overview, and contribution guidelines. We recommend referring to this documentation to gain a deeper insight into UniCollab and make meaningful contributions to its development.
+
+## ⚠️ Caution 
+
+1. **Sync Your Fork**: Before making a pull request, ensure your fork is up-to-date with the latest changes from the main repository to avoid conflicts.
+2. **Data Privacy**: Ensure that sensitive information is protected and not shared without consent. Follow best practices for data security.
+3. **Intellectual Property**: Respect the intellectual property rights of all users. Do not upload or use copyrighted materials without proper authorization.
+4. **Quality Control**: Maintain high standards for project submissions. Ensure that projects are well-documented, functional, and original.
+5. **Community Conduct**: Uphold a positive and respectful community environment. Any form of harassment, discrimination, or inappropriate behavior will not be tolerated.
+6. **Feedback Etiquette**: Provide constructive and respectful feedback. Avoid negative or discouraging comments that do not contribute to the improvement of the project.
+7. **Usage of Resources**: Use platform resources responsibly. Avoid activities that could harm the platform's integrity or availability for other users.
+8. **Compliance with Guidelines**: Adhere to all platform guidelines and policies. Regularly review updates to ensure continued compliance.
+
+By adhering to these cautions, UniCollab aims to create a safe, respectful, and productive environment for all users.
 
 ## 🛡️ License
 
@@ -95,11 +146,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 We believe in the power of collaboration. If you have ideas to improve UniCollab, feel free to contribute! Check out our [Contribution Guidelines](CONTRIBUTING.md) to get started.
 
+## 🧑‍💼 Project Admin 
+ 
+<div align="center">
+<table>
+<tr>
+<td align="center"><a href="https://github.com/SUGAM-ARORA"><img src="https://github.com/SUGAM-ARORA/UniCollab/assets/96546088/09d60ee5-8215-4327-808f-4edf119370b6" width=150px height=150px /></a></br> <h4 style="color:cyan;">Sugam Arora</h4>
+ <a href="https://www.linkedin.com/in/sugamarora23/"><img src="https://img.icons8.com/fluency/2x/linkedin.png" width="32px" height="32px"></img></a>
+   </td>
+
+</tr>
+</table>
+</div>
+
 ## 🤝 Contributors 
-Kudos to you wonderful and dedicated contributors <br>
+<div align =center><h3>🎉 Kudos to You Wonderful and Dedicated Contributors! 🌟</h3> <br>
 <a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
 </a>
+</div>
 
 ## 📬 Contact Details
 
