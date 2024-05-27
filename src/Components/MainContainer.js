@@ -10,7 +10,7 @@ import CardMain from "./CardMain";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
-
+import { NavLink } from "react-router-dom";
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
 
@@ -86,7 +86,7 @@ function MainContainer() {
             <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
             <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
             <CardMain imgSrc={Card5} title={"ArchiTect"} hearts={"47"} />
-            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <NavLink to="/weather"><CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} /></NavLink>
           </main>
         </div>
       </div>
