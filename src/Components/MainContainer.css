@@ -3,6 +3,7 @@
   height: calc(100% - 45px);
   display: flex;
   padding-top: 15px;
+ 
 }
 
 .maincontainer .left {
@@ -20,13 +21,17 @@
   background: #0cb2cf;
   border-radius: 10px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: relative;
+  
 }
 
 .maincontainer .left .banner .textContainer {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
+  padding-top: 15%;
+  padding-left: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .maincontainer .left .banner .textContainer h1 {

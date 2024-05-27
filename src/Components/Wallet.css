@@ -1,20 +1,23 @@
 @import "~@fortawesome/fontawesome-free/css/all.css";
 
 .wallet-container {
-  max-width: 600px;
-  margin: 0 auto;
+  width: 93%;
+  height: 100%;
+  margin: 0;
   padding: 20px;
   background: linear-gradient(135deg, #6dd5ed, #2193b0);
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   color: #fff;
-  font-family: 'Arial', sans-serif;
+  position: absolute;
+  left: 11vh;
+  top:7vh
 }
 
 .wallet-title {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 28px;
+  font-size: 28px;  
 }
 
 .wallet-balance {
@@ -188,6 +191,11 @@
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   animation: fadeOut 4s forwards;
+}
+.wallet-chart{
+  
+  height: 65vh;
+
 }
 
 @keyframes fadeOut {

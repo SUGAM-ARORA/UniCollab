@@ -31,12 +31,13 @@ function Menu() {
   return (
     <menu>
       <img src={logo} alt="logo" />
+      
 
       <ul id="mainMenu">
         <Icon icon={<FaDelicious />} onClick={() => navigate('/delicious')} />
         <Icon icon={<FaShoppingCart />} onClick={() => navigate('/cart')} />
         <Icon icon={<FaWallet />} onClick={() => navigate('/wallet')} />
-        <Icon icon={<FaChartLine />} onClick={() => navigate('/chart')} />
+        <Icon icon={<FaChartLine />}  />  
         <Icon icon={<FaRegClock />} onClick={() => navigate('/clock')} />
       </ul>
 

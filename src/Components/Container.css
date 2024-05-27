@@ -3,6 +3,7 @@
   width: 100%;
   padding: 20px;
   padding-top: 30px;
+  
 }
 
 .menu {
@@ -24,7 +25,7 @@
 .topContainer .inputBox {
   width: 350px;
   height: 45px;
-  position: relative;
+
 }
 
 .topContainer .inputBox input {
@@ -46,8 +47,7 @@
 
 .topContainer .inputBox .searchIcon {
   position: absolute;
-  left: 0;
-  top: 0;
+ left: 12vh;
   width: 40px;
   height: 45px;
   line-height: 45px;
@@ -55,7 +55,7 @@
   color: #8d8b97;
   text-align: center;
   border-color: #757380;
-  padding-top: 2px;
+  
 }
 
 .topContainer .inputBox input:focus {
@@ -74,7 +74,7 @@
   justify-content: center;
   align-items: center;
   color: #d0cfd4;
-  position: relative;
+ 
 }
 
 .profileContainer .profileIcon {
@@ -86,7 +86,8 @@
   line-height: 40px;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   font-size: 18px;
-  position: relative;
+
+  
 }
 
 .profileContainer .profileIcon::before {
