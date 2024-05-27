@@ -1,0 +1,150 @@
+.profile-page {
+    width: 100%;
+    height: 30%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    background: #c1c1ff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-button {
+    background-color: #5d34bb;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+.back-button:hover {
+    background-color: #3a1f77;
+}
+
+.back-button:focus {
+    outline: none;
+}
+
+.back-button svg {
+    margin-right: 1px;
+}
+
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #0db5cb;
+}
+
+.profile-icon {
+    font-size: 150px;
+    color: #000000;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-info h1 {
+    font-size: 2em;
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+    margin-left: 4px;
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.stats-item {
+    text-align: center;
+}
+
+.stats-item h2 {
+    font-size: 1.5em;
+    color: #000000;
+    margin: 0;
+}
+
+.stats-item p {
+    font-size: 0.9em;
+    color: #000000;
+    font-weight: 500;
+}
+
+.profile-bio {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #000000;
+    font-weight: 500;
+}
+
+.follow-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background: #5d34bb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.follow-button:hover {
+    background: #3a1f77;
+}
+
+.profile-section {
+    margin-top: 30px;
+}
+
+.profile-section h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #000000;
+}
+
+.profile-section ul {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.profile-section ul li {
+    background: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    color: #333;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.profile-section ul li:hover {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
