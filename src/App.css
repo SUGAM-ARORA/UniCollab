@@ -46,6 +46,7 @@
 .fromBottom{
   animation: slideBottom 1s ease forwards;
 }
+
 .zoomIn{
   animation: zoomIn 1s ease forwards;
 }

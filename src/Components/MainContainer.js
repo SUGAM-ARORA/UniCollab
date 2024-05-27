@@ -60,6 +60,7 @@ function MainContainer() {
         </div>
 
         <div className="cards zoomIn">
+
           <div className="filters">
             <div className="popular">
               <h2>Feed</h2>
@@ -81,20 +82,49 @@ function MainContainer() {
           </div>
 
           <main className="fromBottom">
-            <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
+
+         
+           <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
             <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
-            <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
-            <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
+
+           
+            
+
+    
+          </main>
+
+        </div>
+
+          
+
+      
+          
+        <div className="one">
+        <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
             <CardMain imgSrc={Card5} title={"ArchiTect"} hearts={"47"} />
             <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
-          </main>
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
         </div>
+
       </div>
+
+
       <div className="right fromRight">
         <MainRightTopCard />
         <MainRightBottomCard />
       </div>
+      
+      
     </div>
+
+
+
   );
 }
 

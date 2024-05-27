@@ -1,15 +1,32 @@
 .maincontainer {
   width: 100%;
-  height: calc(100% - 45px);
+  height: calc(100% - 35px);
   display: flex;
   padding-top: 15px;
 }
 
-.maincontainer .left {
+/* .maincontainer .left {
   width: calc(100% - 30%);
   overflow-y: scroll;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+} */
+
+/* one box styling */
+
+.one {
+  display: flex;
+  justify-content: space-between;
+  width: calc(135%);
+  overflow-y: scroll;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
+
+.left {
+  width: calc(100% - 15%);
+}
+
+
+
 
 .maincontainer .left::-webkit-scrollbar {
   display: none;
@@ -29,6 +46,15 @@
   right: 20px;
 }
 
+  .fromBottomsecond{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+/* 
 .maincontainer .left .banner .textContainer h1 {
   font-size: 3.5rem;
   font-weight: 700;
@@ -46,7 +72,7 @@
   color: #f1f1f1;
   font-size: 18px;
   margin: 5px 0;
-}
+} */
 
 .maincontainer .left .banner .textContainer .bid {
   display: flex;
@@ -106,6 +132,14 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.one{
+  padding-top: 15px;
+  flex-wrap:wrap;
+  display: flex;
+  justify-content: space-between;
+  
+}
+
 .card_main{
   height: 365px;
 }
@@ -113,7 +147,7 @@
   width: 100%;
   height: 200px;
 }
-.maincontainer .left .cards main .card_main {
+ .card_main {
   background: #252041;
   border-radius: 10px;
   overflow: hidden;
@@ -122,12 +156,12 @@
   margin: 15px 10px;
 }
 
-.maincontainer .left .cards main .card_main .card_main_img {
+  .card_main .card_main_img {
   max-width: 100%;
   object-fit: cover;
 }
 
-.maincontainer .left .cards main .card_main .card_main_name {
+  .card_main .card_main_name {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -135,30 +169,27 @@
   margin-top: 10px;
 }
 
-.maincontainer .left .cards main .card_main .card_main_name h2 {
+ .card_main .card_main_name h2 {
   color: #e9e9ec;
   font-size: 16px;
   font-weight: bold;
 }
 
-.maincontainer .left .cards main .card_main .card_main_name .card_main_icon {
+ .card_main_icon {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.maincontainer .left .cards main .card_main .card_main_name .card_main_icon i {
+ .card_main .card_main_name .card_main_icon i {
   color: #0db5cb;
   text-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   font-size: 12px;
 }
 
-.maincontainer
-  .left
-  .cards
-  main
-  .card_main
-  .card_main_name
+
+ 
+ 
   .card_main_icon
   i
   span {
@@ -168,7 +199,7 @@
   font-weight: bold;
 }
 
-.maincontainer .left .cards main .card_main .stat {
+ .card_main .stat {
   columns: 2;
   gap: 1em;
   padding: 5px 10px;
@@ -176,18 +207,18 @@
   column-rule: 1px solid #adabb8;
   margin: 15px 0;
 }
-.maincontainer .left .cards main .card_main .stat p {
+ .card_main .stat p {
   font-size: 12px;
   font-weight: bold;
   color: #adabb8;
 }
 
-.maincontainer .left .cards main .card_main .stat p span {
+.card_main .stat p span {
   display: block;
   color: #0db5cb;
 }
 
-.maincontainer .left .cards main .card_main .card_main_button {
+.card_main .card_main_button {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -195,11 +226,11 @@
 transition: background-color 0.3;
 }
 
-.maincontainer .left .cards main .card_main .card_main_button .btn {
+.card_main .card_main_button .btn {
   font-size: 10px !important;
 transition: background-color 0.3;
 }
-.maincontainer .left .cards main .card_main .card_main_button .btn :hover{
+.card_main_button .btn :hover{
   background-color: #d34eb6;
 }
 
@@ -240,16 +271,16 @@ transition: background-color 0.3;
 
 .maincontainer .right .topCard .earning {
   width: 100%;
-  padding: 5px 10px;
+  padding: 5px 11px;
 }
 
 .maincontainer .right .topCard .earning p {
-  margin: 8px 0;
+  margin: 3px 0px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 12px;
+  font-size: 19px;
   color: #adabb8;
   font-weight: bold;
 }
@@ -265,7 +296,7 @@ transition: background-color 0.3;
 }
 
 .maincontainer .right .bottom_card {
-  margin-top: 15px;
+  margin-top: 21px;
 }
 
 .maincontainer .right .bottom_card .topSeller {
