@@ -4,7 +4,7 @@
     max-width: 800px;
     margin: auto;
     padding: 20px;
-    background: #c1c1ff;
+    background: #cbcbff;
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 60px;
@@ -44,12 +44,11 @@
     margin-right: 1px;
 }
 
-
 .profile-picture {
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid #0db5cb;
+    border: 2px solid #5d34bb;
 }
 
 .profile-icon {
@@ -135,14 +134,15 @@
 }
 
 .profile-section ul li {
-    background: #fff;
+    background: #6843be;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
-    color: #333;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    color: #ffffff;
     transition: box-shadow 0.3s ease;
     cursor: pointer;
+
 }
 
 .profile-section ul li:hover {
