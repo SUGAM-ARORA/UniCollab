@@ -96,7 +96,7 @@ function NewProject() {
                         <label>
                             GitHub Repository Link: <span>*</span>
                             <input 
-                                type='text' 
+                                type='url' 
                                 name="github"
                                 value={data.github}
                                 placeholder='Eg. https://github.com/your-username/repository-name' 
