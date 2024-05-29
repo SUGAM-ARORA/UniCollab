@@ -1,0 +1,124 @@
+* {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+form {
+    padding: 20px 0;
+    width: 100%;
+}
+.input-box {
+    width: 100%;
+    color: white;
+    margin-bottom: 18px;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    opacity: 0;
+    transform: translateY(10px);
+    transform: scale(0.5);
+
+}
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #201d41;
+    border: 2px solid #201d41;
+    outline: none;
+    margin: 7px 0;
+    color: whitesmoke;
+    
+}
+input:focus, textarea:focus {
+    border: 2px solid #231c6e;
+}
+span {
+    color: red;
+}
+.input-box:last-of-type {
+    display: flex;
+    gap: 10px;
+}
+.input-box:nth-of-type(2) {
+    animation-delay: 0.2s;
+}
+.input-box:nth-of-type(3) {
+    animation-delay: 0.4s;
+}
+.input-box:nth-of-type(4) {
+    animation-delay: 0.6s;
+}
+.input-box:nth-of-type(5) {
+    animation-delay: 0.8s;
+}
+.input-box:nth-of-type(6) {
+    animation-delay: 1s;
+}
+.suggesion-list {
+    width:fit-content;
+    min-width: 200px;
+    background-color: #231c6e;
+    position: relative;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.suggesion-list li {
+    padding: 10px;
+    cursor: pointer;
+}
+.suggesion-list::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: -8.9px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid #231c6e;
+}
+.suggesion-list li:hover {
+    background-color: #201d41;
+}
+.selected {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+.selected li {
+    width: fit-content;
+    padding: 7px 15px;
+    border-radius: 25px;
+    background-color: green;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.error {
+    padding: 10px;
+    background-color: rgb(255, 207, 207);
+    color: rgb(205, 4, 4);
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+
+}
+@keyframes fadeIn {
+    0% {
+        transform: translateY(20px);
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        transform: scale(1);
+        opacity: 1;
+    }
+}
