@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -12,28 +13,42 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-content">
+        <div className="icons">
+        <a href="#" target="_blank">
+          <i class="devicon-linkedin-plain"></i>
+        </a>
+        <a href="#" target="_blank">
+          <i class="devicon-github-original"></i>
+        </a>
+        <a href="#" target="_blank">
+          <i class="devicon-facebook-plain"></i>
+        </a>
+        <a href="#" target="_blank">
+          <i class="devicon-twitter-original"></i>
+        </a>
+        </div>
         <p>&copy; 2024 UniCollab. All rights reserved.</p>
         <ul className="footer-links">
           <li>
-            <a href="#home">Home</a>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <a href="#about">About Us</a>
+            <NavLink to="/about">About Us</NavLink>
           </li>
           <li>
-            <a href="#services">Services</a>
+            <NavLink to="/services">Services</NavLink>
           </li>
           <li>
-            <a href="#contact">Contact</a>
+            <NavLink to="/contacts">Contact</NavLink>
           </li>
           <li>
-            <a href="#portfolio">Portfolio</a>
+            <NavLink to="/porfolios">Portfolio</NavLink>
           </li>
           <li>
-            <a href="#blog">Blog</a>
+            <NavLink to="/blogs">Blog</NavLink>
           </li>
           <li>
-            <a href="#faq">FAQ</a>
+            <NavLink to="/faq">FAQ</NavLink>
           </li>
         </ul>
         <a href="#" className="back-to-top" onClick={scrollToTop}>

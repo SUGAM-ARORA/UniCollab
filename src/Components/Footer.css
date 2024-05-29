@@ -35,7 +35,7 @@
   }
   
   .footer-links a:hover {
-    color: #ff6347;
+    color: #00ffff;
   }
   
   .footer-content {
@@ -65,3 +65,19 @@
   .back-to-top:hover {
     background-color: #443b78; 
   }
+a{
+  text-decoration: none;
+}
+.icons{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 20px;
+}
+.icons a{
+  color: #ffffff;
+  transition: color 0.3s;
+}
+.icons a:hover{
+  color: #00ffff;
+}
