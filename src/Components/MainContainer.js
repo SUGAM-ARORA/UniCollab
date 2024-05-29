@@ -11,6 +11,8 @@ import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
 
+const MAX_IMAGE_SIZE = 2185200; // 2MB
+
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
 
@@ -21,7 +23,7 @@ function MainContainer() {
   };
 
   const selectImageHandler = (e) => {
-    if (e.target.files && e?.target?.files[0]?.size < 2185200) {
+    if (e.target.files && e?.target?.files[0]?.size < MAX_IMAGE_SIZE) {
       setBanner(URL.createObjectURL(e?.target?.files[0]));
     } else {
       console.error("Image size should be less than 2MB!");
