@@ -10,6 +10,10 @@ import {
   FaRegClock,
   FaCog,
   FaSignOutAlt,
+  FaCreativeCommons,
+  FaBlog,
+  FaSave,
+  FaList,
 } from "react-icons/fa";
 
 function Menu() {
@@ -31,6 +35,7 @@ function Menu() {
       <img src={logo} alt="" />
     
       <ul className="fromTop" id="mainMenu">
+        <Icon icon={<FaList />} tooltip="My projects" href="/projects"/>
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
         <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
