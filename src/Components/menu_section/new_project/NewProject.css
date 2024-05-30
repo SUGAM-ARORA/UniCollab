@@ -98,17 +98,15 @@ span {
     gap: 15px;
 }
 .error {
-    padding: 10px;
-    background-color: rgb(255, 207, 207);
+    margin-bottom: 15px;
+}
+.error small {
     color: rgb(205, 4, 4);
-    width: 100%;
-    border-radius: 5px;
     display: flex;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 7px;
     font-size: 14px;
-
+    margin-bottom: 5px;
 }
 @keyframes fadeIn {
     0% {
