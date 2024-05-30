@@ -1,6 +1,7 @@
 .maincontainer {
   width: 100%;
   height: calc(100% - 45px);
+  max-height: 100vh;
   display: flex;
   padding-top: 15px;
 }
@@ -61,10 +62,9 @@
 .maincontainer .left .banner .textContainer .bid p span {
   display: block;
   color: #0db5cb;
- transition: color 0.3 sec;
+  transition: color 0.3 sec;
 }
-.maincontainer .left .banner .textContainer .bid p span :hover{
- 
+.maincontainer .left .banner .textContainer .bid p span :hover {
   color: white;
 }
 
@@ -106,17 +106,16 @@
   align-items: center;
   flex-wrap: wrap;
 }
-.card_main{
+.card_main {
   height: 365px;
 }
-.card_main_img{
+.card_main_img {
   width: 100%;
   height: 200px;
 }
 .maincontainer .left .cards main .card_main {
   background: #252041;
   border-radius: 10px;
-  overflow: hidden;
   max-width: 260px;
   padding-bottom: 20px;
   margin: 15px 10px;
@@ -132,7 +131,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 20px;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .maincontainer .left .cards main .card_main .card_main_name h2 {
@@ -174,7 +173,7 @@
   padding: 5px 10px;
   text-align: center;
   column-rule: 1px solid #adabb8;
-  margin: 15px 0;
+  margin: 6px 0;
 }
 .maincontainer .left .cards main .card_main .stat p {
   font-size: 12px;
@@ -192,14 +191,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 5px 20px;
-transition: background-color 0.3;
+  transition: background-color 0.3;
 }
 
 .maincontainer .left .cards main .card_main .card_main_button .btn {
   font-size: 10px !important;
-transition: background-color 0.3;
+  transition: background-color 0.3;
 }
-.maincontainer .left .cards main .card_main .card_main_button .btn :hover{
+.maincontainer .left .cards main .card_main .card_main_button .btn :hover {
   background-color: #d34eb6;
 }
 
@@ -302,12 +301,12 @@ transition: background-color 0.3;
 .maincontainer .right .bottom_card .topSeller .button {
   margin-left: auto;
   font-size: 10px;
- transition: text-decoration-color 0.3 sec ;
+  transition: text-decoration-color 0.3 sec;
 }
-.maincontainer .right .bottom_card .topSeller .button :hover{
+.maincontainer .right .bottom_card .topSeller .button :hover {
   text-decoration-color: #f1f1f1;
-} 
-.topSeller a{
+}
+.topSeller a {
   cursor: pointer;
 }
 @media screen and (max-width: 525px) {
@@ -329,9 +328,9 @@ transition: background-color 0.3;
 
   .maincontainer .left .cards .filters .filter_buttons {
     display: none;
-  transition: background-color 0.3 sec;
+    transition: background-color 0.3 sec;
   }
-  .maincontainer .left .cards .filters .filter_buttons :hover{
+  .maincontainer .left .cards .filters .filter_buttons :hover {
     background-color: white;
   }
 
@@ -377,18 +376,118 @@ transition: background-color 0.3;
 
   .maincontainer .right .bottom_card .topSeller .button {
     font-size: 8px;
-    transition: background-color 0.3 sec ;
+    transition: background-color 0.3 sec;
   }
- .maincontainer .right .bottom_card .topSeller .button :hover{
+  .maincontainer .right .bottom_card .topSeller .button :hover {
     background-color: #e9e9ec;
   }
-  
 }
-.card_main:hover{
-  transform: scale(1.04);;
+.card_main:hover {
+  transform: scale(1.04);
   transition: 0.35s ease-in-out;
 }
-.maincontainer .left .cards main .card_main:hover{
+.maincontainer .left .cards main .card_main:hover {
   background-color: #0e0832;
   transition: 0.35s ease-in-out;
+}
+.author {
+  margin: 5px 0px;
+  width: 260px;
+  height: 25px;
+}
+.nameAuthor {
+  margin: auto;
+  width: 215px;
+  display: flex;
+  color: #e9e9ec;
+  font-weight: bold;
+}
+#author_name {
+  color: #0db5cb;
+}
+#author_name:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.contBox {
+  position: relative;
+  top: -290px;
+  left: -13px;
+  width: 280px;
+  height: auto;
+  border: 2px solid;
+  background-color: #241b44;
+  color: white;
+  border-radius: 15px;
+  z-index: 100;
+  padding: 15px;
+  margin-top: 20px;
+  visibility: hidden;
+  margin-bottom: 15px;
+}
+.contBox.visible {
+  visibility: visible;
+}
+
+.contBox.hidden {
+  visibility: hidden;
+}
+.heading {
+  display: flex;
+  height: 50px;
+  align-items: center;
+}
+
+.dp {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-image: url(../img/Avatar.png);
+  background-size: 100%;
+}
+
+.details1 {
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#name {
+  margin: 0;
+  font-weight: bold;
+  font-size: larger;
+}
+
+#occupation {
+  margin: 0;
+  font-size: small;
+}
+
+.details2 {
+  font-size: 14px;
+  color: rgb(194, 193, 193);
+  margin-top: 10px;
+}
+
+.btnnn {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.btnnn button {
+  background-color: #0db5cb;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.btnnn button:hover {
+  background-color: #0a8ba3;
 }
