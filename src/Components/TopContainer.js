@@ -7,6 +7,7 @@ function TopContainer() {
   const [input,setInput]=useState("")
   const [searchResult,setSearchResult]=useState(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); 
   const dropdownRef = useRef(null);
   useEffect(() => {
     // Add event listener to detect clicks anywhere on the page
@@ -30,6 +31,10 @@ useEffect(()=>{
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  }
 
   const handleOutsideClick = (event) => {
     // Check if the clicked element is outside the dropdown content
@@ -100,11 +105,13 @@ useEffect(()=>{
         </div>
 
         <p className="profileName">Sugam Arora</p>
-        <i className="menuChevron" id="menuChevron">
+        <i className="menuChevron" id="menuChevron" onClick={toggleMenu}> 
+        {/* toggle visibility of menuContainer on click */}
           <FaChevronDown />
         </i>
 
-        <div className="menuContainer" id="menuContainer">
+        <div className="menuContainer" id="menuContainer" style={{ display: isMenuOpen ? 'block' : 'none' }}>  
+        {/* menuContainer hidden on page load (false state) */}
           <ul>
             <li>My Profile</li>
             <li>Theme</li>
