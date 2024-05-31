@@ -2,6 +2,8 @@ import React from "react";
 import { FaArrowLeft, FaUserCircle } from "react-icons/fa";
 import "./UserProfile.css";
 import { Link } from "react-router-dom";
+import toast from 'react-hot-toast';
+
 
 const UserProfile = ({ user }) => {
     return (
@@ -9,7 +11,7 @@ const UserProfile = ({ user }) => {
             <div className="profile-page">
                 <Link to="/">
                     <button className="back-button">
-                        <FaArrowLeft /> 
+                        <FaArrowLeft />
                     </button>
                 </Link>
 
@@ -36,7 +38,7 @@ const UserProfile = ({ user }) => {
                             </div>
                         </div>
                         <p className="profile-bio">{user.bio}</p>
-                        <button className="follow-button">Follow</button>
+                        <button onClick={() => toast.success(`You're now following ${user.name}!`)} className="follow-button">Follow</button>
                     </div>
                 </div>
                 <div className="profile-section">

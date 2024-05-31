@@ -11,6 +11,7 @@ import {
   FaCog,
   FaSignOutAlt,
 } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 function Menu() {
   useEffect(() => {
@@ -29,7 +30,7 @@ function Menu() {
   return (
     <menu className="fromLeft">
       <img src={logo} alt="" />
-    
+
       <ul className="fromTop" id="mainMenu">
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
@@ -42,7 +43,9 @@ function Menu() {
         <Link to="/settings">
           <Icon icon={<FaCog />} tooltip="Settings" />
         </Link>
-        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
+        <div onClick={() => toast.success("Signed Out Successfully!")}>
+          <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
+        </div>
       </ul>
     </menu>
   );

@@ -10,6 +10,7 @@ import CardMain from "./CardMain";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
+import toast from 'react-hot-toast';
 
 const MAX_IMAGE_SIZE = 2185200; // 2MB
 
@@ -25,6 +26,8 @@ function MainContainer() {
   const selectImageHandler = (e) => {
     if (e.target.files && e?.target?.files[0]?.size < MAX_IMAGE_SIZE) {
       setBanner(URL.createObjectURL(e?.target?.files[0]));
+      toast.success('Image uploaded successfully!');
+
     } else {
       console.error("Image size should be less than 2MB!");
     }

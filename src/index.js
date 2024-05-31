@@ -4,11 +4,13 @@ import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Preloader from './Components/Preloader';
+import { Toaster } from 'react-hot-toast';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App /> */}
-    <Preloader/>
+    <Preloader />
+    <Toaster />
   </React.StrictMode>,
   document.getElementById('root')
 );

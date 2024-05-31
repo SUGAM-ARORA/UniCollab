@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Settings.css";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState("profile");
@@ -41,7 +42,7 @@ const SettingsPage = () => {
                 placeholder="Enter URL of profile picture"
               />
             </div>
-            <button>Save Profile Settings</button>
+            <button onClick={() => toast.success("Saved Profile Settings!")}>Save Profile Settings</button>
           </div>
         );
       case "account":
@@ -68,7 +69,7 @@ const SettingsPage = () => {
                 <option value="fr">French</option>
               </select>
             </div>
-            <button>Save Account Settings</button>
+            <button onClick={() => toast.success("Saved Account Settings!")}>Save Account Settings</button>
           </div>
         );
       case "notifications":
@@ -87,7 +88,7 @@ const SettingsPage = () => {
               <label htmlFor="pushNotifications">Push Notifications</label>
               <input type="checkbox" id="pushNotifications" />
             </div>
-            <button>Save Notification Settings</button>
+            <button onClick={() => toast.success("Saved Notification Settings!")}>Save Notification Settings</button>
           </div>
         );
       case "privacy":
@@ -111,7 +112,7 @@ const SettingsPage = () => {
               <label htmlFor="twoFactorAuth">Two-Factor Authentication</label>
               <input type="checkbox" id="twoFactorAuth" />
             </div>
-            <button>Save Privacy Settings</button>
+            <button onClick={() => toast.success("Saved Privacy Settings!")}>Save Privacy Settings</button>
           </div>
         );
       case "collaboration":
@@ -139,7 +140,7 @@ const SettingsPage = () => {
               </label>
               <input type="checkbox" id="collabNotifications" />
             </div>
-            <button>Save Collaboration Settings</button>
+            <button onClick={() => toast.success("Saved Collaboration Settings!")}>Save Collaboration Settings</button>
           </div>
         );
       case "application":
@@ -161,7 +162,7 @@ const SettingsPage = () => {
               <label htmlFor="autoUpdate">Auto-Update</label>
               <input type="checkbox" id="autoUpdate" />
             </div>
-            <button>Save Application Settings</button>
+            <button onClick={() => toast.success("Saved Application Settings!")}>Save Application Settings</button>
           </div>
         );
       case "helpSupport":
