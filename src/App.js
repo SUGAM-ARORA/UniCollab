@@ -8,6 +8,7 @@ import BlogPage from "./Components/footer_section/BlogPage/BlogPage"
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
+import UserProfile from ".//Components/UserProfile/UserProfile";
 
 function App() {
   return (
@@ -19,9 +20,10 @@ function App() {
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About_us />} />
           <Route path="/blogs" element={<BlogPage />} />
-          <Route path="/faq" element={<FAQPage />} /> 
+          <Route path="/faq" element={<FAQPage />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<ContactUs />} />
+          <Route path="/profile-page" element={<UserProfile />} />
         </Routes>
         <Footer />
       </div>
