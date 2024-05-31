@@ -1,11 +1,13 @@
 .about{
-    background-color: #0cb2cf;
+    background-color: #19162c;
     color:#fff;
     display: flex;
     align-items: center;
     justify-content: center;   
     position: relative;
     bottom: 15rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 200;
 }
 
 
