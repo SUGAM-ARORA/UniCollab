@@ -8,13 +8,16 @@ import BlogPage from "./Components/footer_section/BlogPage/BlogPage"
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
-
+import CreateAccount from "./Components/CreateAccount";
+import Login from "./Components/Login";
 function App() {
   return (
     <Router>
       <div className="App">
         <div className="App-content"></div>
         <Routes>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/CreateAccount" element={<CreateAccount/>} />
           <Route path="/" element={<Container />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About_us />} />
