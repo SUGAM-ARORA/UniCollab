@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BsFillHeartFill } from "react-icons/bs";
+import ReadMore from "./ReadMore"; // Import the new ReadMore component
 
 function CardMain({ imgSrc, title, hearts }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,9 +54,7 @@ function CardMain({ imgSrc, title, hearts }) {
         </div>
       </div>
       <div className="card_main_button">
-        <a href="#" className="button btn">
-          Read More
-        </a>
+        <ReadMore content="Read more section" />
         <a href="#" className="button2 btn">
           Source Code
         </a>
@@ -89,4 +88,3 @@ function CardMain({ imgSrc, title, hearts }) {
 }
 
 export default CardMain;
-
