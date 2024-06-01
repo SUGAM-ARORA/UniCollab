@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import DefaultBanner from "../img/1.jpg";
-import Card1 from "../img/card1.jpg";
+/* import Card1 from "../img/card1.jpg";
 import Card2 from "../img/card2.jpg";
 import Card3 from "../img/card3.jpg";
 import Card4 from "../img/card4.jpg";
 import Card5 from "../img/card5.jpg";
-import Card6 from "../img/card6.jpg";
+import Card6 from "../img/card6.jpg"; */
 import CardMain from "./CardMain";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
@@ -83,12 +83,13 @@ function MainContainer() {
           </div>
 
           <main className="fromBottom">
-            <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
+            <CardMain/>
+            {/* <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
             <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
             <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
             <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
             <CardMain imgSrc={Card5} title={"ArchiTect"} hearts={"47"} />
-            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} />
+            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} /> */}
           </main>
         </div>
       </div>
