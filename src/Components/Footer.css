@@ -1,83 +1,96 @@
 .footer {
-    background: #19162c;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .footer-links li {
-    display: inline;
-  }
-  
-  .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-links a:hover {
-    color: #00ffff;
-  }
-  
-  .footer-content {
-    position: relative;
-  }
-  
-  .back-to-top {
-    margin-top: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ffffff;
-  }
+  background: #19162c;
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
 
-  .back-to-top {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #d1d0d5;
-    border: 2px solid #443b78;
-    padding: 5px 15px;
-    border-radius: 10px;
-    margin: 0px 5px;
-    transition: background-color 0.3s ease; 
-  }
-  
-  .back-to-top:hover {
-    background-color: #443b78; 
-  }
-a{
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.footer-links li {
+  display: inline;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #00ffff;
+}
+
+.footer-content {
+  position: relative;
+}
+
+.back-to-top {
+  margin-top: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #ffffff;
+}
+
+.back-to-top {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #d1d0d5;
+  border: 2px solid #443b78;
+  padding: 5px 15px;
+  border-radius: 10px;
+  margin: 0px 5px;
+  transition: background-color 0.3s ease;
+}
+
+.back-to-top:hover {
+  background-color: #443b78;
+}
+
+a {
   text-decoration: none;
 }
-.icons{
+
+.icons {
   display: flex;
   justify-content: center;
   gap: 20px;
   font-size: 20px;
 }
-.icons a{
+
+.icons a {
   color: #ffffff;
   transition: color 0.3s;
 }
-.icons a:hover{
+
+.icons a:hover {
   color: #00ffff;
+}
+
+#pro {
+  background-color: #ff21bc;
+  border-radius: 10px;
+  width: 80px;
+  text-align: center;
+  font-style: oblique;
+  font-weight: bold;
 }
