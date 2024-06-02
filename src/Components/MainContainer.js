@@ -1,75 +1,67 @@
-import React, { useState } from "react";
-import "./MainContainer.css";
-import Banner from "../img/1.jpg";
-import CardMain from "./CardMain";
+import React, { useRef, useState } from "react";
+import DefaultBanner from "../img/1.jpg";
 import Card1 from "../img/card1.jpg";
 import Card2 from "../img/card2.jpg";
 import Card3 from "../img/card3.jpg";
 import Card4 from "../img/card4.jpg";
 import Card5 from "../img/card5.jpg";
 import Card6 from "../img/card6.jpg";
-import MainRightTopCard from "./MainRightTopCard";
+import CardMain from "./CardMain";
+import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
+import MainRightTopCard from "./MainRightTopCard";
+
+const MAX_IMAGE_SIZE = 2185200; // 2MB
 
 function MainContainer() {
-  const [uploadedImage, setUploadedImage] = useState(null);
-  const [isUploaded, setIsUploaded] = useState(false);
+  const imageUploadInputRef = useRef(null);
 
-  const handleUpload = (event) => {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        setUploadedImage(reader.result);
-        setIsUploaded(true);
-      };
-      reader.readAsDataURL(file);
-    }
+  const [banner, setBanner] = useState(DefaultBanner);
+
+  const uploadImageHandler = () => {
+    imageUploadInputRef?.current?.click();
   };
 
-  const handleUnupload = () => {
-    setUploadedImage(null);
-    setIsUploaded(false);
+  const selectImageHandler = (e) => {
+    if (e.target.files && e?.target?.files[0]?.size < MAX_IMAGE_SIZE) {
+      setBanner(URL.createObjectURL(e?.target?.files[0]));
+    } else {
+      console.error("Image size should be less than 2MB!");
+    }
   };
 
   return (
     <div className="maincontainer">
       <div className="left">
         <div
-          className="banner"
+          className="banner zoomIn"
           style={{
-            background: `url(${Banner})`,
-            backgroundRepeat: "no-repeat",
+            background: `url(${banner}) center center no-repeat`,
             backgroundSize: "cover",
-            backgroundPosition: "center",
           }}
         >
           <div className="textContainer">
-            <h1>UniCollab</h1>
-            
-            <br></br> 
             <div className="bid">
-            {!isUploaded ? (
-                <label className="button" htmlFor="uploadInput">
-                  Upload
-                  <input
-                    id="uploadInput"
-                    type="file"
-                    onChange={handleUpload}
-                    style={{ display: "none" }}
-                  />
-                </label>
-              ) : (
-                <button className="button" onClick={handleUnupload}>
-                  Unupload
-                </button>
-              )}
-              
+              <button
+                type="button"
+                className="button"
+                onClick={uploadImageHandler}
+              >
+                Upload
+              </button>
             </div>
           </div>
+
+          <input
+            type="file"
+            accept="image/png, image/jpeg, image/jpg"
+            ref={imageUploadInputRef}
+            onChange={selectImageHandler}
+            hidden
+          />
         </div>
 
-        <div className="cards">
+        <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
               <h2>Feed</h2>
@@ -82,7 +74,7 @@ function MainContainer() {
                 All
               </a>
               <a href="#" className="button2">
-                Type 
+                Type
               </a>
               <a href="#" className="button2">
                 Sort By
@@ -90,7 +82,7 @@ function MainContainer() {
             </div>
           </div>
 
-          <main>
+          <main className="fromBottom">
             <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
             <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
             <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
@@ -100,7 +92,7 @@ function MainContainer() {
           </main>
         </div>
       </div>
-      <div className="right">
+      <div className="right fromRight">
         <MainRightTopCard />
         <MainRightBottomCard />
       </div>
