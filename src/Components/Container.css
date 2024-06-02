@@ -26,6 +26,14 @@
   height: 45px;
   position: relative;
 }
+.searchbtn{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
 .inputBox #search_results {
     max-height: 24rem;
     min-width: 20rem;

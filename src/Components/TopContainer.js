@@ -8,6 +8,12 @@ function TopContainer() {
   const [searchResult,setSearchResult]=useState(null)
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef(null);
+  const searchbar = useRef(null);
+
+  const searchbtnclick = ()=>{
+    searchbar.current.focus();
+  }
+
   useEffect(() => {
     // Add event listener to detect clicks anywhere on the page
     window.addEventListener("click", handleOutsideClick);
@@ -41,10 +47,8 @@ useEffect(()=>{
   return (
     <div className="topContainer">
       <div className="inputBox">
-        <input type="text" placeholder="Search projects, users" onChange={(e)=>setInput(e.target.value)} />
-        <i>
-          <BiSearchAlt />
-        </i>
+        <input ref={searchbar}  type="text" placeholder="Search projects, users" onChange={(e)=>setInput(e.target.value)} />
+        <i onClick={()=>searchbtnclick()} className="searchbtn"><BiSearchAlt /></i>
         {searchResult?
       <div id="search_results">
         {
