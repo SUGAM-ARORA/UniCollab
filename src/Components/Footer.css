@@ -101,6 +101,30 @@
   display: flex;
 }
 
+.go-pro-btn {
+  background: linear-gradient(#ff21bc, #b21783);
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 25px;
+  transition: ease-in-out 500ms;
+  margin-right: 1rem;
+  text-decoration: none !important;
+}
+
+.go-pro-btn:hover {
+  background-color: #b21783;
+  font-size: 22px;
+}
+
+.profileContainer a {
+  text-decoration: none;
+}
+
+.footer-title a {
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
