@@ -110,6 +110,7 @@ function TopContainer() {
       </div>
 
       <div className='profileContainer'>
+        <a href="/pricing"><button className="go-pro-btn">Go Pro</button></a>
         <div className='notification-container' ref={dropdownRef}>
           <div className='profileIcon' onClick={toggleDropdown}>
             <FaBell />
