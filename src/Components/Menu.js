@@ -10,6 +10,10 @@ import {
   FaRegClock,
   FaCog,
   FaSignOutAlt,
+  FaCreativeCommons,
+  FaBlog,
+  FaSave,
+  FaList,
 } from "react-icons/fa";
 
 function Menu() {
@@ -56,16 +60,18 @@ function Menu() {
   }, []);
 
   return (
-    <menu className='fromLeft'>
-        <img src={logo} alt='icon' className="logo" id='logo' onClick={isMobile ? showDropDown : null}
-        style={{ cursor: isMobile ? 'pointer' : 'default' }}/>
 
-      <ul className='fromTop' id='mainMenu'>
-        <Icon icon={<FaDelicious />} tooltip='Delicious' href='/' />
-        <Icon icon={<FaShoppingCart />} tooltip='Cart' href='/' />
-        <Icon icon={<FaWallet />} tooltip='Wallet' href='/' />
-        <Icon icon={<FaChartLine />} tooltip='Trending' href='/' />
-        <Icon icon={<FaRegClock />} tooltip='Speed' href='/' />
+    <menu className="fromLeft">
+      <img src={logo} alt='icon' className="logo" id='logo' onClick={isMobile ? showDropDown : null}
+        style={{ cursor: isMobile ? 'pointer' : 'default' }}/>
+    
+      <ul className="fromTop" id="mainMenu">
+        <Icon icon={<FaList />} tooltip="My projects" href="/projects"/>
+        <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
+        <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
+        <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
+        <Icon icon={<FaChartLine />} tooltip="Trending" href="/" />
+        <Icon icon={<FaRegClock />} tooltip="Speed" href="/" />
       </ul>
 
       <ul className='lastMenu' id='lastMenu'>

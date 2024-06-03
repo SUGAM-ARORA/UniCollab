@@ -8,6 +8,9 @@ import BlogPage from "./Components/footer_section/BlogPage/BlogPage"
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
+import Pricing from "./Components/footer_section/Pricing/pricing";
+import MyProjects from "./Components/menu_section/my_projects/MyProjects";
+import NewProject from "./Components/menu_section/new_project/NewProject";
 
 function App() {
   return (
@@ -22,6 +25,9 @@ function App() {
           <Route path="/faq" element={<FAQPage />} /> 
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<ContactUs />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/projects" element={<MyProjects />} />
+          <Route path="/new/project" element={<NewProject />} />
         </Routes>
         <Footer />
       </div>

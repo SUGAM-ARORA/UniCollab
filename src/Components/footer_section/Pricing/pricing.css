@@ -1,0 +1,176 @@
+* {
+    color: white;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0d0d0d;
+}
+
+.header {
+    margin: auto;
+    padding: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.headingHeader {
+    text-align: center;
+    font-size: 4vw;
+    letter-spacing: 2px;
+    margin-bottom: 14px;
+    margin-top: 50px;
+}
+
+.headingHeader:hover {
+    text-decoration: underline;
+}
+
+.description {
+    text-align: center;
+    font-size: 1.2vw;
+    margin-bottom: 60px;
+}
+
+.cards_price {
+    margin: auto;
+    width: 90vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 75px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.topic_head, .topic_description, .topic_price, .topic_features {
+    font-size: 22px;
+    margin: 30px;
+}
+
+.topic_description, .topic_features {
+    font-size: 16px;
+    text-align: justify;
+}
+
+li {
+    list-style: none;
+}
+
+.topic_features {
+    line-height: 2;
+}
+
+.price1, .price2 {
+    background-color: #1a1736;
+    border-radius: 50px;
+    padding: 20px;
+    transform: translateY(50px);
+    opacity: 0;
+    animation: slideUp 1s ease-in-out forwards;
+    animation-delay: 1.5s;
+}
+
+.price2 {
+    outline: 3px solid #ff21bc;
+}
+
+.topic_head {
+    font-weight: bold;
+    font-size: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+.topic_price {
+    font-weight: bolder;
+    font-size: 30px;
+}
+
+.prev {
+    font-weight: bold;
+}
+
+.free_trial {
+    margin-top: 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 19px;
+    padding: 10px 20px;
+    display: block;
+    width: 80%;
+    margin: 25px auto 0 auto;
+    text-align: center;
+}
+
+.Pro {
+    background-color: #ff21bc;
+    border-radius: 10px;
+    width: 50px;
+    text-align: center;
+    font-style: oblique;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .headingHeader {
+        font-size: 8vw;
+    }
+
+    .description {
+        font-size: 4vw;
+    }
+
+    .topic_head, .topic_description, .topic_price, .topic_features {
+        font-size: 4vw;
+        margin: 15px;
+    }
+
+    .topic_price {
+        font-size: 5vw;
+    }
+
+    .price1, .price2 {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .headingHeader {
+        font-size: 10vw;
+    }
+
+    .description {
+        font-size: 5vw;
+    }
+
+    .topic_head, .topic_description, .topic_price, .topic_features {
+        font-size: 5vw;
+        margin: 10px;
+    }
+
+    .topic_price {
+        font-size: 6vw;
+    }
+
+    .price1, .price2 {
+        padding: 5px;
+    }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
