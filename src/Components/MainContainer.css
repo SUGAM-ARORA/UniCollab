@@ -106,6 +106,10 @@
   align-items: center;
   flex-wrap: wrap;
 }
+.card{  
+  display: flex;
+  flex-wrap: wrap;
+}
 .card_main {
   height: 365px;
 }
