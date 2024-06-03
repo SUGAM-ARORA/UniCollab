@@ -1,0 +1,13 @@
+.prel{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+.error{
+    padding: 0;
+}
+
+a:link{
+    text-decoration: none;
+}
