@@ -1,0 +1,77 @@
+.my-projects-wrapper .top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    font-size: 16px;
+}
+.projects-wrapper {
+    width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: left;
+   flex-wrap: wrap;
+   gap: 20px;
+   margin: 20px 0;
+}
+.project-card {
+    /* background-color: rgb(23, 23, 83); */
+    color: white;
+    flex: 1 0 300px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px #3c395f;
+    transition: 0.3s ease-in-out;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 15px #6052ff;
+}
+.project-card img {
+    width: 100%;
+    height: 220px;
+}
+.project-card .top h2{
+    margin-right: auto;
+}
+.likes i {
+    display: flex;
+    gap: 5px;
+    align-items:  center;
+    color: hotpink;
+}
+small {
+color: gray;
+}
+.btn-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.edit-btn {
+    background-color: blue;
+}
+.github-btn {
+    background-color: purple;
+}
+.edit-btn:hover {
+    background-color: rgb(1, 1, 213);
+}
+.github-btn:hover {
+    background-color: rgb(96, 1, 96);
+}
+.details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
