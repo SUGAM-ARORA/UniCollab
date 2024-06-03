@@ -15,7 +15,7 @@ const Footer = () => {
             <p className='footer-section-title'>Company</p>
             <ul className='footer-links'>
               <li className='footer-link'><a href='/about'>About Us</a></li>
-              <li className='footer-link'>Servives</li>
+              <li className='footer-link'>Services</li>
               <li className='footer-link'>Careers</li>
               <li className='footer-link'>Contact Us</li>
             </ul>

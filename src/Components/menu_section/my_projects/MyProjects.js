@@ -8,6 +8,10 @@ import Card3 from "../../../img/card3.jpg";
 import Card4 from "../../../img/card4.jpg";
 import Card5 from "../../../img/card5.jpg";
 import Card6 from "../../../img/card6.jpg";
+import Card7 from "../../../img/card7.png";
+import Card8 from "../../../img/card8.png";
+import Card9 from "../../../img/card9.png";
+
 import CardMain from '../../CardMain';
 import { BsHeartFill } from 'react-icons/bs';
 
@@ -52,6 +56,56 @@ const SampleData = [
         skills: ['HTML', 'CSS', 'JavaScript'],
         uploadedDate: '2023-10-15',
         image: Card4
+    },
+    {
+        id: 5,
+        name: "E commerce website",
+        noOfHearts: "10",
+        github: "/",
+        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        uploadedDate: '2023-10-15',
+        image: Card5
+    },
+    {
+        id: 6,
+        name: "E commerce website",
+        noOfHearts: "10",
+        github: "/",
+        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        uploadedDate: '2023-10-15',
+        image: Card6
+    },
+    {
+        id: 7,
+        name: "E commerce website",
+        noOfHearts: "10",
+        github: "/",
+        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        uploadedDate: '2023-10-15',
+        image: Card7
+    },
+    {
+        id: 8,
+        name: "E commerce website",
+        noOfHearts: "10",
+        github: "/",
+        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        uploadedDate: '2023-10-15',
+        image: Card8
+    },
+    {
+        id: 9,
+        name: "E commerce website",
+        noOfHearts: "10",
+        github: "/",
+        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
+        skills: ['HTML', 'CSS', 'JavaScript'],
+        uploadedDate: '2023-10-15',
+        image: Card9
     }
 ]
 
