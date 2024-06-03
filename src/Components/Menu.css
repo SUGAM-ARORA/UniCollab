@@ -123,5 +123,29 @@ menu ul li:hover .tooltip {
 @media only screen and (max-width: 525px) {
   menu {
     min-width: 68px;
+    width: auto;
+  }
+  menu ul{
+    display: none;
+    position: relative;
+    top: 50px;
+    right: 0;
+    width: 100%;
+    background-color: #19162c;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  }
+  menu img{
+    position: absolute;
+    left: 1px;
+    padding: 0;
+  }
+  menu ul li{
+    display: block;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  .logo{
+    cursor: pointer;
   }
 }
