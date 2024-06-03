@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
@@ -14,6 +14,9 @@ import {
 import toast from "react-hot-toast";
 
 function Menu() {
+
+  let toggle = false;
+
   useEffect(() => {
     const mainMenuLi = document
       .getElementById("mainMenu")
@@ -27,21 +30,49 @@ function Menu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive));
   }, []);
 
-  return (
-    <menu className="fromLeft">
-      <img src={logo} alt="" />
+  const showDropDown = () => {
+    if(!toggle){
+      document.getElementById("mainMenu").style.display = "flex";
+      document.getElementById("lastMenu").style.display = "flex";
+      toggle = true;
+    } else{
+      document.getElementById("mainMenu").style.display = "none";
+      document.getElementById("lastMenu").style.display = "none";
+      toggle = false;
+    }
+  };
 
-      <ul className="fromTop" id="mainMenu">
-        <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
-        <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
-        <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
-        <Icon icon={<FaChartLine />} tooltip="Trending" href="/" />
-        <Icon icon={<FaRegClock />} tooltip="Speed" href="/" />
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 524);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return (
+
+    <menu className='fromLeft'>
+        <img src={logo} alt='icon' className="logo" id='logo' onClick={isMobile ? showDropDown : null}
+        style={{ cursor: isMobile ? 'pointer' : 'default' }}/>
+
+      <ul className='fromTop' id='mainMenu'>
+        <Icon icon={<FaDelicious />} tooltip='Delicious' href='/' />
+        <Icon icon={<FaShoppingCart />} tooltip='Cart' href='/' />
+        <Icon icon={<FaWallet />} tooltip='Wallet' href='/' />
+        <Icon icon={<FaChartLine />} tooltip='Trending' href='/' />
+        <Icon icon={<FaRegClock />} tooltip='Speed' href='/' />
       </ul>
 
-      <ul className="lastMenu">
-        <Link to="/settings">
-          <Icon icon={<FaCog />} tooltip="Settings" />
+      <ul className='lastMenu' id='lastMenu'>
+        <Link to='/settings'>
+          <Icon icon={<FaCog />} tooltip='Settings' />
         </Link>
         <div onClick={() => toast.success("Signed Out Successfully!")}>
           <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
@@ -55,7 +86,7 @@ const Icon = ({ icon, tooltip, href }) => (
   <li>
     <a href={href}>
       {icon}
-      <span className="tooltip">{tooltip}</span>
+      <span className='tooltip'>{tooltip}</span>
     </a>
   </li>
 );
