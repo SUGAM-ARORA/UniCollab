@@ -11,13 +11,14 @@ import ContactUs from "./Components/footer_section/ContactUs/contact_us";
 import Pricing from "./Components/footer_section/Pricing/pricing";
 import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
-
+import Error from "./Components/404_page/Error";
 function App() {
   return (
     <Router>
       <div className="App">
         <div className="App-content"></div>
         <Routes>
+        <Route path="*" element={<Error />} />
           <Route path="/" element={<Container />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About_us />} />
