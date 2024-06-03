@@ -26,7 +26,6 @@ jobs:
         stale-pr-message: 'This PR has been automatically closed due to inactivity from the owner for 15 days.'
         days-before-pr-stale: 15
         days-before-pr-close: 0
-        exempt-pr-author: false
         exempt-pr-labels: ''
         only-labels: ''
         operations-per-run: 30
