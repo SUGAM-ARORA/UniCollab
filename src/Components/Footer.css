@@ -42,15 +42,18 @@
     position: relative;
   }
   
+  html{
+    scroll-behavior: smooth;
+  }
+  
+ 
+
   .back-to-top {
     margin-top: 40px;
     position: absolute;
     top: 0;
     right: 0;
     color: #ffffff;
-  }
-
-  .back-to-top {
     text-decoration: none;
     font-size: 14px;
     font-weight: bold;
