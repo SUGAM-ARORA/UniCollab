@@ -55,7 +55,7 @@
   cursor: pointer;
 }
 
-.footer-link a{
+.footer-link a {
   text-decoration: none;
   color: white;
 }
@@ -69,13 +69,42 @@
   font-size: x-large;
 }
 
-.footer-icons a i {
-  color: white;
-  transition: color 0.3s, font-size 0.3s;
+.footer-icons a img {
+  width: 2rem; /* Adjust the size of the icons */
+  transition: transform 0.3s;
 }
 
-.footer-icons a i:hover {
-  font-size: 2rem;
+.footer-icons a img:hover {
+  transform: scale(1.2);
+}
+
+.footer-icons a i {
+  transition: color 0.3s, transform 0.3s;
+}
+
+.footer-icons a i.linkedin:hover {
+  color: #0077B5; /* LinkedIn blue */
+  transform: scale(1.2);
+}
+
+.footer-icons a i.github:hover {
+  color: #181717; /* GitHub black */
+  transform: scale(1.2);
+}
+
+.footer-icons a i.facebook:hover {
+  color: #1877F2; /* Facebook light blue */
+  transform: scale(1.2);
+}
+
+.footer-icons a i.twitter:hover {
+  color: #1DA1F2; /* Twitter blue */
+  transform: scale(1.2);
+}
+
+.footer-icons a img.discord:hover {
+  filter: brightness(1.5) hue-rotate(180deg); /* Discord color */
+  transform: scale(1.2);
 }
 
 .footer-icons a {
@@ -99,30 +128,6 @@
 
 .footer-sections {
   display: flex;
-}
-
-.go-pro-btn {
-  background: linear-gradient(#ff21bc, #b21783);
-  font-style: oblique;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 25px;
-  transition: ease-in-out 500ms;
-  margin-right: 1rem;
-  text-decoration: none !important;
-}
-
-.go-pro-btn:hover {
-  background-color: #b21783;
-  font-size: 22px;
-}
-
-.profileContainer a {
-  text-decoration: none;
-}
-
-.footer-title a {
-  text-decoration: none;
 }
 
 @media (max-width: 768px) {
