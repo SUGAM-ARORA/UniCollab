@@ -15,6 +15,7 @@ import Pricing from "./Components/footer_section/Pricing/pricing";
 import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
 import Error from "./Components/404_page/Error";
+import Profile from "./Components/Profile";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/contacts" element={<ContactUs />} />
 
           <Route path="/readmore/:id" element={<Readmore/>}/>
+          <Route path="/profile/:id" element={<Profile/>}/>
 
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<MyProjects />} />
