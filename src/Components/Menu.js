@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
@@ -10,9 +10,16 @@ import {
   FaRegClock,
   FaCog,
   FaSignOutAlt,
+  FaCreativeCommons,
+  FaBlog,
+  FaSave,
+  FaList,
 } from "react-icons/fa";
 
 function Menu() {
+
+  let toggle = false;
+
   useEffect(() => {
     const mainMenuLi = document
       .getElementById("mainMenu")
@@ -26,13 +33,38 @@ function Menu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive));
   }, []);
 
+  const showDropDown = () => {
+    if(!toggle){
+      document.getElementById("mainMenu").style.display = "flex";
+      document.getElementById("lastMenu").style.display = "flex";
+      toggle = true;
+    } else{
+      document.getElementById("mainMenu").style.display = "none";
+      document.getElementById("lastMenu").style.display = "none";
+      toggle = false;
+    }
+  };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 524);
+    };
+
+    window.addEventListener('resize', handleResize);
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   return (
+
     <menu className="fromLeft">
-      <a href="http://localhost:3000/login"> 
-        <img src={logo} alt="" />
-      </a>
-   
+
       <ul className="fromTop" id="mainMenu">
+        <Icon icon={<FaList />} tooltip="My projects" href="/projects"/>
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
         <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
@@ -41,11 +73,11 @@ function Menu() {
        
       </ul>
 
-      <ul className="lastMenu">
-        <Link to="/settings">
-          <Icon icon={<FaCog />} tooltip="Settings" />
+      <ul className='lastMenu' id='lastMenu'>
+        <Link to='/settings'>
+          <Icon icon={<FaCog />} tooltip='Settings' />
         </Link>
-        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
+        <Icon icon={<FaSignOutAlt />} tooltip='Sign Out' href='/' />
       </ul>
     </menu>
   );
@@ -55,7 +87,7 @@ const Icon = ({ icon, tooltip, href }) => (
   <li>
     <a href={href}>
       {icon}
-      <span className="tooltip">{tooltip}</span>
+      <span className='tooltip'>{tooltip}</span>
     </a>
   </li>
 );
