@@ -1,7 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import TopSeller from "./TopSeller";
 
 function MainRightBottomCard() {
+  // Initialize state to track follow/unfollow status for each seller
+  const [followStatus, setFollowStatus] = useState(
+    TopSeller.reduce((acc, seller) => {
+      acc[seller.id] = false; // initially, everyone is not followed
+      return acc;
+    }, {})
+  );
+
+  // Function to toggle follow/unfollow status
+  const toggleFollow = (sellerId) => {
+    setFollowStatus((prevStatus) => ({
+      ...prevStatus,
+      [sellerId]: !prevStatus[sellerId],
+    }));
+  };
+
   return (
     <div className="bottom_card">
       <div className="bottomCard_name">
@@ -20,9 +36,12 @@ function MainRightBottomCard() {
                 {seller?.seller_name} <span>{seller?.username}</span>
               </p>
             </div>
-            <a href="#" className="button">
-              Follow
-            </a>
+            <button
+              onClick={() => toggleFollow(seller.id)}
+              className="button"
+            >
+              {followStatus[seller.id] ? "Unfollow" : "Follow"}
+            </button>
           </div>
         ))}
     </div>
