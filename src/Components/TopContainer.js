@@ -3,6 +3,9 @@ import { BiSearchAlt } from "react-icons/bi";
 import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
+
+
+
 function TopContainer() {
   const [input,setInput]=useState("")
   const [searchResult,setSearchResult]=useState(null)

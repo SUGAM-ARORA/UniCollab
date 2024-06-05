@@ -1,0 +1,4 @@
+{
+  "ext": ".js, .mjs, .html, .css, .coffee, .litcoffee, .json, .yaml",
+  "ignore": ["seed-credentials.json"]
+}

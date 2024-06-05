@@ -28,14 +28,17 @@ function Menu() {
 
   return (
     <menu className="fromLeft">
-      <img src={logo} alt="" />
-    
+      <a href="http://localhost:3000/login"> 
+        <img src={logo} alt="" />
+      </a>
+   
       <ul className="fromTop" id="mainMenu">
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
         <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
         <Icon icon={<FaChartLine />} tooltip="Trending" href="/" />
         <Icon icon={<FaRegClock />} tooltip="Speed" href="/" />
+       
       </ul>
 
       <ul className="lastMenu">
