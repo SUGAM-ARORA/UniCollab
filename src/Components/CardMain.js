@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { BsFillHeartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { features } from "./projects";
 
 function CardMain({ imgSrc, title, hearts }) {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(new Array(features.length).fill(false));
+
   let hideTimeout;
 
   useEffect(() => {
@@ -11,25 +14,33 @@ function CardMain({ imgSrc, title, hearts }) {
     };
   }, []);
 
-  const handleMouseOver = () => {
+  const handleMouseOver = (index) => {
     clearTimeout(hideTimeout);
-    setIsVisible(true);
+    setIsVisible((prevIsVisible) => {
+      prevIsVisible[index] = true;
+      return [...prevIsVisible];
+    });
   };
-
-  const handleMouseOut = () => {
+  
+  const handleMouseOut = (index) => {
     hideTimeout = setTimeout(() => {
-      setIsVisible(false);
+      setIsVisible((prevIsVisible) => {
+        prevIsVisible[index] = false;
+        return [...prevIsVisible];
+      });
     }, 200);
   };
 
   return (
-    <div className="card_main">
-      <img src={imgSrc} alt="" className="card_main_img" title={title} />
+    <div className="card">
+    { features.map((project,index)=>
+    <div className="card_main" key={index}>
+      <img src={project.img} alt="" className="card_main_img" title={project.title} />
       <div className="card_main_name">
-        <h2>{title}</h2>
+        <h2>{project.title}</h2>
         <div className="card_main_icon">
           <i>
-            <BsFillHeartFill /> <span>{hearts}</span>
+            <BsFillHeartFill /> <span>{project.hearts}</span>
           </i>
         </div>
       </div>
@@ -50,27 +61,27 @@ function CardMain({ imgSrc, title, hearts }) {
         <div className="nameAuthor">
           <p>By : &nbsp; </p>
           <p
-            id="author_name"
-            onMouseOver={handleMouseOver}
-            onMouseOut={handleMouseOut}
-          >
+        id="author_name"
+        onMouseOver={() => handleMouseOver(index)}
+        onMouseOut={() => handleMouseOut(index)}
+      >
             Abc
           </p>
         </div>
       </div>
       <div className="card_main_button">
-        <a href="#" className="button btn">
+        <Link to={`/readmore/${project.id}`} className="button btn">
           Read More
-        </a>
-        <a href="#" className="button2 btn">
+        </Link>
+        <a href="#" className="button2 btn">  
           Source Code
         </a>
       </div>
       <div
-        className={`contBox ${isVisible ? "visible" : "hidden"}`}
-        onMouseOver={handleMouseOver}
-        onMouseOut={handleMouseOut}
-      >
+      className={`contBox ${isVisible[index]? "visible" : "hidden"}`}
+      onMouseOver={() => handleMouseOver(index)}
+      onMouseOut={() => handleMouseOut(index)}
+    >
         <div className="heading">
           <div className="dp"></div>
           <div className="details1">
@@ -90,7 +101,9 @@ function CardMain({ imgSrc, title, hearts }) {
           <button>View Profile</button>
         </div>
       </div>
-    </div>
+      </div>
+  )}
+  </div>
   );
 }
 
