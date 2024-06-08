@@ -26,6 +26,7 @@
   width: 350px;
   height: 45px;
   position: relative;
+  padding-right: 20px;
 }
 .searchbtn{
   position: absolute;
