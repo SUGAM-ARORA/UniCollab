@@ -1,0 +1,17 @@
+.profileContainer, .notification-container {
+    display: flex;
+    align-items: center;
+  }
+
+.profileIconlogin{
+    padding: 15px 32px;
+    border-radius: 20px;
+    background-color: #2C2A3E;
+    font-size: larger;
+    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} 

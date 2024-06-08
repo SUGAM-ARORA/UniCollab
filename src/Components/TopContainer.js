@@ -1,9 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { FaBell, FaChevronDown } from "react-icons/fa";
+import {Link} from 'react-router-dom';
+import { FaBell, FaChevronDown} from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
-
+import "./TopContainer.css"
 function TopContainer() {
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState(null);
@@ -121,6 +122,9 @@ function TopContainer() {
           <div className="profileIcon" onClick={toggleDropdown}>
             <FaBell />
           </div>
+          <Link to="/CreateAccount" className="profileIconlogin">
+          Login
+             </Link>
           {isDropdownOpen && (
             <div className="dropdown-content">
               {/* Notification items */}

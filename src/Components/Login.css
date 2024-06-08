@@ -1,0 +1,262 @@
+/* General styles */
+
+body {
+
+    background-image: url('../../public/SignUp_step1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+   color: #fff;
+  }
+
+  .create-account-containe {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .create-account-for {
+    background-color: rgba(0,0,0,0.26);
+    padding: 2rem;
+    border-radius: 25px;
+    border: 1px solid #cf00a3;
+    width: 35vw;
+    height: 35vw;
+
+  }
+.inner-box{
+    background-color: rgba(0,0,0,0.26);
+    padding: 2rem;
+    border-radius: 25px;
+
+    width: 35vw;
+    height: 35vw;
+}
+  h2{
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 1.5vw;
+    font-size: 1rem;
+    font-style:normal;
+    font-weight: 500;
+    line-height: normal;
+
+
+  }
+  p{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    margin-top:.5vw;
+  }
+  p span{
+    color: #78a9fa;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  /* Form steps */
+  .form-steps {
+    margin-bottom: 1.5rem;
+  }
+
+  .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
+
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjust as needed to align with circles */
+    left: 90%;
+    width: 100%; /* Adjust as needed */
+    height: 2px; /* Adjust as needed */
+    background: #cf00a3; /* Adjust as needed */
+  }
+
+  .step::before {
+    content: attr(data-step);
+    position: absolute;
+    top: -20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px; /* Adjust as needed */
+    height: 20px; /* Adjust as needed */
+    border-radius: 50%;
+    background: #ACB6C7;
+    color: #fff;
+    text-align: center;
+    line-height: 20px; /* Adjust as needed */
+    z-index: 1; /* Add this to make the circles appear above the lines */
+  }
+  .step span {
+    flex: 1;
+  }
+
+  .step input {
+    flex: 2;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: none;
+  }
+
+  .step.active span {
+    font-weight: bold;
+  }
+
+  .step.step-1[data-step="1"]::before {
+    background-color: #4285F4; /* Color when step 1 is active */
+  }
+
+
+  .step.step-2[data-step="1"]::before {
+    background-color: #87fc93; /* Color when step 2 is active */
+  }
+
+  .step.step-2[data-step="2"]::before {
+    background-color: #4285F4; /* Color when step 2 is active */
+  }
+  .step.step-3[data-step="1"]::before {
+    background-color: #87fc93; /* Color when step 3 is active */
+  }
+
+  .step.step-2[data-step="3"]::before {
+    background-color: #87fc93; 
+  }
+  .step.step-3[data-step="3"]::before {
+    background-color: #4285F4; /* Color when step 3 is active */
+  }
+
+
+
+
+  /* Buttons */
+  .next-bt {
+    background-color:rgba(9, 2, 34, 0.2);
+    color: #87fc93;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 60%;
+    margin: 1rem auto;
+    display: block;
+    border-radius: 40px;
+    height: 3vw;
+    font-size: 1.5rem;
+  }
+
+  .next-bt:hover {
+    background-color:rgba(4, 1, 15, 0.439);
+  }
+
+  .signup-option {
+    display: flex;
+    justify-content: center;
+
+  }
+
+  .facebook-bt {
+    background-color: rgba(9, 2, 34, 0.2); /* 20% of #090222 */
+    color: #87fc93;
+    border: 1px solid #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 60%;
+    margin: 1rem ; 
+   font-size: 1.5rem;
+    text-align: center; /* Add this line */
+    border-radius: 40px;
+    height: 3vw;
+    font-family: "Roboto", sans-serif;
+
+  }
+
+  .facebook-bt:hover{
+    background-color:rgba(4, 1, 15, 0.439);
+  }
+
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 8vw 0px 8vw;
+    font-family: "Roboto", sans-serif;
+  }
+  .input-fiel {
+    display: block;
+    width: 70%; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    margin-right: 20px;
+    border: 2px solid #CF00A3; /* Adjust as needed */
+    border-radius: 10px; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+    background-color: transparent;
+    color: #fff;
+    padding-top: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+  }
+  .input-fiel::placeholder {
+    color: #ffffff;
+    font-size:1.3rem;
+    font-family: "Roboto", sans-serif;
+    line-height: 50px;
+  }
+  .input-field12 {
+    display: block;
+    width: 60%; /* Decreased width to 50% */
+    height: 50px; /* Adjust as needed */
+    /* margin: 20px auto; */
+    margin-top: 0px; /* Adjust as needed */
+    border: 2px solid #CF00A3; /* Adjust as needed */
+    border-radius: 10px; /* Adjust as needed */
+    padding: 10px; /* Adjust as needed */
+
+
+    background-color: transparent;
+    color: #fff;
+    padding-top: 0;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.5rem;
+  }
+  .input-field1::placeholder {
+    color: #ffffff;
+    font-size:1.3rem;
+    font-family: "Roboto", sans-serif;
+    line-height: 50px;
+  }
+  .emai{
+    font-size:2rem;
+    font-family: "Roboto", sans-serif;
+  }
+  .separator {
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    padding: 0 150px;
+    font-size: 1.5rem;
+  }
+
+  .separator > hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid #fff;
+  }
+
+  .separator > span {
+    padding: 0 10px;
+  }
+
