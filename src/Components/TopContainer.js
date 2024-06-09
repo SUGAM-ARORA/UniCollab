@@ -123,7 +123,7 @@ function TopContainer() {
             <FaBell />
           </div>
           <Link to="/CreateAccount" className="profileIconlogin">
-          Login
+          Launch Your Journey
              </Link>
           {isDropdownOpen && (
             <div className="dropdown-content">

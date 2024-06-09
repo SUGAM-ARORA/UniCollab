@@ -48,8 +48,9 @@ const CreateAccount = () => {
 
     <div className="create-account-container">
       <div className="create-account-form">
-        <h2>Create an account</h2>
-        <p>Already have an account?<Link to = "/login"><span>Login</span></Link></p>
+        <h1>Create an account</h1>
+        <p>Already have an account? <Link to = "/login"> <span> Log In </span></Link></p>
+        <br/>
         <div className="form-steps flex-container">
           <div className={`step ${formStep === 1 ? 'active step-1' : 'step-2'}`} data-step="1">
             <span>Enter your email address</span>
@@ -63,7 +64,7 @@ const CreateAccount = () => {
         </div>
         {formStep === 1 ? (
           <>
-            <label className="email" htmlFor="email-input"> Whats your email?</label>
+            <label className="email" htmlFor="email-input">Your inbox awaits!</label>
             <input
               className="input-field" 
               type="email" 
@@ -74,9 +75,6 @@ const CreateAccount = () => {
              {emailError && <p className="error-message">{emailError}</p>}
             <button className="next-btn" onClick={handleNextClick}>Next</button>
             <div className="separator">
-                <hr />
-                <span>or</span>
-                <hr />
               </div>
               <div className="signup-options">
                 <button className="facebook-btn">

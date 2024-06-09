@@ -1,8 +1,6 @@
 /* General styles */
 
 body {
-
-    background-image: url('../../public/SignUp_step1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -21,7 +19,7 @@ body {
     background-color: rgba(0,0,0,0.26);
     padding: 2rem;
     border-radius: 25px;
-    border: 1px solid #cf00a3;
+    border: 1px solid cyan;
     width: 35vw;
     height: 35vw;
 
@@ -75,7 +73,7 @@ body {
     left: 90%;
     width: 100%; /* Adjust as needed */
     height: 2px; /* Adjust as needed */
-    background: #cf00a3; /* Adjust as needed */
+    background: cyan; /* Adjust as needed */
   }
 
   .step::before {
@@ -197,7 +195,7 @@ body {
     width: 70%; /* Adjust as needed */
     height: 50px; /* Adjust as needed */
     margin-right: 20px;
-    border: 2px solid #CF00A3; /* Adjust as needed */
+    border: 2px solid cyan; /* Adjust as needed */
     border-radius: 10px; /* Adjust as needed */
     padding: 10px; /* Adjust as needed */
     background-color: transparent;
@@ -214,11 +212,11 @@ body {
   }
   .input-field12 {
     display: block;
-    width: 60%; /* Decreased width to 50% */
+    width: 50%; /* Decreased width to 50% */
     height: 50px; /* Adjust as needed */
     /* margin: 20px auto; */
     margin-top: 0px; /* Adjust as needed */
-    border: 2px solid #CF00A3; /* Adjust as needed */
+    border: 2px solid cyan; /* Adjust as needed */
     border-radius: 10px; /* Adjust as needed */
     padding: 10px; /* Adjust as needed */
 

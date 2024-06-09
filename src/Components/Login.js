@@ -49,11 +49,11 @@ const LogIn = () => {
   return (
     <div className="create-account-containe">
       <div className="create-account-for" style={{width:'35vw',height:'41vw'}}>
-        <div className="inner-box" style={{ marginTop:'2vw',width:'31vw',height:'25vw' ,border: '1px solid #cf00a3',borderRadius:'25px',justifyContent:'center'}}>
-          <h2 style={{ marginBottom:'2.5vw', fontSize: '2rem', fontWeight:'400',color: '#ffbdf1', listStyleType: 'none', padding: 0 }}>Sign in</h2>
+        <div className="inner-box" style={{ marginTop:'2vw',width:'31vw',height:'29vw' ,border: '1px solid cyan',borderRadius:'25px',justifyContent:'center'}}>
+          <h2 style={{ marginBottom:'2.5vw', fontSize: '2rem', fontWeight:'400',color: 'cyan', listStyleType: 'none', padding: 0 }}>Log In</h2>
           {formStep === 1 ? (
             <>
-            <label className="emai" htmlFor="email-input" style={{ color: '#ffbdf1', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw'}}>Email or mobile phone number</label>
+            <label className="email" htmlFor="email-input" style={{ color: 'cyan', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw'}}>Email or mobile phone number</label>
             <input
               className="input-fiel" 
               type="email" 
@@ -62,7 +62,7 @@ const LogIn = () => {
               onChange={(e) => setEmail(e.target.value)}
             style={{marginLeft:'3vw'}}
             />
-             <label className="emai" htmlFor="Password" style={{ color: '#ffbdf1', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw' }}>Password</label>
+             <label className="emai" htmlFor="Password" style={{ color: 'cyan', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw' }}>Password</label>
 
     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
       <input
@@ -91,17 +91,14 @@ const LogIn = () => {
     </div>
 
              {emailError && <p className="error-message">{emailError}</p>}
-            <button className="next-bt" onClick={handleNextClick} style={{ color: '#87fc93',marginTop:'3vw' }}>Login</button>
+            <button className="next-bt" onClick={handleNextClick} style={{ color: 'cyan',marginTop:'3vw' }}>Login</button>
             </>
           ) : null}
           </div>
             <div style={{marginTop:'0'}}className="separator">
-                <hr />
-                <span>or</span>
-                <hr />
               </div>
               <div className="signup-option">
-                <Link to="/createAccount" className="facebook-bt" style={{ color: '#87fc93',}}>
+                <Link to="/CreateAccount" className="facebook-bt" style={{ color: 'cyan',}}>
                  Create an Account
                 </Link>
 

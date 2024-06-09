@@ -1,8 +1,6 @@
 /* General styles */
 
 body {
-
-    background-image: url('../../public/SignUp_step1.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -21,12 +19,12 @@ body {
     background-color: rgba(0,0,0,0.26);
     padding: 2rem;
     border-radius: 25px;
-    border: 1px solid #cf00a3;
+    border: 1px solid cyan;
     width: 67vw;
-    height: 35vw;
+    height: 38vw;
 
   }
-  h2{
+  h1{
     font-family: "Roboto", sans-serif;
     color: #fff;
     text-align: center;
@@ -42,11 +40,12 @@ body {
     font-family: "Roboto", sans-serif;
     text-align: center;
     margin-top:.5vw;
+    font-size: x-large;
   }
   p span{
     color: #78a9fa;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 200px;
+    font-weight: bold;
   }
   /* Form steps */
   .form-steps {
@@ -87,6 +86,7 @@ body {
   }
   .step span {
     flex: 1;
+    color: #cf00a3;
   }
 
   .step input {
@@ -193,7 +193,7 @@ body {
     display: inline-block;
     height: 30px;
     width: 30px;
-    background-image: url('../../public/social media logo.png');
+    background-image: url('../../public/2.png');
     background-repeat: no-repeat;
     background-size: contain;
     margin-right: 10px;
@@ -217,7 +217,7 @@ body {
     height: 50px; /* Adjust as needed */
     margin: 20px auto;
     margin-top: 0px; /* Adjust as needed */
-    border: 2px solid #CF00A3; /* Adjust as needed */
+    border: 2px solid cyan; /* Adjust as needed */
     border-radius: 10px; /* Adjust as needed */
     padding: 10px; /* Adjust as needed */
     background-color: transparent;
@@ -238,7 +238,7 @@ body {
     height: 50px; /* Adjust as needed */
     /* margin: 20px auto; */
     margin-top: 0px; /* Adjust as needed */
-    border: 2px solid #CF00A3; /* Adjust as needed */
+    border: 2px solid cyan; /* Adjust as needed */
     border-radius: 10px; /* Adjust as needed */
     padding: 10px; /* Adjust as needed */
     margin-left: 9vw;
@@ -257,7 +257,7 @@ body {
   }
   .email{
     font-size:2rem;
-    margin-left: 9.5vw;
+    margin-left: 22.5vw;
     font-family: "Roboto", sans-serif;
   }
   .separator {
