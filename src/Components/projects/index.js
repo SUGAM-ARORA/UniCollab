@@ -4,6 +4,13 @@ import Card3 from "./card3.jpg";
 import Card4 from "./card4.jpg";
 import Card5 from "./card5.jpg";
 import Card6 from "./card6.jpg";
+import Card7 from "./card7.png";
+import Card8 from "./card8.png";
+import Card9 from "./card9.png";
+import Card10 from "./card10.png";
+import Card11 from "./card11.png";
+import Card12 from "./card12.png";
+
 
 export const features = [
   {
@@ -47,5 +54,47 @@ export const features = [
     hearts: 77,
     title: "WeatherLy",
     text: "WeatherLy is your ultimate destination for accurate and up-to-date weather information. This sleek and user-friendly website offers comprehensive weather forecasts and real-time data to help you plan your day with confidence. With WeatherLy, you can quickly access current conditions, including temperature, humidity, wind speed, and visibility. Detailed hourly, daily, and weekly forecasts keep you prepared for any weather changes. The platform also provides timely severe weather alerts, ensuring your safety during extreme conditions. Interactive maps let you explore weather patterns with dynamic radar visuals showing precipitation, cloud cover, and temperature variations. Additionally, WeatherLy allows you to save custom locations, making it easy to check the weather for your favorite places. Whether on a desktop or mobile device, WeatherLy delivers reliable and precise weather data, helping you make informed decisions and stay prepared for whatever the weather brings.",
+  },
+  {
+    id: 7,
+    img: Card7,
+    hearts: 90,
+    title: "TypingTest",
+    text: "TypingTest is your ultimate destination for accurate and up-to-date weather information. This sleek and user-friendly website offers comprehensive weather forecasts and real-time data to help you plan your day with confidence. With WeatherLy, you can quickly access current conditions, including temperature, humidity, wind speed, and visibility. Detailed hourly, daily, and weekly forecasts keep you prepared for any weather changes. The platform also provides timely severe weather alerts, ensuring your safety during extreme conditions. Interactive maps let you explore weather patterns with dynamic radar visuals showing precipitation, cloud cover, and temperature variations. Additionally, WeatherLy allows you to save custom locations, making it easy to check the weather for your favorite places. Whether on a desktop or mobile device, WeatherLy delivers reliable and precise weather data, helping you make informed decisions and stay prepared for whatever the weather brings.",
+  },
+  {
+    id: 8,
+    img: Card8,
+    hearts: 95,
+    title: "Artisan",
+    text: "Artisan is your ultimate destination for accurate and up-to-date weather information. This sleek and user-friendly website offers comprehensive weather forecasts and real-time data to help you plan your day with confidence. With WeatherLy, you can quickly access current conditions, including temperature, humidity, wind speed, and visibility. Detailed hourly, daily, and weekly forecasts keep you prepared for any weather changes. The platform also provides timely severe weather alerts, ensuring your safety during extreme conditions. Interactive maps let you explore weather patterns with dynamic radar visuals showing precipitation, cloud cover, and temperature variations. Additionally, WeatherLy allows you to save custom locations, making it easy to check the weather for your favorite places. Whether on a desktop or mobile device, WeatherLy delivers reliable and precise weather data, helping you make informed decisions and stay prepared for whatever the weather brings.",
+  },
+  {
+    id: 9,
+    img: Card9,
+    hearts: 110,
+    title: "BBlocks",
+    text: "BBlocks is your ultimate destination for accurate and up-to-date weather information. This sleek and user-friendly website offers comprehensive weather forecasts and real-time data to help you plan your day with confidence. With WeatherLy, you can quickly access current conditions, including temperature, humidity, wind speed, and visibility. Detailed hourly, daily, and weekly forecasts keep you prepared for any weather changes. The platform also provides timely severe weather alerts, ensuring your safety during extreme conditions. Interactive maps let you explore weather patterns with dynamic radar visuals showing precipitation, cloud cover, and temperature variations. Additionally, WeatherLy allows you to save custom locations, making it easy to check the weather for your favorite places. Whether on a desktop or mobile device, WeatherLy delivers reliable and precise weather data, helping you make informed decisions and stay prepared for whatever the weather brings.",
+  },
+  {
+    id: 10,
+    img: Card10,
+    hearts: 83,
+    title: "ZzShoes",
+    text: "ZzShoes is a comprehensive platform designed to streamline inventory management and enhance supply chain efficiency for businesses of all sizes. It offers a user-friendly interface with robust features that cater to the diverse needs of retail, manufacturing, and e-commerce sectors. Key functionalities include real-time inventory tracking, automated restocking alerts, and detailed analytics for informed decision-making. StockIT integrates seamlessly with existing ERP and accounting systems, ensuring smooth data flow across various business operations. With advanced reporting tools, businesses can monitor stock levels, forecast demand, and minimize the risks of overstocking or stockouts. StockIT's cloud-based solution provides secure access from any device, enabling teams to manage inventory on the go. Dedicated customer support and regular software updates ensure that users have the latest tools to maintain optimal inventory levels and maximize profitability.",
+  },
+  {
+    id: 11,
+    img: Card11,
+    hearts: 86,
+    title: "SearchEngine",
+    text: "SearchEngine is a comprehensive platform designed to streamline inventory management and enhance supply chain efficiency for businesses of all sizes. It offers a user-friendly interface with robust features that cater to the diverse needs of retail, manufacturing, and e-commerce sectors. Key functionalities include real-time inventory tracking, automated restocking alerts, and detailed analytics for informed decision-making. StockIT integrates seamlessly with existing ERP and accounting systems, ensuring smooth data flow across various business operations. With advanced reporting tools, businesses can monitor stock levels, forecast demand, and minimize the risks of overstocking or stockouts. StockIT's cloud-based solution provides secure access from any device, enabling teams to manage inventory on the go. Dedicated customer support and regular software updates ensure that users have the latest tools to maintain optimal inventory levels and maximize profitability.",
+  },
+  {
+    id: 12,
+    img: Card12,
+    hearts: 90,
+    title: "AIimage",
+    text: "AIimage is a comprehensive platform designed to streamline inventory management and enhance supply chain efficiency for businesses of all sizes. It offers a user-friendly interface with robust features that cater to the diverse needs of retail, manufacturing, and e-commerce sectors. Key functionalities include real-time inventory tracking, automated restocking alerts, and detailed analytics for informed decision-making. StockIT integrates seamlessly with existing ERP and accounting systems, ensuring smooth data flow across various business operations. With advanced reporting tools, businesses can monitor stock levels, forecast demand, and minimize the risks of overstocking or stockouts. StockIT's cloud-based solution provides secure access from any device, enabling teams to manage inventory on the go. Dedicated customer support and regular software updates ensure that users have the latest tools to maintain optimal inventory levels and maximize profitability.",
   },
 ];
