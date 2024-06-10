@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { FaBell, FaChevronDown } from "react-icons/fa";
-import women from "../img/women.jpg";
-import search from "./searchResults";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/fontawesome-free-solid'
+import {Link} from 'react-router-dom';
+import { FaBell, FaChevronDown} from "react-icons/fa";
+import women from "../img/women.jpg";
+import search from "./searchResults";
 import "./TopContainer.css"
 
 function TopContainer() {
@@ -183,7 +184,11 @@ function TopContainer() {
             )}
           </div>
 
-          <div className="profileImage">
+          <Link to="/CreateAccount" className="profileIconlogin">
+          Launch Your Journey
+             </Link>
+             
+          {/* <div className="profileImage">
             <img src={women} alt="" />
           </div>
 
@@ -199,7 +204,7 @@ function TopContainer() {
               <li>Followers</li>
               <li>Sign Out</li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
