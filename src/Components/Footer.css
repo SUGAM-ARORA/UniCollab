@@ -105,7 +105,7 @@
   background: linear-gradient(#ff21bc, #b21783);
   font-style: oblique;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 25px;
   transition: ease-in-out 500ms;
   margin-right: 1rem;
@@ -114,7 +114,26 @@
 
 .go-pro-btn:hover {
   background-color: #b21783;
-  font-size: 22px;
+  font-size: 20px;
+}
+
+.profileIconlogin {
+  background: linear-gradient(#ff21bc, #b21783);
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: ease-in-out 500ms;
+  margin-right: 1rem;
+  text-decoration: none !important;
+  width: 220px;
+  text-align: center;
+  padding: 6px;
+}
+
+.profileIconlogin:hover {
+  background-color: #b21783;
+  font-size: 20px;
 }
 
 .profileContainer a {
