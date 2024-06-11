@@ -19,18 +19,34 @@ body {
     background-color: rgba(0,0,0,0.26);
     padding: 2rem;
     border-radius: 25px;
-    border: 1px solid cyan;
+    border: 3px solid cyan;
     width: 35vw;
     height: 35vw;
-
+    position: relative;
+    animation: borderAnimationCreateAccount 8s infinite;
   }
+  @keyframes borderAnimationCreateAccount {
+    0% { border-color: cyan; }
+    50% { border-color: rgb(235, 235, 15); }
+    25% { border-color: #cf00a3; }
+    75% { border-color: #04aaac; }
+    100% { border-color: cyan; }
+}
 .inner-box{
     background-color: rgba(0,0,0,0.26);
     padding: 2rem;
     border-radius: 25px;
-
     width: 35vw;
     height: 35vw;
+    position: relative;
+    animation: borderAnimationInnerBox 8s infinite;
+}
+@keyframes borderAnimationInnerBox {
+  0% { border-color: rgb(242, 242, 117); }
+  50% { border-color: cyan; }
+  25% { border-color: #04aaac; }
+  75% { border-color: #cf00a3; }
+  100% { border-color: rgb(242, 242, 117); }
 }
   h2{
     font-family: "Roboto", sans-serif;
@@ -150,7 +166,7 @@ body {
   }
 
   .next-bt:hover {
-    background-color:rgba(4, 1, 15, 0.439);
+    background-color: #b21783;
   }
 
   .signup-option {
@@ -178,7 +194,7 @@ body {
   }
 
   .facebook-bt:hover{
-    background-color:rgba(4, 1, 15, 0.439);
+    background-color: #b21783;
   }
 
 
