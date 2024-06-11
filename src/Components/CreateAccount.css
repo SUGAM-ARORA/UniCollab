@@ -19,10 +19,18 @@ body {
     background-color: rgba(0,0,0,0.26);
     padding: 2rem;
     border-radius: 25px;
-    border: 1px solid cyan;
+    border: 3px solid cyan;
     width: 67vw;
-    height: 38vw;
-
+    height: 42vw;
+    position: relative;
+    animation: borderAnimation 8s infinite;
+    }
+    @keyframes borderAnimation {
+      0% { border-color: cyan; }
+      25% { border-color: white; }
+      50% { border-color: #cf00a3; }
+      75% { border-color: #ff0000; }
+      100% { border-color: cyan; }
   }
   h1{
     font-family: "Roboto", sans-serif;
@@ -144,7 +152,7 @@ body {
   }
 
   .next-btn:hover {
-    background-color:rgba(4, 1, 15, 0.439);
+    background-color: #b21783;
   }
 
   .signup-options {
@@ -174,7 +182,7 @@ body {
 
   .facebook-btn:hover,
   .google-btn:hover {
-    background-color:rgba(4, 1, 15, 0.439);
+    background-color: #b21783;
   }
   .facebook-btn::before {
     content: '';
