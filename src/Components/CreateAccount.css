@@ -27,9 +27,9 @@ body {
     }
     @keyframes borderAnimation {
       0% { border-color: cyan; }
-      25% { border-color: white; }
-      50% { border-color: #cf00a3; }
-      75% { border-color: #ff0000; }
+      50% { border-color: rgb(235, 235, 15); }
+      25% { border-color: #cf00a3; }
+      75% { border-color: #04aaac; }
       100% { border-color: cyan; }
   }
   h1{
