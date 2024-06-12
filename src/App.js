@@ -16,6 +16,9 @@ import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
 import Error from "./Components/404_page/Error";
 import Profile from "./Components/Profile";
+import Licensing from "./Components/footer_section/Legal/Licensing";
+import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
+import PrivacyPolicy from "./Components/footer_section/Legal/PrivacyPolicy";
 
 function App() {
   return (
@@ -33,6 +36,11 @@ function App() {
           <Route path="/faq" element={<FAQPage />} /> 
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<ContactUs />} />
+          <Route path="/termsandconditions" element={<TermsConditions />} />
+
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+
+          <Route path="/licensing" element={<Licensing />} />
 
           <Route path="/readmore/:id" element={<Readmore/>}/>
           <Route path="/profile/:id" element={<Profile/>}/>

@@ -12,7 +12,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@mui/icons-material": "^5.15.19",
-    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/jest-dom": "^6.4.6",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^14.5.2",
     "lottie-react": "^2.4.0",
@@ -21,7 +21,8 @@
     "react-icons": "^5.2.1",
     "react-router-dom": "^6.23.1",
     "react-scripts": "5.0.1",
-    "web-vitals": "^4.1.0"
+    "styled-components": "^6.1.11",
+    "web-vitals": "^4.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
