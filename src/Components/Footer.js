@@ -32,9 +32,9 @@ const Footer = () => {
           <div className='footer-2'>
             <p className='footer-section-title'>Legal</p>
             <ul className='footer-links'>
-              <li className='footer-link'>Privacy Policy</li>
-              <li className='footer-link'>Terms and Conditions</li>
-              <li className='footer-link'>Licensing</li>
+              <a href="/privacypolicy"><li className='footer-link'>Privacy Policy</li></a>
+              <a href="/termsandconditions"><li className='footer-link'>Terms and Conditions</li></a>
+              <a href="/licensing"><li className='footer-link'>Licensing</li></a>
             </ul>
           </div>
         </div>
