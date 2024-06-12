@@ -15,7 +15,7 @@ const Footer = () => {
             <p className='footer-section-title'>Company</p>
             <ul className='footer-links'>
               <li className='footer-link'><a href='/about'>About Us</a></li>
-              <li className='footer-link'>Servives</li>
+              <li className='footer-link'>Services</li>
               <li className='footer-link'>Careers</li>
               <li className='footer-link'>Contact Us</li>
             </ul>
@@ -41,16 +41,16 @@ const Footer = () => {
       </div>
       <div className='footer-icons footer-icons-md'>
       <a href="#" target="_blank" rel='noreferrer'>
-          <i class="devicon-linkedin-plain"></i>
+          <i class="devicon-linkedin-plain" title="LinkedIn"></i>
         </a>
         <a href="https://github.com/SUGAM-ARORA/UniCollab" target="_blank" rel='noreferrer'>
-          <i class="devicon-github-original"></i>
+          <i class="devicon-github-original" title="GitHub"></i>
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <i class="devicon-facebook-plain"></i>
+          <i class="devicon-facebook-plain" title="Facebook"></i>
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <i class="devicon-twitter-original"></i>
+          <i class="devicon-twitter-original" title="X"></i>
         </a>
 
       </div>
