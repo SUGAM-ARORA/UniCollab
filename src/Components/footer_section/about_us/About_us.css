@@ -33,6 +33,7 @@
 
 .about-us-community {
     border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 33px 0px #9165c8;
 }
 
 .about-us-community:hover {
@@ -42,6 +43,7 @@
 
 .about-us-location {
     border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 33px 0px #9165c8;
 }
 
 .about-us-location:hover {
@@ -51,6 +53,7 @@
 
 .about-us-product {
     border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 33px 0px #9165c8;
 }
 
 .about-us-product:hover {
@@ -60,6 +63,7 @@
 
 .about-us-event {
     border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 33px 0px #9165c8;
 }
 
 .about-us-event:hover {
