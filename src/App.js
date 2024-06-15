@@ -15,7 +15,7 @@ import Pricing from "./Components/footer_section/Pricing/pricing";
 import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
 import Error from "./Components/404_page/Error";
-import Profile from "./Components/Profile";
+import Profiles from "./Components/Profiles";
 import Profile from "./Components/Profile/profile";
 import Licensing from "./Components/footer_section/Legal/Licensing";
 import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
@@ -44,7 +44,7 @@ function App() {
           <Route path="/licensing" element={<Licensing />} />
 
           <Route path="/readmore/:id" element={<Readmore/>}/>
-          <Route path="/profile/:id" element={<Profile/>}/>
+          <Route path="/profile/:id" element={<Profiles/>}/>
 
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<MyProjects />} />
