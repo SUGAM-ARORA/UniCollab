@@ -41,6 +41,7 @@
 .footer-section-title {
   color: white;
   font-weight: bold;
+  margin-right: 450px;
   font-size: 24px;
 }
 
@@ -51,6 +52,7 @@
 }
 
 .footer-link {
+  
   padding: 0.25rem 0;
   cursor: pointer;
 }
