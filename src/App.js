@@ -16,6 +16,7 @@ import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
 import Error from "./Components/404_page/Error";
 import Profile from "./Components/Profile";
+import Profile from "./Components/Profile/profile";
 import Licensing from "./Components/footer_section/Legal/Licensing";
 import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
 import PrivacyPolicy from "./Components/footer_section/Legal/PrivacyPolicy";
@@ -48,6 +49,7 @@ function App() {
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<MyProjects />} />
           <Route path="/new/project" element={<NewProject />} />
+          <Route path="/profile" element={<Profile />} />
 
         </Routes>
         <Footer />

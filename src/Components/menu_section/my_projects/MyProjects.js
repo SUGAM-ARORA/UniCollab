@@ -55,10 +55,10 @@ const SampleData = [
     }
 ]
 
-function MyProjects() {
+function MyProjects({showMenu = true}) {
     return (
         <div className="container my-projects-wrapper">
-            <Menu />
+            {showMenu && <Menu />}
             <div className="content">
                 <div className='top fromTop'>
                     <h1>My Projects</h1>
