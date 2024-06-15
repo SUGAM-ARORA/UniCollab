@@ -7,7 +7,7 @@
 }
 
 .maincontainer .left {
-  width: calc(100% - 30%);
+  width: 70%;
   overflow-y: scroll;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -70,9 +70,9 @@
 
 .maincontainer .left .cards {
   background: #19162c;
-  padding: 10px;
+  /* padding: 10px; */
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  margin-top: 20px;
+  /* margin-top: 20px; */
   border-radius: 10px;
 }
 
@@ -111,19 +111,28 @@
   flex-wrap: wrap;
 }
 .card_main {
-  height: 365px;
+  height: 355px;
 }
+
 .card_main_img {
   width: 100%;
-  height: 200px;
+  height: 125px;
+  border-radius: 0px;
+  object-fit: cover;
 }
+
 .maincontainer .left .cards main .card_main {
   background: #252041;
   border-radius: 10px;
   max-width: 260px;
-  padding-bottom: 20px;
+  padding: 20px 10px; /* Adjust padding as needed */
   margin: 15px 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
+
 
 .maincontainer .left .cards main .card_main .card_main_img {
   max-width: 100%;
@@ -234,6 +243,8 @@
 .maincontainer .right .topCard .topCard_name h2,
 .maincontainer .right .bottom_card .bottomCard_name h2 {
   color: #d1d0d5;
+  font-size: larger;
+  font-weight: 900;
 }
 
 .maincontainer .right .topCard .topCard_name a,
@@ -245,6 +256,12 @@
   width: 100%;
   padding: 5px 10px;
 }
+
+.maincontainer .right .topCard .earning span {
+  color: red;
+  font-size: small;
+}
+
 
 .maincontainer .right .topCard .earning p {
   margin: 8px 0;
@@ -298,6 +315,7 @@
 }
 
 .maincontainer .right .bottom_card .topSeller .topSellerName span {
+  color:red;
   display: block;
   font-size: 12px;
 }
