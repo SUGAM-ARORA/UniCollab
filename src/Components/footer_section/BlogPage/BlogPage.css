@@ -1,14 +1,9 @@
 .blog-page {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     background: #121026;
     color: #ffffff;
+    width: 100%;
     padding: 20px;
-    max-width: 700px;
     margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 10px;
 }
 
 .blog-page h1 {
@@ -19,47 +14,58 @@
 .blogs {
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    max-width: 800px;
-}
-
-.blog-post {
-    background: #19162c;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    cursor: pointer;
+    align-items: center;
     width: 100%;
 }
 
-.blog-post h2 {
-    margin-bottom: 10px;
+.blog-post {
+    background: #1f1c35;
+    padding: 10px 20px;
+    transition: 0.3s;
     cursor: pointer;
-}
+    width: 100%;
+    max-width: 800px;
+    overflow: hidden;
+    
 
+}
+.blog-post:not(.active):hover {
+    box-shadow: 0 0px 10px rgba(193, 193, 193, 0.3);
+}
+.blog-post h2 {
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.blog-post.active {
+    color: #e55347;
+}
 .blog-post .date {
-    font-size: 0.9em;
+    font-size: 13px;
     color: #aaa;
-    margin-bottom: 15px;
 }
 
-.blog-post .content {
+.content {
     line-height: 1.6;
-    margin-top: 15px;
+    transition: 0.1s;
+    opacity: 0;
+    background-color: #1f1c35;
+    transform: scaleY(0);
+    transform-origin: top;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 12px;
+    padding: 0 20px;
+    border-top: 2px solid #121026;
+}
+.content.expand {
+    opacity: 1;
+    transform: scaleY(1);
+    padding: 20px;
 }
 
-.blog-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-}
-
-.blog-post.expanded .content {
-    display: block;
-}
-
-.blog-post .content {
-    display: none;
-}
 
 button {
     background: #ff6347;
@@ -73,14 +79,4 @@ button {
 
 button:hover {
     background: #e55347;
-}
-
-@media (max-width: 768px) {
-    .blog-page {
-        padding: 10px;
-    }
-
-    .blog-post {
-        padding: 15px;
-    }
 }

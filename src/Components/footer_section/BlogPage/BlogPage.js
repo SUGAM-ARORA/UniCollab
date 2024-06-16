@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './BlogPage.css';
+import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 
 const blogs = [
     {
@@ -48,17 +49,25 @@ const BlogPage = () => {
 
     return (
         <div className="blog-page">
+            <h1>Our Blogs</h1>
             <div className="blogs">
                 {blogs.map((blog, index) => (
-                    <div
-                        key={index}
-                        className={`blog-post ${activeIndex === index ? 'expanded' : ''}`}
-                        onClick={() => toggleBlog(index)}
-                    >
-                        <h2>{blog.title}</h2>
-                        <p className="date">{blog.date}</p>
-                        {activeIndex === index && <p className="content">{blog.content}</p>}
-                    </div>
+                    <>
+                        <div
+                            key={index}
+                            className={activeIndex === index ? "blog-post active" : "blog-post"}
+                            onClick={() => toggleBlog(index)}
+                        >
+                            <h2>
+                                {blog.title} 
+                                <span>{activeIndex === index ? <FaAngleUp/> : <FaAngleDown/>}</span>
+                            </h2>
+                            <p className="date">{blog.date}</p>
+                        </div>
+                        <p
+                            className={activeIndex === index ? "content expand" : "content"}
+                        >{activeIndex === index ? blog.content : ""}</p>
+                    </>
                 ))}
             </div>
         </div>
