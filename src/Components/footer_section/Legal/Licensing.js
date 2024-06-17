@@ -72,11 +72,6 @@ const LicenseWrapper = styled.div`
     margin-left: 20px;
   }
 
-const Content = styled.p`
-  margin-bottom: 20px;
-  text-align: justify;
-`;
-
   li {
     margin: 10px 0;
   }
