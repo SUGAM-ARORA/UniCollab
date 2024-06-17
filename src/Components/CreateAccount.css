@@ -1,27 +1,78 @@
-.create-account-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   padding: 3rem 0 3rem 0; 
-}
+/* General styles */
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+  }
+
+  .create-account-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .create-account-form {
+    background-color: rgba(0,0,0,0.26);
+    padding: 2rem;
+    border-radius: 25px;
+    border: 3px solid cyan;
+    width: 67vw;
+    height: 42vw;
+    position: relative;
+    animation: borderAnimation 8s infinite;
+    }
+    @keyframes borderAnimation {
+      0% { border-color: cyan; }
+      50% { border-color: rgb(235, 235, 15); }
+      25% { border-color: #cf00a3; }
+      75% { border-color: #04aaac; }
+      100% { border-color: cyan; }
+  }
+  h1{
+    font-family: "Roboto", sans-serif;
+    color: #fff;
+    text-align: center;
+    margin-top: 1.5vw;
+    font-size: 3rem;
+    font-style:normal;
+    font-weight: 700;
+    line-height: normal;
 
 
-.create-account-form {
-  background-color: rgba(0,0,0,0.26);
-  padding: 2rem;
-  border-radius: 25px;
-  border: 3px solid cyan;
-  animation: borderAnimation 8s infinite;
-}
+  }
+  p{
+    font-family: "Roboto", sans-serif;
+    margin-top:.5vw;
+  }
+  p span{
+    color: #78a9fa;
+    font-size: 200px;
+    font-weight: bold;
+  }
+  /* Form steps */
+  .form-steps {
+    margin-bottom: 1.5rem;
+  }
 
-@keyframes borderAnimation {
-  0% { border-color: cyan; }
-  50% { border-color: rgb(235, 235, 15); }
-  25% { border-color: #cf00a3; }
-  75% { border-color: #04aaac; }
-  100% { border-color: cyan; }
-}
+  .step {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    position: relative;
+  }
 
+  .step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: -10px; /* Adjust as needed to align with circles */
+    left: 90%;
+    width: 100%; /* Adjust as needed */
+    height: 2px; /* Adjust as needed */
+    background: #cf00a3; /* Adjust as needed */
+  }
 
 .step::before {
   content: attr(data-step);
