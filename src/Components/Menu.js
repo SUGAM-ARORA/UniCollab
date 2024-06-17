@@ -10,20 +10,14 @@ import {
   FaRegClock,
   FaCog,
   FaSignOutAlt,
-  FaCreativeCommons,
-  FaBlog,
-  FaSave,
   FaList,
 } from "react-icons/fa";
 
 function Menu() {
-
   let toggle = false;
 
   useEffect(() => {
-    const mainMenuLi = document
-      .getElementById("mainMenu")
-      .querySelectorAll("li");
+    const mainMenuLi = document.getElementById("mainMenu").querySelectorAll("li");
 
     function changeActive() {
       mainMenuLi.forEach((n) => n.classList.remove("active"));
@@ -34,11 +28,11 @@ function Menu() {
   }, []);
 
   const showDropDown = () => {
-    if(!toggle){
+    if (!toggle) {
       document.getElementById("mainMenu").style.display = "flex";
       document.getElementById("lastMenu").style.display = "flex";
       toggle = true;
-    } else{
+    } else {
       document.getElementById("mainMenu").style.display = "none";
       document.getElementById("lastMenu").style.display = "none";
       toggle = false;
@@ -59,14 +53,24 @@ function Menu() {
     };
   }, []);
 
-  return (
+  const handleLogoClick = () => {
+    // Navigate to the specified URL using window.location.assign
+    window.location.assign('https://uni-collab.vercel.app');
+  };
 
+  return (
     <menu className="fromLeft">
-      <img src={logo} alt='icon' className="logo" id='logo' onClick={isMobile ? showDropDown : null}
-        style={{ cursor: isMobile ? 'pointer' : 'default' }}/>
-    
+      <img
+        src={logo}
+        alt="icon"
+        className="logo"
+        id="logo"
+        onClick={isMobile ? showDropDown : handleLogoClick}
+        style={{ cursor: isMobile ? 'pointer' : 'default' }}
+      />
+
       <ul className="fromTop" id="mainMenu">
-        <Icon icon={<FaList />} tooltip="My projects" href="/projects"/>
+        <Icon icon={<FaList />} tooltip="My projects" href="/projects" />
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />
         <Icon icon={<FaShoppingCart />} tooltip="Cart" href="/" />
         <Icon icon={<FaWallet />} tooltip="Wallet" href="/" />
@@ -74,11 +78,11 @@ function Menu() {
         <Icon icon={<FaRegClock />} tooltip="Speed" href="/" />
       </ul>
 
-      <ul className='lastMenu' id='lastMenu'>
-        <Link to='/settings'>
-          <Icon icon={<FaCog />} tooltip='Settings' />
+      <ul className="lastMenu" id="lastMenu">
+        <Link to="/settings">
+          <Icon icon={<FaCog />} tooltip="Settings" />
         </Link>
-        <Icon icon={<FaSignOutAlt />} tooltip='Sign Out' href='/' />
+        <Icon icon={<FaSignOutAlt />} tooltip="Sign Out" href="/" />
       </ul>
     </menu>
   );
@@ -88,7 +92,7 @@ const Icon = ({ icon, tooltip, href }) => (
   <li>
     <a href={href}>
       {icon}
-      <span className='tooltip'>{tooltip}</span>
+      <span className="tooltip">{tooltip}</span>
     </a>
   </li>
 );
