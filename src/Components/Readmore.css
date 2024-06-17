@@ -21,12 +21,15 @@
     width: 100%;
     border-radius: 8px;
 }
-.head{
+.readmore .head{
     padding-top: 40px;
     color: #0db5cb;
     font-weight: bold;
     font-size: large;
-    line-height: 30px;
+    line-height: 30px;   
+}
+.head img{
+    width: 100px;
 }
 .upload{
     color: #e9e9ec;
@@ -50,7 +53,7 @@
     padding-top: 40px;
 }
 .dtex{
-    padding-top: 15px;
+    padding: 15px;
     color: #e9e9ec;
     text-transform: none;
     line-height: 27px;
@@ -65,14 +68,12 @@
     font-size: large;
 }
 .abc{
-    padding-top: 10px;
+    padding: 10px;
     font-size: large;
     display: flex;
+    flex-direction: column ;
 }
-.abc .dp{
-    align-items: center;
-    justify-content: center;
-}
+
 .readmore .btn button{
     background-color: #0db5cb;
     margin-right: 20px;
@@ -80,6 +81,7 @@
 }
 .readmore .occupation{
     color: #e9e9ec;
+    
 }
 
 @media (max-width:786px) {
