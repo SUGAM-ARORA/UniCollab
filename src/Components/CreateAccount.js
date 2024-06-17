@@ -72,13 +72,13 @@ const CreateAccount = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-             {emailError && <p className="error-message">{emailError}</p>}
+            {emailError && <p className="error-message">{emailError}</p>}
             <button className="next-btn" onClick={handleNextClick}>Next</button>
             <div className="separator">
               </div>
               <div className="signup-options">
                 <button className="facebook-btn">
-                  <i className="fab fa-facebook-f"></i> Sign up with Facebook
+                  <i className="fab fa-github"></i> Sign up with Github
                 </button>
                 <button className="google-btn">
                   <i className="fab fa-google"></i> Sign up with Google
@@ -114,7 +114,7 @@ const CreateAccount = () => {
         required
         style={{ flex: 1}}
       />
-       <button 
+      <button 
 
         onClick={togglePasswordVisibility} 
         style={{ 
