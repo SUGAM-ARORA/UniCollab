@@ -4,8 +4,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-
-   color: #fff;
+    color: #fff;
   }
 
   .create-account-container {
@@ -47,6 +46,7 @@ body {
   p{
     font-family: "Roboto", sans-serif;
     margin-top:.5vw;
+    text-align: center;
   }
   p span{
     color: #78a9fa;
