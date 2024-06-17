@@ -42,6 +42,7 @@ const SubTitle = styled.h3`
 
 const Content = styled.p`
   margin-bottom: 20px;
+  text-align: justify;
 `;
 
 const StyledUl = styled.ul`

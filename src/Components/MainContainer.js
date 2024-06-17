@@ -64,7 +64,7 @@ function MainContainer() {
         <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
-              <h2>Feed</h2>
+              <h4>Feed</h4>
               <a href="#" className="button2">
                 Popular
               </a>
