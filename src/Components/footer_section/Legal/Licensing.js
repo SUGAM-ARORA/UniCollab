@@ -67,17 +67,15 @@ const LicenseWrapper = styled.div`
     margin: 10px 0;
   }
 
-<<<<<<< master
   ul {
     list-style-type: disc;
     margin-left: 20px;
   }
-=======
+
 const Content = styled.p`
   margin-bottom: 20px;
   text-align: justify;
 `;
->>>>>>> main
 
   li {
     margin: 10px 0;
