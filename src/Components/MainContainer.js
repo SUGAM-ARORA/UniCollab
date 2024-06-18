@@ -64,8 +64,8 @@ function MainContainer() {
         <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
-              <h2>Feed</h2>
-              <a href="#" className="button2">
+              <h2 style={{marginTop:"10px"}}>Feed</h2>
+              <a href="#" className="button2" style={{marginTop:"13px"}}>
                 Popular
               </a>
             </div>

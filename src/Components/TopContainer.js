@@ -98,26 +98,26 @@ function TopContainer() {
     <div className="topContainer">
       <div className="navbar">
         <ul className="largeview">
-          <li id="list">Home</li>
+          <li id="list"><a href='/'>Home</a></li>
           <li id="list"><a href='/about'>About Us</a></li>
-          <li id="list">Services</li>
-          <li id="list">Careers</li>
-          <li id="list">Contact</li>
-          <li id="list">Blogs</li>
-          <li id="list">Faq</li>
+          <li id="list"><a href='/services'>Services</a></li>
+          <li id="list"><a href='/careers'>Careers</a></li>
+          <li id="list"><a href='/contacts'>Contact</a></li>
+          <li id="list"><a href='/blogs'>Blogs</a></li>
+          <li id="list"><a href='/faq'>FAQ</a></li>
         </ul>
 
         <div className="mobview">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
-            <ul>
-              <li id="open">Home</li>
-              <li id="open"><a href='/about'>About Us</a></li>
-              <li id="open">Services</li>
-              <li id="open">Careers</li>
-              <li id="open">Contact</li>
-              <li id="open">Blogs</li>
-              <li id="open">Faq</li>
+            <ul className="open">
+              <li><a href='/'>Home</a></li>
+              <li><a href='/about'>About Us</a></li>
+              <li><a href='/services'>Services</a></li>
+              <li><a href='/careers'>Careers</a></li>
+              <li><a href='/contacts'>Contact</a></li>
+              <li><a href='/blogs'>Blogs</a></li>
+              <li><a href='/faq'>FAQ</a></li>
             </ul>
           </div>
         </div>

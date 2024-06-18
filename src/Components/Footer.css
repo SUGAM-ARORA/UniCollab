@@ -50,14 +50,19 @@
   list-style: none;
 }
 
-.footer-link {
+.footer-links li {
   padding: 0.25rem 0;
-  cursor: pointer;
 }
 
-.footer-link a{
+.footer-links a {
   text-decoration: none;
   color: white;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.footer-links a:hover {
+  color: #cf00a3;
+  font-size: 1.1rem; /* Slightly increase font size on hover */
 }
 
 .footer-icons {
@@ -76,6 +81,7 @@
 
 .footer-icons a i:hover {
   font-size: 2rem;
+  color: #007bff;
 }
 
 .footer-icons a {
@@ -163,6 +169,7 @@
 
   .footer-2 {
     width: 20%;
+    text-align: left;
   }
 
   .footer-icons {
