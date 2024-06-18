@@ -2,8 +2,7 @@ Make Sure that your branch is up to date with the master branch(remotely) before
 
 Step 1: Firstly you need to go to your cloned repo on browser and then click on sync fork and update branch. Here is the sample shown below 
 
-IMAGE_PATH="Sync.png"
-./imgcat "$IMAGE_PATH"
+![Sample](Sync.png)
 
 Step 2: Now you need to go to your terminal and then run the following commands
 ```bash
