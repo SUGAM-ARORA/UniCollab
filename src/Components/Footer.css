@@ -1,83 +1,212 @@
 .footer {
-    background: #19162c;
-    color: #ffffff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .footer p {
-    margin: 0;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .footer-links li {
-    display: inline;
-  }
-  
-  .footer-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s;
-  }
-  
-  .footer-links a:hover {
-    color: #00ffff;
-  }
-  
-  .footer-content {
-    position: relative;
-  }
-  
-  .back-to-top {
-    margin-top: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #ffffff;
-  }
+  background-color: #19162c;
+  color: white;
+  padding: 2.5rem 2.5rem 1rem 2.5rem;
+}
 
-  .back-to-top {
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: bold;
-    color: #d1d0d5;
-    border: 2px solid #443b78;
-    padding: 5px 15px;
-    border-radius: 10px;
-    margin: 0px 5px;
-    transition: background-color 0.3s ease; 
-  }
-  
-  .back-to-top:hover {
-    background-color: #443b78; 
-  }
-a{
+.footer-container {
+  display: flex;
+}
+
+.footer-container-md {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-1 {
+  display: flex;
+  gap: 20px;
+  width: 40%;
+}
+
+.footer-1 img {
+  height: 3rem;
+}
+
+.footer-half {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.footer-2 {
+  width: 20%;
+}
+
+.footer-title {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.footer-section-title {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.footer-links {
+  color: white;
+  padding: 1rem 0;
+  list-style: none;
+}
+
+.footer-links li {
+  padding: 0.25rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.footer-links a:hover {
+  color: #cf00a3;
+  font-size: 1.1rem; /* Slightly increase font size on hover */
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-right: 7rem;
+  font-size: x-large;
+}
+
+.footer-icons a i {
+  color: white;
+  transition: color 0.3s, font-size 0.3s;
+}
+
+.footer-icons a i:hover {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+.footer-icons a {
   text-decoration: none;
 }
-.icons{
+
+.footer-icons-md {
+  justify-content: flex-end;
+}
+
+.footer-bottom {
+  color: #c3c3c3;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  font-size: 0.875rem;
+}
+
+.footer-bottom-link {
+  cursor: pointer;
+}
+
+.footer-sections {
+  display: flex;
+}
+
+.go-pro-btn {
+  background: linear-gradient(#ff21bc, #b21783);
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: ease-in-out 500ms;
+  margin-right: 1rem;
+  text-decoration: none !important;
+}
+
+.go-pro-btn:hover {
+  background-color: #b21783;
   font-size: 20px;
 }
-.icons a{
-  color: #ffffff;
-  transition: color 0.3s;
+
+.profileIconlogin {
+  background: linear-gradient(#ff21bc, #b21783);
+  font-style: oblique;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 25px;
+  transition: ease-in-out 500ms;
+  margin-right: 1rem;
+  text-decoration: none !important;
+  width: 220px;
+  text-align: center;
+  padding: 6px;
 }
-.icons a:hover{
-  color: #00ffff;
+
+.profileIconlogin:hover {
+  background-color: #b21783;
+  font-size: 20px;
+}
+
+.profileContainer a {
+  text-decoration: none;
+}
+
+.footer-title a {
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .footer-1 {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  .footer-half {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .footer-2 {
+    width: 20%;
+    text-align: left;
+  }
+
+  .footer-icons {
+    margin-right: 5rem;
+    justify-content: flex-end;
+  }
+
+  .footer-bottom {
+    justify-content: space-between;
+  }
+
+  .footer-bottom {
+    display: flex;
+    margin-top: 10px;
+    justify-content: left;
+  }
+}
+
+@media (max-width: 400px) {
+  .footer-half {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footer-2 {
+    width: 100%;
+  }
+
+  .footer-icons {
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .footer-bottom {
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+  }
 }

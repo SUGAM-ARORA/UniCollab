@@ -1,0 +1,44 @@
+name: Auto Comment on Issue Close
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  greet-on-close:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+    steps:
+      - name: Greet User
+        uses: actions/github-script@v5
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const issue = context.payload.issue;
+
+            // Check if the event is for an issue (not a pull request)
+            if (!issue.pull_request) {
+              const issueCreator = issue.user.login;
+              const issueNumber = issue.number;
+              const issueTitle = issue.title;
+
+              const greetingMessage = `
+              Hello @${issueCreator}! 🎉
+
+              Your issue **#${issueNumber} - ${issueTitle}** has been successfully closed. 
+
+              We appreciate your valuable contribution and your help in improving the project. If you have any more ideas, questions, or issues, feel free to open a new issue or join the discussion in our community forum.
+
+              Stay awesome! 😊
+              `;
+
+              github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issueNumber,
+                body: greetingMessage
+              });
+            } else {
+              console.log('The closed issue is a pull request. No greeting message sent.');
+            }

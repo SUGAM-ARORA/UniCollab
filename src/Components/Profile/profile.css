@@ -1,0 +1,263 @@
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Keyframes for slide-in effect */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Apply slide-in animation to .first section */
+.first {
+    animation: slideIn 0.8s ease forwards;
+}
+
+/* Apply slide-in-from-right animation to .second section */
+.second {
+    animation: slideInRight 0.8s ease forwards;
+}
+
+/* Apply fade-in animation to .aboutPageProfile */
+.aboutPageProfile {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Ensuring that aboutPageProfile hides and shows smoothly */
+.aboutPageProfile {
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.aboutPageProfile.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Other existing styles */
+.boxProfile {
+    margin: 50px 25px;
+    display: flex;
+    gap: 40px;
+}
+
+.first {
+    width: 400px;
+    outline: 3px solid #ff21bc;
+    height: 100vh;
+    padding: 40px 40px;
+    border-radius: 30px;
+}
+
+.profilephoto {
+    width: 250px;
+    height: 250px;
+    margin: auto;
+    border-radius: 50%;
+    outline: 3px solid #ff21bc;
+    background-image: url(./Avatar.png);
+    background-size: 100%;
+    margin-bottom: 40px;
+}
+
+.Name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.usernameProfile {
+    font-size: larger;
+    color: #8d96a0;
+    margin-bottom: 24px;
+    cursor: pointer;
+}
+
+.usernameProfile:hover {
+    text-decoration: underline;
+}
+
+.descriptionProfile {
+    font-size: larger;
+    margin-bottom: 6px;
+}
+
+.editProfile {
+    width: 100%;
+    font-size: large;
+    margin-bottom: 50px;
+}
+
+.locationProfile {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px
+}
+
+.locationIcon {
+    background-image: url(location.png);
+    height: 24px;
+    width: 24px;
+    background-size: 100%;
+}
+
+.linkedinProfile,
+.instaProfile {
+    display: flex;
+    gap: 10px;
+}
+
+.linkedinIcon {
+    width: 24px;
+    height: 24px;
+    background-image: url(linkedin.png);
+    background-size: 100%;
+}
+
+.instaIcon {
+    width: 24px;
+    height: 24px;
+    background-image: url(instagram.png);
+    background-size: 100%;
+}
+
+.socialProfile {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 30px;
+}
+
+.memberProfile {
+    font-weight: bold;
+    font-size: large;
+    text-align: center
+}
+
+.second {
+    width: 70%;
+    outline: 3px solid #ff21bc;
+    border-radius: 30px;
+}
+
+.navProfile {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: #140043;
+}
+
+.navProfile ul {
+    display: flex;
+    gap: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navProfile ul li {
+    width: 90px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.navProfile ul li:hover {
+    background-color: #e55347;
+    transform: scale(1.05);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.active {
+    background-color: #e55347;
+}
+
+.aboutProfile {
+    width: 100%;
+    height: 100%;
+}
+
+.aboutPageProfile {
+    height: 100%;
+    padding: 30px;
+    display: none;
+}
+
+.aboutPageProfile h1 {
+    font-size: 30px;
+    text-align: left;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.aboutDetails li {
+    list-style: disc;
+    font-size: 22px;
+    list-style-position: inside;
+}
+
+.aboutDetails ol{
+    list-style-position: inside;
+    margin-left: 15px;
+    margin-bottom: 25px;
+}
+
+.aboutDetails ol li{
+    list-style-type:lower-roman;
+    font-size: 18px;
+}
+
+.headingAbout{
+    margin-bottom: 15px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+#name{
+    color: #ff21bc;
+}
+
+.descriptionProfileabout{
+    margin-bottom: 45px;
+    font-size: 20px;
+}
+
+.headAbout{
+    font-weight: 700;
+    color: white;
+}
+
+.projectsPageProfile{
+    height: 100%;
+    display: none;
+}
+
+.visible{
+    display: block;
+}
