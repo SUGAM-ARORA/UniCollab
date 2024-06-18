@@ -1,3 +1,11 @@
+.home-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
 .containerContact {
     width: 95vw;
     margin: auto;

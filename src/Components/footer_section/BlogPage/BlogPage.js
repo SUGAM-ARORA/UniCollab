@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './BlogPage.css';
+import { Link } from 'react-router-dom';
+import homeIcon from '../../../img/homeicon.png';
 
 const blogs = [
     {
@@ -48,6 +50,9 @@ const BlogPage = () => {
 
     return (
         <div className="blog-page">
+        <Link to="/">
+            <img src={homeIcon} alt="Home" className="home-icon" />
+        </Link>
             <div className="blogs">
                 {blogs.map((blog, index) => (
                     <div
