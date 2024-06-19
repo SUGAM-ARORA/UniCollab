@@ -65,7 +65,7 @@ function CardMain({ imgSrc, title, hearts }) {
         onMouseOver={() => handleMouseOver(index)}
         onMouseOut={() => handleMouseOut(index)}
       >
-            Abc
+            {project.dev}
           </p>
         </div>
       </div>
@@ -83,22 +83,22 @@ function CardMain({ imgSrc, title, hearts }) {
       onMouseOut={() => handleMouseOut(index)}
     >
         <div className="heading">
-          <div className="dp"></div>
+          <img width={40} src={project.pro} alt="" />
           <div className="details1">
-            <p id="name">@Abc</p>
-            <p id="occupation">Web Designer, Video Editor</p>
+            <p id="name">@{project.dev}</p>
+            <p id="occupation">{project.role}</p>
           </div>
         </div>
         <div className="details2">
           <p id="info">
-            I'm a versatile professional skilled in web development and video
-            editing, creating seamless online experiences and high-quality
-            multimedia content.
+            {project.about}
           </p>
         </div>
         <div className="btnnn">
           <button>Follow Me</button>
-          <button>View Profile</button>
+          <button><Link to={`/profile/${project.id}`}>
+          View Profile
+        </Link></button>
         </div>
       </div>
       </div>

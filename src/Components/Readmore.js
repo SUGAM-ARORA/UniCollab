@@ -10,29 +10,26 @@ const Readmore = () => {
     const feature = features.find((item) => item.id === parseInt(id));
   return (
     <div className='readmore'>
-      <Link className='arrow' to="/"><img src={Arrow} alt="" /></Link>
+      <Link className='arrow' to="/"><img src={Arrow} alt="back" /></Link>
       <div className="title">{feature.title}</div>
       <div className="image">
       <img src={feature.img} height={480} alt={feature.title} />
       </div>
 
       <div className="head">
-        <span className='upload'>Uploaded On:</span><br />
-        dd:mm:yy
+        <span className='upload'>Uploaded On: </span>
+         dd:mm:yy
       </div>
       <div className="head">
-        <span className='upload'>By:</span><br />
+        <img src={feature.pro} alt={feature.dev} />
         <div className='abc'>
-          <div className="dp"></div>
           <div className="details1">
-            <p className="name">@Abc</p>
-            <p className="occupation">Web Designer, Video Editor</p>
+            <p className="name">@{feature.dev}</p>
+            <p className="occupation">{feature.role}</p>
           </div>
-        </div>
           <div className="dtex">
-            I'm a versatile professional skilled in web development and video
-            editing, creating seamless online experiences and high-quality
-            multimedia content.
+            {feature.about}
+          </div>
           </div>
       </div>
       <div className="text">

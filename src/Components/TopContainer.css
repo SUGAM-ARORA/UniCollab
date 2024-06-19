@@ -20,7 +20,14 @@
     display: inline;
     padding: 20px;
   }
-  
+  .largeview a:hover {
+    color: #cf00a3;
+    font-size: 1.05rem; /* Slightly increase font size on hover */
+  }
+  .open a:hover {
+    color: #cf00a3;
+    font-size: 1.05rem; /* Slightly increase font size on hover */
+  }
   .mobview {
     display: none;
   }
