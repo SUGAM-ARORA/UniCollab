@@ -58,16 +58,19 @@ color: gray;
     flex-wrap: wrap;
 }
 .edit-btn {
-    background-color: blue;
+    /* background-color: blue; */
+    background-color: #0b0b5f;
 }
 .github-btn {
-    background-color: purple;
+    /* background-color: purple; */
+    background-color: #ff6347;
 }
 .edit-btn:hover {
-    background-color: rgb(1, 1, 213);
+    /* background-color: rgb(1, 1, 213); */
+    background-color: #262696;
 }
 .github-btn:hover {
-    background-color: rgb(96, 1, 96);
+    background-color: #e55347;
 }
 .details {
     padding: 15px;
