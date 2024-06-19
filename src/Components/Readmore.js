@@ -10,7 +10,7 @@ const Readmore = () => {
     const feature = features.find((item) => item.id === parseInt(id));
   return (
     <div className='readmore'>
-      <Link className='arrow' to="/"><img src={Arrow} alt="" /></Link>
+      <Link className='arrow' to="/"><img src={Arrow} alt="back" /></Link>
       <div className="title">{feature.title}</div>
       <div className="image">
       <img src={feature.img} height={480} alt={feature.title} />
