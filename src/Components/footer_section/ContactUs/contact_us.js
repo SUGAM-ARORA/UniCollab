@@ -1,9 +1,14 @@
 import './contact_us.css';
 import React from 'react';
+import { Link } from 'react-router-dom';
+import homeIcon from '../../../img/homeicon.png';
 
 function ContactUs() {
     return (
         <div className='box'>
+            <Link to="/">
+            <img src={homeIcon} alt="Home" className="home-icon" />
+            </Link>
             <div className='containerContact'>
                 <div className='general'>
                     <div className='box1'>
