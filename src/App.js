@@ -44,7 +44,6 @@ function App() {
           <Route path="/projects" element={<MyProjects />} />
           <Route path="/new/project" element={<NewProject />} />
           <Route path="/profile" element={<Profile />} />
-
         </Routes>
         <Footer />
       </div>
