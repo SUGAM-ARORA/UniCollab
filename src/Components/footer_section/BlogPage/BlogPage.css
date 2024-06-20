@@ -1,3 +1,11 @@
+.home-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
 .blog-page {
     display: flex;
     flex-direction: column;

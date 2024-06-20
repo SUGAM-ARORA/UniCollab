@@ -1,5 +1,10 @@
 Make Sure that your branch is up to date with the master branch(remotely) before you push your code to the remote repository.
 
+Step 1: Firstly you need to go to your cloned repo on browser and then click on sync fork and update branch. Here is the sample shown below 
+
+![Sample](Sync.png)
+
+Step 2: Now you need to go to your terminal and then run the following commands
 ```bash
 #!/bin/bash
 # This script will update your branch with the master branch

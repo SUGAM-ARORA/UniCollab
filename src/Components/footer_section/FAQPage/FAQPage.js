@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './FAQPage.css'; // Ensure the CSS file is created and imported
-
+import { Link } from 'react-router-dom';
+import homeIcon from '../../../img/homeicon.png';
 const faqs = [
     {
         question: "What is UniCollab?",
@@ -53,6 +54,9 @@ const FAQPage = () => {
 
     return (
         <div className="page-container">
+        <Link to="/">
+            <img src={homeIcon} alt="Home" className="home-icon" />
+        </Link>
             <h1>FAQs</h1>
             <div className="faqs">
                 {faqs.map((faq, index) => (

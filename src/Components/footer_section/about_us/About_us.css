@@ -1,3 +1,11 @@
+.home-icon {
+    position: absolute;
+    top: 1.5rem;
+    left: 1.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
 .about-us {
     display: block;
     margin: auto;
@@ -32,42 +40,60 @@
 }
 
 .about-us-community {
-    border: 2px solid rgba(128, 100, 162, 1);
-    box-shadow: 7px 7px 32px 0px #9165c8;
+    /* border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 32px 0px #9165c8; */
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
+
 .about-us-community:hover {
-    background: rgba(128, 100, 162, 1);
+    /* background: rgba(128, 100, 162, 1); */
+    /* background: #6d469f; */
+    background: #3228a7;
     color: white;
 }
 
 .about-us-location {
-    border: 2px solid rgba(128, 100, 162, 1);
-    box-shadow: 7px 7px 32px 0px #9165c8;
+    /* border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 32px 0px #9165c8; */
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
+
 }
 
 .about-us-location:hover {
-    background: rgba(128, 100, 162, 1);
+    /* background: rgba(128, 100, 162, 1); */
+    /* background: #6d469f; */
+    background: #3228a7;
     color: white;
 }
 
 .about-us-product {
-    border: 2px solid rgba(128, 100, 162, 1);
-    box-shadow: 7px 7px 32px 0px #9165c8;
+    /* border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 32px 0px #9165c8; */
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .about-us-product:hover {
-    background: rgba(128, 100, 162, 1);
+    /* background: rgba(128, 100, 162, 1); */
+    /* background: #6d469f; */
+    background: #3228a7;
     color: white;
 }
 
 .about-us-event {
-    border: 2px solid rgba(128, 100, 162, 1);
-    box-shadow: 7px 7px 32px 0px #9165c8;
+    /* border: 2px solid rgba(128, 100, 162, 1);
+    box-shadow: 7px 7px 32px 0px #9165c8; */
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .about-us-event:hover {
-    background: rgba(128, 100, 162, 1);
+    /* background: rgba(128, 100, 162, 1); */
+    /* background: #6d469f; */
+    background: #3228a7;
     color: white;
 }
 

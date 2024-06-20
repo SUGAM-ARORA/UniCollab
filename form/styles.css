@@ -3,26 +3,38 @@
 }
 
 body {
+    background-color: #19162c;
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
 }
-
+.button {
+    font-size: 15px;
+    margin-left: 96px;
+    padding: 4px;
+    background-color: #f220b3;
+    border: none;
+    color: #fff;
+    border-radius: 2px;
+}
 .container {
-    background: #fff;
+    /* background: #fff; */
+    background: #211d3a;
     padding: 20px;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+    box-shadow: 7px 7px 32px 0 #9165c8;
     width: 300px;
 }
 
 h2 {
     margin-bottom: 20px;
     text-align: center;
+    color: #fff;
 }
 
 .form-control {

@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import "./About_us.css";
 import collaborate from '../../../img/collaboration.png';
 import collaboratehover from '../../../img/collaborationhover.png';
@@ -8,6 +9,8 @@ import project from '../../../img/project.png';
 import projecthover from '../../../img/projecthover.png';
 import event from '../../../img/event.png';
 import eventhover from '../../../img/eventhover.png';
+import homeIcon from '../../../img/homeicon.png';
+
 
 const AboutUs = () => {
     const [collaborateHover, setCollaborateHover] = useState(false);
@@ -17,6 +20,9 @@ const AboutUs = () => {
 
   return (
     <div id='about-us' style={{display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '3rem'}}>
+    <Link to="/">
+    <img src={homeIcon} alt="Home" className="home-icon" />
+    </Link>
     <h1 className='about-us-heading'>About Us</h1>
     <div className='about-us-block'>
         <div className='about-us-community' onMouseOver={()=>setCollaborateHover(true)} onMouseLeave={()=>setCollaborateHover(false)}>
