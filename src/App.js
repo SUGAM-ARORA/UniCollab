@@ -9,7 +9,6 @@ import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
 import Readmore from "./Components/Readmore";
-import CreateAccount from "./Components/CreateAccount";
 import Login from "./Components/Login";
 import Pricing from "./Components/footer_section/Pricing/pricing";
 import MyProjects from "./Components/menu_section/my_projects/MyProjects";
@@ -30,7 +29,6 @@ function App() {
         <Route path="*" element={<Error />} />
           <Route path="/" element={<Container />} />
           <Route path="/login" element={<Login/>}/>
-          <Route path="/CreateAccount" element={<CreateAccount/>} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/about" element={<About_us />} />
           <Route path="/blogs" element={<BlogPage />} />
