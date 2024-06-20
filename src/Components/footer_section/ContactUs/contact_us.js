@@ -2,8 +2,30 @@ import './contact_us.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function ContactUs() {
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        // Perform form validation or any other logic here
+
+        // Show success toast notification
+        toast.success('Sent Successfully!', {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            transition: Bounce,
+        });
+    }
+
+
     return (
         <div className='box'>
             <Link to="/">
@@ -44,7 +66,7 @@ function ContactUs() {
                 <div className='form'>
                     <h2>Facing any Issue? Help Us Improve!</h2>
                     <p>Use the form below to get in touch. We attempt to respond to support requests within 1 business day.</p>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <label htmlFor="flname">Name :</label>
                         <input type='text' id='flname' name='flname' required></input>
                         <label htmlFor="email">Email :</label>
@@ -56,13 +78,26 @@ function ContactUs() {
                             <option value='Other'>Other</option>
                         </select>
                         <label htmlFor="message">Message :</label>
-                        <textarea id='message' name='message'></textarea>
+                        <textarea id='message' name='message' required></textarea>
                         <label htmlFor="attachments">Any Attachments :</label>
                         <input type='file' id='attachments' name='attachments'></input>
                         <button type='submit'>Submit</button>
                     </form>
                 </div>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover={false}
+                theme="dark"
+                transition={Bounce}
+            />
         </div>
     );
 }
