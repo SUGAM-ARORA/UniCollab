@@ -8,7 +8,6 @@ function MainRightBottomCard() {
         <h2>Top Contributor</h2>
         <a href="#">View More</a>
       </div>
-
       {TopSeller &&
         TopSeller.map((seller) => (
           <div className="topSeller fromTop" key={seller.id}>
