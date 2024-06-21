@@ -213,8 +213,6 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 
-
-
 .container1:before {
   content: "";
   position: absolute;
