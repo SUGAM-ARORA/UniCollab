@@ -5,7 +5,6 @@ import homeIcon from '../../../img/homeicon.png';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 function ContactUs() {
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +23,6 @@ function ContactUs() {
             transition: Bounce,
         });
     }
-
 
     return (
         <div className='box'>

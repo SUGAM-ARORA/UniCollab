@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Login.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import logImg from './Profile/log.svg';
+import registerImg from './Profile/register.svg';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -81,7 +83,7 @@ const LogIn = () => {
       <div className="forms-container">
         <div className="signin-signup">
           <form className="sign-in-form" onSubmit={handleNextClick} action="/https://uni-collab.vercel.app/" method="post">
-            <h2 className="title">Adventure Awaits! Log In</h2>
+            <h2 className="title">Step into UniCollab! Log In</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
@@ -107,22 +109,22 @@ const LogIn = () => {
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
               <Link to="https://www.facebook.com" className="social-icon">
-                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter"></i>
+                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.gmail.com" className="social-icon">
-                <i className="fab fa-google"></i>
+                <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.linkedin.com" className="social-icon">
-                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
             </div>
           </form>
 
           <form className="sign-up-form" onSubmit={handleSignUpClick} action="/https://uni-collab.vercel.app/" method="post">
-            <h2 className="title">Start Your Journey</h2>
+            <h2 className="title">Start Journey with UniCollab</h2>
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
@@ -157,16 +159,16 @@ const LogIn = () => {
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
               <Link to="https://www.facebook.com" className="social-icon">
-                <i className="fab fa-facebook-f"></i>
+                <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter"></i>
+                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.gmail.com" className="social-icon">
-                <i className="fab fa-google"></i>
+                <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </Link>
               <Link to="https://www.linkedin.com" className="social-icon">
-                <i className="fab fa-linkedin-in"></i>
+                <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
             </div>
           </form>
@@ -180,25 +182,25 @@ const LogIn = () => {
             <p>
               Explore our platform and unlock a realm of personalized experiences.
             </p>
-            <br></br>
+            <br />
             <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
               Become a Member
             </button>
           </div>
-          <img src="/log.svg" className="image" alt="" />
+          <img src={logImg} className="image" alt="Login illustration" />
         </div>
         <div className="panel right-panel">
           <div className="content">
             <h3>Adventure Awaits!</h3>
             <p>
-            Embark on a journey through UniCollab for personalized experiences.
+              Embark on a journey through UniCollab for personalized experiences.
             </p>
-            <br></br>
+            <br />
             <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
               ENTER YOUR REALM
             </button>
           </div>
-          <img src="./log.svg" className="image" alt="" />
+          <img src={registerImg} className="image" alt="Register illustration" />
         </div>
       </div>
     </div>
