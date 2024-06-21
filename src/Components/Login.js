@@ -1,112 +1,209 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import "./Login.css"
+import './Login.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import logImg from './Profile/log.svg';
+import registerImg from './Profile/register.svg';
 
-const ViewOffIcon = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#ffffff"} fill={"none"} {...props}>
-    <path d="M22 8C22 8 18 14 12 14C6 14 2 8 2 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-    <path d="M15 13.5L16.5 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M20 11L22 13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M2 13L4 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M9 13.5L7.5 16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-
-const ViewIcon = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={24} height={24} color={"#ffffff"} fill={"none"} {...props}>
-    <path d="M21.544 11.045C21.848 11.4713 22 11.6845 22 12C22 12.3155 21.848 12.5287 21.544 12.955C20.1779 14.8706 16.6892 19 12 19C7.31078 19 3.8221 14.8706 2.45604 12.955C2.15201 12.5287 2 12.3155 2 12C2 11.6845 2.15201 11.4713 2.45604 11.045C3.8221 9.12944 7.31078 5 12 5C16.6892 5 20.1779 9.12944 21.544 11.045Z" stroke="currentColor" strokeWidth="1.5" />
-    <path d="M15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15C13.6569 15 15 13.6569 15 12Z" stroke="currentColor" strokeWidth="1.5" />
-  </svg>
-);
 const LogIn = () => {
-    const [email, setEmail] = useState('')
-    ;
-    const [emailError, setEmailError] = useState('');
-    const [formStep, setFormStep] = useState(1);
-    const [password, setPassword] = useState('');
-    const [showPassword, setShowPassword] = useState(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [isSignUpMode, setIsSignUpMode] = useState(false);
 
-    const handleNextClick = () => {
-        if (formStep === 1) {
-          const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+  const handleNextClick = (e) => {
+    e.preventDefault();
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    let valid = true;
 
-          if (!emailPattern.test(email)) {
-            setEmailError('Please enter a valid email address.');
-          } else {
-            setEmailError('');
-            setFormStep(2);
-          }
-        } else if (formStep === 2) {
-          // Add your validation for the three inputs here
-          setFormStep(3);
-        }
-      };
+    if (!emailPattern.test(email)) {
+      displayAlert('* Please enter a valid email address.');
+      valid = false;
+    }
+
+    if (password.length < 6) {
+      displayAlert('* Password must be at least 6 characters.');
+      valid = false;
+    }
+
+    if (valid) {
+      // Handle login action, e.g., call API or set login state
+      console.log('Logging in...');
+    }
+  };
+
+  const handleSignUpClick = (e) => {
+    e.preventDefault();
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    let valid = true;
+
+    if (!username) {
+      displayAlert('* Username is required.');
+      valid = false;
+    }
+
+    if (!emailPattern.test(email)) {
+      displayAlert('* Please enter a valid email address.');
+      valid = false;
+    }
+
+    if (password.length < 6) {
+      displayAlert('* Password must be at least 6 characters.');
+      valid = false;
+    }
+
+    if (valid) {
+      // Handle sign up action, e.g., call API to register user
+      console.log('Signing up...');
+    }
+  };
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
   };
 
+  const toggleSignUpMode = () => {
+    setIsSignUpMode(!isSignUpMode);
+    clearErrors();
+  };
+
+  const displayAlert = (message) => {
+    alert(message);
+  };
+
+  const clearErrors = () => {
+    setEmail('');
+    setPassword('');
+    setUsername('');
+  };
+
   return (
-    <div className="create-account-containe">
-      <div className="create-account-for" style={{width:'35vw',height:'41vw'}}>
-        <div className="inner-box" style={{ marginTop:'2vw',width:'31vw',height:'29vw' ,border: '3px solid yellow',borderRadius:'25px',justifyContent:'center'}}>
-          <h2 style={{ marginBottom:'2.5vw', fontSize: '2rem', fontWeight:'400',color: 'white', listStyleType: 'none', padding: 0 }}>Log In</h2>
-          {formStep === 1 ? (
-            <>
-            <label className="email" htmlFor="email-input" style={{ color: 'white', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw'}}>Email or mobile phone number</label>
-            <input
-              className="input-fiel" 
-              type="email" 
-              placeholder="" 
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            style={{marginLeft:'3vw'}}
-            />
-             <label className="emai" htmlFor="Password" style={{ color: 'white', fontSize: '1.2rem', listStyleType: 'none', padding: 0,marginLeft:'3vw' }}>Password</label>
+    <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
+      <div className="forms-container">
+        <div className="signin-signup">
+          <form className="sign-in-form" onSubmit={handleNextClick} action="/https://uni-collab.vercel.app/" method="post">
+            <h2 className="title">Step into UniCollab! Log In</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
+                {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+              </button>
+            </div>
+            <input type="submit" value="Login" className="btn1 solid" />
+            <p className="social-text">Connect with Social Magic</p>
+            <div className="social-media">
+              <Link to="https://www.facebook.com" className="social-icon">
+                <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.twitter.com" className="social-icon">
+                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.gmail.com" className="social-icon">
+                <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.linkedin.com" className="social-icon">
+                <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+            </div>
+          </form>
 
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-      <input
-        className="input-field12"
-        type={showPassword ? "text" : "password"}
-        placeholder=""
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        required
-        style={{ flex: 1,marginLeft:'3vw'}}
-      />
-       <button 
-
-        onClick={togglePasswordVisibility} 
-        style={{ 
-          color: '#fff',
-
-          marginRight: '3vw',
-          background: 'transparent', 
-          border: 'none', 
-          cursor: 'pointer' 
-        }}
-      >
-        {showPassword ? <ViewOffIcon />: <ViewIcon />}
-      </button>
-    </div>
-
-             {emailError && <p className="error-message">{emailError}</p>}
-            <button className="next-bt" onClick={handleNextClick} style={{ color: 'white',marginTop:'3vw' }}>Login</button>
-            </>
-          ) : null}
-          </div>
-            <div style={{marginTop:'0'}}className="separator">
-              </div>
-              <div className="signup-option">
-                <Link to="/CreateAccount" className="facebook-bt" style={{ color: 'white',}}>
-                 Create an Account
-                </Link>
-
-              </div>
-
+          <form className="sign-up-form" onSubmit={handleSignUpClick} action="/https://uni-collab.vercel.app/" method="post">
+            <h2 className="title">Start Journey with UniCollab</h2>
+            <div className="input-field">
+              <i className="fas fa-user"></i>
+              <input
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-envelope"></i>
+              <input
+                type="email"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="input-field">
+              <i className="fas fa-lock"></i>
+              <input
+                type={showPassword ? 'text' : 'password'}
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
+                {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+              </button>
+            </div>
+            <input type="submit" value="Sign Up" className="btn1 solid" />
+            <p className="social-text">Connect with Social Magic</p>
+            <div className="social-media">
+              <Link to="https://www.facebook.com" className="social-icon">
+                <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.twitter.com" className="social-icon">
+                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.gmail.com" className="social-icon">
+                <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+              <Link to="https://www.linkedin.com" className="social-icon">
+                <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
+              </Link>
+            </div>
+          </form>
         </div>
       </div>
 
+      <div className="panels-container">
+        <div className="panel left-panel">
+          <div className="content">
+            <h3>Be Part of UniCollab</h3>
+            <p>
+              Explore our platform and unlock a realm of personalized experiences.
+            </p>
+            <br />
+            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
+              Become a Member
+            </button>
+          </div>
+          <img src={logImg} className="image" alt="Login illustration" />
+        </div>
+        <div className="panel right-panel">
+          <div className="content">
+            <h3>Adventure Awaits!</h3>
+            <p>
+              Embark on a journey through UniCollab for personalized experiences.
+            </p>
+            <br />
+            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
+              ENTER YOUR REALM
+            </button>
+          </div>
+          <img src={registerImg} className="image" alt="Register illustration" />
+        </div>
+      </div>
+    </div>
   );
 };
 
