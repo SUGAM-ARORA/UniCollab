@@ -19,6 +19,7 @@ import Profile from "./Components/Profile/profile";
 import Licensing from "./Components/footer_section/Legal/Licensing";
 import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
 import PrivacyPolicy from "./Components/footer_section/Legal/PrivacyPolicy";
+import Careers from "./Components/Careers/CareersPage";
 
 function App() {
   return (
@@ -44,6 +45,8 @@ function App() {
           <Route path="/projects" element={<MyProjects />} />
           <Route path="/new/project" element={<NewProject />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/careers" element={<Careers />} />
+
         </Routes>
         <Footer />
       </div>
