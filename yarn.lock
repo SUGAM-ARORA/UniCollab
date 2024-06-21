@@ -1833,7 +1833,7 @@
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-free/-/fontawesome-free-6.5.2.tgz"
   integrity sha512-hRILoInAx8GNT5IMkrtIt9blOdrqHOnPBH+k70aWUAqPZPgopb9G5EQJFpaBx/S8zp2fC+mPW349Bziuk1o28Q==
 
-"@fortawesome/fontawesome-svg-core@^6.5.2", "@fortawesome/fontawesome-svg-core@~1 || ~6":
+"@fortawesome/fontawesome-svg-core@^6.5.2":
   version "6.5.2"
   resolved "https://registry.npmjs.org/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.5.2.tgz"
   integrity sha512-5CdaCBGl8Rh9ohNdxeeTMxIj8oc3KNBgIeLMvJosBMdslK/UnEB8rzyDRrbKdL1kDweqBPo4GT9wvnakHWucZw==
@@ -9901,10 +9901,10 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   dependencies:
     minimalistic-assert "^1.0.0"
 
-web-vitals@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.npmjs.org/web-vitals/-/web-vitals-4.1.1.tgz"
-  integrity sha512-wW3cdBZ56Rc5Az8p1Pw6g1zHU7X8HPLigQjD5Z0ef3EG9SPo4iO7RxsiU87aH3xaaEw0if6Ven2s+zlNGiXYqw==
+web-vitals@^4.2.0:
+  version "4.2.0"
+  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-4.2.0.tgz#008949ab79717a68ccaaa3c4371cbc7bbbd78a92"
+  integrity sha512-ohj72kbtVWCpKYMxcbJ+xaOBV3En76hW47j52dG+tEGG36LZQgfFw5yHl9xyjmosy3XUMn8d/GBUAy4YPM839w==
 
 webidl-conversions@^4.0.2:
   version "4.0.2"
