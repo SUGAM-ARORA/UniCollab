@@ -5,9 +5,7 @@ import { features } from "./projects";
 
 function CardMain({ imgSrc, title, hearts }) {
   const [isVisible, setIsVisible] = useState(new Array(features.length).fill(false));
-
   let hideTimeout;
-
   useEffect(() => {
     return () => {
       clearTimeout(hideTimeout);
@@ -44,7 +42,6 @@ function CardMain({ imgSrc, title, hearts }) {
           </i>
         </div>
       </div>
-
       <div className="stat">
         <div>
           <p>
