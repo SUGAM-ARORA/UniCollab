@@ -66,9 +66,9 @@ function ContactUs() {
                     <p>Use the form below to get in touch. We attempt to respond to support requests within 1 business day.</p>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="flname">Name :</label>
-                        <input type='text' id='flname' name='flname' required></input>
+                        <input type='text' placeholder='Name' id='flname' name='flname' required></input>
                         <label htmlFor="email">Email :</label>
-                        <input type='email' id='email' name='email' required></input>
+                        <input type='email'placeholder='Email' id='email' name='email' required></input>
                         <label htmlFor="issue">Issue Type:</label>
                         <select name='issue' id='issue' required>
                             <option value='Bug'>Bug</option>
@@ -76,7 +76,7 @@ function ContactUs() {
                             <option value='Other'>Other</option>
                         </select>
                         <label htmlFor="message">Message :</label>
-                        <textarea id='message' name='message' required></textarea>
+                        <textarea id='message' placeholder='Message' name='message' required></textarea>
                         <label htmlFor="attachments">Any Attachments :</label>
                         <input type='file' id='attachments' name='attachments'></input>
                         <button type='submit'>Submit</button>
