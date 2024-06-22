@@ -15,6 +15,7 @@ const LogIn = () => {
   const handleNextClick = (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
     let valid = true;
 
     if (!emailPattern.test(email)) {
@@ -22,8 +23,8 @@ const LogIn = () => {
       valid = false;
     }
 
-    if (password.length < 6) {
-      displayAlert('* Password must be at least 6 characters.');
+    if (!passwordPattern.test(password)) {
+      displayAlert('* Password must be alphanumeric with at least one letter and one digit, and at least 8 characters long.');
       valid = false;
     }
 
@@ -36,6 +37,8 @@ const LogIn = () => {
   const handleSignUpClick = (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const passwordPattern = /^(?=.*[a-zA-Z])(?=.*\d)[A-Za-z\d]{8,}$/;
+
     let valid = true;
 
     if (!username) {
@@ -48,8 +51,8 @@ const LogIn = () => {
       valid = false;
     }
 
-    if (password.length < 6) {
-      displayAlert('* Password must be at least 6 characters.');
+    if (!passwordPattern.test(password)) {
+      displayAlert('* Password must be alphanumeric with at least one letter and one digit, and at least 8 characters long.');
       valid = false;
     }
 
