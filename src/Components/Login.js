@@ -77,7 +77,8 @@ const LogIn = () => {
     setPassword('');
     setUsername('');
   };
-
+  
+  
   return (
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
