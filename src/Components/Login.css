@@ -10,6 +10,11 @@ body,
 input {
   font-family: "Poppins", sans-serif;
 }
+.toggle-password:hover {
+  cursor: default;
+  background-color: inherit;
+  transform: none;
+}
 
 .panels-container {
   position: relative;
@@ -79,7 +84,7 @@ form.sign-in-form {
   height: 55px;
   border-radius: 55px;
   display: grid;
-  grid-template-columns: 15% 70% 15%;
+  grid-template-columns: 15% 85%;
   padding: 0 0.4rem;
   position: relative;
 }
@@ -122,7 +127,6 @@ form.sign-in-form {
   align-items: center;
   justify-content: center;
 }
-
 .social-text {
   padding: 0.7rem 0;
   font-size: 1.2rem;
@@ -209,19 +213,17 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
 }
 
-
-
 .container1:before {
   content: "";
   position: absolute;
-  height: 2000px;
-  width: 2000px;
+  height: 1520px;
+  width: 800px;
   top: -10%;
-  right: 40%;
+  right: 48%;
   transform: translateY(-50%);
   background-image: linear-gradient(-45deg, #121026 0%, #121026 100%);
   transition: 1.8s ease-in-out;
-  border-radius: 50%;
+  border-radius: 80%;
   z-index: 6;
 }
 
@@ -283,7 +285,8 @@ form.sign-in-form {
 
 .container1.sign-up-mode:before {
   transform: translate(100%, -50%);
-  right: 57.1%;
+  right: 51%;
+  width: 780px;
 }
 
 .container1.sign-up-mode .left-panel .image,
@@ -292,7 +295,7 @@ form.sign-in-form {
 }
 
 .container1.sign-up-mode .signin-signup {
-  left: 25%;
+  left: 28%;
 }
 
 .container1.sign-up-mode form.sign-up-form {

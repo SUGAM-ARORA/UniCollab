@@ -41,7 +41,12 @@
 .footer-section-title {
   color: white;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 23px;
+}
+
+.footer-section-title:hover {
+  color: #cf00a3;
+  font-size: 27px;
 }
 
 .footer-links {
