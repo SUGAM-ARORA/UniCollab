@@ -320,6 +320,15 @@ form.sign-in-form {
 .container1.sign-up-mode .right-panel {
   pointer-events: all;
 }
+.reset-link {
+  display: inline-block;
+  color: #00ced1;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.reset-link:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 870px) {
   .container {

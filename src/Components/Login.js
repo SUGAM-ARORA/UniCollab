@@ -105,6 +105,7 @@ const LogIn = () => {
                 {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
               </button>
             </div>
+            <p><Link to="/verifyEmail" className='reset-link'>Forgot password?</Link></p>
             <input type="submit" value="Login" className="btn1 solid" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
