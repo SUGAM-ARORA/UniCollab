@@ -4,6 +4,7 @@ import './Login.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
+import { useNavigate } from 'react-router-dom';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -11,8 +12,9 @@ const LogIn = () => {
   const [username, setUsername] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const navigate = useNavigate();
 
-  const handleNextClick = (e) => {
+  const handleNextClick = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -28,12 +30,40 @@ const LogIn = () => {
     }
 
     if (valid) {
-      // Handle login action, e.g., call API or set login state
-      console.log('Logging in...');
+      try {
+        const response = await fetch('http://localhost:5000/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ email, password })
+        });
+
+        const data = await response.json();
+        if (response.status === 200) {
+          console.log('Login successful', data);
+          displayAlert('Logged in');
+
+        // Store the username and email in local storage
+        localStorage.setItem('username', data.user.username);
+        localStorage.setItem('email', data.user.email);
+
+          setTimeout(() => {
+            navigate('/'); 
+          }, 1000);
+
+          // Handle successful login
+        } else {
+          displayAlert(data.message || 'Login failed');
+        }
+      } catch (error) {
+        displayAlert('An error occurred during login');
+        console.error('Error:', error);
+      }
     }
   };
 
-  const handleSignUpClick = (e) => {
+  const handleSignUpClick = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -54,8 +84,26 @@ const LogIn = () => {
     }
 
     if (valid) {
-      // Handle sign up action, e.g., call API to register user
-      console.log('Signing up...');
+      try {
+        const response = await fetch('http://localhost:5000/auth/signup', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, email, password })
+        });
+        const data = await response.json();
+        if (response.ok) {
+          console.log('Signup successful', data);
+          displayAlert('signed-in. Now login')
+          // Handle successful signup
+        } else {
+          displayAlert(data.message || 'Signup failed');
+        }
+      } catch (error) {
+        displayAlert('An error occurred during signup');
+        console.error('Error:', error);
+      }
     }
   };
 
@@ -77,8 +125,7 @@ const LogIn = () => {
     setPassword('');
     setUsername('');
   };
-  
-  
+
   return (
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
@@ -106,7 +153,6 @@ const LogIn = () => {
                 {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
               </button>
             </div>
-            <p><Link to="/verifyEmail" className='reset-link'>Forgot password?</Link></p>
             <input type="submit" value="Login" className="btn1 solid" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">

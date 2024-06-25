@@ -1,18 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/fontawesome-free-solid'
-import {Link} from 'react-router-dom';
-import { FaBell, FaChevronDown} from "react-icons/fa";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/fontawesome-free-solid';
+import { Link } from 'react-router-dom';
+import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
-import "./TopContainer.css"
+import "./TopContainer.css";
 
 function TopContainer() {
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState(null);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [mobMenu, setMobMenu] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [username, setUsername] = useState('');
   const dropdownRef = useRef(null);
   const searchbar = useRef(null);
 
@@ -24,10 +26,7 @@ function TopContainer() {
   };
 
   useEffect(() => {
-    // Add event listener to detect clicks anywhere on the page
     window.addEventListener("click", handleOutsideClick);
-
-    // Cleanup function to remove the event listener
     return () => {
       window.removeEventListener("click", handleOutsideClick);
     };
@@ -49,7 +48,6 @@ function TopContainer() {
   };
 
   const handleOutsideClick = (event) => {
-    // Check if the clicked element is outside the dropdown content
     if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
       setIsDropdownOpen(false);
     }
@@ -84,7 +82,6 @@ function TopContainer() {
 
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -93,6 +90,22 @@ function TopContainer() {
   const toggleMenu = () => {
     setMobMenu(!mobMenu);
   };
+
+  // Function to handle sign out
+  const handleSignOut = () => {
+    localStorage.removeItem('username');
+    setIsLoggedIn(false);
+    setUsername('');
+  };
+
+  // Check local storage for username on component mount
+  useEffect(() => {
+    const storedUsername = localStorage.getItem('username');
+    if (storedUsername) {
+      setIsLoggedIn(true);
+      setUsername(storedUsername);
+    }
+  }, []);
 
   return (
     <div className="topContainer">
@@ -150,13 +163,13 @@ function TopContainer() {
           <a href="/pricing">
             <button className="go-pro-btn">Go Pro</button>
           </a>
+
           <div className="notification-container" ref={dropdownRef}>
             <div className="profileIcon" onClick={toggleDropdown}>
               <FaBell />
             </div>
             {isDropdownOpen && (
               <div className="dropdown-content">
-                {/* Notification items */}
                 <div className="notification-item">
                   User "JohnDoe" has uploaded a new project titled "Introduction
                   to Machine Learning." Check it out now!
@@ -166,32 +179,20 @@ function TopContainer() {
                   Visualization with D3.js." View the comment now.
                 </div>
                 <div className="notification-item">
-                  User "TechMaster" has updated the project "Web Development with
-                  React.js" with bug fixes. Explore the updated version.
+                  User "TechMaster" has updated the project "Building a RESTful
+                  API with Node.js." See what's new!
                 </div>
-                <div className="notification-item">
-                  Congratulations! Your project "Artificial Intelligence in
-                  Robotics" has been approved by the moderators. It's now live on
-                  the platform.
-                </div>
-                <div className="notification-item">
-                  User "CodeNinja" has sent you a collaboration request for the
-                  project "Cybersecurity Best Practices." Accept or decline the
-                  request.
-                </div>
-                <p className="seeAll">See all notifications</p>
               </div>
             )}
           </div>
-          <Link to="/Login" className="profileIconlogin">
-          Launch Your Journey
-             </Link>
-             
-          {/* <div className="profileImage">
+          
+          {isLoggedIn ? (
+            <>
+            <div className="profileImage">
             <img src={women} alt="" />
           </div>
 
-          <p className="profileName">Sugam Arora</p>
+          <p className="profileName">{username}</p>
           <a className="menuChevron" id="menuChevron" onClick={toggleDrop}>
             <FaChevronDown />
           </a>
@@ -201,9 +202,15 @@ function TopContainer() {
               <li>My Profile</li>
               <li>Theme</li>
               <li>Followers</li>
-              <li>Sign Out</li>
+              <li onClick={handleSignOut}>Sign Out</li>
             </ul>
-          </div> */}
+          </div>
+            </>
+          ) : (
+            <Link to="/Login" className="profileIconlogin">
+            Launch Your Journey
+               </Link>
+          )}
         </div>
       </div>
     </div>

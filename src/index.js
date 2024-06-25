@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Step 1
 import './index.css';
 // import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -67,15 +67,13 @@ function animateCircles() {
 
 animateCircles();
 
-ReactDOM.render(
+// Updated rendering method
+const root = createRoot(document.getElementById('root')); // Step 2
+root.render(
   <React.StrictMode>
     {/* <App /> */}
     <Preloader />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
