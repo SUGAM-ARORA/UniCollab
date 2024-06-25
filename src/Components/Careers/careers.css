@@ -1,0 +1,219 @@
+.container1Careers {
+    width: 100vw;
+    height: 450px;
+}
+
+.body {
+    margin: 70px 0px;
+    font-family: sans-serif
+}
+
+.headingCareers1 {
+    font-size: 90px;
+    line-height: 96px;
+    font-weight: 900;
+    width: 1200px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.descriptionCareers1 {
+    font-size: 20px;
+    color: #cccccc;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.searchCareers1 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.searchCareers1 input {
+    width: 500px;
+    margin: 0;
+    font-weight: bold;
+}
+
+.searchCareers1 button {
+    height: 40px;
+}
+
+.container2Careers {
+    width: 100vw;
+    height: 600px;
+}
+
+.headingCareers2 {
+    text-align: center;
+    font-size: 45px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.textCareers {
+    color: #ff21bc;
+}
+
+.descriptionCareers2 {
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    font-size: 20px;
+    color: #cccccc;
+    margin-bottom: 40px;
+}
+
+.boxes1Careers {
+    width: 92vw;
+    margin: auto;
+    height: 450px;
+    display: flex;
+}
+
+.box1Careers {
+    width: 100%;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.headingCareers3 {
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.descriptionCareers3 {
+    text-align: justify;
+    line-height: 26px;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container3Careers {
+    margin-bottom: 70px;
+}
+
+.boxes2Careers {
+    height: 400px;
+    width: 90vw;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+.box2aCareers {
+    height: 225px;
+    display: flex;
+}
+
+.Careers2aa{
+    width: 100%;
+    height: 175px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.text2Careers{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.Careers2abHeading{
+    display: flex;
+    gap: 15px;
+}
+.Careeers2abdesc{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+.boxes3Careers{
+    height: 350px;
+    width: 85vw;
+    margin: auto;
+    display: flex;
+}
+.boxes3aCareers{
+    width: 100%;
+    height: 400px;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.box3adesc{
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 32px;
+    
+}
+.box3adesc ul li{
+    list-style: disc;
+    list-style-position: inside;
+    color: #cccccc;
+}
+.container4Careers{
+    height: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 100px;
+}
+.boxes4Careers{
+    width: 652px;
+    height: 500px;
+    outline: 5px solid #ff6347;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: #13093d;
+    border-radius: 50px;
+}
+.box4desc{
+    text-align: justify;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+.writerCareers{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ff21bc;
+}
+.container5Careers{
+    width: 90vw;
+    height: 300px;
+    margin: auto;
+    margin-bottom: 100px;
+}
+.openingsCareers{
+    padding: 0 50px;
+}
+.openCareers{
+    display: flex;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+.openCareers span{
+    color: white;
+    font-size: 20px;
+}
+.location{
+    color: #cccccc !important;
+    font-style: italic;
+}
+.submitCareers{
+    width: 80vw;
+    height: 80px;
+    font-size: 40px;
+    font-weight: bolder;
+    margin: auto;
+    
+}
