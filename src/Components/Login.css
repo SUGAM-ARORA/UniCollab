@@ -19,13 +19,13 @@ input {
 .panels-container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: #121026 !important;
   min-height: 100vh;
   overflow: hidden;
 }
 
 .error-text {
-  color: darkturquoise; /* Default error text color */
+  color: darkturquoise !important; /* Default error text color */
   font-size: 1.1rem;
   margin-top: 5px;
 }
@@ -72,14 +72,14 @@ form.sign-in-form {
 
 .title {
   font-size: 2.2rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
   margin-bottom: 10px;
 }
 
 .input-field {
   max-width: 380px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
   margin: 10px 0;
   height: 55px;
   border-radius: 55px;
@@ -97,7 +97,7 @@ form.sign-in-form {
 .input-field i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: #acacac !important;
   transition: 0.5s;
   font-size: 1.1rem;
 }
@@ -109,11 +109,11 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
 }
 
 .input-field input::placeholder {
-  color: #aaa;
+  color: #aaa !important;
   font-weight: 500;
 }
 
@@ -122,7 +122,7 @@ form.sign-in-form {
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
-  color:darkturquoise;
+  color:darkturquoise !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +130,7 @@ form.sign-in-form {
 .social-text {
   padding: 0.7rem 0;
   font-size: 1.2rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
 }
 
 .social-media {
@@ -145,9 +145,9 @@ form.sign-in-form {
   justify-content: center;
   align-items: center;
   margin: 0 0.45rem;
-  color: #333;
+  color: #333 !important;
   border-radius: 50%;
-  border: 1px solid darkturquoise;
+  border: 1px solid darkturquoise !important;
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
@@ -155,18 +155,18 @@ form.sign-in-form {
 
 .social-icon:hover {
   transform: scale(1.1); /* Slightly enlarges the icon */
-  box-shadow: 0 4px 8px darkturquoise; /* Adds a shadow on hover */
+  box-shadow: 0 4px 8px darkturquoise !important; /* Adds a shadow on hover */
 }
 
 .btn {
   width: 150px;
   text-align: center;
-  background-color: darkturquoise;;
-  border: solid 2px #121026;
+  background-color: darkturquoise !important;
+  border: solid 2px #121026 !important;
   outline: none;
   height: 32px;
   border-radius: 49px;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;
@@ -221,7 +221,7 @@ form.sign-in-form {
   top: -10%;
   right: 48%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #121026 0%, #121026 100%);
+  background-image: linear-gradient(-45deg, darkturquoise 0%, darkturquoise 100%);
   transition: 1.8s ease-in-out;
   border-radius: 80%;
   z-index: 6;
@@ -260,13 +260,13 @@ form.sign-in-form {
   font-weight: 600;
   line-height: 1;
   font-size: 1.8rem;
-  color: darkturquoise;
+  color: white;
 }
 
 .panel p {
   font-size: 0.95rem;
   padding: 0.8rem 0;
-  color: darkturquoise;
+  color: white;
 }
 
 .btn.transparent {
@@ -274,7 +274,7 @@ form.sign-in-form {
   background: darkturquoise;
   border: 2px solid #fff;
   width: 140px;
-  height: 43px;
+  height: 48px;
   font-weight: 600;
   font-size: 0.8rem;
 }
@@ -319,6 +319,15 @@ form.sign-in-form {
 
 .container1.sign-up-mode .right-panel {
   pointer-events: all;
+}
+.reset-link {
+  display: inline-block;
+  color: #00ced1;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.reset-link:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 870px) {
