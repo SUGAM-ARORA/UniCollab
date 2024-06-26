@@ -32,6 +32,8 @@
 }
 
 .service-post {
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
     background: #19162c;
     padding: 20px;
     border-radius: 10px;
@@ -58,7 +60,8 @@
 
 .service-post:hover {
     transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); */
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .service-post.expanded .content {
