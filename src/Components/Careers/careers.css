@@ -27,8 +27,8 @@
 
 .searchCareers1 {
     display: flex;
+    gap: 0px;
     justify-content: center;
-    gap: 50px;
 }
 
 .searchCareers1 input {
@@ -122,7 +122,7 @@
     color: white;
     font-size: 30px;
     font-weight: bold;
-    text-decoration: underline;
+    /* text-decoration: underline; */
 }
 .Careers2abHeading{
     display: flex;
@@ -168,18 +168,23 @@
 .boxes4Careers{
     width: 652px;
     height: 500px;
-    outline: 5px solid #ff6347;
+    /* outline: 5px solid #ff6347; */
     padding: 40px;
     display: flex;
     flex-direction: column;
+    border: 2px solid #6052ff;
+    box-shadow: 7px 7px 32px 0 #6052ff;
     background-color: #13093d;
     border-radius: 50px;
 }
 .box4desc{
     text-align: justify;
-    font-size: 30px;
-    font-weight: bold;
+    /* font-size: 30px; */
+    /* font-weight: bold; */
     margin-bottom: 45px;
+    font-size: 25px;
+    font-weight: 400;
+    word-spacing: -1px;
 }
 .writerCareers{
     font-size: 30px;
