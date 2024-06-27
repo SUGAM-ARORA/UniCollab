@@ -19,9 +19,11 @@ import Profile from "./Components/Profile/profile";
 import Licensing from "./Components/footer_section/Legal/Licensing";
 import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
 import PrivacyPolicy from "./Components/footer_section/Legal/PrivacyPolicy";
+import Careers from "./Components/Careers/CareersPage";
 import EmailVerification from "./Components/auth/resetPassword/EmailVerification";
 import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
+
 
 function App() {
   return (
@@ -39,23 +41,18 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/contacts" element={<ContactUs />} />
           <Route path="/termsandconditions" element={<TermsConditions />} />
-
           <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-
           <Route path="/licensing" element={<Licensing />} />
-
           <Route path="/readmore/:id" element={<Readmore/>}/>
           <Route path="/profile/:id" element={<Profiles/>}/>
-
           <Route path="/pricing" element={<Pricing />} />
           <Route path="/projects" element={<MyProjects />} />
           <Route path="/new/project" element={<NewProject />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/careers" element={<Careers />} />
           <Route path="/verifyEmail" element={<EmailVerification />} />
           <Route path="/otpVerification/:email" element={<OTPVerification />} />
           <Route path="/resetPassword/:email" element={<ResetPassword />} />
-
-          
 
         </Routes>
         <Footer />

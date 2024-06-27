@@ -84,6 +84,7 @@
     font-size: medium;
     background-color: #3a3756; 
     color: white;
+    border-bottom: 4px solid aliceblue;
 }
 
 .form input[type='file'] {

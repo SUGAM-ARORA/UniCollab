@@ -183,7 +183,6 @@ function TopContainer() {
               </div>
             )}
           </div>
-
           <Link to="/Login" className="profileIconlogin">
           Launch Your Journey
              </Link>
