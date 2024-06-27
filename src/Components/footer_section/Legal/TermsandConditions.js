@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import homeIcon from '../../../img/homeicon.png';
+import { Link } from 'react-router-dom';
 
 const TermsContainer = styled.div`
   margin: auto;
@@ -63,6 +65,10 @@ const Strong = styled.strong`
 
 const TermsConditions = () => {
   return (
+    <>
+    <Link to="/">
+    <img src={homeIcon} alt="Home" className="home-icon" />
+    </Link>
     <TermsContainer>
         <Title>Terms and Conditions</Title><br/>
         <Content><Strong>Last Updated:</Strong> 08-06-2024</Content>
@@ -96,6 +102,7 @@ const TermsConditions = () => {
         <Strong>Contact: </Strong>+91 99323 32321
         </Content>
     </TermsContainer>
+    </>
   )
 }
 

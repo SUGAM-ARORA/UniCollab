@@ -2,6 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faRocket, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './careers.css'
+import homeIcon from '../../img/homeicon.png';
+import { Link } from 'react-router-dom';
+
 
 const careers = () => {
   const handleResume = () => {
@@ -9,7 +12,12 @@ const careers = () => {
     window.location.href = link;
   }
   return (
+<>
+    <Link to="/">
+    <img src={homeIcon} alt="Home" className="home-icon" />
+    </Link>
     <div className='body'>
+      
       <div className="container1Careers">
         <div className="headingCareers1">Let's build from here, together</div>
         <div className='descriptionCareers1'>Join our team and accelerate human progress through innovative developer collaboration.</div>
@@ -156,6 +164,7 @@ const careers = () => {
       </div>
       <button className='submitCareers' onClick={handleResume}>Send Your Job-Application @UniCollab</button>
     </div>
+    </>
   )
 }
 
