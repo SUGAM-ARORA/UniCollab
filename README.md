@@ -21,6 +21,36 @@
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/SUGAM-ARORA/Unicollab?style=badge&color=cyan&logo=openai)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SUGAM-ARORA/Unicollab?style=badge&color=cyan&logo=openai)
 
+## Table of Contents
+
+- [About UniCollab](#about-unicollab)
+- [Scope of the Project](#scope-of-the-project)
+- [Tech Stack](#tech-stack)
+  - [Backend](#backend)
+  - [Frontend](#frontend)
+  - [DevOps & Deployment](#devops--deployment)
+  - [Cloud Platform](#cloud-platform)
+  - [Machine Learning & AI](#machine-learning--ai)
+  - [Database](#database)
+  - [Other Tools and Technologies](#other-tools-and-technologies)
+- [Key Features](#key-features)
+- [Get Started](#get-started)
+- [Available Scripts](#available-scripts)
+- [Vision](#vision)
+  - [Mission](#mission)
+  - [Core Objectives](#core-objectives)
+  - [Long-Term Goals](#long-term-goals)
+  - [Success Metrics](#success-metrics)
+- [Documentation](#documentation)
+- [Caution](#caution)
+- [License](#license)
+- [Contribute](#contribute)
+- [Project Admin](#project-admin)
+- [Contributors](#contributors)
+- [Contact Details](#contact-details)
+- [Join Us](#join-us)
+
+---
 ## 👋 About UniCollab 
 
 UniCollab is more than just a platform; it's a gateway to a world where students from different universities/colleges converge to collaborate, innovate, and elevate their projects. Imagine a space where ideas flow freely, where knowledge is shared effortlessly, and where learning transcends classrooms. That's UniCollab for you.
