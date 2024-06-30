@@ -1,0 +1,323 @@
+.box1Freelancer {
+    width: 100vw;
+    height: 420px;
+    margin-bottom: 100px;
+}
+
+.freelancer {
+    margin: 50px 0px;
+}
+
+.heading1freelancerbox1 {
+    font-size: 80px;
+    font-weight: 600;
+    width: 1000px;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff21bc;
+    font-weight: bold;
+}
+
+.desc1freelancerbox1 {
+    font-size: 27px;
+    text-align: center;
+    margin-bottom: 65px;
+}
+
+.btnFreelancer {
+    margin: auto;
+    width: 200px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 22px;
+    border-radius: 20px;
+}
+
+.box2Freelancer {
+    width: 83vw;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    margin: auto;
+    justify-items: center;
+    align-items: center;
+    margin-bottom: 200px;
+}
+
+.containerFreelancer {
+    width: 350px;
+    height: 275px;
+    border-radius: 50px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    transition: scale 0.35s ease-in-out;
+}
+
+.containerFreelancer:hover{
+    scale: 1.2;
+    
+}
+
+#one {
+    background-image: url(./hire-landing-cat-logo-design.webp);
+}
+
+#two {
+    background-image: url(./hire-landing-cat-branding.webp);
+}
+
+#three {
+    background-image: url(./third.webp);
+
+}
+
+#four {
+    background-image: url(./fourth.webp);
+}
+
+#five {
+    background-image: url(./fifth.webp);
+}
+
+#six {
+    background-image: url(./sixth.webp);
+}
+
+#seven {
+    background-image: url(./eighth.webp);
+}
+
+#eight {
+    background-image: url(./seventh.webp);
+}
+
+.box3Freelancer {
+    width: 83vw;
+    height: 620px;
+    margin: auto;
+    display: flex;
+    margin-bottom: 150px;
+}
+
+.firstBox3 {
+    width: 100%;
+    height: 100px;
+}
+
+.secondBox3 {
+    width: 1100px;
+    background-image: url(./HirePage.webp);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.headingfirstbox3{
+    font-size: 60px;
+    font-weight: bold;
+    color: #ff21bc;
+    margin-bottom: 15px;
+}
+
+.desc1box3{
+    font-size: 26px;
+    margin-bottom: 75px;
+}
+
+.desc2box3{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.firstdesc2box3{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    gap: 40px;
+}
+
+.contentbox3{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 22px;
+}
+
+.contentonebox3{
+    font-weight: bold;
+}
+
+.box4Freelancer{
+    width: 83vw;
+    margin: auto;
+    height: 1600px;
+}
+
+.headingonebox4Freelancer{
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    width: 75vw;
+    color: #ff21bc;
+    margin-bottom: 100px;
+}
+
+.descbox4Freelancer{
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.containerbox4Freelancer{
+    width: 450px;
+    height: 400px;
+    outline: 2px solid #ff21bc;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+.imageFreelancer{
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    border-radius: 50%;
+    background-image: url(./Avatar.png);
+    background-size: 100%;
+    outline: 2px solid #ff21bc;
+    margin-bottom: 15px;
+}
+
+.nameFreelancer{
+    text-align: center;
+    font-weight: 600;
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.skillsFreelancer{
+    text-align: center;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.priceFreelancer{
+    display: flex;
+    font-size: 18px;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.pricetwoFreelancer svg{
+    width: 28px;
+    height: 28px;
+}
+
+.pricetwoFreelancer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.locationMainFreelancer{
+    background-image: url(./location.png);
+    background-size: 100%;
+    width: 30px;
+    height: 30px;
+}
+
+.locationFreelancer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.locationContent{
+    color: green;
+}
+
+.locationofFreelancer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    gap: 25px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.buttonFreelancer{
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.buttonFreelancer button{
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+#one div{
+    background-color: rgb(31, 31, 31);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#two div{
+    background-color:burlywood;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#three div{
+    background-color: rgb(143, 222, 24);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#four div{
+    background-color:brown;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#five div{
+    background-color:rgb(248, 180, 98);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#six div{
+    background-color:grey;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#seven div{
+    background-color:rgb(194, 128, 227);
+    padding: 15px;
+    border-radius: 20px;
+}
+
+#eight div{
+    background-color:rgb(0, 85, 255);
+    padding: 15px;
+    border-radius: 20px;
+}
