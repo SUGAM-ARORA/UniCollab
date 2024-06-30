@@ -88,6 +88,7 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
+                className='input'
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -97,6 +98,7 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-lock"></i>
               <input
+                className='input'
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
@@ -130,6 +132,7 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
+                className='input'
                 type="text"
                 placeholder="Username"
                 value={username}
@@ -140,6 +143,7 @@ const LogIn = () => {
               <i className="fas fa-envelope"></i>
               <input
                 type="email"
+                className='input'
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
