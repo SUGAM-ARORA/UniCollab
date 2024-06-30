@@ -39,7 +39,7 @@ function NewProject() {
             setSelectedSkills(prev => [...prev, val])
         }
         setSuggestions([])
-        onInputChange("skill", "")
+        setData(prev => ({ ...prev, "skill": "" }));
     }
 
     const removeSkill = (val) => {
