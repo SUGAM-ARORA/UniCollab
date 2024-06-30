@@ -39,8 +39,13 @@
 @media screen and (max-width: 1500px) {
   .mobview {
     display: flex;
-    flex-direction: column;
-    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 1100;
   }
 
   .bars {
