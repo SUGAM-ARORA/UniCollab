@@ -23,11 +23,24 @@ import Careers from "./Components/Careers/CareersPage";
 import EmailVerification from "./Components/auth/resetPassword/EmailVerification";
 import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
+import Helmet from "react-helmet";
 
 
 function App() {
   return (
     <Router>
+      <Helmet>
+        <meta name="description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms."/>
+        <meta name="language" content="English"/>
+        <meta name="keywords" content="Collab, Education, Students, Student Collaboration, University Collaboration, College Projects, Innovative Learning, Peer Networking, Academic Collaboration, Project Sharing, Knowledge Sharing, Student Innovation, Collaborative Learning, University Networking, Inter-University Projects, Academic Networking, Collaborative Projects, Student Platform" />
+        <meta property="og:type" content="website" />
+        <meta name="author" content="Sugma Arora" />
+        <meta property="og:title" content="Unicollab" />
+        <meta property="og:description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms." />
+        <meta property="og:image" content="https://github.com/SUGAM-ARORA/UniCollab/blob/main/image.png" />
+        <meta property="og:url" content="https://uni-collab.vercel.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className="App">
         <div className="App-content"></div>
         <Routes>
