@@ -6,7 +6,7 @@ const Freelancer = () => {
         <div className='freelancer'>
             <div className="box1Freelancer">
                 <div className='heading1freelancerbox1'>Hire the India's Best Freelancers on UniCollab</div>
-                <div className="desc1freelancerbox1">Connect with Skilled Freelancers for Your Student Projects</div>
+                <div className="desc1freelancerbox1">Connect with Skilled Freelancers for Your Projects</div>
                 <button className='btnFreelancer'>Get Started</button>
             </div>
             <div className="box2Freelancer">
@@ -14,7 +14,7 @@ const Freelancer = () => {
                     <div className='descbox2Freelancer'>Logo Design</div>
                 </div>
                 <div className="containerFreelancer" id='two'>
-                    <div className='descbox2Freelancer'>Brancding Services</div>
+                    <div className='descbox2Freelancer'>Branding Services</div>
                 </div>
                 <div className="containerFreelancer" id='three'>
                     <div className='descbox2Freelancer'>Social Media Design</div>
@@ -110,7 +110,7 @@ const Freelancer = () => {
                             </div>
                             <div className="contentbox3">
                                 <div className="contentonebox3">Secure payments</div>
-                                <div className="contenttwobox3">Pay seamlessly and securely with a debit or credit card on Behance</div>
+                                <div className="contenttwobox3">Pay seamlessly and securely with a debit or credit card on UniCollab</div>
                             </div>
                         </div>
                     </div>
