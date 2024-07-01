@@ -12,7 +12,6 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-    
     body {
       background-color: #343434 !important;
       background-image: url(https://www.transparenttextures.com/patterns/arches.png);
@@ -35,6 +34,7 @@
       border-radius: 50%;
       pointer-events: none;
       transition: transform 0.1s, left 0.1s, top 0.1s;
+      z-index: 99999;
     }
 
     .circle-container {
@@ -44,7 +44,7 @@
       width: 100%;
       height: 100%;
       pointer-events: none;
-      z-index: 9999;
+      z-index: 99999; /* Ensure the container is below Navbar and Footer */
     }
 
     #google_element {
@@ -70,9 +70,10 @@
       background-color: #333 !important; /* Change button background color */
       color: #333 !important; /* Change button text color */
     }
+
     .goog-te-banner-frame {
-  display: none !important;
-}
+      display: none !important;
+    }
   </style>
 </head>
 <body>
@@ -97,27 +98,18 @@
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
   <div class="circle-container">
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-      <div class="circle"></div>
-    </div>
-    <div id="google_element"></div>
-    <script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
-
-    <script type="text/javascript">
-        function loadGoogleTranslate(){
-           new google.translate.TranslateElement(
-            "google_element");
-        }
-    </script>
-  </body>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+  </div>
+</body>
 </html>

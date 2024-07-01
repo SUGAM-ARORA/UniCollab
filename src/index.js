@@ -1,7 +1,6 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client'; // Step 1
 import './index.css';
-// import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Preloader from './Components/Preloader';
 
@@ -9,29 +8,29 @@ const coords = { x: 0, y: 0 };
 const circles = document.querySelectorAll(".circle");
 
 const colors = [
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
+  "#ff21bc", 
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
   "#3fbcc0c6",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
   "#3fbcc0c6",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
-  "darkturquoise",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
+  "#ff21bc",
 ];
 
 circles.forEach(function (circle, index) {
@@ -42,8 +41,9 @@ circles.forEach(function (circle, index) {
 
 window.addEventListener("mousemove", function (e) {
   coords.x = e.pageX;
-  coords.y = e.pageY;
+  coords.y = e.pageY - window.scrollY; // Adjust for vertical scroll position
 });
+
 
 function animateCircles() {
   let x = coords.x;
@@ -71,7 +71,6 @@ animateCircles();
 const root = createRoot(document.getElementById('root')); // Step 2
 root.render(
   <React.StrictMode>
-    {/* <App /> */}
     <Preloader />
   </React.StrictMode>
 );
