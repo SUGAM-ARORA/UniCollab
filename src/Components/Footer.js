@@ -1,10 +1,11 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
-
+import SubscribeMail from './footer_section/Mail/SubscribeMail';
 const Footer = () => {
   return (
     <div className='footer'>
+      <SubscribeMail/>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
           <img src={logo} alt="logo"/>
