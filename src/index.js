@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Step 1
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Preloader from './Components/Preloader';
@@ -67,11 +67,12 @@ function animateCircles() {
 
 animateCircles();
 
-ReactDOM.render(
+// Updated rendering method
+const root = createRoot(document.getElementById('root')); // Step 2
+root.render(
   <React.StrictMode>
     <Preloader />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
 reportWebVitals();
