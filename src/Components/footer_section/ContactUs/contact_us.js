@@ -27,7 +27,7 @@ function ContactUs() {
     return (
         <div className='box'>
             <Link to="/">
-            <img src={homeIcon} alt="Home" className="home-icon" />
+                <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
             <div className='containerContact'>
                 <div className='general'>
@@ -68,7 +68,7 @@ function ContactUs() {
                         <label htmlFor="flname">Name :</label>
                         <input type='text' placeholder='Name' id='flname' name='flname' required></input>
                         <label htmlFor="email">Email :</label>
-                        <input type='email'placeholder='Email' id='email' name='email' required></input>
+                        <input type='email' placeholder='Email' id='email' name='email' required></input>
                         <label htmlFor="issue">Issue Type:</label>
                         <select name='issue' id='issue' required>
                             <option value='Bug'>Bug</option>
