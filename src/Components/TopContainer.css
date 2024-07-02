@@ -1,15 +1,16 @@
-.profileContainer,
-.notification-container {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+.nav-item a span {
+  white-space: nowrap;
+  color: white;
 }
+.nav-item a:hover span {
+  color: #cf00a3; /* Pink color on hover */
+}
+
 .navbar {
   width: 100%;
-  height: auto;
+  height: 60px;
   background: #19162c;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -19,19 +20,80 @@
   gap: 0.5rem;
   z-index: 99999;
 }
+.profileContainer .go-pro-btn {
+  padding: 10px 10px; /* Adjust padding to change the button size */
+}
 
-#list {
-  display: inline;
-  padding: 20px;
+
+.largeview {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.largeview a:hover {
+
+.largeview .nav-item {
+  margin-right: 20px;
+}
+
+.largeview .nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.largeview .nav-item a:hover {
   color: #cf00a3;
-  font-size: 1.05rem; /* Slightly increase font size on hover */
+  font-size: 1.05rem;
 }
-.open a:hover {
-  color: #cf00a3;
-  font-size: 1.05rem; /* Slightly increase font size on hover */
+
+.inputBox {
+  position: relative;
+  margin-top: -10px;
 }
+@media screen and (max-width: 1500px) {
+  .mobview .inputBox {
+    margin-top: 10px; /* Add 10px space above the search box */
+    padding: 5px 5px;
+  }
+
+  .mobview .searchbtn {
+    font-size: 1.3rem; /* Adjust the search button size */
+  }
+
+  .mobview #search_results {
+    top: 50px; /* Adjust position of search results */
+  }
+}
+
+.searchbtn {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #757380;
+  font-size: 1.5rem;
+}
+
+#search_results {
+  position: absolute;
+  top: 40px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 10;
+}
+
+#search_result_title {
+  margin: 0;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#list li {
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
 .mobview {
   display: none;
 }
@@ -104,8 +166,9 @@
     text-align: center;
     font-size: 14px;
   }
+
   .mobview #shortview ul li:hover {
-    background: #19162c; /* Light background on hover */
+    background: #19162c;
     color: #757380;
     transition: 0.3s;
   }
