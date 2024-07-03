@@ -204,7 +204,6 @@ form.sign-in-form {
 }
 
 .panels-container {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -337,7 +336,6 @@ form.sign-in-form {
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
-    height: 100vh;
   }
   .signin-signup {
     width: 100%;
