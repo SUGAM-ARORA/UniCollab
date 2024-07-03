@@ -62,9 +62,11 @@ function Menu() {
   return (
 
     <menu className="fromLeft">
+    <Link href='/'>
       <img src={logo} alt='icon' className="logo" id='logo' onClick={isMobile ? showDropDown : null}
         style={{ cursor: isMobile ? 'pointer' : 'default' }}/>
-    
+    </Link>
+
       <ul className="fromTop" id="mainMenu">
         <Icon icon={<FaList />} tooltip="My projects" href="/projects"/>
         <Icon icon={<FaDelicious />} tooltip="Delicious" href="/" />

@@ -24,6 +24,8 @@ import EmailVerification from "./Components/auth/resetPassword/EmailVerification
 import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
+import Freelancer from "./Components/FreeLancer/Freelancer";
+
 
 
 function App() {
@@ -66,6 +68,7 @@ function App() {
           <Route path="/verifyEmail" element={<EmailVerification />} />
           <Route path="/otpVerification/:email" element={<OTPVerification />} />
           <Route path="/resetPassword/:email" element={<ResetPassword />} />
+          <Route path="/freelancer" element={<Freelancer />} />
 
         </Routes>
         <Footer />
