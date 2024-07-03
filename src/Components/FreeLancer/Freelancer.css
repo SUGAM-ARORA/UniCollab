@@ -11,7 +11,8 @@
 .heading1freelancerbox1 {
     font-size: 80px;
     font-weight: 600;
-    width: 1000px;
+    max-width: 1000px;
+    width: 85vw;
     margin: auto;
     text-align: center;
     margin-bottom: 30px;
@@ -23,6 +24,8 @@
     font-size: 27px;
     text-align: center;
     margin-bottom: 65px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .btnFreelancer {
@@ -36,34 +39,35 @@
 
 .box2Freelancer {
     width: 83vw;
-    height: 800px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
     margin: auto;
     justify-items: center;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 175px;
+    gap: 1vw;
 }
 
 .containerFreelancer {
-    width: 350px;
-    height: 275px;
+    width: 295px;
+    height: 225px;
     border-radius: 50px;
     background-size: 100%;
     background-repeat: no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
     color: black;
     transition: scale 0.35s ease-in-out;
 }
 
-.containerFreelancer:hover{
-    scale: 1.2;
-    
+.containerFreelancer:hover {
+    scale: 1.15;
+
 }
 
 #one {
@@ -101,7 +105,7 @@
 
 .box3Freelancer {
     width: 83vw;
-    height: 620px;
+    height: auto;
     margin: auto;
     display: flex;
     margin-bottom: 150px;
@@ -109,86 +113,95 @@
 
 .firstBox3 {
     width: 100%;
-    height: 100px;
+    height: auto;
+    padding-right: 50px;
 }
 
 .secondBox3 {
-    width: 1100px;
+    width: 1000px;
     background-image: url(./HirePage.webp);
     background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
 }
 
-.headingfirstbox3{
+.headingfirstbox3 {
     font-size: 60px;
     font-weight: bold;
     color: #ff21bc;
     margin-bottom: 15px;
 }
 
-.desc1box3{
+.svg {
+    width: 50px;
+    height: 50px;
+}
+
+.desc1box3 {
     font-size: 26px;
     margin-bottom: 75px;
 }
 
-.desc2box3{
+.desc2box3 {
     display: flex;
     flex-direction: column;
     gap: 100px;
+    height: auto;
 }
 
-.firstdesc2box3{
+.firstdesc2box3 {
     width: 100%;
-    height: 50px;
+    height: auto;
     display: flex;
     gap: 40px;
 }
 
-.contentbox3{
+.contentbox3 {
     display: flex;
     flex-direction: column;
     width: 100%;
     font-size: 22px;
 }
 
-.contentonebox3{
+.contentonebox3 {
     font-weight: bold;
 }
 
-.box4Freelancer{
-    width: 83vw;
+.box4Freelancer {
     margin: auto;
-    height: 1600px;
+    height: auto;
 }
 
-.headingonebox4Freelancer{
+.headingonebox4Freelancer {
     font-size: 60px;
     font-weight: bold;
     text-align: center;
     width: 75vw;
     color: #ff21bc;
+    margin: auto;
     margin-bottom: 100px;
 }
 
-.descbox4Freelancer{
-    width: 100%;
-    height: 1000px;
+.descbox4Freelancer {
+    width: 90vw;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 50px;
+    margin: auto;
 }
 
-.containerbox4Freelancer{
-    width: 450px;
-    height: 400px;
+.containerbox4Freelancer {
+    width: 335px;
+    height: auto;
     outline: 2px solid #ff21bc;
     padding: 20px;
     border-radius: 30px;
 }
 
-.imageFreelancer{
+.imageFreelancer {
     width: 70px;
     height: 70px;
     margin: auto;
@@ -199,23 +212,23 @@
     margin-bottom: 15px;
 }
 
-.nameFreelancer{
+.nameFreelancer {
     text-align: center;
     font-weight: 600;
-    font-size: 35px;
+    font-size: 28px;
     margin-bottom: 15px;
 }
 
-.skillsFreelancer{
+.skillsFreelancer {
     text-align: center;
-    font-size: 22px;
+    font-size: 18px;
     font-weight: 500;
     margin-bottom: 15px;
 }
 
-.priceFreelancer{
+.priceFreelancer {
     display: flex;
-    font-size: 18px;
+    font-size: 16px;
     gap: 15px;
     justify-content: center;
     align-items: center;
@@ -223,101 +236,164 @@
     margin-bottom: 15px;
 }
 
-.pricetwoFreelancer svg{
+.pricetwoFreelancer svg {
     width: 28px;
     height: 28px;
 }
 
-.pricetwoFreelancer{
+.pricetwoFreelancer {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
 }
 
-.locationMainFreelancer{
+.locationMainFreelancer {
     background-image: url(./location.png);
     background-size: 100%;
     width: 30px;
     height: 30px;
 }
 
-.locationFreelancer{
+.locationFreelancer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.locationContent{
+.locationContent {
     color: green;
 }
 
-.locationofFreelancer{
+.locationofFreelancer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
+    font-size: 16px;
     gap: 25px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 
-.buttonFreelancer{
+.buttonFreelancer {
     display: flex;
     justify-content: space-around;
     gap: 20px;
 }
 
-.buttonFreelancer button{
+.buttonFreelancer button {
     width: 100%;
     font-size: 16px;
     font-weight: 600;
 }
 
-#one div{
+#one div {
     background-color: rgb(31, 31, 31);
     padding: 15px;
     border-radius: 20px;
 }
 
-#two div{
-    background-color:burlywood;
+#two div {
+    background-color: burlywood;
     padding: 15px;
     border-radius: 20px;
 }
 
-#three div{
+#three div {
     background-color: rgb(143, 222, 24);
     padding: 15px;
     border-radius: 20px;
 }
 
-#four div{
-    background-color:brown;
+#four div {
+    background-color: brown;
     padding: 15px;
     border-radius: 20px;
 }
 
-#five div{
-    background-color:rgb(248, 180, 98);
+#five div {
+    background-color: rgb(248, 180, 98);
     padding: 15px;
     border-radius: 20px;
 }
 
-#six div{
-    background-color:grey;
+#six div {
+    background-color: grey;
     padding: 15px;
     border-radius: 20px;
 }
 
-#seven div{
-    background-color:rgb(194, 128, 227);
+#seven div {
+    background-color: rgb(194, 128, 227);
     padding: 15px;
     border-radius: 20px;
 }
 
-#eight div{
-    background-color:rgb(0, 85, 255);
+#eight div {
+    background-color: rgb(0, 85, 255);
     padding: 15px;
     border-radius: 20px;
+}
+
+@media only screen and (max-width:1000px) {
+    .secondBox3 {
+        display: none;
+    }
+
+    .headingfirstbox3 {
+        text-align: center;
+    }
+
+    .desc1box3 {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width:750px) {
+    .heading1freelancerbox1 {
+        font-size: 60px;
+    }
+
+    .desc1freelancerbox1,
+    .desc1box3 {
+        font-size: 24px;
+    }
+
+    .headingfirstbox3,
+    .headingonebox4Freelancer {
+        font-size: 40px;
+    }
+
+    .firstBox3 {
+        padding: 0;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .heading1freelancerbox1 {
+        font-size: 50px;
+    }
+
+    .desc1freelancerbox1,
+    .desc1box3,
+    .contentbox3 {
+        font-size: 21px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .heading1freelancerbox1 {
+        font-size: 40px;
+    }
+
+    .desc1freelancerbox1,
+    .desc1box3,
+    .contentbox3 {
+        font-size: 18px;
+    }
+
+    .headingfirstbox3,
+    .headingonebox4Freelancer {
+        font-size: 30px;
+    }
 }
