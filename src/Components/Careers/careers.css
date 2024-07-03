@@ -16,6 +16,8 @@
     margin: auto;
     text-align: center;
     margin-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .descriptionCareers1 {
@@ -23,6 +25,8 @@
     color: #cccccc;
     text-align: center;
     margin-bottom: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .searchCareers1 {
@@ -43,7 +47,7 @@
 
 .container2Careers {
     width: 100vw;
-    height: 600px;
+    height: 700px;
 }
 
 .headingCareers2 {
@@ -51,6 +55,8 @@
     font-size: 45px;
     font-weight: 900;
     margin-bottom: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .textCareers {
@@ -59,7 +65,8 @@
 
 .descriptionCareers2 {
     margin: auto;
-    width: 1000px;
+    max-width: 1000px;
+    width: 95vw;
     text-align: center;
     font-size: 20px;
     color: #cccccc;
@@ -88,7 +95,6 @@
 }
 
 .descriptionCareers3 {
-    text-align: justify;
     line-height: 26px;
     font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -110,37 +116,47 @@
     display: flex;
 }
 
-.Careers2aa{
+.Careers2aa {
     width: 100%;
-    height: 175px;
+    height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 }
-.text2Careers{
+
+.text2Careers {
     color: white;
     font-size: 30px;
     /* text-decoration: underline; */
     text-decoration: none;
     font-weight: bold;
 }
-.Careers2abHeading{
+
+.Careers2abHeading {
     display: flex;
     gap: 15px;
 }
-.Careeers2abdesc{
+
+.Careeers2abdesc {
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
 }
-.boxes3Careers{
+
+.boxes3Careers {
     height: 350px;
     width: 85vw;
     margin: auto;
     display: flex;
 }
-.boxes3aCareers{
+
+.box2bCareers {
+    margin: 0;
+    padding: 0;
+}
+
+.boxes3aCareers {
     width: 100%;
     height: 400px;
     padding: 45px;
@@ -148,27 +164,33 @@
     flex-direction: column;
     gap: 20px;
 }
-.box3adesc{
+
+.box3adesc {
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     line-height: 32px;
-    
+
 }
-.box3adesc ul li{
+
+.box3adesc ul li {
     list-style: disc;
     list-style-position: inside;
     color: #cccccc;
 }
-.container4Careers{
-    height: 500px;
+
+.container4Careers {
+    min-height: 500px;
+    height: auto;
     margin: auto;
     display: flex;
     justify-content: space-around;
     margin-bottom: 100px;
 }
-.boxes4Careers{
-    width: 652px;
-    height: 445px;
+
+
+.boxes4Careers {
+    width: 550px;
+    height: 500px;
     /* outline: 5px solid #ff6347; */
     padding: 40px;
     display: flex;
@@ -178,7 +200,8 @@
     border: 3px solid #6052ff;
     box-shadow: 6px 6px 32px 0 #6052ff;
 }
-.box4desc{
+
+.box4desc {
     text-align: justify;
     font-size: 26px;
     font-weight: 300;
@@ -186,39 +209,234 @@
     word-spacing: -5px;
     
 }
-.writerCareers{
+
+.writerCareers {
     font-size: 30px;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: #ff21bc;
 }
-.container5Careers{
+
+.container5Careers {
     width: 90vw;
     height: 300px;
     margin: auto;
     margin-bottom: 100px;
 }
-.openingsCareers{
+
+.openingsCareers {
     padding: 0 50px;
 }
-.openCareers{
+
+.openCareers {
     display: flex;
     gap: 50px;
     margin-bottom: 15px;
 }
-.openCareers span{
+
+.openCareers span {
     color: white;
     font-size: 20px;
 }
-.location{
+
+.location {
     color: #cccccc !important;
     font-style: italic;
 }
-.submitCareers{
+
+.submitCareers {
     width: 80vw;
     height: 80px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bolder;
     margin: auto;
-    
+
+}
+
+@media only screen and (max-width : 1220px) {
+    .headingCareers1 {
+        width: 95vw;
+    }
+
+    .box3adesc {
+        font-size: 16px;
+    }
+
+    .boxes3aCareers {
+        padding: 20px;
+    }
+
+    .boxes4Careers {
+        width: 475px;
+    }
+
+    .box4desc {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+@media only screen and (max-width:1000px) {
+    .boxes4Careers {
+        width: 400px;
+    }
+
+    .box4desc {
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
+
+@media only screen and (max-width : 850px) {
+    .headingCareers1 {
+        font-size: 70px;
+    }
+
+    .descriptionCareers1,
+    .descriptionCareers2 {
+        font-size: 16px;
+    }
+
+    .headingCareers3 {
+        font-size: 20px;
+    }
+
+    .descriptionCareers3 {
+        font-size: 16px;
+    }
+
+    .box1Careers {
+        padding: 10px;
+    }
+
+    .box4desc {
+        font-size: 16px;
+    }
+
+    .boxes4Careers {
+        width: 350px;
+    }
+
+    .writerCareers {
+        font-size: 22px;
+    }
+}
+
+@media only screen and (max-width:760px) {
+    .submitCareers {
+        font-size: 25px;
+    }
+
+    .boxes3aCareers {
+        padding: 15px;
+    }
+
+    .headingCareers3 {
+        font-size: 18px;
+    }
+
+    .box3adesc {
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    .boxes4Careers {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width:665px) {
+    .submitCareers {
+        font-size: 20px;
+    }
+
+    .headingCareers1 {
+        font-size: 50px;
+        line-height: 1.3;
+    }
+
+    .descriptionCareers1,
+    .descriptionCareers2 {
+        font-size: 14px;
+    }
+
+    .searchCareers1 {
+        width: 90vw;
+        margin: auto;
+    }
+
+    .headingCareers2 {
+        font-size: 30px;
+    }
+
+    .Careeers2abdesc {
+        font-size: 14px;
+    }
+
+    .boxes3Careers {
+        flex-direction: column;
+        height: 500px;
+    }
+
+    .headingCareers3 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .box3adesc ul li {
+        text-align: center;
+    }
+
+    .container4Careers {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .boxes4Careers {
+        width: 90%;
+        height: max-content;
+    }
+
+    .box4desc {
+        font-size: 20px;
+    }
+
+    .openCareers span {
+        font-size: 16px;
+    }
+
+    .openingsCareers {
+        padding: 0 25px;
+    }
+}
+
+@media only screen and (max-width:550px) {
+    .container2Careers {
+        height: 1200px;
+    }
+
+    .boxes1Careers {
+        flex-direction: column;
+        height: 600px;
+        gap: 30px;
+    }
+
+    .box1Careers {
+        align-items: center;
+    }
+
+    .box2aCareers {
+        display: flex;
+        flex-direction: column;
+        gap: 10px
+    }
+
+    .box4desc {
+        font-size: 16px;
+    }
+
+    .openCareers span {
+        font-size: 14px;
+    }
 }
