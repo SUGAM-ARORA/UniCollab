@@ -111,14 +111,14 @@ function TopContainer() {
     <div className="topContainer">
       <div className="navbar">
         <ul className="largeview">
-          <li id="list"><a href='/'>Home</a></li>
-          <li id="list"><a href='/about'>About Us</a></li>
-          <li id="list"><a href='/services'>Services</a></li>
-          <li id="list"><a href='/careers'>Careers</a></li>
-          <li id="list"><a href="/freelancer">Hire a Freelancer</a></li>
-          <li id="list"><a href='/contacts'>Contact</a></li>
-          <li id="list"><a href='/blogs'>Blogs</a></li>
-          <li id="list"><a href='/faq'>FAQ</a></li>
+          <li className="nav-item"><a href='/'>Home</a></li>
+          <li className="nav-item"><a href='/about'><span>About Us</span></a></li>
+          <li className="nav-item"><a href='/services'>Services</a></li>
+          <li className="nav-item"><a href='/careers'>Careers</a></li>
+          <li className="nav-item"><a href="/freelancer"><span>Hire a Freelancer</span></a></li>
+          <li className="nav-item"><a href='/contacts'>Contact</a></li>
+          <li className="nav-item"><a href='/blogs'>Blogs</a></li>
+          <li className="nav-item"><a href='/faq'>FAQ</a></li>
         </ul>
 
         <div className="mobview">
@@ -129,6 +129,7 @@ function TopContainer() {
               <li><a href='/about'>About Us</a></li>
               <li><a href='/services'>Services</a></li>
               <li><a href='/careers'>Careers</a></li>
+              <li><a href='/freelancer'>Freelancer</a></li>
               <li><a href='/contacts'>Contact</a></li>
               <li><a href='/blogs'>Blogs</a></li>
               <li><a href='/faq'>FAQ</a></li>
@@ -160,7 +161,7 @@ function TopContainer() {
           ) : null}
         </div>
 
-        <div className="profileContainer">
+        <div className="profileContainer" >
           <a href="/pricing">
             <button className="go-pro-btn">Go Pro</button>
           </a>

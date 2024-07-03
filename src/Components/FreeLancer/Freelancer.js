@@ -1,5 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './Freelancer.css'
+import homeIcon from './homeicon.png';
 
 const Freelancer = () => {
     return (
@@ -9,6 +11,9 @@ const Freelancer = () => {
                 <div className="desc1freelancerbox1">Connect with Skilled Freelancers for Your Projects</div>
                 <button className='btnFreelancer'>Get Started</button>
             </div>
+            <Link to="/" className="home-link">
+                <img src={homeIcon} alt="Home" className="home-icon" />
+            </Link>
             <div className="box2Freelancer">
                 <div className="containerFreelancer" id='one'>
                     <div className='descbox2Freelancer'>Logo Design</div>
