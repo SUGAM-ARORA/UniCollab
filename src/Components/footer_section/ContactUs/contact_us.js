@@ -10,19 +10,30 @@ function ContactUs() {
         event.preventDefault();
         // Perform form validation or any other logic here
 
-        // Show success toast notification
-        toast.success('Sent Successfully!', {
-            position: "top-center",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: false,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-            transition: Bounce,
-        });
+    const email = document.getElementById("email").value;
+    const name = document.getElementById("flname").value;
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+    if (!emailPattern.test(email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    } else if (name.length < 2 || name.length > 40) {
+      toast.error("Name should be within 2 - 40 characters only.");
+      return;
     }
+    // Show success toast notification
+    toast.success("Sent Successfully!", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      transition: Bounce,
+    });
+  };
 
     return (
         <div className='box'>
