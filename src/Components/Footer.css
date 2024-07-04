@@ -2,15 +2,18 @@
   background-color: #19162c;
   color: white;
   padding: 2.5rem 2.5rem 1rem 2.5rem;
+  z-index: 1000;
 }
 
 .footer-container {
   display: flex;
+  z-index: 1000;
 }
 
 .footer-container-md {
   display: flex;
   justify-content: space-between;
+  z-index: 1000;
 }
 
 .footer-1 {
@@ -45,6 +48,7 @@
   width: 60%;
   display: flex;
   justify-content: space-evenly;
+  z-index: 1000;
 }
 
 .footer-2 {
