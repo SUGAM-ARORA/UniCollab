@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { features } from "./projects";
 
 function CardMain() {
-  const [isVisible, setIsVisible] = useState(new Array(features.length).fill(false));
+  const [isVisible, setIsVisible] = useState(
+    new Array(features.length).fill(false)
+  );
   const containerRef = useRef(null);
   let hideTimeout;
 
@@ -22,7 +24,7 @@ function CardMain() {
       return newIsVisible;
     });
   };
-  
+
   const handleMouseOut = (index) => {
     hideTimeout = setTimeout(() => {
       setIsVisible((prevIsVisible) => {
@@ -37,21 +39,30 @@ function CardMain() {
     if (containerRef.current) {
       containerRef.current.scrollTo({
         top: 0,
-        behavior: 'smooth'
+        behavior: "smooth",
       });
     }
-    
+
     window.scrollTo({
       top: 0,
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   };
 
   return (
-    <div className="card" ref={containerRef} style={{ overflowY: 'auto', maxHeight: '100vh' }}>
+    <div
+      className="card"
+      ref={containerRef}
+      style={{ overflowY: "auto", maxHeight: "100vh" }}
+    >
       {features.map((project, index) => (
         <div className="card_main" key={index}>
-          <img src={project.img} alt="" className="card_main_img" title={project.title} />
+          <img
+            src={project.img}
+            alt=""
+            className="card_main_img"
+            title={project.title}
+          />
           <div className="card_main_name">
             <h2>{project.title}</h2>
             <div className="card_main_icon">
@@ -88,7 +99,7 @@ function CardMain() {
             <Link to={`/readmore/${project.id}`} className="button btn">
               Read More
             </Link>
-            <a href="#" className="button2 btn">  
+            <a href="#" className="button2 btn">
               Source Code
             </a>
           </div>
@@ -105,23 +116,28 @@ function CardMain() {
               </div>
             </div>
             <div className="details2">
-              <p id="info">
-                {project.about}
-              </p>
+              <p id="info">{project.about}</p>
             </div>
             <div className="btnnn">
               <button>Follow Me</button>
               <button>
-                <Link to={`/profile/${project.id}`}>
-                  View Profile
-                </Link>
+                <Link to={`/profile/${project.id}`}>View Profile</Link>
               </button>
             </div>
           </div>
         </div>
       ))}
-      
-      <div style={{ textAlign: 'center', padding: '20px' }}>
+
+      <div
+        style={{
+          textAlign: "center",
+          padding: "20px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "100%",
+        }}
+      >
         <button onClick={scrollToTop} className="button btn">
           To the Top
         </button>
