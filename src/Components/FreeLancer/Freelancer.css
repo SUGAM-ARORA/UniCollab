@@ -1,20 +1,29 @@
 .box1Freelancer {
     width: 100vw;
     height: 420px;
-    margin-bottom: 100px;
+    margin-bottom: 2px;
 }
-
+.home-icon {
+    position: absolute;
+    top: 1.8rem;
+    left: 1.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
 .freelancer {
     margin: 50px 0px;
+    height: 4000px;
 }
-
+.footer{
+    margin-bottom: 0px;
+}
 .heading1freelancerbox1 {
     font-size: 80px;
     font-weight: 600;
     width: 1000px;
     margin: auto;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     color: #ff21bc;
     font-weight: bold;
 }
@@ -22,7 +31,7 @@
 .desc1freelancerbox1 {
     font-size: 27px;
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 45px;
 }
 
 .btnFreelancer {
@@ -32,6 +41,7 @@
     font-weight: 500;
     font-size: 22px;
     border-radius: 20px;
+    background-color: darkturquoise;
 }
 
 .box2Freelancer {
@@ -43,7 +53,7 @@
     margin: auto;
     justify-items: center;
     align-items: center;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .containerFreelancer {
@@ -104,7 +114,7 @@
     height: 620px;
     margin: auto;
     display: flex;
-    margin-bottom: 150px;
+    margin-bottom: 50px;
 }
 
 .firstBox3 {
@@ -128,7 +138,7 @@
 
 .desc1box3{
     font-size: 26px;
-    margin-bottom: 75px;
+    margin-bottom: 55px;
 }
 
 .desc2box3{
@@ -249,7 +259,7 @@
 }
 
 .locationContent{
-    color: green;
+    color: darkturquoise;
 }
 
 .locationofFreelancer{

@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
-  margin: 0;
+  margin: 100px;
   padding: 0;
   box-sizing: border-box;
 }
-
+.home-icon {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -156,6 +162,9 @@ form.sign-in-form {
 .social-icon:hover {
   transform: scale(1.1); /* Slightly enlarges the icon */
   box-shadow: 0 4px 8px darkturquoise !important; /* Adds a shadow on hover */
+}
+.home-link.no-margin-right {
+  margin-right: 0px;
 }
 
 .btn {

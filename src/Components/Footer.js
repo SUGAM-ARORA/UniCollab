@@ -2,6 +2,10 @@ import React from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
 
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+};
+
 const Footer = () => {
   return (
     <div className='footer'>
@@ -59,8 +63,16 @@ const Footer = () => {
           &copy; 2024 UniCollab. All rights reserved.
         </div>
       </div>
+      <div className='scrolltop'>
+      <div style={{ textAlign: 'center', padding: '20px'  }}>
+        <button onClick={scrollToTop} className="button btn">
+          To the Top
+        </button>
+      </div>
+    </div>
     </div>
   );
 }
 
 export default Footer;
+
