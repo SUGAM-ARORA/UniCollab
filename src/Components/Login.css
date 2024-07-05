@@ -48,7 +48,7 @@ input {
   height: 100%;
   top: 0;
   left: 0;
-  margin-top: -20vh;
+  margin-top: -38vh;
 }
 
 .signin-signup {
@@ -232,7 +232,7 @@ form.sign-in-form {
 .container1:before {
   content: "";
   position: absolute;
-  margin-top: 6vh;
+  margin-top: 18vh;
   height: 1520px;
   width: 800px;
   top: -10%;
