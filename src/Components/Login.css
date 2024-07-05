@@ -34,6 +34,7 @@ input {
   background-color: #121026 !important;
   min-height: 100vh;
   overflow: hidden;
+  margin-top: 20px;
 }
 
 .error-text {
@@ -47,7 +48,7 @@ input {
   height: 100%;
   top: 0;
   left: 0;
-  margin-top: -20px;
+  margin-top: -200px;
 }
 
 .signin-signup {
@@ -231,7 +232,7 @@ form.sign-in-form {
 .container1:before {
   content: "";
   position: absolute;
-  margin-top: 5px;
+  margin-top: 55px;
   height: 1520px;
   width: 800px;
   top: -10%;
