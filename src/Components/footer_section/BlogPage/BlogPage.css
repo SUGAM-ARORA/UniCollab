@@ -6,6 +6,7 @@
     margin: 0 auto;
 }
 
+
 .blog-page h1 {
     text-align: center;
     margin-bottom: 20px;
@@ -26,7 +27,7 @@
     width: 100%;
     max-width: 800px;
     overflow: hidden;
-    
+    box-shadow: 7px 7px 32px 0 #6052ff;
 
 }
 .blog-post:not(.active):hover {
@@ -63,6 +64,7 @@
     margin-bottom: 12px;
     padding: 0 20px;
     border-top: 2px solid #121026;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 .blogs .content.expand {
     opacity: 1;

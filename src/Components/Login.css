@@ -12,6 +12,12 @@
   width: 2.5rem;
   cursor: pointer;
 }
+.signin-signup.home-link.no-margin-right{
+  position: relative;
+  top: 1.0rem;
+  left: 1.5rem;
+  width: 2.5rem;
+}
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -41,6 +47,7 @@ input {
   height: 100%;
   top: 0;
   left: 0;
+  margin-top: -20px;
 }
 
 .signin-signup {
@@ -224,10 +231,11 @@ form.sign-in-form {
 .container1:before {
   content: "";
   position: absolute;
+  margin-top: 5px;
   height: 1520px;
   width: 800px;
   top: -10%;
-  right: 48%;
+  right: 49%;
   transform: translateY(-50%);
   background-image: linear-gradient(
     -45deg,
