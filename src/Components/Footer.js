@@ -4,11 +4,17 @@ import logo from '../img/apple-touch-icon.png';
 
 const Footer = () => {
   return (
+    
     <div className='footer'>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
           <img src={logo} alt="logo"/>
-          <div className='footer-title'>Unicollab</div>
+          <div>
+            <div className='footer-title'>Unicollab</div>
+            <div className='footer-description'>
+              UniCollab is more than just a platform;<br /> it's a gateway to a world where students from different universities/colleges converge to collaborate, innovate, and <br />elevate their projects.
+            </div>
+          </div>
         </div>
         <div className='footer-half footer-sections'>
           <div className='footer-2'>
