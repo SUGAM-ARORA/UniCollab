@@ -1,19 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
-  margin: 0;
+  margin: 100px;
   padding: 0;
   box-sizing: border-box;
 }
-body, input {
-  font-family: "Poppins", sans-serif;
-}
-.home-icon, .signin-signup.home-link.no-margin-right {
+.home-icon {
   position: absolute;
   top: 1.9rem;
   left: 1.5rem;
   width: 2.5rem;
   cursor: pointer;
+}
+.signin-signup.home-link.no-margin-right{
+  position: relative;
+  top: 1.0rem;
+  left: 1.5rem;
+  width: 2.5rem;
+}
+body,
+input {
+  font-family: "Poppins", sans-serif;
 }
 .toggle-password:hover {
   cursor: default;
@@ -31,7 +38,7 @@ body, input {
 }
 
 .error-text {
-  color: darkturquoise !important;
+  color: darkturquoise !important; /* Default error text color */
   font-size: 1.1rem;
   margin-top: 5px;
 }
@@ -84,7 +91,7 @@ form.sign-in-form {
 }
 
 .input-field {
-  max-width: 100%;
+  max-width: 380px;
   width: 100%;
   background-color: #f0f0f0 !important;
   margin: 10px 0;
@@ -98,7 +105,7 @@ form.sign-in-form {
 .input-field .toggle-password {
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 50%; /* This centers the eye icon vertically */
   transform: translateY(-50%);
 }
 .input-field i {
@@ -161,10 +168,9 @@ form.sign-in-form {
 }
 
 .social-icon:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 8px darkturquoise !important;
+  transform: scale(1.1); /* Slightly enlarges the icon */
+  box-shadow: 0 4px 8px darkturquoise !important; /* Adds a shadow on hover */
 }
-
 .home-link.no-margin-right {
   margin-right: 0px;
 }
@@ -187,9 +193,9 @@ form.sign-in-form {
 
 .btn:hover {
   background-color: #00ced1;
-  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  border-color: #121026;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+  border-color: #121026; /* Slightly lighter yellow on hover */
 }
 
 .btn1 {
@@ -209,9 +215,9 @@ form.sign-in-form {
 
 .btn1:hover {
   background-color: #00ced1;
-  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2);
-  transform: scale(1.05);
-  border-color: #121026;
+  box-shadow: 0 16px 16px rgba(0, 0, 0, 0.2); /* Adds a shadow on hover */
+  transform: scale(1.05); /* Slightly enlarges the button */
+  border-color: #121026; /* Slightly lighter yellow on hover */
 }
 
 .panels-container {
@@ -335,27 +341,30 @@ form.sign-in-form {
 .container1.sign-up-mode .right-panel {
   pointer-events: all;
 }
-
-/* Media queries */
+.reset-link {
+  display: inline-block;
+  color: #00ced1;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.reset-link:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 870px) {
-  .container1 {
+  .container {
     min-height: 800px;
-    height: 100vh;
   }
-
   .signin-signup {
     width: 100%;
-    left: 50%;
     top: 95%;
     transform: translate(-50%, -100%);
     transition: 1s 0.8s ease-in-out;
   }
 
   .signin-signup,
-  .container1.sign-up-mode .signin-signup {
-    top: 5%;
-    transform: translate(-50%, 0);
+  .container.sign-up-mode .signin-signup {
+    left: 50%;
   }
 
   .panels-container {
@@ -367,139 +376,186 @@ form.sign-in-form {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    padding: 2.5rem 8%;
+    grid-column: 1 / 2;
   }
 
-  .right-panel .content,
-  .right-panel .image {
-    transform: translateX(0);
-  }
-
-  .container1:before {
-    top: 60%;
-    right: initial;
-    transform: translateY(-50%);
-    width: 1500px;
-    height: 1500px;
-  }
-
-  .container1.sign-up-mode:before {
-    transform: translate(-50%, -50%);
-    left: 30%;
-    width: 1500px;
-    height: 1500px;
-  }
-
-  .left-panel,
   .right-panel {
-    padding: 1.5rem 8%;
+    grid-row: 3 / 4;
   }
 
-  .left-panel .image,
-  .right-panel .image {
-    width: 300px;
+  .left-panel {
+    grid-row: 1 / 2;
   }
 
-  .container1.sign-up-mode .right-panel .image {
-    width: 300px;
+  .image {
+    width: 200px;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.6s;
   }
 
+  .panel .content {
+    padding-right: 15%;
+    transition: transform 0.9s ease-in-out;
+    transition-delay: 0.8s;
+  }
+
+  .panel h3 {
+    font-size: 1.2rem;
+  }
+
+  .panel p {
+    font-size: 0.7rem;
+    padding: 0.5rem 0;
+  }
+
+  .btn.transparent {
+    width: 140px;
+    height: 35px;
+    font-size: 0.7rem;
+  }
+
+  .container:before {
+    width: 1500px;
+    height: 1500px;
+    transform: translateX(-50%);
+    left: 30%;
+    bottom: 68%;
+    right: initial;
+    top: initial;
+    transition: 2s ease-in-out;
+  }
+
+  .container.sign-up-mode:before {
+    transform: translate(-50%, 100%);
+    bottom: 32%;
+    right: initial;
+  }
+
+  .container.sign-up-mode .left-panel .image,
+  .container.sign-up-mode .left-panel .content {
+    transform: translateY(-300px);
+  }
+
+  .container.sign-up-mode .right-panel .image,
+  .container.sign-up-mode .right-panel .content {
+    transform: translateY(0px);
+  }
+
+  .right-panel .image,
+  .right-panel .content {
+    transform: translateY(300px);
+  }
+
+  .container.sign-up-mode .signin-signup {
+    top: 5%;
+    transform: translate(-50%, 0);
+  }
+  .container1:before {
+    background-image: none;
+  }
+  .signin-signup {
+    margin-top: 50px;
+  }
+  .btn.transparent {
+    font-size: 11px;
+    width: auto;
+    height: 5vh;
+  }
   .container1.sign-up-mode .right-panel {
-    pointer-events: all;
+    position: absolute;
+    left: 3%;
+    bottom: 65vh;
   }
-
-  .container1.sign-up-mode .left-panel {
-    pointer-events: none;
+  .signin-signup .sign-up-form {
+    margin-left: 20%;
   }
+  .container1.sign-up-mode:before {
+    display: none;
+  }
+}
 
+@media screen and (max-width: 606px) {
   .container1.sign-up-mode .right-panel {
-    pointer-events: all;
+    padding-left: 40px;
+    margin-bottom: 5%;
+    bottom: 62vh;
   }
-
-  .container1.sign-up-mode .left-panel .content,
-  .container1.sign-up-mode .right-panel .content {
-    transform: translateX(0);
+  h2.title {
+    font-size: 2rem;
   }
-
-  .container1.sign-up-mode .signin-signup {
-    transform: translate(-50%, -100%);
+  .sign-up-form {
+    padding-left: 4%;
+  }
+  .panels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 }
 
 @media (max-width: 570px) {
+  .container1.sign-up-mode .right-panel {
+    margin-left: 7%;
+  }
   form {
     padding: 0 1.5rem;
   }
 
+  .image {
+    display: none;
+  }
   .panel .content {
-    padding: 0.5rem 1rem;
+    padding: 0;
   }
-
-  .container1:before {
-    top: 72%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 500px;
+  .container {
+    padding: 1.5rem;
   }
-
-  .container1.sign-up-mode:before {
-    width: 500px;
-    height: 500px;
-    transform: translate(-50%, -50%);
+  .right-panel {
+    padding: 1rem 4rem 4rem 0;
   }
-
-  .home-icon, .signin-signup.home-link.no-margin-right {
-    width: 2rem;
-    top: 1rem;
-    left: 1rem;
+  .panels-container {
+    margin-top: 0;
   }
-
   .input-field {
-    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .password-container {
+    position: relative;
+    width: 100%;
+  }
+
+  .password-container input {
+    width: 100%;
+    padding-right: 30px; /* Add padding to make space for the icon */
+  }
+  .password-container i {
+    position: absolute;
+    right: 20px; /* Adjusted to move the icon more to the right */
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
-
-@media (max-width: 400px) {
-  .title {
-    font-size: 1.8rem;
+@media (max-width: 515px) {
+  .container1.sign-up-mode .right-panel {
+    margin-left: 4%;
+    margin-right: 3%;
   }
-
+}
+@media screen and (max-width: 401px) {
   .input-field {
-    height: 45px;
+    width: 80%;
   }
-
-  .input-field input {
-    font-size: 1rem;
+  .container1.sign-up-mode .right-panel {
+    margin-bottom: 20%;
   }
-
-  .social-text {
-    font-size: 1rem;
+  .container1 .left-panel {
+    margin-top: 20%;
   }
-
-  .social-icon {
-    height: 40px;
-    width: 40px;
-    font-size: 1rem;
-  }
-
-  .btn, .btn1 {
-    width: 130px;
-    height: 40px;
-    font-size: 0.9rem;
-  }
-
-  .panel h3 {
+  h2.title {
     font-size: 1.5rem;
-  }
-
-  .panel p {
-    font-size: 0.8rem;
-  }
-
-  .container1:before {
-    height: 400px;
-  }
-
-  .container1.sign-up-mode:before {
-    height: 400px;
   }
 }
