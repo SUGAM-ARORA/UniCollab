@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Login.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
-import { useNavigate } from 'react-router-dom';
+import homeIcon from './FreeLancer/homeicon.png'
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -44,12 +44,12 @@ const LogIn = () => {
           console.log('Login successful', data);
           displayAlert('Logged in');
 
-        // Store the username and email in local storage
-        localStorage.setItem('username', data.user.username);
-        localStorage.setItem('email', data.user.email);
+          // Store the username and email in local storage
+          localStorage.setItem('username', data.user.username);
+          localStorage.setItem('email', data.user.email);
 
           setTimeout(() => {
-            navigate('/'); 
+            navigate('/');
           }, 1000);
 
           // Handle successful login
@@ -95,7 +95,7 @@ const LogIn = () => {
         const data = await response.json();
         if (response.ok) {
           console.log('Signup successful', data);
-          displayAlert('signed-in. Now login')
+          displayAlert('Signed up. Now login');
           // Handle successful signup
         } else {
           displayAlert(data.message || 'Signup failed');
@@ -130,8 +130,12 @@ const LogIn = () => {
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          <form className="sign-in-form" onSubmit={handleNextClick} action="/https://uni-collab.vercel.app/" method="post">
+          <form className="sign-in-form" onSubmit={handleNextClick}>
+          <Link to="/" className="home-link">
+                <img src={homeIcon} alt="Home" className="home-icon" />
+            </Link>
             <h2 className="title">Step into UniCollab! Log In</h2>
+            
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
@@ -173,8 +177,12 @@ const LogIn = () => {
             </div>
           </form>
 
-          <form className="sign-up-form" onSubmit={handleSignUpClick} action="/https://uni-collab.vercel.app/" method="post">
+          <form className="sign-up-form" onSubmit={handleSignUpClick}>
+            
             <h2 className="title">Start Journey with UniCollab</h2>
+            <Link to="/" className="home-link">
+                <img src={homeIcon} alt="Home" className="home-icon" />
+            </Link>
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
@@ -235,9 +243,10 @@ const LogIn = () => {
               Explore our platform and unlock a realm of personalized experiences.
             </p>
             <br />
-            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
-              Become a Member
-            </button>
+            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: '0 auto' }}>
+  Become a Member
+</button>
+
           </div>
           <img src={logImg} className="image" alt="Login illustration" />
         </div>
@@ -248,7 +257,7 @@ const LogIn = () => {
               Embark on a journey through UniCollab for personalized experiences.
             </p>
             <br />
-            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: 'auto' }}>
+            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: '0 auto' }}>
               ENTER YOUR REALM
             </button>
           </div>

@@ -15,9 +15,9 @@
     padding: 20px;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 50px;
+    margin-top: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    
 }
 
 .page-container h1 {
@@ -31,6 +31,7 @@
     flex-direction: column;
     gap: 20px;
     max-width: 800px;
+
 }
 
 .faq-item {
@@ -42,7 +43,7 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .faq-item::before {
@@ -56,6 +57,7 @@
     z-index: 1;
     opacity: 0;
     transition: opacity 0.3s;
+    
 }
 
 .faq-item:hover::before {
