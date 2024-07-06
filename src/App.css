@@ -23,6 +23,7 @@
   color: #ffffff;
   font-size: 14px;
   padding: 0 10px;
+  z-index: 1000;
 }
 
 .App::-webkit-scrollbar {

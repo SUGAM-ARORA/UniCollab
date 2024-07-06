@@ -1,0 +1,69 @@
+site_name: Uni-Collab
+site_author: Sugam-Arora
+docs_dir: Docs
+
+theme:
+  name: material
+  feature:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotations
+    - content.code.copy
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+      primary: deep blue
+      accent: deep purple
+    - scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+      primary: slate
+      accent: lime
+  language: en
+  logo: 'images/logo.png'
+
+  
+repo_url: https://github.com/SUGAM-ARORA/UniCollab
+repo_name: Uni-Collab
+
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Home: index.md
+  - Objectives: objectives.md
+  - Purpose: purpose.md
+  - Features and Services: featuresandservices.md
+  - Technology Stack Used: technologystack.md
+  - Getting Started: installation.md
+  - Usage: usage.md
+  - Advantages: advantages.md
+  - Future Scope: futurescope.md
+  - Contributing: contributing.md
+  
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/SUGAM-ARORA/UniCollab"  target="_blank" rel="noopener">Uni-Collab</a>
