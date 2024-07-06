@@ -1,9 +1,8 @@
+
 import "./App.css";
 import Footer from "./Components/Footer";
 import { RouterProvider } from "react-router-dom";
 import router from "./configs/router";
-
-// Define the routes
 
 function App() {
   return (
@@ -12,8 +11,8 @@ function App() {
       <div>
           <RouterProvider router={router} />
       </div>
-
       <Footer />
+      <ChatbotIcon />
     </div>
   );
 }
