@@ -128,7 +128,6 @@ const LogIn = () => {
 
   return (
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
-      {/* Home Link */}
       <div className="forms-container">
         <div className="signin-signup">
           <form className="sign-in-form" onSubmit={handleNextClick}>
