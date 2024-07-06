@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
-  margin: 0;
+  margin: 100px;
   padding: 0;
   box-sizing: border-box;
 }
-
+.home-icon {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -157,6 +163,9 @@ form.sign-in-form {
   transform: scale(1.1); /* Slightly enlarges the icon */
   box-shadow: 0 4px 8px darkturquoise !important; /* Adds a shadow on hover */
 }
+.home-link.no-margin-right {
+  margin-right: 0px;
+}
 
 .btn {
   width: 150px;
@@ -204,7 +213,6 @@ form.sign-in-form {
 }
 
 .panels-container {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
@@ -337,7 +345,6 @@ form.sign-in-form {
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
-    height: 100vh;
   }
   .signin-signup {
     width: 100%;
