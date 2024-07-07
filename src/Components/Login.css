@@ -12,6 +12,12 @@
   width: 2.5rem;
   cursor: pointer;
 }
+.signin-signup.home-link.no-margin-right{
+  position: relative;
+  top: 1.0rem;
+  left: 1.5rem;
+  width: 2.5rem;
+}
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -28,7 +34,9 @@ input {
   background-color: #121026 !important;
   min-height: 100vh;
   overflow: hidden;
+  margin-top: 20px;
 }
+
 
 .error-text {
   color: darkturquoise !important; /* Default error text color */
@@ -41,6 +49,8 @@ input {
   height: 100%;
   top: 0;
   left: 0;
+  margin-top: -38vh;
+  
 }
 
 .signin-signup {
@@ -65,6 +75,7 @@ form {
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  
 }
 
 form.sign-up-form {
@@ -219,15 +230,17 @@ form.sign-in-form {
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 }
 
 .container1:before {
   content: "";
   position: absolute;
+  margin-top: 18vh;
   height: 1520px;
   width: 800px;
   top: -10%;
-  right: 48%;
+  right: 53%;
   transform: translateY(-50%);
   background-image: linear-gradient(
     -45deg,
@@ -297,7 +310,7 @@ form.sign-in-form {
 
 .container1.sign-up-mode:before {
   transform: translate(100%, -50%);
-  right: 51%;
+  right: 46%;
   width: 780px;
 }
 

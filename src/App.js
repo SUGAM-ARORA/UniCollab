@@ -26,8 +26,7 @@ import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import router from "./configs/router";
-// Define the routes
-
+import ChatbotIcon from './Components/ChatbotIcon';
 
 
 function App() {
@@ -50,8 +49,8 @@ function App() {
       <div>
         <RouterProvider router={router} />
       </div>
-
       <Footer />
+      <ChatbotIcon />
     </div>
   );
 }
