@@ -8,6 +8,11 @@
   display: flex;
 }
 
+.visitor{
+  margin-top: 60px;
+}
+
+
 .footer-container-md {
   display: flex;
   justify-content: space-between;

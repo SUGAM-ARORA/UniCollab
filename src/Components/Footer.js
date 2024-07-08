@@ -6,10 +6,16 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='footer-container footer-container-md'>
-        <div className='footer-1'>
-          <img src={logo} alt="logo"/>
-          <div className='footer-title'>Unicollab</div>
+        <div className='footer-0'>
+          <div className='footer-1'>
+            <img src={logo} alt="logo"/>
+            <div className='footer-title'>Unicollab</div> 
+          </div>
+          <div className='visitor'>
+          <a><img alt="Hits" src="https://hits.sh/uni-collab.vercel.app.svg?style=for-the-badge&label=Visitors&extraCount=786&color=a00a73&labelColor=1e1a34"/></a>
+          </div>
         </div>
+        
         <div className='footer-half footer-sections'>
           <div className='footer-2'>
             <p className='footer-section-title'>Company</p>
