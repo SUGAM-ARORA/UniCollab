@@ -40,6 +40,7 @@ const Footer = () => {
               <li><a href='#'><FontAwesomeIcon icon={faStar} /> Testimonials</a></li>
               <li><a href='#'><FontAwesomeIcon icon={faClipboardList} /> Portfolio</a></li>
               <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
+              <li><a href='#'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
             </ul>
           </div>
           <div className='footer-2'>
@@ -63,7 +64,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon icon={faTwitter} />
+          <FontAwesomeIcon   icon={faTwitter} />
         </a>
       </div>
       <div className='footer-bottom'>

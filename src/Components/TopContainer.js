@@ -187,7 +187,6 @@ function TopContainer() {
               </div>
             )}
           </div>
-          
           {isLoggedIn ? (
             <>
             <div className="profileImage">
@@ -209,6 +208,7 @@ function TopContainer() {
           </div>
             </>
           ) : (
+
             <Link to="/Login" className="profileIconlogin">
             Launch Your Journey
                </Link>
