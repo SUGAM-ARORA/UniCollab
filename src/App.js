@@ -27,6 +27,7 @@ import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import router from "./configs/router";
 import ChatbotIcon from './Components/ChatbotIcon';
+import GoToTop from './Components/gototop';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
       <div>
         <RouterProvider router={router} />
       </div>
+      <GoToTop />
       <Footer />
       <ChatbotIcon />
     </div>
