@@ -1,10 +1,10 @@
 import "./App.css";
 import Container from "./Components/Container";
 import Footer from "./Components/Footer";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Settings from "./Components/Settings/SettingsPage";
 import About_us from "./Components/footer_section/about_us/About_us";
-import BlogPage from "./Components/footer_section/BlogPage/BlogPage"
+import BlogPage from "./Components/footer_section/BlogPage/BlogPage";
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
@@ -23,43 +23,38 @@ import Careers from "./Components/Careers/CareersPage";
 import EmailVerification from "./Components/auth/resetPassword/EmailVerification";
 import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
+import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
+import router from "./configs/router";
+import ChatbotIcon from './Components/ChatbotIcon';
+import GoToTop from './Components/gototop';
 
 
 function App() {
   return (
-    <Router>
+    <>
+      <Helmet>
+        <meta name="description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms."/>
+        <meta name="language" content="English"/>
+        <meta name="keywords" content="Collab, Education, Students, Student Collaboration, University Collaboration, College Projects, Innovative Learning, Peer Networking, Academic Collaboration, Project Sharing, Knowledge Sharing, Student Innovation, Collaborative Learning, University Networking, Inter-University Projects, Academic Networking, Collaborative Projects, Student Platform" />
+        <meta property="og:type" content="website" />
+        <meta name="author" content="Sugma Arora" />
+        <meta property="og:title" content="Unicollab" />
+        <meta property="og:description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms." />
+        <meta property="og:image" content="https://github.com/SUGAM-ARORA/UniCollab/blob/main/image.png" />
+        <meta property="og:url" content="https://uni-collab.vercel.app/" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
       <div className="App">
-        <div className="App-content"></div>
-        <Routes>
-        <Route path="*" element={<Error />} />
-          <Route path="/" element={<Container />} />
-          <Route path="/login" element={<Login/>}/>
-          <Route path="/settings" element={<Settings />} />
-          <Route path="/about" element={<About_us />} />
-          <Route path="/blogs" element={<BlogPage />} />
-          <Route path="/faq" element={<FAQPage />} /> 
-          <Route path="/services" element={<Services />} />
-          <Route path="/contacts" element={<ContactUs />} />
-          <Route path="/termsandconditions" element={<TermsConditions />} />
-          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-          <Route path="/licensing" element={<Licensing />} />
-          <Route path="/readmore/:id" element={<Readmore/>}/>
-          <Route path="/profile/:id" element={<Profiles/>}/>
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/projects" element={<MyProjects />} />
-          <Route path="/new/project" element={<NewProject />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/careers" element={<Careers />} />
-          <Route path="/verifyEmail" element={<EmailVerification />} />
-          <Route path="/otpVerification/:email" element={<OTPVerification />} />
-          <Route path="/resetPassword/:email" element={<ResetPassword />} />
-          <Route path="/freelancer" element={<Freelancer />} />
-
-        </Routes>
-        <Footer />
+      <div className="App-content"></div>
+      <div>
+        <RouterProvider router={router} />
       </div>
-    </Router>
+      <GoToTop />
+      <Footer />
+      <ChatbotIcon />
+    </div>
+    </>
   );
 }
 

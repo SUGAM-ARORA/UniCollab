@@ -229,6 +229,19 @@
   padding: 10px 20px;
 }
 
+
+
+.maincontainer .right .bottom_card {
+  height: 375px; /* Set a fixed height */
+  overflow-y: auto; /* Enable vertical scrolling */
+  scrollbar-width: none; /* Firefox */
+}
+.maincontainer .right .bottom_card::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+
+
 .maincontainer .right .topCard .topCard_name,
 .maincontainer .right .bottom_card .bottomCard_name {
   display: flex;
@@ -292,6 +305,7 @@
   display: flex;
   align-items: center;
   margin: 10px 0;
+  border-bottom: 4px solid #ff21bc;
 }
 
 .maincontainer .right .bottom_card .topSeller .topSellerImg {
@@ -391,7 +405,21 @@
     width: 30px;
     height: 30px;
   }
-
+  .bottom_card {
+    height: 500px;
+    overflow-y: scroll;
+  }
+  
+  .bottom_card::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  .bottom_card {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  
   .maincontainer .right .bottom_card .topSeller {
     margin: 20px 0;
   }
