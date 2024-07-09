@@ -50,6 +50,7 @@
   max-width: 800px; 
   min-height: 500px;
   box-sizing: border-box;
+  animation: zoomIn 1s ease forwards;
 }
 
 .form-group {
