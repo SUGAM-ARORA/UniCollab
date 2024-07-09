@@ -27,6 +27,7 @@ import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import ChatbotIcon from './Components/ChatbotIcon';
+import GoToTop from './Components/gototop';
 
 
 
@@ -50,6 +51,7 @@ function App() {
       <div>
           <RouterProvider router={router} />
       </div>
+      <GoToTop />
       <Footer />
       <ChatbotIcon />
     </div>

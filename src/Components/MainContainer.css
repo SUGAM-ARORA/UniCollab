@@ -305,6 +305,7 @@
   display: flex;
   align-items: center;
   margin: 10px 0;
+  border-bottom: 4px solid #ff21bc;
 }
 
 .maincontainer .right .bottom_card .topSeller .topSellerImg {
