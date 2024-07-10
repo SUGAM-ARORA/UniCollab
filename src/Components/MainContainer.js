@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import DefaultBanner from "../img/1.jpg";
-/* import Card1 from "../img/card1.jpg";
+import Card1 from "../img/card1.jpg";
 import Card2 from "../img/card2.jpg";
 import Card3 from "../img/card3.jpg";
 import Card4 from "../img/card4.jpg";
 import Card5 from "../img/card5.jpg";
-import Card6 from "../img/card6.jpg"; */
+import Card6 from "../img/card6.jpg";
 import CardMain from "./CardMain";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
@@ -13,10 +13,20 @@ import MainRightTopCard from "./MainRightTopCard";
 
 const MAX_IMAGE_SIZE = 2185200; // 2MB
 
+const initialCards = [
+  { imgSrc: Card1, title: "StockIT", hearts: 83, dev: "Dev1", id: 1, pro: "profile1.png", role: "Developer", about: "About Dev1" },
+  { imgSrc: Card2, title: "TakeNote", hearts: 65, dev: "Dev2", id: 2, pro: "profile2.png", role: "Designer", about: "About Dev2" },
+  { imgSrc: Card3, title: "TaRct", hearts: 32, dev: "Dev3", id: 3, pro: "profile3.png", role: "Manager", about: "About Dev3" },
+  { imgSrc: Card4, title: "To Do", hearts: 51, dev: "Dev4", id: 4, pro: "profile4.png", role: "Tester", about: "About Dev4" },
+  { imgSrc: Card5, title: "ArchiTect", hearts: 47, dev: "Dev5", id: 5, pro: "profile5.png", role: "Analyst", about: "About Dev5" },
+  { imgSrc: Card6, title: "WeatherLy", hearts: 77, dev: "Dev6", id: 6, pro: "profile6.png", role: "Engineer", about: "About Dev6" },
+];
+
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
 
   const [banner, setBanner] = useState(DefaultBanner);
+  const [cards, setCards] = useState(initialCards);
 
   const uploadImageHandler = () => {
     imageUploadInputRef?.current?.click();
@@ -28,6 +38,11 @@ function MainContainer() {
     } else {
       console.error("Image size should be less than 2MB!");
     }
+  };
+
+  const sortCardsAlphabetically = () => {
+    const sortedCards = [...cards].sort((a, b) => a.title.localeCompare(b.title));
+    setCards(sortedCards);
   };
 
   return (
@@ -64,8 +79,8 @@ function MainContainer() {
         <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
-              <h2 style={{marginTop:"10px"}}>Feed</h2>
-              <a href="#" className="button2" style={{marginTop:"13px"}}>
+              <h2 style={{ marginTop: "10px" }}>Feed</h2>
+              <a href="#" className="button2" style={{ marginTop: "13px" }}>
                 Popular
               </a>
             </div>
@@ -76,20 +91,14 @@ function MainContainer() {
               <a href="#" className="button2">
                 Type
               </a>
-              <a href="#" className="button2">
+              <a href="#" className="button2" onClick={sortCardsAlphabetically}>
                 Sort By
               </a>
             </div>
           </div>
 
           <main className="fromBottom">
-            <CardMain/>
-            {/* <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
-            <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
-            <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
-            <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
-            <CardMain imgSrc={Card5} title={"ArchiTect"} hearts={"47"} />
-            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} /> */}
+            <CardMain cards={cards} />
           </main>
         </div>
       </div>
