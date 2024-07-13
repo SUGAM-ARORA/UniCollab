@@ -1,86 +1,169 @@
-import React from 'react';
-import './Footer.css';
-import logo from '../img/apple-touch-icon.png';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faTrophy, faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import React from "react";
+import logo from "../image/logo1.png";
+import "../style/Footer.css";
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+import { FaGithubSquare, FaLinkedin, FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import { SiGmail } from "react-icons/si";
+import { Link } from "react-router-dom";
+import { AiOutlineInstagram, AiOutlineTwitter } from 'react-icons/ai';
+import { BsYoutube } from 'react-icons/bs';
 
-const Footer = () => {
+function Footer() {
+  const divStyle = {
+    color: "white",
+    backgroundColor: "black",
+    padding: "20px",
+    fontFamily: "Arial",
+    textAlign: "center",
+    animation: "colorChange 2s infinite",
+  };
   return (
-    <div className='footer'>
-      <div className='footer-container footer-container-md'>
-        <div className='footer-1'>
-          <img src={logo} alt="logo"/>
-          <div>
-            <div className='footer-title'>Unicollab</div>
-            <div className='footer-description'>
-              UniCollab is more than just a platform;<br /> it's a gateway to a world where students from different universities/colleges converge to collaborate, innovate, and <br />elevate their projects.
+    <footer>
+      <div className="Footer">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6 col-lg-4 col-12 ft-1">
+              <a href="https://www.devlabsstore.tech/">
+                <img width={209} src={logo} alt="devlabs" />
+              </a>
+              <p className="footer-content">
+                Welcome to DevLabs, a website where you can search for free
+                tools that are useful for your daily needs. This application is
+                created by the incredible open-source community. On DevLaps, you
+                can discover a collection of free tools that can assist you in
+                various aspects of your life.
+              </p>
+              <h3>Facing an issue or just enjoying the site?</h3>
+              <button>
+                <Link to="/review">Tell us Now</Link>
+              </button>
+            </div>
+            <div className="col-md-6 col-lg-2 col-12 ft-2 ft-space">
+              <h3>Company</h3>
+              <ul>
+                <li className="nav-item">
+                  <a href="https://www.devlabsstore.tech/">Home</a>
+                </li>
+                <li className="nav-item">
+                  <a href="https://www.devlabsstore.tech/about">About Us</a>
+                </li>
+                <li className="nav-item">
+                  <a href="https://www.devlabsstore.tech/bookmark">Bookmark</a>
+                </li>
+                <li className="nav-item">
+                  <a href="https://www.linkedin.com/in/himanshunarware/">Contact</a>
+                </li>
+                <li className="nav-item">
+                  <a href="https://www.devlabsstore.tech/open-source">Open Source</a>
+                </li>
+                <li className="nav-item">
+                  <a href="https://github.com/HimanshuNarware/Devlabs">Contribute Here</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-6 col-lg-2 col-12 ft-2 ft-space">
+              <h3>Quick Links</h3>
+              <ul>
+                <li className="nav-item">
+                  <a href="/remote-job">Remote Jobs</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/ai">AI</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/movies&series">Movie/Series</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/extensions">Extension</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/ui-designs">UI Design</a>
+                </li>
+              </ul>
+            </div>
+            <div className="col-md-6 col-lg-2 col-12 ft-2 ft-last">
+              <h3>Explore</h3>
+              <ul>
+                <li className="nav-item">
+                  <a href="/front-end-tools">Frontend Tools</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/ethical-hacking">Ethical Hacking</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/coding-platform">Coding Platforms</a>
+                </li>
+                <li className="nav-item">
+                  <a href="/courses-platform">Course Platforms</a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-        <div className='footer-half footer-sections'>
-          <div className='footer-2'>
-            <p className='footer-section-title'>Company</p>
-            <ul className='footer-links'>
-              <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
-              <li><a href='/services'><FontAwesomeIcon icon={faBriefcase} /> Services</a></li>
-              <li><a href='/careers'><FontAwesomeIcon icon={faUsers} /> Careers</a></li>
-              <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact Us</a></li>
-              <li><a href='/freelancer'><FontAwesomeIcon icon={faAddressBook} /> Hire a Freelancer</a></li>
-            </ul>
-          </div>
-          <div className='footer-2'>
-            <p className='footer-section-title'>Product</p>
-            <ul className='footer-links'>
-              <li><a href='/blogs'><FontAwesomeIcon icon={faBlog} /> Blogs</a></li>
-              <li><a href='#'><FontAwesomeIcon icon={faStar} /> Testimonials</a></li>
-              <li><a href='#'><FontAwesomeIcon icon={faClipboardList} /> Portfolio</a></li>
-              <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
-              <li><a href='#'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
-            </ul>
-          </div>
-          <div className='footer-2'>
-            <p className='footer-section-title'>Legal</p>
-            <ul className='footer-links'>
-              <li><a href="/privacypolicy"><FontAwesomeIcon icon={faFileAlt} /> Privacy Policy</a></li>
-              <li><a href="/termsandconditions"><FontAwesomeIcon icon={faGavel} /> Terms and Conditions</a></li>
-              <li><a href="/licensing"><FontAwesomeIcon icon={faFileAlt} /> Licensing</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className='footer-icons footer-icons-md'>
-        <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon icon={faLinkedin} />
-        </a>
-        <a href="https://github.com/SUGAM-ARORA/UniCollab" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon icon={faGithub} />
-        </a>
-        <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon icon={faFacebook} />
-        </a>
-        <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon   icon={faTwitter} />
-        </a>
-      </div>
-      <div className='footer-bottom'>
-        <div className='footer-bottom-link'>
-          &copy; 2024 UniCollab. All rights reserved.
-        </div>
-      </div>
-      <div className='scrolltop'>
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-          <button onClick={scrollToTop} className="button btn">
-            To the Top
-          </button>
-        </div>
       </div>
 
-    </div>
+      <div className="Last-footer">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-md-6 col-12 ft-1">
+              <div className="text-center fs-6 my-3 ">
+                COPYRIGHT © Devlaps 2024 | <br /> MAINTAINED BY HIMANSHU NARWARE
+              </div>
+
+              <div className="text-center mb-2">
+                <a href="https://github.com/sponsors/HimanshuNarware" target="_blank">
+                  <img
+                    src="https://badgen.net/badge/icon/github?icon=github&label=Sponsor&color=orange"
+                    alt="Sponsor Me on GitHub"
+                    style={{ height: '30px', width: 'auto' }}
+                  />
+                </a>
+              </div>
+              <div className="outerD gap-4 md:gap-2">
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <AiOutlineInstagram color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <AiOutlineTwitter color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <BsYoutube color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <FaLinkedinIn color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="/" target="_blank" rel="noopener noreferrer">
+                    <FaGithubSquare color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+                <span className="icons">
+                  <a href="mailto:example@gmail.com" target="_blank" rel="noopener noreferrer">
+                    <SiGmail color="white" fontSize={25} className="ico" />
+                  </a>
+                </span>
+              </div>
+
+              <hr></hr>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   );
 }
 
