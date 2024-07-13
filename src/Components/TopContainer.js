@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars } from '@fortawesome/fontawesome-free-solid';
+import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
 import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
@@ -111,28 +111,28 @@ function TopContainer() {
     <div className="topContainer">
       <div className="navbar">
         <ul className="largeview">
-          <li className="nav-item"><a href='/'>Home</a></li>
-          <li className="nav-item"><a href='/about'><span>About Us</span></a></li>
-          <li className="nav-item"><a href='/services'>Services</a></li>
-          <li className="nav-item"><a href='/careers'>Careers</a></li>
-          <li className="nav-item"><a href="/freelancer"><span>Hire a Freelancer</span></a></li>
-          <li className="nav-item"><a href='/contacts'>Contact</a></li>
-          <li className="nav-item"><a href='/blogs'>Blogs</a></li>
-          <li className="nav-item"><a href='/faq'>FAQ</a></li>
+          <li className="nav-item"><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
+          <li className="nav-item"><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
+          <li className="nav-item"><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>
+          <li className="nav-item"><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>
+          <li className="nav-item"><a href="/freelancer"><FontAwesomeIcon icon={faUsers} /> Hire a Freelancer</a></li>
+          <li className="nav-item"><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+          <li className="nav-item"><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
+          <li className="nav-item"><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
         </ul>
 
         <div className="mobview">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
             <ul className="open">
-              <li><a href='/'>Home</a></li>
-              <li><a href='/about'>About Us</a></li>
-              <li><a href='/services'>Services</a></li>
-              <li><a href='/careers'>Careers</a></li>
-              <li><a href='/freelancer'>Freelancer</a></li>
-              <li><a href='/contacts'>Contact</a></li>
-              <li><a href='/blogs'>Blogs</a></li>
-              <li><a href='/faq'>FAQ</a></li>
+              <li><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
+              <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
+              <li><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>
+              <li><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>
+              <li><a href='/freelancer'><FontAwesomeIcon icon={faUsers} /> Freelancer</a></li>
+              <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+              <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
+              <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
             </ul>
           </div>
         </div>
@@ -187,7 +187,6 @@ function TopContainer() {
               </div>
             )}
           </div>
-          
           {isLoggedIn ? (
             <>
             <div className="profileImage">
@@ -209,6 +208,7 @@ function TopContainer() {
           </div>
             </>
           ) : (
+
             <Link to="/Login" className="profileIconlogin">
             Launch Your Journey
                </Link>
