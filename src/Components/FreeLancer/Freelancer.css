@@ -209,6 +209,7 @@
     outline: 2px solid #ff21bc;
     padding: 20px;
     border-radius: 30px;
+    transition: transform 0.15s ease-in-out;
 }
 
 .imageFreelancer {
@@ -343,6 +344,11 @@
     background-color: rgb(0, 85, 255);
     padding: 15px;
     border-radius: 20px;
+}
+
+.containerbox4Freelancer:hover{
+    transform: scale(1.08);
+    box-shadow: 0px 0px 11px 4px #ff21bc;
 }
 
 @media only screen and (max-width:1000px) {
