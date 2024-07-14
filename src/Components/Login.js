@@ -5,6 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png'
+import  { auth, googleProvider } from '../configs/firebase.js';
+import { signInWithPopup } from "firebase/auth";
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -12,7 +14,30 @@ const LogIn = () => {
   const [username, setUsername] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [user, setUser] = useState({
+    firstName: '',
+    lastname: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+  });
   const navigate = useNavigate();
+
+  const handleGoogleSignIn = async () => {
+    try {
+      // Sign in with Google
+      const result = await signInWithPopup(auth, googleProvider);
+      
+      const user = result.user;
+      const uid=user.uid;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log("Google sign-in success:", user);
+      
+      navigate("/");
+    } catch (error) {
+      console.error("Google sign-in error:", error);
+    }
+  };
 
   const handleNextClick = async (e) => {
     e.preventDefault();
@@ -168,9 +193,12 @@ const LogIn = () => {
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
-              <Link to="https://www.gmail.com" className="social-icon">
+              <div onClick={()=>{
+                handleGoogleSignIn()
+              
+              }}  className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <Link to="https://www.linkedin.com" className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
@@ -224,9 +252,12 @@ const LogIn = () => {
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
-              <Link to="https://www.gmail.com" className="social-icon">
+              <div onClick={()=>{
+                handleGoogleSignIn()
+              
+              }}  className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <Link to="https://www.linkedin.com" className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
