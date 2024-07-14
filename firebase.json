@@ -1,15 +1,15 @@
 {
   "hosting": {
     "public": "build",
-    "site": "unicollab-38f58-33221",
+    "site": "unicollab-38f58",
     "ignore": [
       "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+      "/.*",
+      "/node_modules/"
     ],
     "rewrites": [
       {
-        "source": "**",
+        "source": "",
         "destination": "/index.html"
       }
     ]
