@@ -2,6 +2,15 @@ import React, { useState } from "react";
 import "./Settings.css";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import React, { useState, useEffect } from "react";
+useEffect(() => {
+  document.body.classList.add("zoomIn");
+
+  return () => {
+    document.body.classList.remove("zoomIn");
+  };
+}, []);
+
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState("profile");
