@@ -152,6 +152,9 @@ button:hover {
   background-color: #121026;
   padding-right: 30px;
 }
+.zoomIn {
+    animation: zoomIn 1s ease forwards;
+}
 
 @media (max-width: 768px) {
   .settings-tabs {
@@ -168,4 +171,14 @@ button:hover {
   .settings-content {
     width: 100%; 
   }
+}
+@keyframes zoomIn{
+0% {
+    opacity: 0;
+    transform: scale(0);
+}
+100% {
+    opacity: 1;
+    transform: scale(1);
+}
 }
