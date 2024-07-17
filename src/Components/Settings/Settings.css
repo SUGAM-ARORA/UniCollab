@@ -170,17 +170,8 @@ button:hover {
     width: 100%; 
   }
 }
-@-webkit-keyframes zoomIn {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
+.zoomIn{
+animation : zoomIn 1s ease forwards;
 }
 
 @keyframes zoomIn {
