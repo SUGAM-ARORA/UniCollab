@@ -10,16 +10,7 @@ const SettingsPage = () => {
     switch (activeTab) {
       case "profile":
         return (
-          <div className="profile-settings settings-content">
-            <h2>Profile Settings</h2>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Enter your username"
-              />
-            </div>
+          <div className="profile-settings settings-content zoomIn">
             <h2>Profile Settings</h2>
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -46,7 +37,7 @@ const SettingsPage = () => {
         );
       case "account":
         return (
-          <div className="account-settings settings-content">
+          <div className="account-settings settings-content zoomIn">
             <h2>Account Settings</h2>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -73,7 +64,7 @@ const SettingsPage = () => {
         );
       case "notifications":
         return (
-          <div className="notification-settings settings-content">
+          <div className="notification-settings settings-content zoomIn">
             <h2>Notification Settings</h2>
             <div className="form-group checkbox-group">
               <label htmlFor="emailNotifications">Email Notifications</label>
@@ -92,7 +83,7 @@ const SettingsPage = () => {
         );
       case "privacy":
         return (
-          <div className="privacy-settings settings-content">
+          <div className="privacy-settings settings-content zoomIn">
             <h2>Privacy Settings</h2>
             <div className="form-group">
               <label htmlFor="profileVisibility">Profile Visibility</label>
@@ -116,7 +107,7 @@ const SettingsPage = () => {
         );
       case "collaboration":
         return (
-          <div className="collaboration-settings settings-content">
+          <div className="collaboration-settings settings-content zoomIn">
             <h2>Collaboration Settings</h2>
             <div className="form-group">
               <label htmlFor="inviteCollab">Invite to Collaborate</label>
@@ -144,7 +135,7 @@ const SettingsPage = () => {
         );
       case "application":
         return (
-          <div className="application-settings settings-content">
+          <div className="application-settings settings-content zoomIn">
             <h2>Application Settings</h2>
             <div className="form-group">
               <label htmlFor="theme">Theme</label>
