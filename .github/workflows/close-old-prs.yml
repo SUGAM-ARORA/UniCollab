@@ -1,33 +1,104 @@
-name: Close Old PRs
+name: Unassign Stale Issues
 
 on:
   schedule:
     - cron: '0 0 * * *' # Runs daily at midnight
-  pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
 
 permissions:
-  pull-requests: write
   issues: write
 
 jobs:
-  close_stale_prs:
+  unassign_stale_issues:
     runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-  
+
     steps:
-    - uses: actions/stale@v7
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        stale-pr-message: 'This PR has been automatically closed due to inactivity from the owner for 15 days.'
-        days-before-pr-stale: 15
-        days-before-pr-close: 0
-        exempt-pr-labels: ''
-        only-labels: ''
-        operations-per-run: 30
-        remove-stale-when-updated: true
-        debug-only: false
+        node-version: '16'
+
+    - name: Unassign stale issues
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        npm install axios
+        node -e "
+        const axios = require('axios');
+
+        const token = process.env.GITHUB_TOKEN;
+        const owner = 'YOUR_GITHUB_USERNAME_OR_ORG';
+        const repo = 'YOUR_REPOSITORY_NAME';
+        const daysStale = 15;
+
+        const headers = {
+          headers: {
+            Authorization: `token ${token}`,
+            'Content-Type': 'application/json',
+          },
+        };
+
+        async function getStaleIssues() {
+          const now = new Date();
+          const staleDate = new Date(now.setDate(now.getDate() - daysStale));
+
+          const issues = await axios.get(\`https://api.github.com/repos/${owner}/${repo}/issues?state=open&per_page=100\`, headers);
+
+          return issues.data.filter(issue => {
+            const lastUpdate = new Date(issue.updated_at);
+            return lastUpdate < staleDate && issue.assignees.length > 0;
+          });
+        }
+
+        async function unassignAndReassign(issue) {
+          const assignees = issue.assignees.map(assignee => assignee.login);
+          const nextAssignee = issue.body.match(/@(\w+)/g)?.[1];
+
+          if (nextAssignee) {
+            await axios.post(
+              \`https://api.github.com/repos/${owner}/${repo}/issues/${issue.number}/assignees\`,
+              {
+                assignees: [nextAssignee.replace('@', '')],
+              },
+              headers
+            );
+
+            await axios.delete(
+              \`https://api.github.com/repos/${owner}/${repo}/issues/${issue.number}/assignees\`,
+              {
+                data: {
+                  assignees,
+                },
+                headers: {
+                  Authorization: `token ${token}`,
+                  'Content-Type': 'application/json',
+                },
+              }
+            );
+          } else {
+            await axios.delete(
+              \`https://api.github.com/repos/${owner}/${repo}/issues/${issue.number}/assignees\`,
+              {
+                data: {
+                  assignees,
+                },
+                headers: {
+                  Authorization: `token ${token}`,
+                  'Content-Type': 'application/json',
+                },
+              }
+            );
+          }
+        }
+
+        async function main() {
+          const staleIssues = await getStaleIssues();
+          for (const issue of staleIssues) {
+            await unassignAndReassign(issue);
+          }
+        }
+
+        main().catch(error => console.error(error));
+        "
