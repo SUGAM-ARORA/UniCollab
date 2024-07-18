@@ -2,7 +2,7 @@ import React from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faTrophy, faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const scrollToTop = () => {
