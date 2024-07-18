@@ -5,8 +5,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png'
-// import  { auth, googleProvider } from '../configs/firebase.js';
-// import { signInWithPopup } from "firebase/auth";
+import { auth, googleProvider } from './Firebase/Firebase.js';
+import { signInWithPopup } from "firebase/auth";
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -25,11 +25,9 @@ const LogIn = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      // Sign in with Google
-      // const result = await signInWithPopup(auth, googleProvider);
-      
-      // const user = result.user;
-      const uid=user.uid;
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+      const uid = user.uid;
       localStorage.setItem('user', JSON.stringify(user));
       console.log("Google sign-in success:", user);
       
@@ -156,8 +154,8 @@ const LogIn = () => {
       <div className="forms-container">
         <div className="signin-signup">
           <form className="sign-in-form" onSubmit={handleNextClick}>
-          <Link to="/" className="home-link">
-                <img src={homeIcon} alt="Home" className="home-icon" />
+            <Link to="/" className="home-link">
+              <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
             <h2 className="title">Step into UniCollab! Log In</h2>
             
@@ -193,10 +191,7 @@ const LogIn = () => {
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
-              <div onClick={()=>{
-                handleGoogleSignIn()
-              
-              }}  className="social-icon">
+              <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
               <Link to="https://www.linkedin.com" className="social-icon">
@@ -206,10 +201,9 @@ const LogIn = () => {
           </form>
 
           <form className="sign-up-form" onSubmit={handleSignUpClick}>
-            
             <h2 className="title">Start Journey with UniCollab</h2>
             <Link to="/" className="home-link">
-                <img src={homeIcon} alt="Home" className="home-icon" />
+              <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
             <div className="input-field">
               <i className="fas fa-user"></i>
@@ -252,10 +246,7 @@ const LogIn = () => {
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
-              <div onClick={()=>{
-                handleGoogleSignIn()
-              
-              }}  className="social-icon">
+              <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
               <Link to="https://www.linkedin.com" className="social-icon">
@@ -269,30 +260,23 @@ const LogIn = () => {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>Be Part of UniCollab</h3>
-            <p>
-              Explore our platform and unlock a realm of personalized experiences.
-            </p>
-            <br />
-            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: '0 auto' }}>
-  Become a Member
-</button>
-
+            <h3>New here ?</h3>
+            <p>Join the UniCollab community to collaborate and innovate with fellow students.</p>
+            <button className="btn1 transparent" id="sign-up-btn" onClick={toggleSignUpMode}>
+              Sign Up
+            </button>
           </div>
-          <img src={logImg} className="image" alt="Login illustration" />
+          <img src={logImg} className="image" alt="Sign in" />
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>Adventure Awaits!</h3>
-            <p>
-              Embark on a journey through UniCollab for personalized experiences.
-            </p>
-            <br />
-            <button className="btn transparent" onClick={toggleSignUpMode} style={{ display: 'block', margin: '0 auto' }}>
-              ENTER YOUR REALM
+            <h3>One of us ?</h3>
+            <p>Welcome back! Log in to access your projects and collaborations.</p>
+            <button className="btn1 transparent" id="sign-in-btn" onClick={toggleSignUpMode}>
+              Sign In
             </button>
           </div>
-          <img src={registerImg} className="image" alt="Register illustration" />
+          <img src={registerImg} className="image" alt="Sign up" />
         </div>
       </div>
     </div>
