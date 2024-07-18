@@ -63,7 +63,6 @@
   color: white;
   font-weight: bold;
   font-size: 23px;
-  transition: color 0.3s ease, font-size 0.3s ease; /* Adjust the duration and easing as needed */
 }
 
 .footer-section-title:hover {
@@ -215,7 +214,19 @@
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 780px){
+  .footer{
+    height: 65vh;
+  }
+}
+
+@media (max-width: 620px){
+  .footer{
+    height: 75vh;
+  }
+}
+
+@media (max-width: 450px) {
   .footer-half {
     flex-direction: column;
     gap: 2rem;
@@ -223,6 +234,10 @@
 
   .footer-2 {
     width: 100%;
+  }
+
+  .footer{
+    height: 120vh;
   }
 
   .footer-icons {
