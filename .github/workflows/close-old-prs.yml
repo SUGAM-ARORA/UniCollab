@@ -31,7 +31,7 @@ jobs:
         const token = process.env.GITHUB_TOKEN;
         const owner = 'YOUR_GITHUB_USERNAME_OR_ORG';
         const repo = 'YOUR_REPOSITORY_NAME';
-        const daysStale = 15;
+        const daysStale = 40;
 
         const headers = {
           headers: {
