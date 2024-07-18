@@ -4,7 +4,6 @@ import { features } from './projects'
 import './Profile.css'
 import Arrow from '../Components/projects/arrow.png'
 
-
 const Profile = () => {
     const { id } = useParams();
     const feature = features.find((item) => item.id === parseInt(id));
