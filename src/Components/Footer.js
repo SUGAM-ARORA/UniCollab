@@ -74,13 +74,6 @@ const Footer = () => {
           &copy; 2024 UniCollab. All rights reserved.
         </div>
       </div>
-      <div className='scrolltop'>
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-          <button onClick={scrollToTop} className="button btn">
-            To the Top
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
