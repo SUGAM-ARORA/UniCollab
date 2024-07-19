@@ -63,6 +63,7 @@
   color: white;
   font-weight: bold;
   font-size: 23px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .footer-section-title:hover {
