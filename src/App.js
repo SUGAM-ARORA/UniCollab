@@ -1,7 +1,8 @@
 import "./App.css";
+import { RouterProvider } from "react-router-dom";
+import router from "./configs/router";
 import Container from "./Components/Container";
 import Footer from "./Components/Footer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Settings from "./Components/Settings/SettingsPage";
 import About_us from "./Components/footer_section/about_us/About_us";
 import BlogPage from "./Components/footer_section/BlogPage/BlogPage";
@@ -25,10 +26,8 @@ import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
-import router from "./configs/router";
 import ChatbotIcon from './Components/ChatbotIcon';
 import GoToTop from './Components/gototop';
-
 
 function App() {
   return (
@@ -48,7 +47,7 @@ function App() {
       <div className="App">
       <div className="App-content"></div>
       <div>
-        <RouterProvider router={router} />
+          <RouterProvider router={router} />
       </div>
       <GoToTop />
       <Footer />
