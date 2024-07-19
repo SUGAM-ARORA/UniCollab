@@ -23,11 +23,11 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const db = getFirestore(firebaseApp);
-const auth = getAuth(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 const app = initializeApp(firebaseConfig);
-const provider = new GoogleAuthProvider();
+const auth= getAuth(app);
 
-export { auth, provider, signInWithPopup, googleProvider, GithubAuthProvider };
+export { auth, signInWithPopup, githubProvider, googleProvider, GithubAuthProvider };
 export { db, analytics, app };
 export default app;
