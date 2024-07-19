@@ -3,7 +3,7 @@
   color: white;
   padding: 2.5rem 2.5rem 1rem 2.5rem;
   z-index: 900;
-  height: 55vh;;
+  height: auto;
 }
 .scrolltop{
   size: 20px;
@@ -175,6 +175,7 @@
 .footer-title a {
   text-decoration: none;
 }
+
 
 @media (max-width: 768px) {
   .footer-container {

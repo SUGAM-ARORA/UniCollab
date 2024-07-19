@@ -6,7 +6,7 @@ import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
 import { auth, googleProvider, githubProvider } from './Firebase/Firebase.js';
-import { signInWithPopup } from "firebase/auth";
+import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -40,7 +40,7 @@ const LogIn = () => {
     }
   };
 
-  const handleNextClick = async (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -57,39 +57,23 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const response = await fetch('http://localhost:5000/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, password })
-        });
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log('Login successful:', user);
+        localStorage.setItem('user', JSON.stringify(user));
 
-        const data = await response.json();
-        if (response.status === 200) {
-          console.log('Login successful', data);
-          displayAlert('Logged in');
-
-          // Store the username and email in local storage
-          localStorage.setItem('username', data.user.username);
-          localStorage.setItem('email', data.user.email);
-
-          setTimeout(() => {
-            navigate('/');
-          }, 1000);
-
-          // Handle successful login
-        } else {
-          displayAlert(data.message || 'Login failed');
-        }
+        displayAlert('Logged in');
+        setTimeout(() => {
+          navigate('/');
+        }, 1000);
       } catch (error) {
         displayAlert('An error occurred during login');
-        console.error('Error:', error);
+        console.error('Error:', error.message);
       }
     }
   };
 
-  const handleSignUpClick = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -111,24 +95,13 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const response = await fetch('http://localhost:5000/auth/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ username, email, password })
-        });
-        const data = await response.json();
-        if (response.ok) {
-          console.log('Signup successful', data);
-          displayAlert('Signed up. Now login');
-          // Handle successful signup
-        } else {
-          displayAlert(data.message || 'Signup failed');
-        }
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log('Signup successful:', user);
+        displayAlert('Signed up. Now login');
       } catch (error) {
         displayAlert('An error occurred during signup');
-        console.error('Error:', error);
+        console.error('Error:', error.message);
       }
     }
   };
@@ -156,7 +129,7 @@ const LogIn = () => {
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          <form className="sign-in-form" onSubmit={handleNextClick}>
+          <form className="sign-in-form" onSubmit={handleLogin}>
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
@@ -206,7 +179,7 @@ const LogIn = () => {
             </div>
           </form>
 
-          <form className="sign-up-form" onSubmit={handleSignUpClick}>
+          <form className="sign-up-form" onSubmit={handleSignUp}>
             <h2 className="title">Start Journey with UniCollab</h2>
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
