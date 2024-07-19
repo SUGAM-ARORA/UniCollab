@@ -214,19 +214,7 @@
   }
 }
 
-@media (max-width: 780px){
-  .footer{
-    height: 66vh;
-  }
-}
-
-@media (max-width: 620px){
-  .footer{
-    height: 75vh;
-  }
-}
-
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   .footer-half {
     flex-direction: column;
     gap: 2rem;
@@ -234,10 +222,6 @@
 
   .footer-2 {
     width: 100%;
-  }
-
-  .footer{
-    height: 121vh;
   }
 
   .footer-icons {
