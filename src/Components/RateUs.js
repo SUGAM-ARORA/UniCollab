@@ -1,0 +1,73 @@
+import React, { useState } from "react";
+import "./RateUs.css";
+import TopContainer from "./TopContainer";
+
+function RateUsComponent({ previousContent }) {
+  const [emoji, setEmoji] = useState("");
+  const [feedback, setFeedback] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleEmojiClick = (selectedEmoji) => {
+    setEmoji(selectedEmoji);
+  };
+
+  const handleFeedbackChange = (e) => {
+    setFeedback(e.target.value);
+  };
+
+  const handleSubmit = () => {
+    if (emoji !== "" && feedback.trim() !== "") {
+      // Reset the state after submitting
+      setEmoji("");
+      setFeedback("");
+      setSubmitted(true); // Hide the rating and feedback area
+      // Optionally handle success feedback, such as showing a thank you message
+    } else {
+      // Optionally handle error feedback
+    }
+  };
+
+  return (
+    <div>
+      <TopContainer />
+      <div className={`rate-us-page ${previousContent ? 'animated' : ''}`}>
+        <div className="rate-us-container">
+          
+          {!submitted ? (
+            <>
+            <h2 className="rate-us-heading">Rate Our Website</h2>
+              <div className="emoji-selection">
+                {["😡", "😞","😐 ","😊", "😍"].map((emojiOption) => (
+                  <span
+                    key={emojiOption}
+                    className={`emoji ${emoji === emojiOption ? 'selected' : ''}`}
+                    onClick={() => handleEmojiClick(emojiOption)}
+                  >
+                    {emojiOption}
+                  </span>
+                ))}
+              </div>
+              <textarea
+                className="feedback-textarea"
+                placeholder="Write your feedback here..."
+                value={feedback}
+                onChange={handleFeedbackChange}
+              ></textarea>
+              <button className="submit-button" onClick={handleSubmit}>
+                Submit
+              </button>
+            </>
+          ) : (
+            <p className="thank-you-message">Thank you for your feedback!</p>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default RateUsComponent;
+
+
+
+
