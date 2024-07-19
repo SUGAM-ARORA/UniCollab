@@ -111,7 +111,7 @@
   flex-wrap: wrap;
 }
 .card_main {
-  height: 355px;
+  height: 325px;
 }
 
 .card_main_img {
@@ -144,7 +144,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 20px;
-  margin-top: 1px;
+  margin-top: 10px;
 }
 
 .maincontainer .left .cards main .card_main .card_main_name h2 {

@@ -302,6 +302,9 @@ form.sign-in-form {
   height: 48px;
   font-weight: 600;
   font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .right-panel .image,
 .right-panel .content {
