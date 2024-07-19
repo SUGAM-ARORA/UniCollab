@@ -3,7 +3,7 @@
   color: white;
   padding: 2.5rem 2.5rem 1rem 2.5rem;
   z-index: 900;
-  height: 55vh;;
+  height: auto;
 }
 .scrolltop{
   size: 20px;
@@ -63,6 +63,7 @@
   color: white;
   font-weight: bold;
   font-size: 23px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .footer-section-title:hover {
@@ -175,6 +176,7 @@
 .footer-title a {
   text-decoration: none;
 }
+
 
 @media (max-width: 768px) {
   .footer-container {
