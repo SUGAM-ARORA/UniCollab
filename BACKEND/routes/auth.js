@@ -5,7 +5,7 @@ const {
     logoutuser
 }=require("../controllers/authcontrollers.js");
 const router=express.Router();
-router.get("/signup",signup);
-router.get("/login",loginuser);
-router.get("/logout",logoutuser);
+router.post("/signup",signup);
+router.post("/login",loginuser);
+router.post("/logout",logoutuser);
 module.exports=router;
