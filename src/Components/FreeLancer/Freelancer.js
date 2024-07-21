@@ -287,7 +287,7 @@ const Freelancer = () => {
                             <button>Hire</button>
                         </div>
                     </div>
-                    <div className="containerbox4Freelancer">
+                    <div className="containerbox4Freelancer" id="lastboxfreelancer">
                         <div className='imageFreelancer'></div>
                         <div className="nameFreelancer">Abcd</div>
                         <div className="skillsFreelancer">Flutter/Android/IOS/Java/Node.js/AI Developer</div>
