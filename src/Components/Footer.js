@@ -1,8 +1,9 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
+import SubscribeMail from './footer_section/Mail/SubscribeMail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faTrophy, faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const scrollToTop = () => {
@@ -12,6 +13,7 @@ const scrollToTop = () => {
 const Footer = () => {
   return (
     <div className='footer'>
+      <SubscribeMail/>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
           <img src={logo} alt="logo"/>
@@ -70,13 +72,6 @@ const Footer = () => {
       <div className='footer-bottom'>
         <div className='footer-bottom-link'>
           &copy; 2024 UniCollab. All rights reserved.
-        </div>
-      </div>
-      <div className='scrolltop'>
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-          <button onClick={scrollToTop} className="button btn">
-            To the Top
-          </button>
         </div>
       </div>
     </div>
