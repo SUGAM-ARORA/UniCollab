@@ -1,148 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-  <title>UniCollab</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
+    <title>UniCollab</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
 
-    body {
-      background-color: #343434 !important;
-      background-image: url(https://www.transparenttextures.com/patterns/arches.png);
-      cursor: none;
-    }
+      body {
+        background-color: #343434 !important;
+        background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+        cursor: none;
+      }
 
-    .dark-mode {
-      background-color: #343434 !important;
-      background-image: url(https://www.transparenttextures.com/patterns/arches.png);
-    }
+      .dark-mode {
+        background-color: #343434 !important;
+        background-image: url(https://www.transparenttextures.com/patterns/arches.png);
+      }
 
-    .dark-mode h2, .dark-mode h3 {
-      color: #333 !important;
-    }
+      .dark-mode h2,
+      .dark-mode h3 {
+        color: #333 !important;
+      }
 
-    .circle {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      pointer-events: none;
-      transition: transform 0.1s, left 0.1s, top 0.1s;
-      z-index: 99999;
-    }
+      .circle {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        pointer-events: none;
+        transition: transform 0.1s, left 0.1s, top 0.1s;
+        z-index: 99999;
+      }
 
-    .circle-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: 99999; /* Ensure the container is below Navbar and Footer */
-    }
+      .circle-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 99999; /* Ensure the container is below Navbar and Footer */
+      }
 
-    #google_element {
-      position: fixed;
-      top: 0px; /* Adjust as needed */
-      left: 50px; /* Adjust as needed */
-      color: #333 !important;
-    }
+      @media (max-width: 780px) {
+        .circle-container {
+          display: none;
+        }
+      }
 
-    /* Change dropdown text color to black */
-    #google_element .goog-te-combo option {
-      color: #333 !important;
-    }
+      #google_element {
+        position: fixed;
+        top: 0px; /* Adjust as needed */
+        left: 50px; /* Adjust as needed */
+        color: #333 !important;
+      }
 
-    /* Optionally, you can change the background color of the dropdown */
-    #google_element .goog-te-combo {
-      background-color: #333 !important; /* Change background color */
-      color: #333 !important; /* Change text color to white */
-    }
+      /* Change dropdown text color to black */
+      #google_element .goog-te-combo option {
+        color: #333 !important;
+      }
 
-    /* Change the dropdown button background color */
-    #google_element .goog-te-combo-button {
-      background-color: #333 !important; /* Change button background color */
-      color: #333 !important; /* Change button text color */
-    }
+      /* Optionally, you can change the background color of the dropdown */
+      #google_element .goog-te-combo {
+        background-color: #333 !important; /* Change background color */
+        color: #333 !important; /* Change text color to white */
+      }
 
-    .goog-te-banner-frame {
-      display: none !important;
-    }
-  </style>
-   <style>#progressBar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 0%;
-    height: 8px;
-    background-color: #ff21bc;
-    z-index: 9999;
+      /* Change the dropdown button background color */
+      #google_element .goog-te-combo-button {
+        background-color: #333 !important; /* Change button background color */
+        color: #333 !important; /* Change button text color */
+      }
 
-  }</style>
-</head>
-<body>
-  <div id="progressBar"></div>
-  <script>
-    window.onscroll = function () {
-      var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-      var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-      var scrolled = (winScroll / height) * 100;
-      document.getElementById("progressBar").style.width = scrolled + "%";
-    };
-  </script>
+      .goog-te-banner-frame {
+        display: none !important;
+      }
+    </style>
+    <style>
+      #progressBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 8px;
+        background-color: #ff21bc;
+        z-index: 9999;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="progressBar"></div>
+    <script>
+      window.onscroll = function () {
+        var winScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        var height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        document.getElementById("progressBar").style.width = scrolled + "%";
+      };
+    </script>
 
-  <div id="google_element"></div>
-  <!-- Load Google Translate script over HTTPS and handle errors -->
-  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate" onerror="handleError(this)"></script>
+    <div id="google_element"></div>
+    <!-- Load Google Translate script over HTTPS and handle errors -->
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
+      onerror="handleError(this)"
+    ></script>
 
-  <script type="text/javascript">
-    function loadGoogleTranslate(){
-      new google.translate.TranslateElement({
-        pageLanguage: 'en',
-        includedLanguages: 'en,hi,pa,sa,mr,ur,bn,es,fr,de,it',
-        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-      }, 'google_element');
-    }
+    <script type="text/javascript">
+      function loadGoogleTranslate() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en",
+            includedLanguages: "en,hi,pa,sa,mr,ur,bn,es,fr,de,it",
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          },
+          "google_element"
+        );
+      }
 
-    function handleError(error) {
-      console.error('Error loading Google Translate script:', error);
-    }
-  </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-  var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-  (function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/66891af8eaf3bd8d4d18ca2d/1i24gr9s5';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-  })();
-  </script>
-  <!--End of Tawk.to Script-->
+      function handleError(error) {
+        console.error("Error loading Google Translate script:", error);
+      }
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/66891af8eaf3bd8d4d18ca2d/1i24gr9s5";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
 
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
-  <div class="circle-container">
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-  </div>
-</body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div class="circle-container">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+  </body>
 </html>
