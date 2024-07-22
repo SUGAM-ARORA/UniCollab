@@ -4,9 +4,9 @@ import './Login.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
-import homeIcon from './FreeLancer/homeicon.png'
-import { auth, googleProvider } from './Firebase/Firebase.js';
-import { signInWithPopup } from "firebase/auth";
+import homeIcon from './FreeLancer/homeicon.png';
+import { auth, googleProvider, githubProvider } from './Firebase/Firebase.js';
+import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -14,30 +14,33 @@ const LogIn = () => {
   const [username, setUsername] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUpMode, setIsSignUpMode] = useState(false);
-  const [user, setUser] = useState({
-    firstName: '',
-    lastname: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-  });
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
-      const uid = user.uid;
       localStorage.setItem('user', JSON.stringify(user));
       console.log("Google sign-in success:", user);
-      
       navigate("/");
     } catch (error) {
       console.error("Google sign-in error:", error);
     }
   };
 
-  const handleNextClick = async (e) => {
+  const handleGitHubSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, githubProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log("GitHub sign-in success:", user);
+      navigate("/");
+    } catch (error) {
+      console.error("GitHub sign-in error:", error);
+    }
+  };
+
+  const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -54,39 +57,23 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const response = await fetch('http://localhost:5000/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ email, password })
-        });
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log('Login successful:', user);
+        localStorage.setItem('user', JSON.stringify(user));
 
-        const data = await response.json();
-        if (response.status === 200) {
-          console.log('Login successful', data);
-          displayAlert('Logged in');
-
-          // Store the username and email in local storage
-          localStorage.setItem('username', data.user.username);
-          localStorage.setItem('email', data.user.email);
-
-          setTimeout(() => {
-            navigate('/');
-          }, 1000);
-
-          // Handle successful login
-        } else {
-          displayAlert(data.message || 'Login failed');
-        }
+        displayAlert('Logged in');
+        setTimeout(() => {
+          navigate('/');
+        }, 1000);
       } catch (error) {
         displayAlert('An error occurred during login');
-        console.error('Error:', error);
+        console.error('Error:', error.message);
       }
     }
   };
 
-  const handleSignUpClick = async (e) => {
+  const handleSignUp = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
     let valid = true;
@@ -108,24 +95,13 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const response = await fetch('http://localhost:5000/auth/signup', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ username, email, password })
-        });
-        const data = await response.json();
-        if (response.ok) {
-          console.log('Signup successful', data);
-          displayAlert('Signed up. Now login');
-          // Handle successful signup
-        } else {
-          displayAlert(data.message || 'Signup failed');
-        }
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        console.log('Signup successful:', user);
+        displayAlert('Signed up. Now login');
       } catch (error) {
         displayAlert('An error occurred during signup');
-        console.error('Error:', error);
+        console.error('Error:', error.message);
       }
     }
   };
@@ -153,7 +129,7 @@ const LogIn = () => {
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">
         <div className="signin-signup">
-          <form className="sign-in-form" onSubmit={handleNextClick}>
+          <form className="sign-in-form" onSubmit={handleLogin}>
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
@@ -197,10 +173,13 @@ const LogIn = () => {
               <Link to="https://www.linkedin.com" className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
+              <div onClick={handleGitHubSignIn} className="social-icon">
+                <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
             </div>
           </form>
 
-          <form className="sign-up-form" onSubmit={handleSignUpClick}>
+          <form className="sign-up-form" onSubmit={handleSignUp}>
             <h2 className="title">Start Journey with UniCollab</h2>
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
@@ -218,8 +197,8 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-envelope"></i>
               <input
-                type="email"
                 className='input'
+                type="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -228,6 +207,7 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-lock"></i>
               <input
+                className='input'
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
@@ -237,7 +217,7 @@ const LogIn = () => {
                 {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
               </button>
             </div>
-            <input type="submit" value="Sign Up" className="btn1 solid" />
+            <input type="submit" className="btn1" value="Sign Up" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
               <Link to="https://www.facebook.com" className="social-icon">
@@ -252,6 +232,9 @@ const LogIn = () => {
               <Link to="https://www.linkedin.com" className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
               </Link>
+              <div onClick={handleGitHubSignIn} className="social-icon">
+                <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
             </div>
           </form>
         </div>
@@ -260,23 +243,23 @@ const LogIn = () => {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>New here ?</h3>
-            <p>Join the UniCollab community to collaborate and innovate with fellow students.</p>
+            <h3>New here?</h3>
+            <p>Step into UniCollab with a social login or create a new account.</p>
             <button className="btn1 transparent" id="sign-up-btn" onClick={toggleSignUpMode}>
               Sign Up
             </button>
           </div>
-          <img src={logImg} className="image" alt="Sign in" />
+          <img src={logImg} className="image" alt="" />
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>One of us ?</h3>
-            <p>Welcome back! Log in to access your projects and collaborations.</p>
+            <h3>One of us?</h3>
+            <p>Sign in to continue your journey with UniCollab.</p>
             <button className="btn1 transparent" id="sign-in-btn" onClick={toggleSignUpMode}>
               Sign In
             </button>
           </div>
-          <img src={registerImg} className="image" alt="Sign up" />
+          <img src={registerImg} className="image" alt="" />
         </div>
       </div>
     </div>

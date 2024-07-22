@@ -13,10 +13,9 @@ const scrollToTop = () => {
 const Footer = () => {
   return (
     <div className='footer'>
-      <SubscribeMail/>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
           <div>
             <div className='footer-title'>Unicollab</div>
             <div className='footer-description'>
@@ -55,6 +54,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <SubscribeMail />
       <div className='footer-icons footer-icons-md'>
         <a href="#" target="_blank" rel='noreferrer'>
           <FontAwesomeIcon icon={faLinkedin} />
@@ -66,21 +66,16 @@ const Footer = () => {
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon   icon={faTwitter} />
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
       </div>
+
       <div className='footer-bottom'>
         <div className='footer-bottom-link'>
           &copy; 2024 UniCollab. All rights reserved.
         </div>
       </div>
-      <div className='scrolltop'>
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-          <button onClick={scrollToTop} className="button btn">
-            To the Top
-          </button>
-        </div>
-      </div>
+
     </div>
   );
 }
