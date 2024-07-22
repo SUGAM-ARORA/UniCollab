@@ -101,13 +101,13 @@
   font-size: x-large;
 }
 
-.footer-icons a i {
+.footer-icons a {
   color: white;
   transition: color 0.3s, font-size 0.3s;
 }
 
-.footer-icons a i:hover {
-  font-size: 2rem;
+.footer-icons a:hover {
+  font-size: 1.75rem;
   color: #007bff;
 }
 
