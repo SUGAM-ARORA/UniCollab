@@ -1,39 +1,79 @@
-import './contact_us.css';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './contact_us.css';
 
 function ContactUs() {
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        // Perform form validation or any other logic here
 
-    const email = document.getElementById("email").value;
-    const name = document.getElementById("flname").value;
-    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        const formData = new FormData();
+        const email = document.getElementById("email").value;
+        const name = document.getElementById("flname").value;
+        const issue = document.getElementById("issue").value;
+        const message = document.getElementById("message").value;
+        const attachment = document.getElementById("attachments").files[0];
 
-    if (!emailPattern.test(email)) {
-      toast.error("Please enter a valid email address.");
-      return;
-    } else if (name.length < 2 || name.length > 40) {
-      toast.error("Name should be within 2 - 40 characters only.");
-      return;
-    }
-    // Show success toast notification
-    toast.success("Sent Successfully!", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-      transition: Bounce,
-    });
-  };
+        const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+        if (!emailPattern.test(email)) {
+            toast.error("Please enter a valid email address.");
+            return;
+        } else if (name.length < 2 || name.length > 40) {
+            toast.error("Name should be within 2 - 40 characters only.");
+            return;
+        }
+
+        // Append data to FormData object
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('issue', issue);
+        formData.append('message', message);
+        if (attachment) {
+            formData.append('attachments', attachment);
+        }
+
+        const sendButton = document.querySelector('button[type="submit"]');
+        sendButton.disabled = true;
+        sendButton.textContent = 'Sending...';
+
+        try {
+            const response = await fetch('http://localhost:3000/send', {
+                method: 'POST',
+                body: formData, // Send FormData object
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const result = await response.json();
+
+            if (result.success) {
+                toast.success("Sent Successfully!", {
+                    position: "top-center",
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "dark",
+                    transition: Bounce,
+                });
+            } else {
+                toast.error("Failed to send message. Please try again later.");
+            }
+        } catch (error) {
+            console.error("Error sending message:", error);
+            toast.error("Failed to send message. Please try again later.");
+        } finally {
+            sendButton.disabled = false;
+            sendButton.textContent = 'Submit';
+        }
+    };
 
     return (
         <div className='box'>
