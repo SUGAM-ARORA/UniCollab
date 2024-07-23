@@ -31,7 +31,7 @@ btn1:hover {
 .mail {
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 500px;
 }
 
 p {
