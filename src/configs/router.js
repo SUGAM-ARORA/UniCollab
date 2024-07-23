@@ -24,6 +24,7 @@ import EmailVerification from "../Components/auth/resetPassword/EmailVerificatio
 import OTPVerification from "../Components/auth/resetPassword/OTPVerification";
 import ResetPassword from "../Components/auth/resetPassword/ResetPassword";
 import Freelancer from "../Components/FreeLancer/Freelancer";
+import Feedbackform from "../Components/feedback/feedbackform";
 
 
 const router = createBrowserRouter([
@@ -51,6 +52,7 @@ const router = createBrowserRouter([
     { path: "/otpVerification/:email", element: <OTPVerification /> },
     { path: "/resetPassword/:email", element: <ResetPassword /> },
     { path: "/freelancer", element: <Freelancer /> },
+    { path: "/feedback", element: <Feedbackform /> }
   ]);
 
   export default router;

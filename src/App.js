@@ -33,8 +33,8 @@ function App() {
   return (
     <>
       <Helmet>
-        <meta name="description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms."/>
-        <meta name="language" content="English"/>
+        <meta name="description" content="Welcome to UniCollab, the ultimate platform for student collaboration. Connect with peers from various universities and colleges to innovate and elevate your projects. UniCollab: where ideas flow, knowledge is shared, and learning transcends classrooms." />
+        <meta name="language" content="English" />
         <meta name="keywords" content="Collab, Education, Students, Student Collaboration, University Collaboration, College Projects, Innovative Learning, Peer Networking, Academic Collaboration, Project Sharing, Knowledge Sharing, Student Innovation, Collaborative Learning, University Networking, Inter-University Projects, Academic Networking, Collaborative Projects, Student Platform" />
         <meta property="og:type" content="website" />
         <meta name="author" content="Sugma Arora" />
@@ -45,14 +45,17 @@ function App() {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <div className="App">
-      <div className="App-content"></div>
-      <div>
+        <div className="App-content"></div>
+        <div>
           <RouterProvider router={router} />
+        </div>
+        <GoToTop />
+        <Footer />
+        <ChatbotIcon />
+        <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px',zIndex:'1000' }}>
+          <button style={{backgroundColor:'#ff21bc'}}>Help Us Improve!</button>
+        </a>
       </div>
-      <GoToTop />
-      <Footer />
-      <ChatbotIcon />
-    </div>
     </>
   );
 }
