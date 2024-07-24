@@ -1,7 +1,6 @@
 // pricing.js
 import React from "react";
 import './pricing.css';
-import Arrow from '../../projects/arrow.png'
 import { Link } from "react-router-dom";
 import homeIcon from '../../../img/homeicon.png';
 
