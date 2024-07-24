@@ -214,7 +214,6 @@ const Cart = () => {
   </a>
   <span className="cart-count">{cartCount}</span>
 </div>
-
       <div className="card-container">
         <Link to="/" className="home-link" style={{ marginRight: '10px', marginTop:'30px' }}>
           <img src={homeIcon} alt="Home" className="home-icon" />
@@ -243,7 +242,7 @@ const Cart = () => {
 
       <div className="cart-signin">
         <button onClick={signIn}>Enter Your UniCollab Portal</button>
-        <button onClick={signUp}>Be Part of UniCollab Club</button>
+        <button onClick={signUp}>Be Part of Our UniCollab Club</button>
       </div>
     </div>
   );
