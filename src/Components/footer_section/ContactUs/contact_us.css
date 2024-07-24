@@ -16,6 +16,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     justify-content: space-around;
+    
 }
 
 .general {
@@ -35,6 +36,7 @@
     padding: 20px;
     background-color: #1e1b3a;
     border-radius: 10px;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .box1:hover,
@@ -46,6 +48,7 @@
     outline: 3px solid white;
     border-radius: 15px;
     transition: 0.1s ease-in-out;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .box1 h2,
@@ -70,6 +73,7 @@
     border: 3px solid white;
     border-radius: 15px;
     background-color: #2a2747;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .form h2 {
