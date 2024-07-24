@@ -6,7 +6,13 @@ import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
 import { auth, googleProvider, githubProvider } from './Firebase/Firebase.js';
-import { signInWithPopup, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  signInWithPopup,
+  signInWithEmailAndPassword,
+  createUserWithEmailAndPassword,
+  RecaptchaVerifier,
+  signInWithPhoneNumber,
+} from 'firebase/auth';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -14,6 +20,10 @@ const LogIn = () => {
   const [username, setUsername] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUpMode, setIsSignUpMode] = useState(false);
+  const [showPhoneAuth, setShowPhoneAuth] = useState(false);
+  const [phoneNumber, setPhoneNumber] = useState('');
+  const [otp, setOtp] = useState('');
+  const [verificationId, setVerificationId] = useState(null);
   const navigate = useNavigate();
 
   const handleGoogleSignIn = async () => {
@@ -21,10 +31,10 @@ const LogIn = () => {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
       localStorage.setItem('user', JSON.stringify(user));
-      console.log("Google sign-in success:", user);
-      navigate("/");
+      console.log('Google sign-in success:', user);
+      navigate('/');
     } catch (error) {
-      console.error("Google sign-in error:", error);
+      console.error('Google sign-in error:', error);
     }
   };
 
@@ -33,10 +43,10 @@ const LogIn = () => {
       const result = await signInWithPopup(auth, githubProvider);
       const user = result.user;
       localStorage.setItem('user', JSON.stringify(user));
-      console.log("GitHub sign-in success:", user);
-      navigate("/");
+      console.log('GitHub sign-in success:', user);
+      navigate('/');
     } catch (error) {
-      console.error("GitHub sign-in error:", error);
+      console.error('GitHub sign-in error:', error);
     }
   };
 
@@ -57,7 +67,11 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const userCredential = await signInWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
         const user = userCredential.user;
         console.log('Login successful:', user);
         localStorage.setItem('user', JSON.stringify(user));
@@ -95,7 +109,11 @@ const LogIn = () => {
 
     if (valid) {
       try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const userCredential = await createUserWithEmailAndPassword(
+          auth,
+          email,
+          password
+        );
         const user = userCredential.user;
         console.log('Signup successful:', user);
         displayAlert('Signed up. Now login');
@@ -115,6 +133,10 @@ const LogIn = () => {
     clearErrors();
   };
 
+  const togglePhoneAuth = () => {
+    setShowPhoneAuth(!showPhoneAuth);
+  };
+
   const displayAlert = (message) => {
     alert(message);
   };
@@ -123,6 +145,58 @@ const LogIn = () => {
     setEmail('');
     setPassword('');
     setUsername('');
+  };
+
+  const handlePhoneSignIn = async () => {
+    try {
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(
+          'recaptcha-container',
+          {
+            size: 'invisible',
+            callback: (response) => {
+              console.log('Recaptcha verified');
+            },
+          },
+          auth
+        );
+      }
+
+      const appVerifier = window.recaptchaVerifier;
+
+      if (!phoneNumber.startsWith('+')) {
+        displayAlert('Please include country code in phone number.');
+        return;
+      }
+
+      const confirmationResult = await signInWithPhoneNumber(
+        auth,
+        phoneNumber,
+        appVerifier
+      );
+      setVerificationId(confirmationResult);
+      console.log('SMS sent.');
+      displayAlert('OTP sent. Please check your phone.');
+    } catch (error) {
+      console.error('Error during phone sign-in:', error);
+      displayAlert('Failed to send OTP. Please try again.');
+    }
+  };
+
+  const verifyOtp = async () => {
+    try {
+      if (verificationId) {
+        const result = await verificationId.confirm(otp);
+        const user = result.user;
+        localStorage.setItem('user', JSON.stringify(user));
+        console.log('Phone sign-in success:', user);
+        displayAlert('Phone verification successful!');
+        navigate('/');
+      }
+    } catch (error) {
+      console.error('Error verifying OTP:', error);
+      displayAlert('Invalid OTP. Please try again.');
+    }
   };
 
   return (
@@ -134,11 +208,11 @@ const LogIn = () => {
               <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
             <h2 className="title">Step into UniCollab! Log In</h2>
-            
+
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
-                className='input'
+                className="input"
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -148,14 +222,22 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-lock"></i>
               <input
-                className='input'
+                className="input"
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
-                {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? (
+                  <i className="fas fa-eye-slash"></i>
+                ) : (
+                  <i className="fas fa-eye"></i>
+                )}
               </button>
             </div>
             <input type="submit" value="Login" className="btn1 solid" />
@@ -176,18 +258,51 @@ const LogIn = () => {
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
               </div>
+              <div onClick={togglePhoneAuth} className="social-icon">
+                <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
+              </div>
             </div>
+
+            {showPhoneAuth && (
+              <div className="phone-auth-section">
+                <div className="input-field">
+                  <i className="fas fa-phone"></i>
+                  <input
+                    type="tel"
+                    placeholder="Phone Number"
+                    value={phoneNumber}
+                    onChange={(e) => setPhoneNumber(e.target.value)}
+                  />
+                </div>
+                <button type="button" className="btn1 solid" onClick={handlePhoneSignIn}>
+                  Send OTP
+                </button>
+                <div className="input-field">
+                  <i className="fas fa-key"></i>
+                  <input
+                    type="text"
+                    placeholder="Enter OTP"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                  />
+                </div>
+                <button type="button" className="btn1 solid" onClick={verifyOtp}>
+                  Verify OTP
+                </button>
+                <div id="recaptcha-container"></div>
+              </div>
+            )}
           </form>
 
           <form className="sign-up-form" onSubmit={handleSignUp}>
-            <h2 className="title">Start Journey with UniCollab</h2>
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
+            <h2 className="title">Sign Up for UniCollab</h2>
+
             <div className="input-field">
               <i className="fas fa-user"></i>
               <input
-                className='input'
                 type="text"
                 placeholder="Username"
                 value={username}
@@ -197,7 +312,6 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-envelope"></i>
               <input
-                className='input'
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -207,14 +321,21 @@ const LogIn = () => {
             <div className="input-field">
               <i className="fas fa-lock"></i>
               <input
-                className='input'
                 type={showPassword ? 'text' : 'password'}
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
-              <button type="button" className="toggle-password" onClick={togglePasswordVisibility}>
-                {showPassword ? <i className="fas fa-eye-slash"></i> : <i className="fas fa-eye"></i>}
+              <button
+                type="button"
+                className="toggle-password"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? (
+                  <i className="fas fa-eye-slash"></i>
+                ) : (
+                  <i className="fas fa-eye"></i>
+                )}
               </button>
             </div>
             <input type="submit" className="btn1" value="Sign Up" />
@@ -235,6 +356,9 @@ const LogIn = () => {
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
               </div>
+              <div onClick={togglePhoneAuth} className="social-icon">
+                <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
+              </div>
             </div>
           </form>
         </div>
@@ -243,23 +367,29 @@ const LogIn = () => {
       <div className="panels-container">
         <div className="panel left-panel">
           <div className="content">
-            <h3>New here?</h3>
-            <p>Step into UniCollab with a social login or create a new account.</p>
-            <button className="btn1 transparent" id="sign-up-btn" onClick={toggleSignUpMode}>
+            <h3>New to UniCollab?</h3>
+            <p>
+              Join us today and start collaborating with students from
+              universities worldwide!
+            </p>
+            <button className="btn1 transparent" onClick={toggleSignUpMode}>
               Sign Up
             </button>
           </div>
-          <img src={logImg} className="image" alt="" />
+          <img src={logImg} className="image" alt="Log In" />
         </div>
         <div className="panel right-panel">
           <div className="content">
-            <h3>One of us?</h3>
-            <p>Sign in to continue your journey with UniCollab.</p>
-            <button className="btn1 transparent" id="sign-in-btn" onClick={toggleSignUpMode}>
-              Sign In
+            <h3>One of Us?</h3>
+            <p>
+              Log in to access your account and continue collaborating and
+              innovating.
+            </p>
+            <button className="btn1 transparent" onClick={toggleSignUpMode}>
+              Log In
             </button>
           </div>
-          <img src={registerImg} className="image" alt="" />
+          <img src={registerImg} className="image" alt="Sign Up" />
         </div>
       </div>
     </div>
