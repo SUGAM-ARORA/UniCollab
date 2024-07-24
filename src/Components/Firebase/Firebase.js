@@ -2,13 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, signInWithPopup, GithubAuthProvider } from "firebase/auth";
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth, GoogleAuthProvider, signInWithPopup, GithubAuthProvider, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBijC8S9eqfsv6FJ4-XfCJswmn9cxYqj80",
   authDomain: "unicollab-38f58.firebaseapp.com",
@@ -25,9 +21,8 @@ const analytics = getAnalytics(firebaseApp);
 const db = getFirestore(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
-const app = initializeApp(firebaseConfig);
-const auth= getAuth(app);
+const auth = getAuth(firebaseApp);
 
-export { auth, signInWithPopup, githubProvider, googleProvider, GithubAuthProvider };
-export { db, analytics, app };
-export default app;
+export { auth, signInWithPopup, githubProvider, googleProvider, GithubAuthProvider, RecaptchaVerifier, signInWithPhoneNumber };
+export { db, analytics, firebaseApp as app };
+export default firebaseApp;
