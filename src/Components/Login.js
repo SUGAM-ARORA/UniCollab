@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
-import { auth, googleProvider, githubProvider } from './Firebase/Firebase.js';
+import { auth, googleProvider, githubProvider, facebookProvider } from './Firebase/Firebase.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -49,7 +49,18 @@ const LogIn = () => {
       console.error('GitHub sign-in error:', error);
     }
   };
-
+  const handleFacebookSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, facebookProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Facebook sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Facebook sign-in error:', error);
+    }
+  };
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -243,9 +254,9 @@ const LogIn = () => {
             <input type="submit" value="Login" className="btn1 solid" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
-              <Link to="https://www.facebook.com" className="social-icon">
+              <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
@@ -341,9 +352,9 @@ const LogIn = () => {
             <input type="submit" className="btn1" value="Sign Up" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
-              <Link to="https://www.facebook.com" className="social-icon">
+            <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <Link to="https://www.twitter.com" className="social-icon">
                 <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
               </Link>
@@ -372,9 +383,22 @@ const LogIn = () => {
               Join us today and start collaborating with students from
               universities worldwide!
             </p>
-            <button className="btn1 transparent" onClick={toggleSignUpMode}>
-              Sign Up
-            </button>
+            <button
+  className="btn1 transparent"
+  onClick={toggleSignUpMode}
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '30%', // Adjust width as needed
+    padding: '10px 20px', // Adjust padding as necessary
+    margin: '0 auto', // Center the button itself if it has a fixed width
+    fontSize: '14px', // Set text size to 14px
+  }}
+>
+  Sign Up
+</button>
+
           </div>
           <img src={logImg} className="image" alt="Log In" />
         </div>
@@ -385,9 +409,22 @@ const LogIn = () => {
               Log in to access your account and continue collaborating and
               innovating.
             </p>
-            <button className="btn1 transparent" onClick={toggleSignUpMode}>
-              Log In
-            </button>
+            <button
+  className="btn1 transparent"
+  onClick={toggleSignUpMode}
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '30%', // Ensure the button takes full width if needed
+    padding: '10px 20px', // Adjust padding as necessary
+    margin: '0 auto', // Center the button itself if it has a fixed width
+    fontSize: '14px', // Set text size to 14px
+  }}
+>
+  Log In
+</button>
+
           </div>
           <img src={registerImg} className="image" alt="Sign Up" />
         </div>
