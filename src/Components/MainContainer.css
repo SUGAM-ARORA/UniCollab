@@ -240,6 +240,12 @@
   display: none; /* Chrome, Safari, Opera */
 }
 
+.bottomCard_name {
+
+  border: 2px solid black;
+  padding: 2px;
+  top: 0;
+}
 
 
 .maincontainer .right .topCard .topCard_name,
@@ -247,11 +253,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .maincontainer .right .bottom_card .bottomCard_name {
   margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: grey;
 }
+
 
 .maincontainer .right .topCard .topCard_name h2,
 .maincontainer .right .bottom_card .bottomCard_name h2 {
@@ -290,7 +302,7 @@
 .maincontainer .right .topCard .earning p:nth-child(odd) {
   background: #211d3a;
   border-radius: 5px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);  
 }
 
 .maincontainer .right .topCard .earning p:last-child span {
@@ -419,6 +431,7 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
   
   .maincontainer .right .bottom_card .topSeller {
     margin: 20px 0;
