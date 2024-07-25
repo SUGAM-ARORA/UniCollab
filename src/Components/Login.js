@@ -5,7 +5,7 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
-import { auth, googleProvider, githubProvider, facebookProvider, microsoftProvider } from './Firebase/Firebase.js';
+import { auth, googleProvider, githubProvider, facebookProvider, microsoftProvider, linkedinProvider } from './Firebase/Firebase.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
@@ -86,6 +86,19 @@ const LogIn = () => {
     }
   };
   
+  // New LinkedIn sign-in handler
+  const handleLinkedInSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, linkedinProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('LinkedIn sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('LinkedIn sign-in error:', error);
+    }
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -288,9 +301,9 @@ const LogIn = () => {
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.linkedin.com" className="social-icon">
+              <div onClick={handleLinkedInSignIn} className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
               </div>
@@ -389,9 +402,9 @@ const LogIn = () => {
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.linkedin.com" className="social-icon">
+              <div onClick={handleLinkedInSignIn} className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
               </div>
