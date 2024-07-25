@@ -12,7 +12,7 @@ import {
   createUserWithEmailAndPassword,
   RecaptchaVerifier,
   signInWithPhoneNumber,
-  TwitterAuthProvider
+  TwitterAuthProvider,
 } from 'firebase/auth';
 
 const LogIn = () => {
