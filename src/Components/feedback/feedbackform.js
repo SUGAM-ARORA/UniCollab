@@ -1,9 +1,14 @@
 import React from 'react'
 import './feedback.css'
+import { Link } from 'react-router-dom';
+import homeIcon from './homeicon.png'
 
 const Feedbackform = () => {
   return (
     <div>
+      <Link to="/">
+        <img src={homeIcon} alt="Home" className="home-icon" />
+      </Link>
       <div className='headingFeedback'>
         Help Us Improve!
       </div>
@@ -15,7 +20,7 @@ const Feedbackform = () => {
           </div>
           <div className='componentsFormFeedback'>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required  placeholder='Enter Your Email'/>
+            <input type="email" id="email" name="email" required placeholder='Enter Your Email' />
           </div>
           <div className='componentsFormFeedback'>
             <label for="rating">Rating:</label>
