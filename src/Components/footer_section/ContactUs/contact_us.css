@@ -133,6 +133,10 @@
     background-color: #3a3756;
     color: white;
 }
+.select-issue {
+    height: 100px;
+    /* Add any other styles you want here */
+}
 
 .contentInside a {
     font-size: large;

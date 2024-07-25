@@ -5,14 +5,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
-import { auth, googleProvider, githubProvider, facebookProvider } from './Firebase/Firebase.js';
+import { auth, googleProvider, githubProvider, facebookProvider, microsoftProvider, linkedinProvider } from './Firebase/Firebase.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   RecaptchaVerifier,
   signInWithPhoneNumber,
-  TwitterAuthProvider
+  TwitterAuthProvider,
 } from 'firebase/auth';
 
 const LogIn = () => {
@@ -74,6 +74,31 @@ const LogIn = () => {
     }
   };
   
+  const handleMicrosoftSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, microsoftProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Microsoft sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Microsoft sign-in error:', error);
+    }
+  };
+  
+  // New LinkedIn sign-in handler
+  const handleLinkedInSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, linkedinProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('LinkedIn sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('LinkedIn sign-in error:', error);
+    }
+  };
+
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -276,11 +301,14 @@ const LogIn = () => {
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.linkedin.com" className="social-icon">
+              <div onClick={handleLinkedInSignIn} className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
               </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
@@ -374,11 +402,14 @@ const LogIn = () => {
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.linkedin.com" className="social-icon">
+              <div onClick={handleLinkedInSignIn} className="social-icon">
                 <i className="fab fa-linkedin-in" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
               </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
