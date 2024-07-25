@@ -2,7 +2,16 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, signInWithPopup, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { 
+  getAuth, 
+  GoogleAuthProvider, 
+  GithubAuthProvider, 
+  FacebookAuthProvider, 
+  TwitterAuthProvider, // Import TwitterAuthProvider
+  signInWithPopup, 
+  RecaptchaVerifier, 
+  signInWithPhoneNumber 
+} from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -22,8 +31,22 @@ const db = getFirestore(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
+const twitterProvider = new TwitterAuthProvider(); // Initialize TwitterAuthProvider
 const auth = getAuth(firebaseApp);
 
-export { auth, signInWithPopup, githubProvider, googleProvider, facebookProvider, GithubAuthProvider, FacebookAuthProvider, RecaptchaVerifier, signInWithPhoneNumber };
+export { 
+  auth, 
+  signInWithPopup, 
+  githubProvider, 
+  googleProvider, 
+  facebookProvider, 
+  twitterProvider, // Export twitterProvider
+  GithubAuthProvider, 
+  FacebookAuthProvider, 
+  TwitterAuthProvider, // Export TwitterAuthProvider
+  RecaptchaVerifier, 
+  signInWithPhoneNumber 
+};
+
 export { db, analytics, firebaseApp as app };
 export default firebaseApp;
