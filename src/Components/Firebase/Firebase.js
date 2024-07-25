@@ -8,7 +8,7 @@ import {
   GithubAuthProvider, 
   FacebookAuthProvider, 
   TwitterAuthProvider,
-  OAuthProvider, // Import OAuthProvider for Microsoft
+  OAuthProvider, // Import OAuthProvider for LinkedIn
   signInWithPopup, 
   RecaptchaVerifier, 
   signInWithPhoneNumber 
@@ -29,12 +29,14 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
 const twitterProvider = new TwitterAuthProvider();
 const microsoftProvider = new OAuthProvider('microsoft.com'); // Initialize Microsoft provider
-const auth = getAuth(firebaseApp);
+const linkedinProvider = new OAuthProvider('linkedin.com'); // Initialize LinkedIn provider
 
 export { 
   auth, 
@@ -43,10 +45,8 @@ export {
   githubProvider, 
   facebookProvider, 
   twitterProvider, 
-  microsoftProvider, // Export Microsoft provider
-  GithubAuthProvider, 
-  FacebookAuthProvider, 
-  TwitterAuthProvider, 
+  microsoftProvider, 
+  linkedinProvider, 
   RecaptchaVerifier, 
   signInWithPhoneNumber 
 };
