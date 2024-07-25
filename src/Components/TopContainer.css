@@ -23,7 +23,6 @@
 .profileContainer .go-pro-btn {
   padding: 10px 10px; /* Adjust padding to change the button size */
 }
-
 @media (max-width: 830px){
   .navbar{
     width: 80vw;
