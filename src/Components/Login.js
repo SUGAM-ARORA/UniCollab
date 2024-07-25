@@ -5,14 +5,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
-import { auth, googleProvider, githubProvider, facebookProvider } from './Firebase/Firebase.js';
+import { auth, googleProvider, githubProvider, facebookProvider, microsoftProvider } from './Firebase/Firebase.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   RecaptchaVerifier,
   signInWithPhoneNumber,
-  TwitterAuthProvider
+  TwitterAuthProvider,
 } from 'firebase/auth';
 
 const LogIn = () => {
@@ -71,6 +71,18 @@ const LogIn = () => {
       navigate('/');
     } catch (error) {
       console.error('Twitter sign-in error:', error);
+    }
+  };
+  
+  const handleMicrosoftSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, microsoftProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Microsoft sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Microsoft sign-in error:', error);
     }
   };
   
@@ -282,6 +294,9 @@ const LogIn = () => {
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
               </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
+              </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
               </div>
@@ -379,6 +394,9 @@ const LogIn = () => {
               </Link>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
               </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>

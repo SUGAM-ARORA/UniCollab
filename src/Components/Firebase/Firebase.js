@@ -7,7 +7,8 @@ import {
   GoogleAuthProvider, 
   GithubAuthProvider, 
   FacebookAuthProvider, 
-  TwitterAuthProvider, // Import TwitterAuthProvider
+  TwitterAuthProvider,
+  OAuthProvider, // Import OAuthProvider for Microsoft
   signInWithPopup, 
   RecaptchaVerifier, 
   signInWithPhoneNumber 
@@ -31,19 +32,21 @@ const db = getFirestore(firebaseApp);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
-const twitterProvider = new TwitterAuthProvider(); // Initialize TwitterAuthProvider
+const twitterProvider = new TwitterAuthProvider();
+const microsoftProvider = new OAuthProvider('microsoft.com'); // Initialize Microsoft provider
 const auth = getAuth(firebaseApp);
 
 export { 
   auth, 
   signInWithPopup, 
-  githubProvider, 
   googleProvider, 
+  githubProvider, 
   facebookProvider, 
-  twitterProvider, // Export twitterProvider
+  twitterProvider, 
+  microsoftProvider, // Export Microsoft provider
   GithubAuthProvider, 
   FacebookAuthProvider, 
-  TwitterAuthProvider, // Export TwitterAuthProvider
+  TwitterAuthProvider, 
   RecaptchaVerifier, 
   signInWithPhoneNumber 
 };

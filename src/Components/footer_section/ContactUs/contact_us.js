@@ -117,11 +117,11 @@ function ContactUs() {
                     <p>Use the form below to get in touch. We attempt to respond to support requests within 1 business day.</p>
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="flname">Name :</label>
-                        <input type='text' placeholder='Name' id='flname' name='flname' required></input>
+                        <input type='text' placeholder='Name' id='flname' name='flname' required />
                         <label htmlFor="email">Email :</label>
-                        <input type='email' placeholder='Email' id='email' name='email' required></input>
+                        <input type='email' placeholder='Email' id='email' name='email' required />
                         <label htmlFor="issue">Issue Type:</label>
-                        <select name='issue' id='issue' required>
+                        <select name='issue' id='issue' className='select-issue' required>
                             <option value='Bug'>Bug</option>
                             <option value='Suggestion'>Suggestion</option>
                             <option value='Other'>Other</option>
@@ -129,7 +129,7 @@ function ContactUs() {
                         <label htmlFor="message">Message :</label>
                         <textarea id='message' placeholder='Message' name='message' required></textarea>
                         <label htmlFor="attachments">Any Attachments :</label>
-                        <input type='file' id='attachments' name='attachments'></input>
+                        <input type='file' id='attachments' name='attachments' />
                         <button type='submit'>Submit</button>
                     </form>
                 </div>
