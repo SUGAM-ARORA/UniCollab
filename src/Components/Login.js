@@ -5,13 +5,14 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import logImg from './Profile/log.svg';
 import registerImg from './Profile/register.svg';
 import homeIcon from './FreeLancer/homeicon.png';
-import { auth, googleProvider, githubProvider } from './Firebase/Firebase.js';
+import { auth, googleProvider, githubProvider, facebookProvider, microsoftProvider } from './Firebase/Firebase.js';
 import {
   signInWithPopup,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   RecaptchaVerifier,
   signInWithPhoneNumber,
+  TwitterAuthProvider
 } from 'firebase/auth';
 
 const LogIn = () => {
@@ -49,7 +50,42 @@ const LogIn = () => {
       console.error('GitHub sign-in error:', error);
     }
   };
-
+  const handleFacebookSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, facebookProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Facebook sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Facebook sign-in error:', error);
+    }
+  };
+  const handleTwitterSignIn = async () => {
+    try {
+      const twitterProvider = new TwitterAuthProvider();
+      const result = await signInWithPopup(auth, twitterProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Twitter sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Twitter sign-in error:', error);
+    }
+  };
+  
+  const handleMicrosoftSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, microsoftProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Microsoft sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Microsoft sign-in error:', error);
+    }
+  };
+  
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
@@ -243,12 +279,12 @@ const LogIn = () => {
             <input type="submit" value="Login" className="btn1 solid" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
-              <Link to="https://www.facebook.com" className="social-icon">
+              <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
-              </Link>
-              <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
+              <div onClick={handleTwitterSignIn} className="social-icon">
+              <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+            </div>
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
@@ -257,6 +293,9 @@ const LogIn = () => {
               </Link>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
               </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
@@ -341,12 +380,12 @@ const LogIn = () => {
             <input type="submit" className="btn1" value="Sign Up" />
             <p className="social-text">Connect with Social Magic</p>
             <div className="social-media">
-              <Link to="https://www.facebook.com" className="social-icon">
+            <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
-              </Link>
-              <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              </div>
+              <div onClick={handleTwitterSignIn} className="social-icon">
+              <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+            </div>
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
@@ -355,6 +394,9 @@ const LogIn = () => {
               </Link>
               <div onClick={handleGitHubSignIn} className="social-icon">
                 <i className="fab fa-github" style={{ color: 'darkturquoise' }}></i>
+              </div>
+              <div onClick={handleMicrosoftSignIn} className="social-icon">
+              <i className="fab fa-microsoft" style={{ color: 'darkturquoise' }}></i>
               </div>
               <div onClick={togglePhoneAuth} className="social-icon">
                 <i className="fas fa-phone" style={{ color: 'darkturquoise' }}></i>
@@ -372,9 +414,22 @@ const LogIn = () => {
               Join us today and start collaborating with students from
               universities worldwide!
             </p>
-            <button className="btn1 transparent" onClick={toggleSignUpMode}>
-              Sign Up
-            </button>
+            <button
+  className="btn1 transparent"
+  onClick={toggleSignUpMode}
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '30%', // Adjust width as needed
+    padding: '10px 20px', // Adjust padding as necessary
+    margin: '0 auto', // Center the button itself if it has a fixed width
+    fontSize: '14px', // Set text size to 14px
+  }}
+>
+  Sign Up
+</button>
+
           </div>
           <img src={logImg} className="image" alt="Log In" />
         </div>
@@ -385,9 +440,22 @@ const LogIn = () => {
               Log in to access your account and continue collaborating and
               innovating.
             </p>
-            <button className="btn1 transparent" onClick={toggleSignUpMode}>
-              Log In
-            </button>
+            <button
+  className="btn1 transparent"
+  onClick={toggleSignUpMode}
+  style={{
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '30%', // Ensure the button takes full width if needed
+    padding: '10px 20px', // Adjust padding as necessary
+    margin: '0 auto', // Center the button itself if it has a fixed width
+    fontSize: '14px', // Set text size to 14px
+  }}
+>
+  Log In
+</button>
+
           </div>
           <img src={registerImg} className="image" alt="Sign Up" />
         </div>
