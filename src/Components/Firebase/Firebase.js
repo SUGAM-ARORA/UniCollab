@@ -2,7 +2,17 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getFirestore } from "firebase/firestore";
-import { getAuth, GoogleAuthProvider, GithubAuthProvider, FacebookAuthProvider, signInWithPopup, RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { 
+  getAuth, 
+  GoogleAuthProvider, 
+  GithubAuthProvider, 
+  FacebookAuthProvider, 
+  TwitterAuthProvider,
+  OAuthProvider, // Import OAuthProvider for LinkedIn
+  signInWithPopup, 
+  RecaptchaVerifier, 
+  signInWithPhoneNumber 
+} from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -19,11 +29,27 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const analytics = getAnalytics(firebaseApp);
 const db = getFirestore(firebaseApp);
+const auth = getAuth(firebaseApp);
+
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const facebookProvider = new FacebookAuthProvider();
-const auth = getAuth(firebaseApp);
+const twitterProvider = new TwitterAuthProvider();
+const microsoftProvider = new OAuthProvider('microsoft.com'); // Initialize Microsoft provider
+const linkedinProvider = new OAuthProvider('linkedin.com'); // Initialize LinkedIn provider
 
-export { auth, signInWithPopup, githubProvider, googleProvider, facebookProvider, GithubAuthProvider, FacebookAuthProvider, RecaptchaVerifier, signInWithPhoneNumber };
+export { 
+  auth, 
+  signInWithPopup, 
+  googleProvider, 
+  githubProvider, 
+  facebookProvider, 
+  twitterProvider, 
+  microsoftProvider, 
+  linkedinProvider, 
+  RecaptchaVerifier, 
+  signInWithPhoneNumber 
+};
+
 export { db, analytics, firebaseApp as app };
 export default firebaseApp;
