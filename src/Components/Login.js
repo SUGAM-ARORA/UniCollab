@@ -12,6 +12,7 @@ import {
   createUserWithEmailAndPassword,
   RecaptchaVerifier,
   signInWithPhoneNumber,
+  TwitterAuthProvider
 } from 'firebase/auth';
 
 const LogIn = () => {
@@ -58,6 +59,18 @@ const LogIn = () => {
       navigate('/');
     } catch (error) {
       console.error('Facebook sign-in error:', error);
+    }
+  };
+  const handleTwitterSignIn = async () => {
+    try {
+      const twitterProvider = new TwitterAuthProvider();
+      const result = await signInWithPopup(auth, twitterProvider);
+      const user = result.user;
+      localStorage.setItem('user', JSON.stringify(user));
+      console.log('Twitter sign-in success:', user);
+      navigate('/');
+    } catch (error) {
+      console.error('Twitter sign-in error:', error);
     }
   };
   
@@ -257,9 +270,9 @@ const LogIn = () => {
               <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              <div onClick={handleTwitterSignIn} className="social-icon">
+              <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+            </div>
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
@@ -355,9 +368,9 @@ const LogIn = () => {
             <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
               </div>
-              <Link to="https://www.twitter.com" className="social-icon">
-                <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
-              </Link>
+              <div onClick={handleTwitterSignIn} className="social-icon">
+              <i className="fab fa-twitter" style={{ color: 'darkturquoise' }}></i>
+            </div>
               <div onClick={handleGoogleSignIn} className="social-icon">
                 <i className="fab fa-google" style={{ color: 'darkturquoise' }}></i>
               </div>
