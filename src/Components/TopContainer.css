@@ -190,3 +190,28 @@
     transition: 0.3s;
   }
 }
+
+@media (max-width: 830px){
+  .navbar{
+    width: 80vw;
+  }
+}
+
+@media (max-width: 650px){
+  .navbar{
+    width: 80vw;
+  }
+
+  .profileIconlogin{
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+
+}
+@media (max-width: 525px){
+  .navbar{
+    flex-direction: column;
+    height: min-content;
+    gap: 30px;
+  }
+}

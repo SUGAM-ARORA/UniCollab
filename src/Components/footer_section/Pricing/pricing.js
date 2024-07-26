@@ -1,14 +1,16 @@
 // pricing.js
 import React from "react";
 import './pricing.css';
-import Arrow from '../../projects/arrow.png'
 import { Link } from "react-router-dom";
+import homeIcon from '../../../img/homeicon.png';
 
 function Pricing() {
     return (
         <div className="pricing">
             <div className="header">
-                <Link className='arrow' to="/"><img src={Arrow} alt="back" /></Link>
+            <Link to="/" className="home-link">
+              <img src={homeIcon} alt="Home" className="home-icon" />
+            </Link>
                 <div className="headingHeader">Start your 7 day free trial today</div>
                 <div className="description">Unlock Advanced Features and Maximize Your Potential with UniCollab Pro.</div>
             </div>
