@@ -50,6 +50,7 @@
   max-width: 800px; 
   min-height: 500px;
   box-sizing: border-box;
+  animation: zoomIn 1s ease forwards;
 }
 
 .form-group {
@@ -167,5 +168,21 @@ button:hover {
 
   .settings-content {
     width: 100%; 
+  }
+}
+.zoomIn{
+animation : zoomIn 1s ease forwards;
+}
+
+@keyframes zoomIn {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
   }
 }
