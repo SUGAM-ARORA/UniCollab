@@ -11,6 +11,8 @@ const scrollToTop = () => {
 };
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   return (
     <div className='footer'>
       <div className='footer-container footer-container-md'>
@@ -72,7 +74,7 @@ const Footer = () => {
 
       <div className='footer-bottom'>
         <div className='footer-bottom-link'>
-          &copy; 2024 UniCollab. All rights reserved.
+          &copy; {year} UniCollab. All rights reserved.
         </div>
       </div>
 

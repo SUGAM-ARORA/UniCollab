@@ -278,7 +278,7 @@
 
   .topContainer .inputBox {
     width: 100%;
-    height: 4.5vh;
+    height: auto;
     display: flex;
     justify-content: flex-end;
   }

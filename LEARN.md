@@ -6,6 +6,24 @@ UniCollab is not just a platform; it's a community-driven ecosystem that empower
 
 ## Getting Started
 
+### With docker
+- For run the App write the following command
+```bash
+docker build -t your-image-name .
+docker push your-image-name
+
+```
+- For Deploy the App Locally with kubernetes
+
+1. Add the image name in deployment.yaml
+
+2. write the following command to run the app
+```bash
+
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+
+```
 ### 1. Clone the Repository
 
 First, clone the UniCollab repository to your local machine:

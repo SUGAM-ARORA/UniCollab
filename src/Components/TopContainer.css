@@ -191,3 +191,10 @@
   }
 
 }
+@media (max-width: 525px){
+  .navbar{
+    flex-direction: column;
+    height: min-content;
+    gap: 30px;
+  }
+}

@@ -20,110 +20,70 @@
         .shopping-cart {
             background: white;
             padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .shopping-cart h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .cart-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ddd;
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
         }
         .cart-item:last-child {
             border-bottom: none;
-            margin-bottom: 0;
         }
-        .cart-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 4px;
+        .item-details {
+            display: flex;
+            justify-content: space-between;
         }
-        .cart-item-info {
-            flex: 1;
-            margin-left: 20px;
+        .item-price {
+            color: #333;
         }
-        .cart-item-name {
-            font-size: 18px;
-            margin: 0 0 5px 0;
-        }
-        .cart-item-quantity,
-        .cart-item-price {
-            font-size: 14px;
-            color: #777;
-        }
-        .cart-summary {
+        .total {
+            font-weight: bold;
             margin-top: 20px;
-            text-align: right;
-        }
-        .cart-summary p {
-            font-size: 18px;
-            margin: 5px 0;
-        }
-        .checkout-button {
-            background-color: #ff21bc;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            border-radius: 4px;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="shopping-cart">
-            <h1>Your Cart</h1>
+            <h2>Your Shopping Cart</h2>
             <div id="cart-items"></div>
-            <div class="cart-summary">
-                <p>Total Items: <span id="total-items"></span></p>
-                <p>Total Price: $<span id="total-price"></span></p>
-                <button class="checkout-button" onclick="checkout()">Proceed to Checkout</button>
+            <div class="total">
+                Total Items: <span id="total-items">0</span> |
+                Total Price: $<span id="total-price">0.00</span>
             </div>
         </div>
     </div>
 
     <script>
-        // Fetch cart items from local storage
-        const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+        document.addEventListener('DOMContentLoaded', () => {
+            const cartItemsContainer = document.getElementById('cart-items');
+            const totalItemsElement = document.getElementById('total-items');
+            const totalPriceElement = document.getElementById('total-price');
 
-        const cartItemsContainer = document.getElementById('cart-items');
-        const totalItemsElement = document.getElementById('total-items');
-        const totalPriceElement = document.getElementById('total-price');
+            const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
 
-        let totalItems = 0;
-        let totalPrice = 0;
+            let totalItems = 0;
+            let totalPrice = 0;
 
-        cartItems.forEach(item => {
-            totalItems += item.quantity;
-            totalPrice += item.price * item.quantity;
+            cartItems.forEach(item => {
+                totalItems += item.quantity;
+                totalPrice += item.price * item.quantity;
 
-            const cartItemElement = document.createElement('div');
-            cartItemElement.className = 'cart-item';
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `
+                    <div class="item-details">
+                        <span>${item.name} (x${item.quantity})</span>
+                        <span class="item-price">$${item.price.toFixed(2)}</span>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(itemElement);
+            });
 
-            cartItemElement.innerHTML = `
-                <div class="cart-item-info">
-                    <p class="cart-item-name">${item.name}</p>
-                    <p class="cart-item-quantity">Quantity: ${item.quantity}</p>
-                    <p class="cart-item-price">Price: $${(item.price * item.quantity).toFixed(2)}</p>
-                </div>
-            `;
-
-            cartItemsContainer.appendChild(cartItemElement);
+            totalItemsElement.textContent = totalItems;
+            totalPriceElement.textContent = totalPrice.toFixed(2);
         });
-
-        totalItemsElement.textContent = totalItems;
-        totalPriceElement.textContent = totalPrice.toFixed(2);
-
-        function checkout() {
-            alert('Proceeding to checkout...');
-        }
     </script>
 </body>
 </html>
