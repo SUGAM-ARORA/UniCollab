@@ -11,22 +11,31 @@
 }
 .services {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
     width: 100%;
+    padding: 0 3%;
 }
 .service-post {
     background: #1f1c35;
-    padding: 10px 20px;
+    padding: 15px;
     transition: 0.3s;
+    flex: 1 1 300px;
     cursor: pointer;
     width: 100%;
-    max-width: 800px;
-    overflow: hidden;
-    box-shadow: 7px 7px 32px 0 #6052ff;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 
+    2px solid white;
+
 }
-.service-post:not(.active):hover {
-    box-shadow: 0 0px 10px rgba(193, 193, 193, 0.3);
+.service-post:hover {
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 .service-post h2 {
     cursor: pointer;
@@ -34,30 +43,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin: 10px 0;
+    text-align: center;
 }
-.service-post.active {
-    background-color: #1f1c35;
-}
-.service-post.active * {
-    color: #ff21bc;
-}
-.service-post .date {
+.service-post .content {
+    text-align: center;
     font-size: 13px;
-    color: #aaa;
-}
-.services .content {
-    line-height: 1.6;
-    transition: 0.1s;
-    opacity: 0;
-    background-color: #1f1c35;
-    transform: scaleY(0);
-    transform-origin: top;
-    width: 100%;
-    max-width: 800px;
-    margin-bottom: 12px;
-    padding: 0 20px;
-    border-top: 2px solid #121026;
-    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 .home-icon {
     position: absolute;
@@ -65,9 +56,4 @@
     left: 1rem;
     width: 2.5rem;
     cursor: pointer;
-}
-.services .content.expand {
-    opacity: 1;
-    transform: scaleY(1);
-    padding: 20px;
 }
