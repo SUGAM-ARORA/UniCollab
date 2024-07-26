@@ -16,6 +16,7 @@
     margin-top: 50px;
     margin-bottom: 50px;
     justify-content: space-around;
+    
 }
 
 .general {
@@ -28,24 +29,41 @@
     height: auto;
 }
 
-.box1, .box2, .box3, .box4 {
+.box1,
+.box2,
+.box3,
+.box4 {
     padding: 20px;
-    background-color: #1e1b3a; 
+    background-color: #1e1b3a;
     border-radius: 10px;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
-.box1:hover, .box2:hover, .box3:hover, .box4:hover {
+
+.box1:hover,
+.box2:hover,
+.box3:hover,
+.box4:hover {
     background-color: #2a2747;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
     outline: 3px solid white;
     border-radius: 15px;
     transition: 0.1s ease-in-out;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
-.box1 h2, .box2 h2, .box3 h2, .box4 h2, .form h2 {
+
+.box1 h2,
+.box2 h2,
+.box3 h2,
+.box4 h2,
+.form h2 {
     text-decoration: underline;
     margin-bottom: 10px;
 }
 
-.box1 p, .box2 p, .box3 p, .box4 p {
+.box1 p,
+.box2 p,
+.box3 p,
+.box4 p {
     font-size: large;
     margin: 5px 0;
 }
@@ -54,7 +72,8 @@
     padding: 20px;
     border: 3px solid white;
     border-radius: 15px;
-    background-color: #2a2747; 
+    background-color: #2a2747;
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
 
 .form h2 {
@@ -76,14 +95,18 @@
     font-size: medium;
 }
 
-.form input, .form select, .form textarea, .form button {
+.form input,
+.form select,
+.form textarea,
+.form button {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: medium;
-    background-color: #3a3756; 
+    background-color: #3a3756;
     color: white;
+    border-bottom: 4px solid aliceblue;
 }
 
 .form input[type='file'] {
@@ -107,9 +130,34 @@
     padding: 10px;
     height: 100px;
     resize: none;
-    background-color: #3a3756; 
+    background-color: #3a3756;
     color: white;
 }
-.contentInside a{
+.select-issue {
+    height: 100px;
+    /* Add any other styles you want here */
+}
+
+.contentInside a {
     font-size: large;
+}
+
+@media only screen and (max-width : 600px) {
+
+    .general,
+    .form {
+        scale: 0.8;
+    }
+}
+
+@media only screen and (max-width : 500px) {
+    .containerContact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form,
+    .general {
+        scale: 0.9;
+    }
 }

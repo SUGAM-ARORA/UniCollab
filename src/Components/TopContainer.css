@@ -1,11 +1,105 @@
-.profileContainer, .notification-container {
-  display: flex;
-  align-items: center;
+.nav-item a span {
+  white-space: nowrap;
+  color: white;
 }
+.nav-item a:hover span {
+  color: #cf00a3; /* Pink color on hover */
+}
+
 .navbar {
-    width: 100%;
-    height: 100px;
-    background: #19162c;
+  width: 100%;
+  height: 60px;
+  background: #19162c;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  gap: 0.5rem;
+  z-index: 99999;
+}
+.profileContainer .go-pro-btn {
+  padding: 10px 10px; /* Adjust padding to change the button size */
+}
+
+
+.largeview {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.largeview .nav-item {
+  margin-right: 20px;
+}
+
+.largeview .nav-item a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s ease, font-size 0.3s ease;
+}
+
+.largeview .nav-item a:hover {
+  color: #cf00a3;
+  font-size: 1.05rem;
+}
+
+.inputBox {
+  position: relative;
+  margin-top: -10px;
+}
+@media screen and (max-width: 1500px) {
+  .mobview .inputBox {
+    margin-top: 10px; /* Add 10px space above the search box */
+    padding: 5px 5px;
+  }
+
+  .mobview .searchbtn {
+    font-size: 1.3rem; /* Adjust the search button size */
+  }
+
+  .mobview #search_results {
+    top: 50px; /* Adjust position of search results */
+  }
+}
+
+.searchbtn {
+  position: absolute;
+  top: 70%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #757380;
+  font-size: 1.5rem;
+}
+
+#search_results {
+  position: absolute;
+  top: 40px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 10;
+}
+
+#search_result_title {
+  margin: 0;
+  padding: 10px;
+  font-weight: bold;
+}
+
+#list li {
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.mobview {
+  display: none;
+}
+
+@media screen and (max-width: 1500px) {
+  .mobview {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,95 +107,94 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     position: sticky;
     top: 0;
-    z-index: 99999;
+    z-index: 1100;
   }
-  
-  #list {
-    display: inline;
+
+  .bars {
     padding: 20px;
+    cursor: pointer;
   }
-  .largeview a:hover {
-    color: #cf00a3;
-    font-size: 1.05rem; /* Slightly increase font size on hover */
-  }
-  .open a:hover {
-    color: #cf00a3;
-    font-size: 1.05rem; /* Slightly increase font size on hover */
-  }
-  .mobview {
+
+  .largeview {
     display: none;
   }
-  
-  @media screen and (max-width: 1500px) {
-    .mobview {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-  
-    .bars {
-      padding: 20px;
-      cursor: pointer;
-    }
-  
-    .largeview {
-      display: none;
-    }
-  
-    .mobview #shortview {
-      position: absolute;
-      right: 15px;
-      top: 60px;
-      background: rgba(0, 0, 0, 0.8); 
-      border-radius: 10px; 
-      width: 200px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-      z-index: 100000;
-      display: none;
-      transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
-    }
-  
-    .mobview #shortview:after {
-      position: absolute;
-      content: "";
-      width: 10px;
-      height: 10px;
-      background: hsl(190, 85%, 40%); 
-      top: -5px;
-      right: 20px;
-      transform: rotate(45deg);
-    }
-  
-    #shortview.show {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .mobview #shortview ul {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
-  
-    .mobview #shortview ul li {
-      list-style: none;
-      margin: 0;
-      width: 100%;
-      padding: 10px 15px;
-      cursor: pointer;
-      color: #757380; 
-      text-align: center;
-      font-size: 14px;
-      
-    }
-    .mobview #shortview ul li:hover {
-      background: #19162c; /* Light background on hover */
-      color: #757380;
-      transition: 0.3s;
-    }
+
+  .mobview #shortview {
+    position: absolute;
+    right: 15px;
+    top: 60px;
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    width: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 100000;
+    display: none;
+    transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
   }
-  
-  
-  
+
+  .mobview #shortview:after {
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: hsl(190, 85%, 40%);
+    top: -5px;
+    right: 20px;
+    transform: rotate(45deg);
+  }
+
+  #shortview.show {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mobview #shortview ul {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobview #shortview ul li {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #757380;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .mobview #shortview ul li:hover {
+    background: #19162c;
+    color: #757380;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 830px){
+  .navbar{
+    width: 80vw;
+  }
+}
+
+@media (max-width: 650px){
+  .navbar{
+    width: 80vw;
+  }
+
+  .profileIconlogin{
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+
+}
+@media (max-width: 525px){
+  .navbar{
+    flex-direction: column;
+    height: min-content;
+    gap: 30px;
+  }
+}

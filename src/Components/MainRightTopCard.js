@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 
 function MainRightTopCard() {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleViewMore = () => {
+    setShowMore(!showMore);
+  };
+
   return (
     <div className="topCard">
       <div className="topCard_name">
         <h2>Statistics</h2>
-        <a href="#">View More</a>
+        <a href="#" onClick={handleViewMore}>
+          {showMore ? "View Less" : "View More"}
+        </a>
       </div>
 
       <div className="earning fromTop">
@@ -23,9 +31,24 @@ function MainRightTopCard() {
         <p>
           Total Exp earned <span>300 exp</span>
         </p>
+
+        {showMore && (
+          <div className="extraStats">
+            <p>
+              Projects Completed <span>160</span>
+            </p>
+            <p>
+              Projects In Progress <span>20</span>
+            </p>
+            <p>
+              Average Project Rating <span>4.5</span>
+            </p>
+          </div>
+        )}
       </div>
     </div>
   );
 }
 
 export default MainRightTopCard;
+

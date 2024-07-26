@@ -10,15 +10,13 @@ menu {
   top: 0;
 }
 
-menu .logo
-{
+menu .logo {
   cursor: pointer;
   opacity: 1;
   transition: all 0.4s ease-in-out;
 }
 
-menu .logo:hover
-{
+menu .logo:hover {
   opacity: 0.7;
   transition: all 0.4s ease-in-out;
 }
@@ -34,6 +32,7 @@ menu ul {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: transparent;
 }
 
 menu ul li {
@@ -43,6 +42,7 @@ menu ul li {
   color: #8c8a95;
   width: 100%;
   text-align: center;
+  background-color: transparent;
 }
 
 menu ul li a {
@@ -51,6 +51,8 @@ menu ul li a {
   text-decoration: none;
   transition: all 0.3s;
   position: relative;
+  background-color: transparent; /* Ensure background is transparent */
+  outline: none; /* Remove focus outline */
 }
 
 menu ul li a::before {
@@ -60,26 +62,36 @@ menu ul li a::before {
   left: -10px;
   width: 0px;
   height: 20px;
-  background: #0db5cb;
+  background: #cf00a3;
   border-radius: 50%;
 }
 
 menu ul li:hover a::before {
   width: 20px;
   transition: all 0.3s;
+  background-color: transparent;
 }
 
 menu ul li.active a::before {
   width: 20px;
   transition: all 0.3s;
+  background-color: transparent;
 }
 
 menu ul li.active a {
   color: #0db5cb;
+  background-color: transparent; /* Ensure background is transparent */
+  outline: none; /* Remove focus outline */
 }
 
 menu ul li:hover a {
   color: #0db5cb;
+  background-color: transparent; /* Ensure background is transparent */
+}
+
+menu ul li a:focus {
+  background-color: transparent; /* Remove orange background on focus */
+  outline: none; /* Remove focus outline */
 }
 
 .tooltip {
@@ -114,18 +126,21 @@ menu ul li:hover a {
 menu ul li:hover .tooltip {
   visibility: visible;
   opacity: 1;
+  background-color: transparent;
 }
 
 .lastMenu {
   margin-top: auto;
+  background-color: transparent;
 }
 
 @media only screen and (max-width: 525px) {
   menu {
     min-width: 68px;
     width: auto;
+    background-color: transparent;
   }
-  menu ul{
+  menu ul {
     display: none;
     position: relative;
     top: 50px;
@@ -135,17 +150,19 @@ menu ul li:hover .tooltip {
     border-radius: 10px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   }
-  menu img{
+  menu img {
     position: absolute;
     left: 1px;
     padding: 0;
+    background-color: transparent;
   }
-  menu ul li{
+  menu ul li {
     display: block;
     padding: 10px;
     border-bottom: 1px solid #eee;
+    background-color: transparent;
   }
-  .logo{
+  .logo {
     cursor: pointer;
   }
 }

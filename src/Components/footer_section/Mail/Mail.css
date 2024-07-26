@@ -1,0 +1,61 @@
+.inputmail {
+    width: 300px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin-right: 10px;
+}
+
+.subscribe-mail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+btn1 {
+    background: #574d91;
+    color: #000000;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+
+btn1:hover {
+    background: #252041;
+}
+
+.mail {
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+}
+
+p {
+    font-weight: 900;
+}
+
+@media only screen and (max-width:915px) {
+    .subscribe-mail {
+        flex-direction: column;
+        gap: 2px;
+    }
+}
+
+@media only screen and (max-width:490px) {
+    .mail {
+        flex-direction: column;
+        width: 85vw;
+    }
+
+    .inputmail {
+        width: 90%;
+    }
+
+    .btn1 {
+        width: 90%;
+    }
+}
