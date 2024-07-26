@@ -1,94 +1,59 @@
-.home-icon {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    width: 2.5rem;
-    cursor: pointer;
-}
-
-.services {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.services-page {
     background: #121026;
     color: #ffffff;
+    width: 100%;
     padding: 20px;
-    max-width: 700px;
     margin: 0 auto;
-    margin-top: 50px;
-    border-radius: 10px;
 }
-
-.services h1 {
+.services-page h1 {
     text-align: center;
     margin-bottom: 20px;
 }
-
-.service {
+.services {
     display: flex;
-    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    max-width: 800px;
+    width: 100%;
+    padding: 0 3%;
 }
-
 .service-post {
-    background: #19162c;
-    padding: 20px;
-    border-radius: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
+    background: #1f1c35;
+    padding: 15px;
+    transition: 0.3s;
+    flex: 1 1 300px;
     cursor: pointer;
     width: 100%;
-}
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 
+    2px solid white;
 
-.service-post h2 {
-    margin-bottom: 10px;
-    cursor: pointer;
 }
-
-.service-post .date {
-    font-size: 0.9em;
-    color: #aaa;
-    margin-bottom: 15px;
-}
-
-.service-post .content {
-    line-height: 1.6;
-    margin-top: 15px;
-}
-
 .service-post:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 7px 7px 32px 0 #6052ff;
 }
-
-.service-post.expanded .content {
-    display: block;
-}
-
-.service-post .content {
-    display: none;
-}
-
-button {
-    background: #ff6347;
-    color: #ffffff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+.service-post h2 {
     cursor: pointer;
-    transition: background-color 0.3s;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    text-align: center;
 }
-
-button:hover {
-    background: #e55347;
+.service-post .content {
+    text-align: center;
+    font-size: 13px;
 }
-
-@media (max-width: 768px) {
-    .services {
-        padding: 10px;
-    }
-
-    .service-post {
-        padding: 15px;
-    }
+.home-icon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    width: 2.5rem;
+    cursor: pointer;
 }
