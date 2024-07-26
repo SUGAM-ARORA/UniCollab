@@ -35,22 +35,20 @@ const GoToTop = () => {
 };
 
 const Wrapper = styled.div`
-  z-index: 9999;
+  z-index: 10000;
   display: flex;
   justify-content: center;
   align-items: center;
   position: fixed;
-  bottom: 25px;
-  left: 40px;
+  bottom: 72px;
+  left: 30px;
   color: white;
   background-color: #ff21bc;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  cursor: pointer;
   &:hover {
     background-color: darkturquoise;
-
   }
 `;
 

@@ -1,8 +1,9 @@
 import React from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
+import SubscribeMail from './footer_section/Mail/SubscribeMail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faNewspaper, faTrophy, faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const scrollToTop = () => {
@@ -10,11 +11,13 @@ const scrollToTop = () => {
 };
 
 const Footer = () => {
+  const today = new Date();
+  const year = today.getFullYear();
   return (
     <div className='footer'>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
-          <img src={logo} alt="logo"/>
+          <img src={logo} alt="logo" />
           <div>
             <div className='footer-title'>Unicollab</div>
             <div className='footer-description'>
@@ -53,6 +56,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
+      <SubscribeMail />
       <div className='footer-icons footer-icons-md'>
         <a href="#" target="_blank" rel='noreferrer'>
           <FontAwesomeIcon icon={faLinkedin} />
@@ -64,21 +68,16 @@ const Footer = () => {
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon   icon={faTwitter} />
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
       </div>
+
       <div className='footer-bottom'>
         <div className='footer-bottom-link'>
-          &copy; 2024 UniCollab. All rights reserved.
+          &copy; {year} UniCollab. All rights reserved.
         </div>
       </div>
-      <div className='scrolltop'>
-        <div style={{ textAlign: 'center', padding: '20px' }}>
-          <button onClick={scrollToTop} className="button btn">
-            To the Top
-          </button>
-        </div>
-      </div>
+
     </div>
   );
 }

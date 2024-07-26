@@ -111,7 +111,7 @@
   flex-wrap: wrap;
 }
 .card_main {
-  height: 355px;
+  height: 325px;
 }
 
 .card_main_img {
@@ -144,7 +144,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 5px 20px;
-  margin-top: 1px;
+  margin-top: 10px;
 }
 
 .maincontainer .left .cards main .card_main .card_main_name h2 {
@@ -540,4 +540,30 @@
 
 .btnnn button:hover {
   background-color: #0a8ba3;
+}
+
+@media (max-width:950px){
+  .maincontainer{
+    flex-direction: column;
+  }
+
+  .topCard{
+    width: 76vw;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 0.7rem !important;
+  }
+
+  .bottom_card{
+    width: 76vw;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 0.7rem !important;
+  }
+
+
+  .maincontainer .left{
+    width: 75vw !important;
+    margin: auto;
+  }
 }

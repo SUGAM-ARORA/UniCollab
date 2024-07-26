@@ -233,7 +233,6 @@ form.sign-in-form {
   grid-template-columns: repeat(2, 1fr);
   
 }
-
 .container1:before {
   content: "";
   position: absolute;
@@ -249,7 +248,7 @@ form.sign-in-form {
     darkturquoise 100%
   );
   transition: 1.8s ease-in-out;
-  border-radius: 80%;
+  border-radius: 50% 50% 0 0; /* Changed to a semi-circle */
   z-index: 6;
 }
 
@@ -290,9 +289,10 @@ form.sign-in-form {
 }
 
 .panel p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   padding: 0.8rem 0;
   color: white;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .btn.transparent {
@@ -303,6 +303,9 @@ form.sign-in-form {
   height: 48px;
   font-weight: 600;
   font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .right-panel .image,
 .right-panel .content {
