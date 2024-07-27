@@ -33,6 +33,9 @@
   <a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
     <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=CSS3&logoColor=black">
   </a>
+<a href="https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/React_getting_started">
+    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
+  </a>
 </p>
 
 ### Backend
@@ -40,6 +43,21 @@
 - **MongoDB** for the database (using Mongoose for object modeling) 📊
 - **Firebase Authentication** for user authentication and authorization 🔐
 - **Firebase Cloud Functions** for serverless backend logic ☁️
+- **Firebase Installation and Setup**
+- Install Firebase Admin SDK: Run npm install firebase-admin to add the SDK to your project.
+- Download Service Account Key: Get the service account key JSON from Firebase Console.
+- Initialize Firebase Admin: Use admin.initializeApp() with your service account key.
+- Enable Authentication Providers: In Firebase Console, activate Google, Facebook, LinkedIn, Twitter, GitHub, and Microsoft.
+- Set OAuth Credentials: Obtain client IDs and secrets from each provider's developer portal.
+- Verify ID Tokens: Implement Firebase middleware to verify tokens and secure your API.
+
+- **Firebase Authentication Integration for user login and registration:**
+- Google Authentication for quick sign-in using Google accounts 🌐
+- Facebook Authentication for users to log in with their Facebook credentials 📘
+- LinkedIn Authentication for professional network-based access 🌐
+- Twitter Authentication to allow sign-ins using Twitter accounts 🐦
+- GitHub Authentication for developer-focused login using GitHub accounts 🐙
+- Microsoft Authentication for enterprise-level login through Microsoft accounts 🖥️
 
 ### Frontend
 - **React.js** for a dynamic and responsive user interface ⚛️
