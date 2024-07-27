@@ -126,6 +126,7 @@ function CardMain() {
             </div>
           </div>
         </div>
+        
       ))}
 
       <div
@@ -143,6 +144,7 @@ function CardMain() {
         </button>
       </div>
     </div>
+    
   );
 }
 
