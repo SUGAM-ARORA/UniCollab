@@ -40,6 +40,9 @@
 
 
 ###  Contributors <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Smilies/Red%20Heart.png" alt="Red Heart" width="30" height="30" />
+ <p align="center">
+  <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" width="600" height="300">
+  </p>
 <div align =center><h3>🎉 Kudos to You Wonderful and Dedicated Contributors! 🌟</h3> <br>
 <a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
@@ -52,11 +55,13 @@ You can connect with me on various platforms:<br>
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/sugam-arora-117265142) [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/sugam.arora.393?utm_source=qr&igshid=MzNlNGNkZWQ4Mg%3D%3D) [![Twitter](https://img.shields.io/badge/Twitter-%231DA1F2.svg?logo=Twitter&logoColor=white)](https://twitter.com/SugamArora14) [![Facebook](https://img.shields.io/badge/Facebook-%231877F2.svg?logo=Facebook&logoColor=white)](https://facebook.com/sugam.arora.393)[![YouTube](https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white)](https://youtube.com/@sugamarora5997)
 [![Gmail](https://img.shields.io/badge/Gmail-%23FFFFFF.svg?logo=gmail&logoColor=red)](mailto:sugam.arora23@gmail.com)
 
-### 🌟 Join Us 
+## 🌟 Join Us 
 
 Ready to embark on a journey of collaborative learning? Join UniCollab now and be a part of a community that believes in the power of collaboration!
+Thank you for contributing to our open-source project! We appreciate your support 🚀
+Don't forget to leave a star ⭐
 
-Thank you for contributing to our open-source project! We appreciate your support and look forward to your valuable contributions.
+![image](https://github.com/user-attachments/assets/a6c43df5-3552-48dc-8d65-1e4711bc6376)
 
 
 <p align="right"><a href="#top" style="font-size: 29px;">🔝</a></p>
