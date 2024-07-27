@@ -5,7 +5,7 @@
   <img src="UniCollab-Bottom.png">
 </p>
 <center>
-<img src = "https://readme-typing-svg.herokuapp.com/?color=00FFFF&size=40&width=900&height=80&lines=UniCollab:%20Unleashing%20Collaborative%20Learning"> 
+<img src="https://readme-typing-svg.herokuapp.com/?color=00FFFF&size=40&width=900&height=80&lines=UniCollab:%20Unleashing%20Collaborative%20Learning"> 
 </center>
 <h3><p align="center">Welcome to UniCollab, where knowledge knows no boundaries</h3></p>
 
@@ -20,6 +20,10 @@
 ![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/SUGAM-ARORA/Unicollab?style=badge&color=cyan&logo=openai)
 ![GitHub pull requests](https://img.shields.io/github/issues-pr/SUGAM-ARORA/Unicollab?style=badge&color=cyan&logo=openai)
 ![GitHub closed pull requests](https://img.shields.io/github/issues-pr-closed/SUGAM-ARORA/Unicollab?style=badge&color=cyan&logo=openai)
+
+<p align="center">
+  <img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="600" height="300">
+</p>
 
 ## 👋 About UniCollab 
 
@@ -131,10 +135,9 @@ Explore our comprehensive documentation in the [DOCUMENTATION](Documentation.md)
 2. **Data Privacy**: Ensure that sensitive information is protected and not shared without consent. Follow best practices for data security.
 3. **Intellectual Property**: Respect the intellectual property rights of all users. Do not upload or use copyrighted materials without proper authorization.
 4. **Quality Control**: Maintain high standards for project submissions. Ensure that projects are well-documented, functional, and original.
-5. **Community Conduct**: Uphold a positive and respectful community environment. Any form of harassment, discrimination, or inappropriate behavior will not be tolerated.
-6. **Feedback Etiquette**: Provide constructive and respectful feedback. Avoid negative or discouraging comments that do not contribute to the improvement of the project.
-7. **Usage of Resources**: Use platform resources responsibly. Avoid activities that could harm the platform's integrity or availability for other users.
-8. **Compliance with Guidelines**: Adhere to all platform guidelines and policies. Regularly review updates to ensure continued compliance.
+5. **Respectful Collaboration**: Foster a respectful and inclusive environment. Discrimination, harassment, or any form of misconduct will not be tolerated.
+6. **Resource Management**: Use platform resources responsibly. Avoid activities that could harm the platform's integrity or availability for other users.
+7. **Compliance with Guidelines**: Adhere to all platform guidelines and policies. Regularly review updates to ensure continued compliance.
 
 By adhering to these cautions, UniCollab aims to create a safe, respectful, and productive environment for all users.
 
@@ -160,10 +163,14 @@ We believe in the power of collaboration. If you have ideas to improve UniCollab
 </div>
 
 ## 🤝 Contributors 
-<div align =center><h3>🎉 Kudos to You Wonderful and Dedicated Contributors! 🌟</h3> <br>
-<a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
-</a>
+  <p align="center">
+  <img src="https://media.giphy.com/media/xT5LMHxhOfscxPfIfm/giphy.gif" width="600" height="300">
+  </p>
+<div align="center">
+  <h3>🎉 Kudos to You Wonderful and Dedicated Contributors! 🌟</h3> <br>
+  <a href="https://github.com/SUGAM-ARORA/UniCollab/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=SUGAM-ARORA/UniCollab" />
+  </a>
 </div>
 
 ## 📬 Contact Details
@@ -177,6 +184,9 @@ You can connect with me on various platforms:<br>
 Ready to embark on a journey of collaborative learning? Join UniCollab now and be a part of a community that believes in the power of collaboration!
 Thank you for contributing to our open-source project! We appreciate your support 🚀
 Don't forget to leave a star ⭐
+
+![image](https://github.com/user-attachments/assets/a6c43df5-3552-48dc-8d65-1e4711bc6376)
+
 
 
 <p align="right">{<a href="#top">Back to top</a>}</p>
