@@ -18,11 +18,10 @@ import {
   FaList,
 } from "react-icons/fa";
 
-
 function Menu() {
 
-  const [toggle, setToggle] = useState(false);
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
+  let toggle = false;
+
   useEffect(() => {
     const mainMenuLi = document
       .getElementById("mainMenu")
@@ -36,16 +35,23 @@ function Menu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive));
   }, []);
 
+  const showDropDown = () => {
+    if(!toggle){
+      document.getElementById("mainMenu").style.display = "flex";
+      document.getElementById("lastMenu").style.display = "flex";
+      toggle = true;
+    } else{
+      document.getElementById("mainMenu").style.display = "none";
+      document.getElementById("lastMenu").style.display = "none";
+      toggle = false;
+    }
+  };
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 524);
-
-      // Hide dropdown when resizing to desktop view
-      if (window.innerWidth >= 524) {
-        document.getElementById("mainMenu").style.display = "flex";
-        document.getElementById("lastMenu").style.display = "flex";
-        setToggle(false);
-      }
     };
 
     window.addEventListener('resize', handleResize);
@@ -54,26 +60,6 @@ function Menu() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
-  const showDropDown = () => {
-    if(isMobile){
-      if(!toggle){
-        document.getElementById("mainMenu").style.display = "flex";
-        document.getElementById("lastMenu").style.display = "flex";
-        toggle = true;
-        
-      }
-      else{
-          document.getElementById("mainMenu").style.display = "none";
-          document.getElementById("lastMenu").style.display = "none";
-          toggle = false;
-      }
-    }
-  };
-
-  
-
-  
 
   return (
 
