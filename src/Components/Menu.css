@@ -53,6 +53,9 @@ menu ul li a {
   position: relative;
   background-color: transparent; /* Ensure background is transparent */
   outline: none; /* Remove focus outline */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 menu ul li a::before {
@@ -79,19 +82,21 @@ menu ul li.active a::before {
 }
 
 menu ul li.active a {
-  color: #0db5cb;
+  color: #cf00a3;
   background-color: transparent; /* Ensure background is transparent */
   outline: none; /* Remove focus outline */
 }
 
 menu ul li:hover a {
-  color: #0db5cb;
+  color: #cf00a3;
   background-color: transparent; /* Ensure background is transparent */
 }
 
 menu ul li a:focus {
   background-color: transparent; /* Remove orange background on focus */
   outline: none; /* Remove focus outline */
+  box-shadow: 0 0 0 2px #0db5cb; /* Smaller cyan box shadow */
+  border-radius: 5px; /* Adjust border-radius if needed */
 }
 
 .tooltip {
@@ -167,6 +172,7 @@ menu ul li:hover .tooltip {
   }
 }
 
+
 .sign-out-popup {
   position: fixed;
   top: 50%;
@@ -202,3 +208,56 @@ menu ul li:hover .tooltip {
   margin-top: 10%;
   justify-content: center;
 }
+
+.stopwatch-container {
+  /* Add necessary styles */
+  background: #19162c;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  margin: 10px;
+}
+
+.stopwatch-header {
+  /* Add necessary styles */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stopwatch-time {
+  /* Add necessary styles */
+  text-align: center;
+  font-size: 1em;
+  margin: 20px 0;
+}
+
+.stopwatch-controls {
+  /* Add necessary styles */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  size: 10px;
+}
+
+.stopwatch-controls button {
+  margin: 10px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #cf00a3;
+  background-color: #cf00a3;
+  font-size: 0.8em;
+  transition: color 0.3s;
+}
+
+stopwatch-controls button:hover {
+  color: #cf00a3;
+  background-color: #cf00a3;
+}
+
+.tooltip {
+  margin-left: 5px; /* Ensure tooltip text has a margin from the icon */
+}
+
