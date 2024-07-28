@@ -10,6 +10,7 @@ import Card5 from "../../../img/card5.jpg";
 import Card6 from "../../../img/card6.jpg";
 import CardMain from '../../CardMain';
 import { BsHeartFill } from 'react-icons/bs';
+import homeIcon from '../../../img/homeicon.png';
 
 
 const SampleData = [
@@ -64,6 +65,10 @@ function MyProjects({showMenu = true}) {
                     <h1>My Projects</h1>
                     <Link to='/new/project'><button><FaPlus size={15} /> New Project</button></Link>
                 </div>
+                <Link to="/">
+  <img src={homeIcon} alt="Home" className="home-icon" style={{ marginLeft: '300px' }} />
+</Link>
+
                 <div className='projects-wrapper zoomIn'>
 
                     {
