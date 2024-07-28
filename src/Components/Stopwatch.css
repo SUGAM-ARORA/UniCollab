@@ -1,0 +1,22 @@
+/* Stopwatch.css */
+.stopwatch {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  padding: 20px;
+  background: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+.stopwatch h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.stopwatch button {
+  margin: 5px;
+  padding: 10px;
+}
