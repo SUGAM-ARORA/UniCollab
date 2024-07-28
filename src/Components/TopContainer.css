@@ -21,7 +21,7 @@
   z-index: 99999;
 }
 .profileContainer .go-pro-btn {
-  padding: 10px 10px; /* Adjust padding to change the button size */
+  padding: 20px 20px; /* Adjust padding to change the button size */
 }
 
 
@@ -40,6 +40,7 @@
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease, font-size 0.3s ease;
+  align-self: right;
 }
 
 .largeview .nav-item a:hover {
@@ -121,7 +122,7 @@
 
   .mobview #shortview {
     position: absolute;
-    right: 15px;
+    left: 10px;  /*made it so that the dropdown is towards left when screen size >524 but not enough*/
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;

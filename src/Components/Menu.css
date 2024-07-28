@@ -1,5 +1,5 @@
 menu {
-  width: 100px;
+  width: 90px;
   height: auto;
   background: #19162c;
   display: flex;
@@ -132,6 +132,35 @@ menu ul li:hover .tooltip {
 .lastMenu {
   margin-top: auto;
   background-color: transparent;
+}
+
+/* New styles for toggle button */
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  top: 10px;
+  background: #19162c;
+}
+
+.menu-toggle {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.menu-toggle:hover {
+  color: #cf00a3; /* Change to your hover color */
+}
+
+/* Adjust styles for dropdown menus */
+.menu-header .logo {
+  margin-left: 10px;
 }
 
 @media only screen and (max-width: 525px) {
