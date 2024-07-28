@@ -48,8 +48,6 @@ function Menu() {
       toggle = false;
     }
   };
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
   const [showStopwatch, setShowStopwatch] = useState(false); // State to handle stopwatch visibility
 
 
@@ -69,16 +67,8 @@ function Menu() {
   }, []);
 
 
-  const showDropDown = () => {
-    if (!toggle) {
-      document.getElementById("mainMenu").style.display = "flex";
-      document.getElementById("lastMenu").style.display = "flex";
-      toggle = true;
-    } else {
-      document.getElementById("mainMenu").style.display = "none";
-      document.getElementById("lastMenu").style.display = "none";
-      toggle = false;
-    }
+  const toggleStopwatch = () => {
+    setShowStopwatch(!showStopwatch);
   };
 
   const handleSignOut = () => {
@@ -93,21 +83,8 @@ function Menu() {
     }, 3000);
   };
 
-  return (
-    <div>
-      <menu className="fromLeft">
-        <Link to='/'>
-          <img
-            src={logo}
-            alt='icon'
-            className="logo"
-            id='logo'
-            onClick={isMobile ? showDropDown : null}
-            style={{ cursor: isMobile ? 'pointer' : 'default' }}
 
-  const toggleStopwatch = () => {
-    setShowStopwatch(!showStopwatch);
-  };
+
 
   return (
     <>
@@ -125,7 +102,7 @@ function Menu() {
         </Link>
 
         <ul className="fromTop" id="mainMenu">
-<Icon icon={<FaList size={30} />} tooltip="My projects" href="/projects" />
+          <Icon icon={<FaList size={30} />} tooltip="My projects" href="/projects" />
           <Icon icon={<FaDelicious size={30} />} tooltip="Delicious" href="/" />
           <Icon icon={<FaShoppingCart size={30} />} tooltip="Cart" href="/cart" />
           <Icon icon={<FaWallet size={30} />} tooltip="Wallet" href="/" />
@@ -169,7 +146,7 @@ function Menu() {
 
 const Icon = ({ icon, tooltip, href, onClick }) => (
   <li>
-    <a href={href} onClick={(e) => { e.target.blur(); if(onClick) onClick(); }} style={{ display: "flex", alignItems: "center" }}>
+    <a href={href} onClick={(e) => { e.target.blur(); if (onClick) onClick(); }} style={{ display: "flex", alignItems: "center" }}>
       {icon}
       <span className="tooltip">{tooltip}</span>
     </a>
