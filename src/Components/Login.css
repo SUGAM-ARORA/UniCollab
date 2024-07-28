@@ -127,6 +127,7 @@ form.sign-in-form {
   font-weight: 600;
   font-size: 1.1rem;
   color: darkturquoise !important;
+  margin: 4px 0 4px -10px
 }
 
 .input-field input::placeholder {
@@ -475,7 +476,7 @@ form.sign-in-form {
     bottom: 65vh;
   }
   .signin-signup .sign-up-form {
-    margin-left: 20%;
+    margin: 0 0 20% 20%;
   }
   .container1.sign-up-mode:before {
     display: none;
