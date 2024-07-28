@@ -43,7 +43,7 @@ const Footer = () => {
               <li><a href='#'><FontAwesomeIcon icon={faStar} /> Testimonials</a></li>
               <li><a href='#'><FontAwesomeIcon icon={faClipboardList} /> Portfolio</a></li>
               <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
-              <li><a href='#'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
+              <li><a href='/rateus'><FontAwesomeIcon icon={faStar} /> Rate-Us</a></li>
             </ul>
           </div>
           <div className='footer-2'>

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./RateUs.css";
 import TopContainer from "./TopContainer";
+import Menu from "./Menu";
 
 function RateUsComponent({ previousContent }) {
   const [emoji, setEmoji] = useState("");
@@ -29,40 +30,45 @@ function RateUsComponent({ previousContent }) {
 
   return (
     <div>
-      <TopContainer />
-      <div className={`rate-us-page ${previousContent ? 'animated' : ''}`}>
-        <div className="rate-us-container">
-          
-          {!submitted ? (
-            <>
-            <h2 className="rate-us-heading">Rate Our Website</h2>
-              <div className="emoji-selection">
-                {["😡", "😞","😐 ","😊", "😍"].map((emojiOption) => (
-                  <span
-                    key={emojiOption}
-                    className={`emoji ${emoji === emojiOption ? 'selected' : ''}`}
-                    onClick={() => handleEmojiClick(emojiOption)}
-                  >
-                    {emojiOption}
-                  </span>
-                ))}
-              </div>
-              <textarea
-                className="feedback-textarea"
-                placeholder="Write your feedback here..."
-                value={feedback}
-                onChange={handleFeedbackChange}
-              ></textarea>
-              <button className="submit-button" onClick={handleSubmit}>
-                Submit
-              </button>
-            </>
-          ) : (
-            <p className="thank-you-message">Thank you for your feedback!</p>
-          )}
+      <div className="header">
+        <TopContainer /></div>
+      <div className="rateUsContainer">
+        <Menu />
+        <div className={`rate-us-page ${previousContent ? 'animated' : ''}`}>
+          <div className="rate-us-container">
+
+            {!submitted ? (
+              <>
+                <h2 className="rate-us-heading">Rate Our Website</h2>
+                <div className="emoji-selection">
+                  {["😡", "😞", "😐 ", "😊", "😍"].map((emojiOption) => (
+                    <span
+                      key={emojiOption}
+                      className={`emoji ${emoji === emojiOption ? 'selected' : ''}`}
+                      onClick={() => handleEmojiClick(emojiOption)}
+                    >
+                      {emojiOption}
+                    </span>
+                  ))}
+                </div>
+                <textarea
+                  className="feedback-textarea"
+                  placeholder="How Can We Improve?"
+                  value={feedback}
+                  onChange={handleFeedbackChange}
+                ></textarea>
+                <button className="submit-button" onClick={handleSubmit}>
+                  Submit
+                </button>
+              </>
+            ) : (
+              <p className="thank-you-message">Thank you for your feedback!</p>
+            )}
+          </div>
         </div>
       </div>
     </div>
+
   );
 }
 

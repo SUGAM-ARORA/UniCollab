@@ -267,8 +267,6 @@
 }
 
 .bottomCard_name {
-
-  border: 2px solid black;
   padding: 2px;
   top: 0;
 }
@@ -287,7 +285,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: grey;
+  background-color:#19162c;
 }
 
 
