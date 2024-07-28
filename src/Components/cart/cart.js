@@ -60,17 +60,17 @@ const Cart = () => {
 
   const signIn = () => {
     navigate('/login'); // Navigate to the login page
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   };
 
   const signUp = () => {
     navigate('/login'); // Navigate to the login page
-    window.scrollTo(0, 0); 
+    window.scrollTo(0, 0);
   };
 
   return (
     <div className="cart-container">
-<style>{`
+      <style>{`
   body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -126,8 +126,13 @@ const Cart = () => {
     color: white;
     text-align: left;
     position: relative;
-    box-shadow: 7px 7px 32px 20px #6052ff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     gap:10px;
+  }
+
+  .card:hover{
+    box-shadow: 7px 7px 32px 20px #362c9f;
+    transform: scale(1.09);
   }
 
   .card img {
@@ -208,14 +213,14 @@ const Cart = () => {
   }
 `}</style>
 
-<div className="cart-top">
-  <a href="/index.html">
-    <img src={carticon} className="cart-icon" alt="Cart Icon" />
-  </a>
-  <span className="cart-count">{cartCount}</span>
-</div>
+      <div className="cart-top">
+        <a href="/index.html">
+          <img src={carticon} className="cart-icon" alt="Cart Icon" />
+        </a>
+        <span className="cart-count">{cartCount}</span>
+      </div>
       <div className="card-container">
-        <Link to="/" className="home-link" style={{ marginRight: '10px', marginTop:'30px' }}>
+        <Link to="/" className="home-link" style={{ marginRight: '10px', marginTop: '30px' }}>
           <img src={homeIcon} alt="Home" className="home-icon" />
         </Link>
         {cartItems.map((item) => (
