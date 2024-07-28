@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Settings.css";
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
+import homeIcon from '../../img/homeicon.png';
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState("profile");
@@ -11,15 +12,6 @@ const SettingsPage = () => {
       case "profile":
         return (
           <div className="profile-settings settings-content">
-            <h2>Profile Settings</h2>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Enter your username"
-              />
-            </div>
             <h2>Profile Settings</h2>
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -223,13 +215,12 @@ const SettingsPage = () => {
 
   return (
     <div className="settings">
-      <div className="settings-tabs">
+      <div className="settings-header">
         <Link to="/">
-          <button>
-            <FaArrowLeft />
-            Back to Home
-          </button>
+          <img src={homeIcon} alt="Home" className="home-icon" />
         </Link>
+      </div>
+      <div className="settings-tabs">
         <button
           className={activeTab === "profile" ? "active" : ""}
           onClick={() => setActiveTab("profile")}
