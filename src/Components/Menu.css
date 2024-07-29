@@ -15,6 +15,43 @@ body {
   z-index: 1100;
 }
 
+
+.sign-out-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: rgb(25, 22, 44);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+.sign-out-popup button {
+  margin: 5px;
+}
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  z-index: 10000;
+}
+
+.buttonSignOut{
+  display: flex;
+  margin-top: 10%;
+  justify-content: center;
+}
+
 .sidebar {
   width: 150px;
   height: 100%;
@@ -80,3 +117,4 @@ body {
   margin-left: 10px;
   font-size: 0.9rem;
 }
+
