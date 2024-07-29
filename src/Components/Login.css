@@ -37,7 +37,13 @@ input {
   margin-top: 20px;
 }
 
-
+.forgot-password-link a {
+  font-weight: bold; /* Make the text bold */
+  color: darkturquoise; /* Change text color to dark turquoise */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px;
+}
 .error-text {
   color: darkturquoise !important; /* Default error text color */
   font-size: 1.1rem;
