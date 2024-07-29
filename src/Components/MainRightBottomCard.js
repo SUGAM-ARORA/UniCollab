@@ -7,6 +7,19 @@ function MainRightBottomCard() {
   const [showMore, setShowMore] = useState(false);
   const profileListRef = useRef(null);
 
+  const handleButton = (e) => {
+    if (e.target.textContent === "Follow") {
+      e.target.textContent = "Following"
+      e.target.style.background = "rgb(25, 22, 44)"
+      e.target.style.border = "2px solid #443b78"
+    }
+    else if (e.target.textContent === "Following") {
+      e.target.textContent = "Follow"
+      e.target.style.background = "linear-gradient(#ff21bc, #b21783)"
+      e.target.style.border = ""
+    }
+  }
+
   const loadMoreSellers = () => {
     setVisibleSellers((prevVisibleSellers) => {
       const newVisibleSellers = prevVisibleSellers + 3;
@@ -39,7 +52,7 @@ function MainRightBottomCard() {
 
   const handleViewMore = () => {
     setShowMore((prevShowMore) => !prevShowMore);
-    setVisibleSellers((prevVisibleSellers) => 
+    setVisibleSellers((prevVisibleSellers) =>
       showMore ? 3 : TopSeller.length
     );
     setAllSellersLoaded(!showMore); // Reset scroll loading state when toggling
@@ -64,7 +77,7 @@ function MainRightBottomCard() {
               {seller?.seller_name} <span>{seller?.username}</span>
             </p>
           </div>
-          <a href="#" className="button">Follow</a>
+          <a href="#" className="button" onClick={handleButton}>Follow</a>
         </div>
       ))}
     </div>
