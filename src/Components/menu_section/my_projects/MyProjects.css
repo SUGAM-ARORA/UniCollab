@@ -20,6 +20,10 @@ button {
    gap: 20px;
    margin: 20px 0;
 }
+.top h1 {
+    margin-left: 70px;
+}
+
 .project-card {
     /* background-color: rgb(23, 23, 83); */
     color: white;

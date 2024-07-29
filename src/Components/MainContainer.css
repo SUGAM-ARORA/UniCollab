@@ -6,6 +6,32 @@
   padding-top: 15px;
 }
 
+@media (max-width:950px){
+  .maincontainer{
+    flex-direction: column;
+  }
+
+  .topCard{
+    width: 76vw;
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 0.7rem !important;
+  }
+
+  .bottom_card{
+    width: 76vw;
+    margin-left: 10px;
+    margin-top: 10px;
+    border-radius: 0.7rem !important;
+  }
+
+
+  .maincontainer .left{
+    width: 75vw !important;
+    margin: auto;
+  }
+}
+
 .maincontainer .left {
   width: 70%;
   overflow-y: scroll;
@@ -241,8 +267,6 @@
 }
 
 .bottomCard_name {
-
-  border: 2px solid black;
   padding: 2px;
   top: 0;
 }
@@ -261,7 +285,7 @@
   position: sticky;
   top: 0;
   z-index: 1;
-  background-color: grey;
+  background-color:#19162c;
 }
 
 

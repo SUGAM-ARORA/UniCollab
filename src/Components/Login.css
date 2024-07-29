@@ -37,7 +37,13 @@ input {
   margin-top: 20px;
 }
 
-
+.forgot-password-link a {
+  font-weight: bold; /* Make the text bold */
+  color: darkturquoise; /* Change text color to dark turquoise */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px;
+}
 .error-text {
   color: darkturquoise !important; /* Default error text color */
   font-size: 1.1rem;
@@ -55,7 +61,7 @@ input {
 
 .signin-signup {
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   left: 75%;
   width: 50%;
@@ -127,6 +133,7 @@ form.sign-in-form {
   font-weight: 600;
   font-size: 1.1rem;
   color: darkturquoise !important;
+  margin: 4px 0 4px -10px
 }
 
 .input-field input::placeholder {
@@ -214,6 +221,7 @@ form.sign-in-form {
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+  margin: auto;
 }
 
 .btn1:hover {
@@ -475,7 +483,7 @@ form.sign-in-form {
     bottom: 65vh;
   }
   .signin-signup .sign-up-form {
-    margin-left: 20%;
+    margin: 0 0 20% 20%;
   }
   .container1.sign-up-mode:before {
     display: none;

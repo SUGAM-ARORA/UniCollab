@@ -195,6 +195,11 @@ const LogIn = () => {
     setPassword('');
     setUsername('');
   };
+  const handleForgotPassword = () => {
+    // Implement your forgot password logic here
+    navigate('/'); // Redirect to the main page
+  };
+  
 
   const handlePhoneSignIn = async () => {
     try {
@@ -289,8 +294,15 @@ const LogIn = () => {
                 )}
               </button>
             </div>
+            <div className="forgot-password-link">
+           <a href="#" onClick={handleForgotPassword}>
+           Forgot Password?
+          </a>
+         </div>
+        <br></br>
             <input type="submit" value="Login" className="btn1 solid" />
             <p className="social-text">Connect with Social Magic</p>
+         
             <div className="social-media">
               <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>
@@ -390,8 +402,15 @@ const LogIn = () => {
                 )}
               </button>
             </div>
+            <div className="forgot-password-link">
+           <a href="#" onClick={handleForgotPassword}>
+           Forgot Password?
+          </a>
+         </div>
+        <br></br>
             <input type="submit" className="btn1" value="Sign Up" />
             <p className="social-text">Connect with Social Magic</p>
+                   
             <div className="social-media">
             <div onClick={handleFacebookSignIn} className="social-icon">
                 <i className="fab fa-facebook-f" style={{ color: 'darkturquoise' }}></i>

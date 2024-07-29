@@ -1,197 +1,137 @@
-menu {
-  width: 90px;
-  height: auto;
-  background: #19162c;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 0;
-}
-
-menu .logo {
-  cursor: pointer;
-  opacity: 1;
-  transition: all 0.4s ease-in-out;
-}
-
-menu .logo:hover {
-  opacity: 0.7;
-  transition: all 0.4s ease-in-out;
-}
-
-menu img {
-  width: 3em;
-  padding-top: 30px;
-}
-
-menu ul {
-  padding-top: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
-}
-
-menu ul li {
-  list-style: none;
-  margin: 20px 0;
+body {
   position: relative;
-  color: #8c8a95;
-  width: 100%;
-  text-align: center;
-  background-color: transparent;
-}
-
-menu ul li a {
-  font-size: 24px;
-  color: #8c8a95;
-  text-decoration: none;
-  transition: all 0.3s;
-  position: relative;
-  background-color: transparent; /* Ensure background is transparent */
-  outline: none; /* Remove focus outline */
-}
-
-menu ul li a::before {
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: -10px;
-  width: 0px;
-  height: 20px;
-  background: #cf00a3;
-  border-radius: 50%;
-}
-
-menu ul li:hover a::before {
-  width: 20px;
-  transition: all 0.3s;
-  background-color: transparent;
-}
-
-menu ul li.active a::before {
-  width: 20px;
-  transition: all 0.3s;
-  background-color: transparent;
-}
-
-menu ul li.active a {
-  color: #0db5cb;
-  background-color: transparent; /* Ensure background is transparent */
-  outline: none; /* Remove focus outline */
-}
-
-menu ul li:hover a {
-  color: #0db5cb;
-  background-color: transparent; /* Ensure background is transparent */
-}
-
-menu ul li a:focus {
-  background-color: transparent; /* Remove orange background on focus */
-  outline: none; /* Remove focus outline */
-}
-
-.tooltip {
-  visibility: hidden;
-  width: 80px;
-  background-color: #2e2758;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 8px;
-  font-size: 15px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -30px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #231e42 transparent transparent transparent;
-}
-
-menu ul li:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  background-color: transparent;
-}
-
-.lastMenu {
-  margin-top: auto;
-  background-color: transparent;
-}
-
-/* New styles for toggle button */
-.menu-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 5px;
-  top: 10px;
-  background: #19162c;
+  margin: 0;
 }
 
 .menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
   background: none;
   border: none;
-  color: white;
-  font-size: 24px;
+  color: #19162c;
+  font-size: 1.5rem;
   cursor: pointer;
-  transition: color 0.3s;
+  z-index: 1001; /* Higher than the navbar */
 }
 
-.menu-toggle:hover {
-  color: #cf00a3; /* Change to your hover color */
+.sign-out-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background: rgb(25, 22, 44);
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1002; /* Higher than the navbar */
+  border-radius: 10px;
 }
 
-/* Adjust styles for dropdown menus */
-.menu-header .logo {
+.sign-out-popup button {
+  margin: 5px;
+}
+
+.success-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px;
+  background: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1002; /* Higher than the navbar */
+}
+
+.buttonSignOut {
+  display: flex;
+  margin-top: 10%;
+  justify-content: center;
+}
+
+.sidebar {
+  width: 180px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background: #19162c;
+  color: #fff;
+  transition: 0.3s;
+  z-index: 1001; /* Higher than the navbar */
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: #cf00a3;
+  z-index: 999; /* Higher than the navbar */
+}
+
+.sidebar-header h3 {
+  margin: 0;
+}
+
+.sidebar-header .close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.sidebar-menu {
+  position: relative;
+  margin: 0;
+  z-index: 1001; /* Ensure menu items are above other elements */
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sidebar ul li {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: #cf00a3; /* Change the background color on hover */
+  border-radius: 5px; /* Optional: Add rounded corners for a smoother look */
+}
+
+.sidebar ul li:hover a {
+  color: white; /* Ensure text color is readable on hover */
+}
+
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 100px;
+  z-index: 1100; /* Higher than other elements to ensure it is not hidden */
+  position: relative; /* Ensure it follows the normal flow and positioning */
+}
+
+.tooltip {
   margin-left: 10px;
-}
-
-@media only screen and (max-width: 525px) {
-  menu {
-    min-width: 68px;
-    width: auto;
-    background-color: transparent;
-  }
-  menu ul {
-    display: none;
-    position: relative;
-    top: 50px;
-    right: 0;
-    width: 100%;
-    background-color: #19162c;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  }
-  menu img {
-    position: absolute;
-    left: 1px;
-    padding: 0;
-    background-color: transparent;
-  }
-  menu ul li {
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    background-color: transparent;
-  }
-  .logo {
-    cursor: pointer;
-  }
+  font-size: 1.1rem;
+  color: white;
 }
