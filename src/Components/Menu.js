@@ -4,7 +4,6 @@ import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
 import Stopwatch from "./Stopwatch"; // Import the Stopwatch component
 
-
 import {
   FaDelicious,
   FaShoppingCart,
@@ -16,14 +15,12 @@ import {
   FaList,
   FaCoffee, // New icon for sidebar open
   FaBeer, // New icon for sidebar closed
-  FaTimes
 } from "react-icons/fa";
 
 function Menu() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
   const [showStopwatch, setShowStopwatch] = useState(false); // State to handle stopwatch visibility
-
 
   useEffect(() => {
     const handleResize = () => {
@@ -41,62 +38,44 @@ function Menu() {
     setSidebarOpen(!sidebarOpen);
   };
 
-
   const toggleStopwatch = () => {
     setShowStopwatch(!showStopwatch);
   };
 
   const handleSignOut = () => {
-    // Simulate sign-out logic here (e.g., clearing tokens, redirecting to login)
     console.log("User signed out");
-    // setShowSignOutPopup(false);
-    // setShowSuccessMessage(true);
-
-    // Hide success message after 3 seconds
     setTimeout(() => {
-      // setShowSuccessMessage(false);
+      // Handle any additional sign-out logic here
     }, 3000);
   };
 
   return (
     <>
-      <div 
+      <div
         className={`sidebar ${sidebarOpen ? 'open' : ''}`}
         style={{
-          width: '180px',
+          width: '220px', // Adjusted width to fit the logo properly
           height: '100%',
           position: 'fixed',
           top: '0',
-          left: sidebarOpen ? '0' : '-250px',
+          left: sidebarOpen ? '0' : '-220px', // Adjusted to match the new width
           background: '#19162c',
           color: 'white',
           transition: '0.3s',
-          zIndex: '1000', // Ensure sidebar is below menu-toggle
+          zIndex: '1000',
         }}
       >
         <div
           className="sidebar-header"
           style={{
             display: 'flex',
-            justifyContent: 'space-between',
+            justifyContent: 'center', // Center the logo
             alignItems: 'center',
             padding: '1rem',
-            background: '#cf00a3',
+            background: '#19162c',
           }}
         >
-          <img src={logo} alt="Logo" className="logo" style={{ width: '100px' }} />
-          <button
-            className="close-btn"
-            onClick={toggleSidebar}
-            style={{
-              background: 'none',
-              border: 'none',
-              color: 'white',
-              fontSize: '1.5rem',
-            }}
-          >
-            <FaTimes size={20} />
-          </button>
+          <img src={logo} alt="Logo" className="logo" style={{ width: '90px' }} /> {/* Adjusted width */}
         </div>
         <ul
           className="sidebar-menu"
@@ -161,43 +140,12 @@ function Menu() {
           color: 'white',
           fontSize: '1.5rem',
           cursor: 'pointer',
-          zIndex: '1100', // Ensure it stays on top
+          zIndex: '1100',
           marginLeft: '-15px',
         }}
       >
         {sidebarOpen ? <FaBeer size={45} /> : <FaCoffee size={45} />}
       </button>
-
-      {/* {showSignOutPopup && (
-        <div className="sign-out-popup">
-          <p>Are you sure you want to sign out?</p>
-          <div className="buttonSignOut">
-            <button onClick={handleSignOut}>Yes</button>
-            <button onClick={() => setShowSignOutPopup(false)}>No</button>
-          </div>
-        </div>
-      )}
-
-      {showSuccessMessage && (
-        <div className="success-message">
-          Successfully signed out
-        </div>
-      )}
-      {showSignOutPopup && (
-        <div className="sign-out-popup">
-          <p>Are you sure you want to sign out?</p>
-          <div className="buttonSignOut">
-            <button onClick={handleSignOut}>Yes</button>
-            <button onClick={() => setShowSignOutPopup(false)}>No</button>
-          </div>
-        </div>
-      )}
-
-      {showSuccessMessage && (
-        <div className="success-message">
-          Successfully signed out
-        </div>
-      )} */}
 
       {showStopwatch && <Stopwatch onClose={toggleStopwatch} />}
     </>

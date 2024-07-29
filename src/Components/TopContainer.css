@@ -7,7 +7,7 @@
 }
 
 .navbar {
-  width: 100%;
+  width: 1530px;
   height: 60px;
   background: #19162c;
   display: flex;
@@ -15,11 +15,10 @@
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: sticky;
+  position: relative;
   top: 0;
   gap: 0.5rem;
-  z-index: 999;
-  margin-left: 50px;
+  margin-left: 130px;
 }
 .profileContainer .go-pro-btn {
   padding: 20px 20px; /* Adjust padding to change the button size */
