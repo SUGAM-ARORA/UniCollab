@@ -116,7 +116,7 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    font-size: 22px; /* Match the form font size */
+    font-size: 16px; /* Match the form font size */
     font-weight: bold; /* Make the button text bold */
     font-family: Arial, Helvetica, sans-serif; /* Update font family */
 }
