@@ -30,9 +30,6 @@ function Menu() {
       setIsMobile(window.innerWidth < 524);
     };
 
-
-    window.addEventListener('resize', handleResize);
-
     window.addEventListener("resize", handleResize);
 
     return () => {
@@ -52,17 +49,14 @@ function Menu() {
   const handleSignOut = () => {
     // Simulate sign-out logic here (e.g., clearing tokens, redirecting to login)
     console.log("User signed out");
-    setShowSignOutPopup(false);
-    setShowSuccessMessage(true);
+    // setShowSignOutPopup(false);
+    // setShowSuccessMessage(true);
 
     // Hide success message after 3 seconds
     setTimeout(() => {
-      setShowSuccessMessage(false);
+      // setShowSuccessMessage(false);
     }, 3000);
   };
-
-
-
 
   return (
     <>
@@ -174,7 +168,7 @@ function Menu() {
         {sidebarOpen ? <FaBeer size={45} /> : <FaCoffee size={45} />}
       </button>
 
-      {showSignOutPopup && (
+      {/* {showSignOutPopup && (
         <div className="sign-out-popup">
           <p>Are you sure you want to sign out?</p>
           <div className="buttonSignOut">
@@ -189,6 +183,21 @@ function Menu() {
           Successfully signed out
         </div>
       )}
+      {showSignOutPopup && (
+        <div className="sign-out-popup">
+          <p>Are you sure you want to sign out?</p>
+          <div className="buttonSignOut">
+            <button onClick={handleSignOut}>Yes</button>
+            <button onClick={() => setShowSignOutPopup(false)}>No</button>
+          </div>
+        </div>
+      )}
+
+      {showSuccessMessage && (
+        <div className="success-message">
+          Successfully signed out
+        </div>
+      )} */}
 
       {showStopwatch && <Stopwatch onClose={toggleStopwatch} />}
     </>
