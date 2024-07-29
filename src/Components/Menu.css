@@ -1,225 +1,82 @@
-menu {
-  width: 100px;
-  height: auto;
-  background: #19162c;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: sticky;
-  top: 0;
+body {
+  position: relative;
+  margin: 0;
 }
 
-menu .logo {
+.menu-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: none;
+  border: none;
+  color: #19162c;
+  font-size: 1.5rem;
   cursor: pointer;
-  opacity: 1;
-  transition: all 0.4s ease-in-out;
+  z-index: 1100;
 }
 
-menu .logo:hover {
-  opacity: 0.7;
-  transition: all 0.4s ease-in-out;
-}
-
-menu img {
-  width: 3em;
-  padding-top: 30px;
-}
-
-menu ul {
-  padding-top: 30px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: transparent;
-}
-
-menu ul li {
-  list-style: none;
-  margin: 20px 0;
-  position: relative;
-  color: #8c8a95;
-  width: 100%;
-  text-align: center;
-  background-color: transparent;
-}
-
-menu ul li a {
-  font-size: 24px;
-  color: #8c8a95;
-  text-decoration: none;
-  transition: all 0.3s;
-  position: relative;
-  background-color: transparent; /* Ensure background is transparent */
-  outline: none; /* Remove focus outline */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-menu ul li a::before {
-  position: absolute;
-  content: "";
-  top: 5px;
-  left: -10px;
-  width: 0px;
-  height: 20px;
-  background: #cf00a3;
-  border-radius: 50%;
-}
-
-menu ul li:hover a::before {
-  width: 20px;
-  transition: all 0.3s;
-  background-color: transparent;
-}
-
-menu ul li.active a::before {
-  width: 20px;
-  transition: all 0.3s;
-  background-color: transparent;
-}
-
-menu ul li.active a {
-  color: #cf00a3;
-  background-color: transparent; /* Ensure background is transparent */
-  outline: none; /* Remove focus outline */
-}
-
-menu ul li:hover a {
-  color: #cf00a3;
-  background-color: transparent; /* Ensure background is transparent */
-}
-
-menu ul li a:focus {
-  background-color: transparent; /* Remove orange background on focus */
-  outline: none; /* Remove focus outline */
-  box-shadow: 0 0 0 2px #0db5cb; /* Smaller cyan box shadow */
-  border-radius: 5px; /* Adjust border-radius if needed */
-}
-
-.tooltip {
-  visibility: hidden;
-  width: 80px;
-  background-color: #2e2758;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 8px 8px;
-  font-size: 15px;
-  position: absolute;
-  z-index: 1;
-  bottom: 125%;
-  left: 50%;
-  margin-left: -30px;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.tooltip::after {
-  content: "";
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #231e42 transparent transparent transparent;
-}
-
-menu ul li:hover .tooltip {
-  visibility: visible;
-  opacity: 1;
-  background-color: transparent;
-}
-
-.lastMenu {
-  margin-top: auto;
-  background-color: transparent;
-}
-
-@media only screen and (max-width: 525px) {
-  menu {
-    min-width: 68px;
-    width: auto;
-    background-color: transparent;
-  }
-  menu ul {
-    display: none;
-    position: relative;
-    top: 50px;
-    right: 0;
-    width: 100%;
-    background-color: #19162c;
-    border-radius: 10px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  }
-  menu img {
-    position: absolute;
-    left: 1px;
-    padding: 0;
-    background-color: transparent;
-  }
-  menu ul li {
-    display: block;
-    padding: 10px;
-    border-bottom: 1px solid #eee;
-    background-color: transparent;
-  }
-  .logo {
-    cursor: pointer;
-  }
-}
-
-.stopwatch-container {
-  /* Add necessary styles */
+.sidebar {
+  width: 150px;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -250px;
   background: #19162c;
-  border-radius: 10px;
-  padding: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   color: #fff;
-  margin: 10px;
+  transition: 0.3s;
+  z-index: 1000;
 }
 
-.stopwatch-header {
-  /* Add necessary styles */
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem;
+  background: #19162c;
 }
 
-.stopwatch-time {
-  /* Add necessary styles */
-  text-align: center;
-  font-size: 1em;
-  margin: 20px 0;
+.sidebar-header h3 {
+  margin: 0;
 }
 
-.stopwatch-controls {
-  /* Add necessary styles */
+.sidebar-header .close-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.sidebar-menu {
+  position: relative;
+  margin: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  size: 10px;
+  gap: 2px;
 }
 
-.stopwatch-controls button {
-  margin: 10px 0;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #cf00a3;
-  background-color: #cf00a3;
-  font-size: 0.8em;
-  transition: color 0.3s;
+.sidebar ul li {
+  padding: 1rem;
 }
 
-stopwatch-controls button:hover {
-  color: #cf00a3;
-  background-color: #cf00a3;
+.sidebar ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo {
+  width: 100px;
 }
 
 .tooltip {
-  margin-left: 5px; /* Ensure tooltip text has a margin from the icon */
+  margin-left: 10px;
+  font-size: 0.9rem;
 }

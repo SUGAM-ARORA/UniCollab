@@ -19,28 +19,12 @@
   top: 0;
   gap: 0.5rem;
   z-index: 99999;
+  margin-left: 50px;
 }
 .profileContainer .go-pro-btn {
   padding: 10px 10px; /* Adjust padding to change the button size */
 }
 
-@media (max-width: 830px){
-  .navbar{
-    width: 80vw;
-  }
-}
-
-@media (max-width: 650px){
-  .navbar{
-    width: 80vw;
-  }
-
-  .profileIconlogin{
-    width: 140px !important;
-    font-size: 12px !important;
-  }
-
-}
 
 .largeview {
   display: flex;
