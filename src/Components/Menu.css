@@ -12,9 +12,8 @@ body {
   color: #19162c;
   font-size: 1.5rem;
   cursor: pointer;
-  z-index: 1100;
+  z-index: 1001; /* Higher than the navbar */
 }
-
 
 .sign-out-popup {
   position: fixed;
@@ -24,8 +23,8 @@ body {
   padding: 20px;
   background: rgb(25, 22, 44);
   border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1002; /* Higher than the navbar */
   border-radius: 10px;
 }
 
@@ -42,18 +41,18 @@ body {
   color: #155724;
   border: 1px solid #c3e6cb;
   border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  z-index: 10000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 1002; /* Higher than the navbar */
 }
 
-.buttonSignOut{
+.buttonSignOut {
   display: flex;
   margin-top: 10%;
   justify-content: center;
 }
 
 .sidebar {
-  width: 150px;
+  width: 180px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -61,7 +60,7 @@ body {
   background: #19162c;
   color: #fff;
   transition: 0.3s;
-  z-index: 1000;
+  z-index: 1001; /* Higher than the navbar */
 }
 
 .sidebar.open {
@@ -73,7 +72,8 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background: #19162c;
+  background: #cf00a3;
+  z-index: 999; /* Higher than the navbar */
 }
 
 .sidebar-header h3 {
@@ -90,6 +90,7 @@ body {
 .sidebar-menu {
   position: relative;
   margin: 0;
+  z-index: 1001; /* Ensure menu items are above other elements */
 }
 
 .sidebar ul {
@@ -102,19 +103,35 @@ body {
 
 .sidebar ul li {
   padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sidebar ul li:hover {
+  background-color: #cf00a3; /* Change the background color on hover */
+  border-radius: 5px; /* Optional: Add rounded corners for a smoother look */
+}
+
+.sidebar ul li:hover a {
+  color: white; /* Ensure text color is readable on hover */
 }
 
 .sidebar ul li a {
   color: #fff;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .logo {
   width: 100px;
+  z-index: 1100; /* Higher than other elements to ensure it is not hidden */
+  position: relative; /* Ensure it follows the normal flow and positioning */
 }
 
 .tooltip {
   margin-left: 10px;
-  font-size: 0.9rem;
+  font-size: 1.1rem;
+  color: white;
 }
-
