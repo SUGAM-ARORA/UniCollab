@@ -7,7 +7,7 @@ import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
-
+ 
 function TopContainer() {
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState(null);
