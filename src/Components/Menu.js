@@ -4,6 +4,7 @@ import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
 import Stopwatch from "./Stopwatch"; // Import the Stopwatch component
 
+
 import {
   FaDelicious,
   FaShoppingCart,
@@ -31,6 +32,11 @@ function Menu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive));
   }, []);
 
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
+  const [showSignOutPopup, setShowSignOutPopup] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
+
   const showDropDown = () => {
     if (!toggle) {
       document.getElementById("mainMenu").style.display = "flex";
@@ -42,24 +48,43 @@ function Menu() {
       toggle = false;
     }
   };
-
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
   const [showStopwatch, setShowStopwatch] = useState(false); // State to handle stopwatch visibility
+
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 524);
     };
 
+
+    window.addEventListener('resize', handleResize);
+
     window.addEventListener("resize", handleResize);
+
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
+
   const toggleStopwatch = () => {
     setShowStopwatch(!showStopwatch);
   };
+
+  const handleSignOut = () => {
+    // Simulate sign-out logic here (e.g., clearing tokens, redirecting to login)
+    console.log("User signed out");
+    setShowSignOutPopup(false);
+    setShowSuccessMessage(true);
+
+    // Hide success message after 3 seconds
+    setTimeout(() => {
+      setShowSuccessMessage(false);
+    }, 3000);
+  };
+
+
+
 
   return (
     <>
@@ -72,6 +97,7 @@ function Menu() {
             id="logo"
             onClick={isMobile ? showDropDown : null}
             style={{ cursor: isMobile ? "pointer" : "default" }}
+
           />
         </Link>
 
@@ -81,25 +107,46 @@ function Menu() {
           <Icon icon={<FaShoppingCart size={30} />} tooltip="Cart" href="/cart" />
           <Icon icon={<FaWallet size={30} />} tooltip="Wallet" href="/" />
           <Icon icon={<FaChartLine size={30} />} tooltip="Trending" href="/" />
-          <Icon icon={<FaRegClock size={30} />} tooltip="Speed" href="#" onClick={toggleStopwatch} /> {/* Add onClick handler */}
+          <Icon icon={<FaRegClock size={30} />} tooltip="Speed" href="#" onClick={toggleStopwatch} />
         </ul>
 
         <ul className="lastMenu" id="lastMenu">
           <Link to="/settings">
             <Icon icon={<FaCog size={30} />} tooltip="Settings" />
           </Link>
-          <Icon icon={<FaSignOutAlt size={30} />} tooltip="Sign Out" href="/" />
+          <li onClick={() => setShowSignOutPopup(true)}>
+            <a href="#">
+              <FaSignOutAlt size={30} />
+              <span className="tooltip">Sign Out</span>
+            </a>
+          </li>
         </ul>
       </menu>
 
-      {showStopwatch && <Stopwatch onClose={toggleStopwatch} />} {/* Render the Stopwatch conditionally */}
+      {showSignOutPopup && (
+        <div className="sign-out-popup">
+          <p>Are you sure you want to sign out?</p>
+          <div className="buttonSignOut">
+            <button onClick={handleSignOut}>Yes</button>
+            <button onClick={() => setShowSignOutPopup(false)}>No</button>
+          </div>
+        </div>
+      )}
+
+      {showSuccessMessage && (
+        <div className="success-message">
+          Successfully signed out
+        </div>
+      )}
+
+      {showStopwatch && <Stopwatch onClose={toggleStopwatch} />}
     </>
   );
 }
 
 const Icon = ({ icon, tooltip, href, onClick }) => (
   <li>
-    <a href={href} onClick={(e) => { e.target.blur(); if(onClick) onClick(); }} style={{ display: "flex", alignItems: "center" }}>
+    <a href={href} onClick={(e) => { e.target.blur(); if (onClick) onClick(); }} style={{ display: "flex", alignItems: "center" }}>
       {icon}
       <span className="tooltip">{tooltip}</span>
     </a>

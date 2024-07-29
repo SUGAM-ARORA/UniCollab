@@ -18,7 +18,7 @@
   position: sticky;
   top: 0;
   gap: 0.5rem;
-  z-index: 99999;
+  z-index: 999;
 }
 .profileContainer .go-pro-btn {
   padding: 10px 10px; /* Adjust padding to change the button size */
