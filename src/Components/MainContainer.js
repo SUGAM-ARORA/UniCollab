@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import DefaultBanner from "../img/1.jpg";
 import CardMain from "./CardMain";
 import Popular from "./Popular"; // Correctly import Popular component
@@ -10,10 +10,12 @@ const MAX_IMAGE_SIZE = 2185200; // 2MB
 
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
-
+  const dropdownRef = useRef(null);
   const [banner, setBanner] = useState(DefaultBanner);
-  const [activeButton, setActiveButton] = useState("Feed"); // State to track the active button
-  const [activeFilterButton, setActiveFilterButton] = useState("All"); // State to track the active filter button
+  const [activeButton, setActiveButton] = useState("Feed");
+  const [activeFilterButton, setActiveFilterButton] = useState("All");
+  const [sortByOpen, setSortByOpen] = useState(false);
+  const [nameDropdownOpen, setNameDropdownOpen] = useState(false);
 
   const uploadImageHandler = () => {
     imageUploadInputRef?.current?.click();
@@ -33,7 +35,29 @@ function MainContainer() {
 
   const toggleFilterButtonHandler = (buttonName) => {
     setActiveFilterButton(buttonName);
+    if (buttonName === "Sort By") {
+      setSortByOpen(!sortByOpen);
+    } else {
+      setSortByOpen(false);
+    }
   };
+
+  const toggleNameDropdown = () => {
+    setNameDropdownOpen(!nameDropdownOpen);
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setSortByOpen(false);
+        setNameDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="maincontainer">
@@ -118,14 +142,29 @@ function MainContainer() {
               </button>
               <button
                 className="button2"
+                onClick={() => toggleFilterButtonHandler("Sort By")}
                 style={{
                   color: "white",
                   backgroundColor: activeFilterButton === "Sort By" ? "#cf00a3" : "#19162c",
                 }}
-                onClick={() => toggleFilterButtonHandler("Sort By")}
               >
                 Sort By
               </button>
+              {sortByOpen && (
+                <div className="dropdown" ref={dropdownRef}>
+                  <button className="dropdown-item" onClick={toggleNameDropdown}>
+                    Name
+                  </button>
+                  <button className="dropdown-item">Role</button>
+                  <button className="dropdown-item">Hearts</button>
+                  {nameDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">Ascending</button>
+                      <button className="dropdown-item">Descending</button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 

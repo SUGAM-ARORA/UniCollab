@@ -7,7 +7,9 @@ import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
- 
+
+
+
 function TopContainer() {
   const [input, setInput] = useState("");
   const [searchResult, setSearchResult] = useState(null);
@@ -87,6 +89,8 @@ function TopContainer() {
     };
   }, []);
 
+  
+
   const toggleMenu = () => {
     setMobMenu(!mobMenu);
   };
@@ -152,12 +156,13 @@ function TopContainer() {
           {searchResult ? (
             <div id="search_results">
               {searchResult.map((item, index) => (
-                <div key={`parent_container${index}`}>
+                <Link to={`/readmore/${item.id}`} key={index}>
+                  <div>
                   <p id="search_result_title" key={`title${index}`}>
                     {item.title}
                   </p>
                   <span key={`category${index}`}>{item.category}</span>
-                </div>
+                </div></Link>
               ))}
             </div>
           ) : null}
