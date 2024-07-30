@@ -68,8 +68,8 @@ const Footer = () => {
           <FontAwesomeIcon icon={faFacebook} />
         </a>
         <a href="#" target="_blank" rel='noreferrer'>
-          <FontAwesomeIcon icon={faTwitter} />
-        </a>
+        <i class="fa-brands fa-square-x-twitter"></i>  
+              </a>
       </div>
 
       <div className='footer-bottom'>
