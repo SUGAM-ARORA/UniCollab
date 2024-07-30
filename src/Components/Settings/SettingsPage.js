@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./Settings.css";
 import { Link } from "react-router-dom";
-import { FaArrowLeft } from "react-icons/fa";
 import homeIcon from '../../img/homeicon.png';
 
 const SettingsPage = () => {
@@ -15,11 +14,7 @@ const SettingsPage = () => {
             <h2>Profile Settings</h2>
             <div className="form-group">
               <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                placeholder="Enter your username"
-              />
+              <input type="text" id="username" placeholder="Enter your username" />
             </div>
             <div className="form-group">
               <label htmlFor="bio">Bio</label>
@@ -27,11 +22,7 @@ const SettingsPage = () => {
             </div>
             <div className="form-group">
               <label htmlFor="profilePic">Profile Picture URL</label>
-              <input
-                type="text"
-                id="profilePic"
-                placeholder="Enter URL of profile picture"
-              />
+              <input type="text" id="profilePic" placeholder="Enter URL of profile picture" />
             </div>
             <button>Save Profile Settings</button>
           </div>
@@ -46,11 +37,7 @@ const SettingsPage = () => {
             </div>
             <div className="form-group">
               <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter your password"
-              />
+              <input type="password" id="password" placeholder="Enter your password" />
             </div>
             <div className="form-group">
               <label htmlFor="language">Language</label>
@@ -94,9 +81,7 @@ const SettingsPage = () => {
               </select>
             </div>
             <div className="form-group checkbox-group">
-              <label htmlFor="searchEngineIndexing">
-                Search Engine Indexing
-              </label>
+              <label htmlFor="searchEngineIndexing">Search Engine Indexing</label>
               <input type="checkbox" id="searchEngineIndexing" />
             </div>
             <div className="form-group checkbox-group">
@@ -112,11 +97,7 @@ const SettingsPage = () => {
             <h2>Collaboration Settings</h2>
             <div className="form-group">
               <label htmlFor="inviteCollab">Invite to Collaborate</label>
-              <input
-                type="text"
-                id="inviteCollab"
-                placeholder="Enter email or username"
-              />
+              <input type="text" id="inviteCollab" placeholder="Enter email or username" />
             </div>
             <div className="form-group">
               <label htmlFor="projectVisibility">Project Visibility</label>
@@ -126,9 +107,7 @@ const SettingsPage = () => {
               </select>
             </div>
             <div className="form-group checkbox-group">
-              <label htmlFor="collabNotifications">
-                Collaboration Notifications
-              </label>
+              <label htmlFor="collabNotifications">Collaboration Notifications</label>
               <input type="checkbox" id="collabNotifications" />
             </div>
             <button>Save Collaboration Settings</button>
@@ -163,36 +142,17 @@ const SettingsPage = () => {
             <ul>
               <li className="help-support-list">FAQ</li>
               <p className="help-support-content">
-                Frequently Asked Questions (FAQ) serve as a vital resource for
-                users seeking quick answers to common queries. Whether it's
-                troubleshooting technical issues or understanding platform
-                features, our FAQ section is meticulously curated to address the
-                most pressing concerns. Dive into a wealth of information
-                covering account management, billing inquiries, feature
-                functionalities, and more.
+                Frequently Asked Questions (FAQ) serve as a vital resource for users seeking quick answers to common queries. Whether it's troubleshooting technical issues or understanding platform features, our FAQ section is meticulously curated to address the most pressing concerns. Dive into a wealth of information covering account management, billing inquiries, feature functionalities, and more.
               </p>
               <br />
               <li className="help-support-list">Contact Support</li>
               <p className="help-support-content">
-                At UniCollab, your satisfaction is our priority, which is why
-                our dedicated support team is readily available to assist you
-                every step of the way. Whether you're encountering technical
-                difficulties, have questions about our services, or require
-                assistance with account-related matters, our support specialists
-                are here to provide prompt and personalized assistance. Reach
-                out to us via email, phone, or live chat for timely resolutions
-                and expert guidance tailored to your needs.
+                At UniCollab, your satisfaction is our priority, which is why our dedicated support team is readily available to assist you every step of the way. Whether you're encountering technical difficulties, have questions about our services, or require assistance with account-related matters, our support specialists are here to provide prompt and personalized assistance. Reach out to us via email, phone, or live chat for timely resolutions and expert guidance tailored to your needs.
               </p>
               <br />
               <li className="help-support-list">Community Guidelines</li>
               <p className="help-support-content">
-                Our community thrives on collaboration, innovation, and respect
-                for all members. To foster a vibrant and inclusive environment,
-                we've established clear Community Guidelines that outline the
-                standards of behavior expected from every participant. Upholding
-                principles of mutual respect, integrity, and professionalism,
-                our guidelines promote constructive engagement and discourage
-                harmful conduct.
+                Our community thrives on collaboration, innovation, and respect for all members. To foster a vibrant and inclusive environment, we've established clear Community Guidelines that outline the standards of behavior expected from every participant. Upholding principles of mutual respect, integrity, and professionalism, our guidelines promote constructive engagement and discourage harmful conduct.
               </p>
             </ul>
           </div>
@@ -257,8 +217,20 @@ const SettingsPage = () => {
         >
           Application Settings
         </button>
+        <button
+          className={activeTab === "helpSupport" ? "active" : ""}
+          onClick={() => setActiveTab("helpSupport")}
+        >
+          Help & Support
+        </button>
+        <button
+          className={activeTab === "legal" ? "active" : ""}
+          onClick={() => setActiveTab("legal")}
+        >
+          Legal Settings
+        </button>
       </div>
-      {renderTabContent()}
+      <div className="settings-content-container">{renderTabContent()}</div>
     </div>
   );
 };
