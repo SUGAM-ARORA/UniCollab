@@ -2,12 +2,16 @@
   white-space: nowrap;
   color: white;
 }
+
 .nav-item a:hover span {
   color: #cf00a3; /* Pink color on hover */
 }
-
+.notification-item:hover {
+  background-color: #cf00a3;
+  color: white; /* Optional: Change text color for better contrast */
+}
 .navbar {
-  width: 1542px;
+  width: 1533px;
   height: 60px;
   background: #19162c;
   display: flex;
@@ -17,13 +21,13 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   position: relative;
   top: 0;
-  gap: 0.5rem;
-  margin-left: 130px;
-}
-.profileContainer .go-pro-btn {
-  padding: 20px 20px; /* Adjust padding to change the button size */
+  gap: 0.1rem;
+  margin-left: 120px;
 }
 
+.profileContainer .go-pro-btn {
+  padding: 10px 20px; /* Adjust padding to change the button size */
+}
 
 .largeview {
   display: flex;
@@ -33,7 +37,7 @@
 }
 
 .largeview .nav-item {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 .largeview .nav-item a {
@@ -52,6 +56,7 @@
   position: relative;
   margin-top: -10px;
 }
+
 @media screen and (max-width: 1500px) {
   .mobview .inputBox {
     margin-top: 10px; /* Add 10px space above the search box */
@@ -122,7 +127,7 @@
 
   .mobview #shortview {
     position: absolute;
-    left: 10px;  /*made it so that the dropdown is towards left when screen size >524 but not enough*/
+    left: 10px;
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
@@ -175,27 +180,27 @@
   }
 }
 
-@media (max-width: 830px){
-  .navbar{
+@media (max-width: 830px) {
+  .navbar {
     width: 80vw;
   }
 }
 
-@media (max-width: 650px){
-  .navbar{
+@media (max-width: 650px) {
+  .navbar {
     width: 80vw;
   }
 
-  .profileIconlogin{
+  .profileIconlogin {
     width: 140px !important;
     font-size: 12px !important;
   }
-
 }
-@media (max-width: 525px){
-  .navbar{
+
+@media (max-width: 525px) {
+  .navbar {
     flex-direction: column;
     height: min-content;
-    gap: 30px;
+    gap: 20px;
   }
 }

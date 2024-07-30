@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './MainRightTopCard.css'; // Ensure this is imported
 
 function MainRightTopCard() {
   const [showMore, setShowMore] = useState(false);

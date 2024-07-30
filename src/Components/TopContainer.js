@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faInfoCircle, faWrench, faBriefcase,faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
+import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
 import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
-
-
 
 function TopContainer() {
   const [input, setInput] = useState("");
@@ -89,8 +87,6 @@ function TopContainer() {
     };
   }, []);
 
-  
-
   const toggleMenu = () => {
     setMobMenu(!mobMenu);
   };
@@ -122,7 +118,7 @@ function TopContainer() {
           <li className="nav-item"><a href="/freelancer"><FontAwesomeIcon icon={faUsers} /> Hire a Freelancer</a></li>
           <li className="nav-item"><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
           <li className="nav-item"><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
-          <li className="nav-item"><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
+          <li className="nav-item" style={{ marginRight: "10px" }}><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
         </ul>
 
         <div className="mobview">
@@ -138,12 +134,11 @@ function TopContainer() {
               <li><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
               <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
               <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
-
             </ul>
           </div>
         </div>
 
-        <div className="inputBox">
+        <div className="inputBox" style={{ marginRight: "30px" }}>
           <input
             ref={searchbar}
             type="text"
@@ -158,22 +153,23 @@ function TopContainer() {
               {searchResult.map((item, index) => (
                 <Link to={`/readmore/${item.id}`} key={index}>
                   <div>
-                  <p id="search_result_title" key={`title${index}`}>
-                    {item.title}
-                  </p>
-                  <span key={`category${index}`}>{item.category}</span>
-                </div></Link>
+                    <p id="search_result_title" key={`title${index}`}>
+                      {item.title}
+                    </p>
+                    <span key={`category${index}`}>{item.category}</span>
+                  </div>
+                </Link>
               ))}
             </div>
           ) : null}
         </div>
 
         <div className="profileContainer" >
-          <a href="/pricing">
-            <button className="go-pro-btn">Go Pro</button>
-          </a>
+        <a href="/pricing">
+    <button className="go-pro-btn" style={{ marginRight: "55px" }}>Go Pro</button>
+  </a>
 
-          <div className="notification-container" ref={dropdownRef}>
+          <div className="notification-container"  style={{ gap: "10px" }} ref={dropdownRef}>
             <div className="profileIcon" onClick={toggleDropdown}>
               <FaBell />
             </div>
@@ -196,29 +192,28 @@ function TopContainer() {
           </div>
           {isLoggedIn ? (
             <>
-            <div className="profileImage">
-            <img src={women} alt="" />
-          </div>
+              <div className="profileImage">
+                <img src={women} alt="" />
+              </div>
 
-          <p className="profileName">{username}</p>
-          <a className="menuChevron" id="menuChevron" onClick={toggleDrop}>
-            <FaChevronDown />
-          </a>
+              <p className="profileName">{username}</p>
+              <a className="menuChevron" id="menuChevron" onClick={toggleDrop}>
+                <FaChevronDown />
+              </a>
 
-          <div className="menuContainer" id="menuContainer">
-            <ul>
-              <li>My Profile</li>
-              <li>Theme</li>
-              <li>Followers</li>
-              <li onClick={handleSignOut}>Sign Out</li>
-            </ul>
-          </div>
+              <div className="menuContainer" id="menuContainer">
+                <ul>
+                  <li>My Profile</li>
+                  <li>Theme</li>
+                  <li>Followers</li>
+                  <li onClick={handleSignOut}>Sign Out</li>
+                </ul>
+              </div>
             </>
           ) : (
-
-            <Link to="/Login" className="profileIconlogin">
-            Launch Your Journey
-               </Link>
+            <Link to="/Login" className="profileIconlogin"style={{ marginRight: "20px" }}>
+              Launch Your Journey
+            </Link>
           )}
         </div>
       </div>
