@@ -3,8 +3,8 @@ import homeIcon from '../../../img/homeicon.png';
 import { Link } from 'react-router-dom';
 
 const TermsContainer = styled.div`
-  margin: auto;
-  max-width: 75%;
+  margin: 0 auto;
+  max-width: 800px; /* Set a fixed max-width similar to Licensing and Privacy pages */
   overflow: auto;
   padding: 20px;
   border-radius: 5px;
@@ -33,6 +33,7 @@ const Title = styled.h2`
   text-align: center;
   font-size: 28px;
   color: #ff21bc;
+  margin-top: 45px;
 `;
 
 const SubTitle = styled.h3`
@@ -45,6 +46,7 @@ const SubTitle = styled.h3`
 const Content = styled.p`
   margin-bottom: 20px;
   text-align: justify;
+  font-weight: normal; /* Set font weight to normal to match the Licensing page */
 `;
 
 const StyledUl = styled.ul`
@@ -66,12 +68,12 @@ const Strong = styled.strong`
 const TermsConditions = () => {
   return (
     <>
-    <Link to="/">
-    <img src={homeIcon} alt="Home" className="home-icon" />
-    </Link>
-    <TermsContainer>
-        <Title>Terms and Conditions</Title><br/>
-        <Content><Strong>Last Updated:</Strong> 08-06-2024</Content>
+      <Link to="/">
+        <img src={homeIcon} alt="Home" className="home-icon" />
+      </Link>
+      <TermsContainer>
+        <Title>Terms and Conditions</Title>
+        <Content><Strong>Last Updated:</Strong> 29-07-2024</Content>
         <SubTitle>Introduction</SubTitle>
         <Content>Welcome to UniCollab! These Terms and Conditions govern your use of our collaborative platform, designed for students from different universities and colleges to collaborate, innovate, and elevate their projects.</Content>
         <SubTitle>Acceptance of Terms</SubTitle>
@@ -84,24 +86,24 @@ const TermsConditions = () => {
         <Content>UniCollab and its original content, features, and functionality are owned by UniCollab and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</Content>
         <SubTitle>Prohibited Activities</SubTitle>
         <Content>When using UniCollab, you agree not to engage in any of the following activities:
-            <StyledUl> <br/>
-                <StyledLi>Violating laws or regulations;</StyledLi>
-                <StyledLi>Infringing intellectual property rights;</StyledLi>
-                <StyledLi>Posting or transmitting unauthorized commercial communications (such as spam);</StyledLi>
-                <StyledLi>Interfering with the operation of our platform;</StyledLi>
-                <StyledLi>Accessing or using our platform using automated means (such as bots).</StyledLi>
-            </StyledUl>
+          <StyledUl>
+            <StyledLi>Violating laws or regulations;</StyledLi>
+            <StyledLi>Infringing intellectual property rights;</StyledLi>
+            <StyledLi>Posting or transmitting unauthorized commercial communications (such as spam);</StyledLi>
+            <StyledLi>Interfering with the operation of our platform;</StyledLi>
+            <StyledLi>Accessing or using our platform using automated means (such as bots).</StyledLi>
+          </StyledUl>
         </Content>
         <SubTitle>Termination</SubTitle>
         <Content>We may terminate or suspend your account and access to UniCollab immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms and Conditions.</Content>
         <SubTitle>Changes to Terms</SubTitle>
         <Content>We reserve the right to modify or replace these Terms and Conditions at any time. It is your responsibility to review these Terms and Conditions periodically for changes.</Content>
         <SubTitle>Contact Us</SubTitle>
-        <Content style={{ marginBottom: '5rem' }}>If you have any questions or concerns about these Terms and Conditions, please contact us at: <br/><br/>
-        <Strong>Email: </Strong><a href="mailto:unicollab@gmail.com" style={{color: 'cyan'}}>unicollab@gmail.com</a><br/>
-        <Strong>Contact: </Strong>+91 99323 32321
+        <Content style={{ marginBottom: '5rem' }}>If you have any questions or concerns about these Terms and Conditions, please contact us at: <br /><br />
+          <Strong>Email: </Strong><a href="mailto:unicollab@gmail.com" style={{ color: 'cyan' }}>unicollab@gmail.com</a><br />
+          <Strong>Contact: </Strong>+91 99323 32321
         </Content>
-    </TermsContainer>
+      </TermsContainer>
     </>
   )
 }
