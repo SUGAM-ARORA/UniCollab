@@ -1,12 +1,7 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import DefaultBanner from "../img/1.jpg";
-/* import Card1 from "../img/card1.jpg";
-import Card2 from "../img/card2.jpg";
-import Card3 from "../img/card3.jpg";
-import Card4 from "../img/card4.jpg";
-import Card5 from "../img/card5.jpg";
-import Card6 from "../img/card6.jpg"; */
 import CardMain from "./CardMain";
+import Popular from "./Popular"; // Correctly import Popular component
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
@@ -15,8 +10,12 @@ const MAX_IMAGE_SIZE = 2185200; // 2MB
 
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
-
+  const dropdownRef = useRef(null);
   const [banner, setBanner] = useState(DefaultBanner);
+  const [activeButton, setActiveButton] = useState("Feed");
+  const [activeFilterButton, setActiveFilterButton] = useState("All");
+  const [sortByOpen, setSortByOpen] = useState(false);
+  const [nameDropdownOpen, setNameDropdownOpen] = useState(false);
 
   const uploadImageHandler = () => {
     imageUploadInputRef?.current?.click();
@@ -29,6 +28,36 @@ function MainContainer() {
       console.error("Image size should be less than 2MB!");
     }
   };
+
+  const toggleButtonHandler = (buttonName) => {
+    setActiveButton(buttonName);
+  };
+
+  const toggleFilterButtonHandler = (buttonName) => {
+    setActiveFilterButton(buttonName);
+    if (buttonName === "Sort By") {
+      setSortByOpen(!sortByOpen);
+    } else {
+      setSortByOpen(false);
+    }
+  };
+
+  const toggleNameDropdown = () => {
+    setNameDropdownOpen(!nameDropdownOpen);
+  };
+
+  // Close dropdown if clicked outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setSortByOpen(false);
+        setNameDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   return (
     <div className="maincontainer">
@@ -46,6 +75,9 @@ function MainContainer() {
                 type="button"
                 className="button"
                 onClick={uploadImageHandler}
+                style={{
+                  color: "white",
+                }}
               >
                 Upload
               </button>
@@ -64,32 +96,84 @@ function MainContainer() {
         <div className="cards zoomIn">
           <div className="filters">
             <div className="popular">
-              <h2 style={{marginTop:"10px"}}>Feed</h2>
-              <a href="#" className="button2" style={{marginTop:"13px"}}>
+              <button
+                className="button2"
+                style={{
+                  marginTop: "13px",
+                  backgroundColor: activeButton === "Feed" ? "#cf00a3" : "#19162c",
+                  color: "white",
+                }}
+                onClick={() => toggleButtonHandler("Feed")}
+              >
+                Feed
+              </button>
+              <button
+                className="button2"
+                style={{
+                  marginTop: "13px",
+                  backgroundColor: activeButton === "Popular" ? "#cf00a3" : "#19162c",
+                  color: "white",
+                }}
+                onClick={() => toggleButtonHandler("Popular")}
+              >
                 Popular
-              </a>
+              </button>
             </div>
             <div className="filter_buttons">
-              <a href="#" className="button">
+              <button
+                className="button2"
+                style={{
+                  color: "white",
+                  backgroundColor: activeFilterButton === "All" ? "#cf00a3" : "#19162c",
+                }}
+                onClick={() => toggleFilterButtonHandler("All")}
+              >
                 All
-              </a>
-              <a href="#" className="button2">
+              </button>
+              <button
+                className="button2"
+                style={{
+                  color: "white",
+                  backgroundColor: activeFilterButton === "Type" ? "#cf00a3" : "#19162c",
+                }}
+                onClick={() => toggleFilterButtonHandler("Type")}
+              >
                 Type
-              </a>
-              <a href="#" className="button2">
+              </button>
+              <button
+                className="button2"
+                onClick={() => toggleFilterButtonHandler("Sort By")}
+                style={{
+                  color: "white",
+                  backgroundColor: activeFilterButton === "Sort By" ? "#cf00a3" : "#19162c",
+                }}
+              >
                 Sort By
-              </a>
+              </button>
+              {sortByOpen && (
+                <div className="dropdown" ref={dropdownRef}>
+                  <button className="dropdown-item" onClick={toggleNameDropdown}>
+                    Name
+                  </button>
+                  <button className="dropdown-item">Role</button>
+                  <button className="dropdown-item">Hearts</button>
+                  {nameDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">Ascending</button>
+                      <button className="dropdown-item">Descending</button>
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           </div>
 
           <main className="fromBottom">
-            <CardMain/>
-            {/* <CardMain imgSrc={Card1} title={"StockIT"} hearts={"83"} />
-            <CardMain imgSrc={Card2} title={"TakeNote"} hearts={"65"} />
-            <CardMain imgSrc={Card3} title={"TaRct"} hearts={"32"} />
-            <CardMain imgSrc={Card4} title={"To Do"} hearts={"51"} />
-            <CardMain imgSrc={Card5} title={"ArchiTect"} hearts={"47"} />
-            <CardMain imgSrc={Card6} title={"WeatherLy"} hearts={"77"} /> */}
+            {activeButton === "Feed" ? (
+              <CardMain />
+            ) : (
+              <Popular /> // Use the Popular component here
+            )}
           </main>
         </div>
       </div>

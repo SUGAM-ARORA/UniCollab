@@ -1,11 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 * {
-  margin: 0;
+  margin: 100px;
   padding: 0;
   box-sizing: border-box;
 }
-
+.home-icon {
+  position: absolute;
+  top: 1.9rem;
+  left: 1.5rem;
+  width: 2.5rem;
+  cursor: pointer;
+}
+.signin-signup.home-link.no-margin-right{
+  position: relative;
+  top: 1.0rem;
+  left: 1.5rem;
+  width: 2.5rem;
+}
 body,
 input {
   font-family: "Poppins", sans-serif;
@@ -19,13 +31,21 @@ input {
 .panels-container {
   position: relative;
   width: 100%;
-  background-color: #fff;
+  background-color: #121026 !important;
   min-height: 100vh;
   overflow: hidden;
+  margin-top: 20px;
 }
 
+.forgot-password-link a {
+  font-weight: bold; /* Make the text bold */
+  color: darkturquoise; /* Change text color to dark turquoise */
+  text-decoration: none; /* Remove underline */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  font-size: 16px;
+}
 .error-text {
-  color: darkturquoise; /* Default error text color */
+  color: darkturquoise !important; /* Default error text color */
   font-size: 1.1rem;
   margin-top: 5px;
 }
@@ -35,11 +55,13 @@ input {
   height: 100%;
   top: 0;
   left: 0;
+  margin-top: -38vh;
+  
 }
 
 .signin-signup {
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
   left: 75%;
   width: 50%;
@@ -59,6 +81,7 @@ form {
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
+  
 }
 
 form.sign-up-form {
@@ -72,14 +95,14 @@ form.sign-in-form {
 
 .title {
   font-size: 2.2rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
   margin-bottom: 10px;
 }
 
 .input-field {
   max-width: 380px;
   width: 100%;
-  background-color: #f0f0f0;
+  background-color: #f0f0f0 !important;
   margin: 10px 0;
   height: 55px;
   border-radius: 55px;
@@ -97,7 +120,7 @@ form.sign-in-form {
 .input-field i {
   text-align: center;
   line-height: 55px;
-  color: #acacac;
+  color: #acacac !important;
   transition: 0.5s;
   font-size: 1.1rem;
 }
@@ -109,11 +132,12 @@ form.sign-in-form {
   line-height: 1;
   font-weight: 600;
   font-size: 1.1rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
+  margin: 4px 0 4px -10px
 }
 
 .input-field input::placeholder {
-  color: #aaa;
+  color: #aaa !important;
   font-weight: 500;
 }
 
@@ -122,7 +146,7 @@ form.sign-in-form {
   border: none;
   cursor: pointer;
   font-size: 1.1rem;
-  color:darkturquoise;
+  color: darkturquoise !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -130,7 +154,7 @@ form.sign-in-form {
 .social-text {
   padding: 0.7rem 0;
   font-size: 1.2rem;
-  color: darkturquoise;
+  color: darkturquoise !important;
 }
 
 .social-media {
@@ -145,9 +169,9 @@ form.sign-in-form {
   justify-content: center;
   align-items: center;
   margin: 0 0.45rem;
-  color: #333;
+  color: #333 !important;
   border-radius: 50%;
-  border: 1px solid darkturquoise;
+  border: 1px solid darkturquoise !important;
   text-decoration: none;
   font-size: 1.1rem;
   transition: 0.3s;
@@ -155,18 +179,21 @@ form.sign-in-form {
 
 .social-icon:hover {
   transform: scale(1.1); /* Slightly enlarges the icon */
-  box-shadow: 0 4px 8px darkturquoise; /* Adds a shadow on hover */
+  box-shadow: 0 4px 8px darkturquoise !important; /* Adds a shadow on hover */
+}
+.home-link.no-margin-right {
+  margin-right: 0px;
 }
 
 .btn {
   width: 150px;
   text-align: center;
-  background-color: darkturquoise;;
-  border: solid 2px #121026;
+  background-color: darkturquoise !important;
+  border: solid 2px #121026 !important;
   outline: none;
   height: 32px;
   border-radius: 49px;
-  color: #fff;
+  color: #fff !important;
   text-transform: uppercase;
   font-weight: 600;
   margin: 10px 0;
@@ -183,7 +210,7 @@ form.sign-in-form {
 
 .btn1 {
   width: 150px;
-  background-color: darkturquoise;;
+  background-color: darkturquoise;
   border: solid 2px #121026;
   outline: none;
   height: 49px;
@@ -194,6 +221,7 @@ form.sign-in-form {
   margin: 10px 0;
   cursor: pointer;
   transition: 0.5s;
+  margin: auto;
 }
 
 .btn1:hover {
@@ -204,26 +232,30 @@ form.sign-in-form {
 }
 
 .panels-container {
-  position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  
 }
-
 .container1:before {
   content: "";
   position: absolute;
+  margin-top: 18vh;
   height: 1520px;
   width: 800px;
   top: -10%;
-  right: 48%;
+  right: 53%;
   transform: translateY(-50%);
-  background-image: linear-gradient(-45deg, #121026 0%, #121026 100%);
+  background-image: linear-gradient(
+    -45deg,
+    darkturquoise 0%,
+    darkturquoise 100%
+  );
   transition: 1.8s ease-in-out;
-  border-radius: 80%;
+  border-radius: 50% 50% 0 0; /* Changed to a semi-circle */
   z-index: 6;
 }
 
@@ -260,13 +292,14 @@ form.sign-in-form {
   font-weight: 600;
   line-height: 1;
   font-size: 1.8rem;
-  color: darkturquoise;
+  color: white;
 }
 
 .panel p {
-  font-size: 0.95rem;
+  font-size: 1.1rem;
   padding: 0.8rem 0;
-  color: darkturquoise;
+  color: white;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
 .btn.transparent {
@@ -274,9 +307,12 @@ form.sign-in-form {
   background: darkturquoise;
   border: 2px solid #fff;
   width: 140px;
-  height: 43px;
+  height: 48px;
   font-weight: 600;
   font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .right-panel .image,
 .right-panel .content {
@@ -285,7 +321,7 @@ form.sign-in-form {
 
 .container1.sign-up-mode:before {
   transform: translate(100%, -50%);
-  right: 51%;
+  right: 46%;
   width: 780px;
 }
 
@@ -320,11 +356,19 @@ form.sign-in-form {
 .container1.sign-up-mode .right-panel {
   pointer-events: all;
 }
+.reset-link {
+  display: inline-block;
+  color: #00ced1;
+  cursor: pointer;
+  margin: 15px 0;
+}
+.reset-link:hover {
+  text-decoration: underline;
+}
 
 @media (max-width: 870px) {
   .container {
     min-height: 800px;
-    height: 100vh;
   }
   .signin-signup {
     width: 100%;
@@ -422,9 +466,53 @@ form.sign-in-form {
     top: 5%;
     transform: translate(-50%, 0);
   }
+  .container1:before {
+    background-image: none;
+  }
+  .signin-signup {
+    margin-top: 50px;
+  }
+  .btn.transparent {
+    font-size: 11px;
+    width: auto;
+    height: 5vh;
+  }
+  .container1.sign-up-mode .right-panel {
+    position: absolute;
+    left: 3%;
+    bottom: 65vh;
+  }
+  .signin-signup .sign-up-form {
+    margin: 0 0 20% 20%;
+  }
+  .container1.sign-up-mode:before {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 606px) {
+  .container1.sign-up-mode .right-panel {
+    padding-left: 40px;
+    margin-bottom: 5%;
+    bottom: 62vh;
+  }
+  h2.title {
+    font-size: 2rem;
+  }
+  .sign-up-form {
+    padding-left: 4%;
+  }
+  .panels-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
 }
 
 @media (max-width: 570px) {
+  .container1.sign-up-mode .right-panel {
+    margin-left: 7%;
+  }
   form {
     padding: 0 1.5rem;
   }
@@ -433,32 +521,28 @@ form.sign-in-form {
     display: none;
   }
   .panel .content {
-    padding: 0.5rem 1rem;
+    padding: 0;
   }
   .container {
     padding: 1.5rem;
   }
-
-  .container:before {
-    bottom: 72%;
-    left: 50%;
+  .right-panel {
+    padding: 1rem 4rem 4rem 0;
   }
-
-  .container.sign-up-mode:before {
-    bottom: 28%;
-    left: 50%;
+  .panels-container {
+    margin-top: 0;
   }
   .input-field {
     position: relative;
     display: flex;
     align-items: center;
   }
-  
+
   .password-container {
     position: relative;
     width: 100%;
   }
-  
+
   .password-container input {
     width: 100%;
     padding-right: 30px; /* Add padding to make space for the icon */
@@ -468,6 +552,25 @@ form.sign-in-form {
     right: 20px; /* Adjusted to move the icon more to the right */
     top: 50%;
     transform: translateY(-50%);
-  }   
-  
+  }
+}
+@media (max-width: 515px) {
+  .container1.sign-up-mode .right-panel {
+    margin-left: 4%;
+    margin-right: 3%;
+  }
+}
+@media screen and (max-width: 401px) {
+  .input-field {
+    width: 80%;
+  }
+  .container1.sign-up-mode .right-panel {
+    margin-bottom: 20%;
+  }
+  .container1 .left-panel {
+    margin-top: 20%;
+  }
+  h2.title {
+    font-size: 1.5rem;
+  }
 }

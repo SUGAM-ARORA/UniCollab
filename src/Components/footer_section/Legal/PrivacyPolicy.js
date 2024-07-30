@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import homeIcon from '../../../img/homeicon.png';
+import { Link } from 'react-router-dom';
+
 
 const PrivacyContainer = styled.div`
   margin: auto;
@@ -63,6 +66,11 @@ const Strong = styled.strong`
 
 const PrivacyPolicy = () => {
   return (
+
+    <>
+    <Link to="/">
+    <img src={homeIcon} alt="Home" className="home-icon" />
+    </Link>
     <PrivacyContainer>
         <Title>Privacy Policy</Title><br/>
         <Content><Strong>Last Updated:</Strong> 08-06-2024</Content>
@@ -124,6 +132,7 @@ const PrivacyPolicy = () => {
         <Strong>Contact: </Strong>+91 99323 32321
         </Content>
     </PrivacyContainer>
+    </>
   )
 }
 

@@ -1,8 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
+import homeIcon from '../../../img/homeicon.png';
+import { Link } from 'react-router-dom';
+
 
 const Licensing = () => {
   return (
+    <>
+    <Link to="/">
+    <img src={homeIcon} alt="Home" className="home-icon" />
+</Link>
     <div className="py-8 mb-5 sm:w-[90vw] justify-start ml-auto mr-auto mt-10">
       <div className='text-center'>
         <LicenseWrapper className='license'>
@@ -39,6 +46,7 @@ const Licensing = () => {
         </LicenseWrapper>
       </div>
     </div>
+    </>
   );
 };
 

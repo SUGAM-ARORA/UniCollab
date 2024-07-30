@@ -1,0 +1,150 @@
+.headingFeedback {
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif; /* Update font family */
+    max-width: 1000px;
+    width: 85vw;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 80px;
+    color: white;
+    margin-top: 40px;
+    font-weight: bold; /* Make text bold */
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.formFeedback {
+    width: 65vw;
+    height: auto;
+    font-family: Arial, Helvetica, sans-serif; /* Update font family */
+    outline: 3px solid white;
+    transition: 0.2s box-shadow ease-in-out;
+    margin: auto;
+    box-shadow: 7px 7px 32px 20px #6052ff;
+    margin-bottom: 100px;
+    padding: 20px;
+    border-radius: 50px;
+    font-size: 22px;
+}
+
+.formforFeedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form elements */
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif; /* Update font family */
+}
+
+.componentsFormFeedback {
+    width: 90%;
+    gap: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the labels */
+    text-align: center; /* Center-align text */
+    gap: 10px;
+    font-family: Arial, Helvetica, sans-serif; /* Update font family */
+}
+
+.componentsFormFeedback label {
+    font-size: large;
+    font-weight: bold; /* Make text bold */
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.star-rating input[type="radio"] {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.star-rating input[type="radio"]:checked~label {
+    color: #ff21bc;
+}
+
+.star-rating label:hover,
+.star-rating label:hover~label {
+    color: #ff21bc;
+}
+
+#star5, #star4, #star3, #star2, #star1 {
+    font-size: 120px;
+}
+
+#issue {
+    background-color: #201d41;
+    font-weight: 600;
+    font-size: 18px;
+    height: 50px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-bottom: 4px solid aliceblue;
+}
+
+#comments {
+    min-height: 200px;
+    font-size: 22px;
+    border: 1px solid #ccc;
+    border-bottom: 4px solid aliceblue;
+}
+
+#email {
+    border: 1px solid #ccc;
+    border-bottom: 4px solid aliceblue;
+}
+
+#nameFeedback {
+    border: 1px solid #ccc;
+    border-bottom: 4px solid aliceblue;
+}
+
+button {
+    background-color: #ff21bc; /* Set button color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 16px; /* Match the form font size */
+    font-weight: bold; /* Make the button text bold */
+    font-family: Arial, Helvetica, sans-serif; /* Update font family */
+}
+
+button:hover {
+    background-color: #201d41; /* Change hover color */
+}
+
+@media only screen and (max-width: 900px) {
+    .formFeedback {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .headingFeedback {
+        font-size: 60px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .headingFeedback {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .headingFeedback {
+        font-size: 40px;
+    }
+}
