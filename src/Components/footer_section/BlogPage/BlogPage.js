@@ -40,7 +40,7 @@ const blogs = [
         date: "March 10, 2024",
         content: `Git is a powerful version control system. This article explores some advanced techniques like rebase, stash, and cherry-pick to enhance your workflow. Rebasing can be used to maintain a clean project history, while stashing allows you to save your work in progress and switch contexts quickly. Cherry-picking lets you apply specific commits from one branch to another. Understanding these advanced Git commands can help you manage your codebase more effectively and collaborate more efficiently with your team.`
     }, {
-        title: "ReactJS Virtual DOM",
+        title: "React Virtual DOM",
         date: "July 30, 2024",
         content: `React JS Virtual DOM is an in-memory representation of the DOM. DOM refers to the Document Object Model that represents the content of XML or HTML documents as a tree structure so that the programs can be read, accessed and changed in the document structure, style, and content.The virtual DOM is a lightweight copy of the real DOM that allows React to manage changes more efficiently by minimizing the direct manipulation required on the real DOM. This process significantly enhances the performance of web apps.`
     }
