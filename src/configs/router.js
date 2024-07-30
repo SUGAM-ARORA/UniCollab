@@ -1,6 +1,6 @@
 import Container from "../Components/Container";
 import Footer from "../Components/Footer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter} from "react-router-dom";
 import Settings from "../Components/Settings/SettingsPage";
 import About_us from "../Components/footer_section/about_us/About_us";
 import BlogPage from "../Components/footer_section/BlogPage/BlogPage";
