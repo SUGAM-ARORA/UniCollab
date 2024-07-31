@@ -125,7 +125,7 @@ function TopContainer() {
           <li className="nav-item"><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
         </ul>
 
-        <div className="mobview">
+        <div className="mobview o1">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
             <ul className="open">
@@ -143,16 +143,20 @@ function TopContainer() {
           </div>
         </div>
 
-        <div className="inputBox">
+        <div className="inputBox o2">
+          <div className="input-div">
+          <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
+            <BiSearchAlt />
+          </i>
           <input
             ref={searchbar}
             type="text"
             placeholder="Search projects, users"
             onChange={(e) => setInput(e.target.value)}
           />
-          <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
-            <BiSearchAlt />
-          </i>
+          </div>
+          
+          
           {searchResult ? (
             <div id="search_results">
               {searchResult.map((item, index) => (
@@ -168,7 +172,7 @@ function TopContainer() {
           ) : null}
         </div>
 
-        <div className="profileContainer" >
+        <div className="profileContainer o3" >
           <a href="/pricing">
             <button className="go-pro-btn">Go Pro</button>
           </a>

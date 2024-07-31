@@ -7,8 +7,8 @@
 }
 
 .navbar {
-  width: 1542px;
-  height: 60px;
+  width: 100%;
+  height: auto;
   background: #19162c;
   display: flex;
   flex-direction: row;
@@ -50,8 +50,26 @@
 
 .inputBox {
   position: relative;
-  margin-top: -10px;
 }
+
+.o1 { order: 1; }
+.o2 { order: 2; }
+.o3 { order: 3; }
+
+.input-div{
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.container .inputBox input{
+  padding: 0.5rem 2rem;
+  
+
+}
+
 @media screen and (max-width: 1500px) {
   .mobview .inputBox {
     margin-top: 10px; /* Add 10px space above the search box */
@@ -68,10 +86,6 @@
 }
 
 .searchbtn {
-  position: absolute;
-  top: 70%;
-  right: 10px;
-  transform: translateY(-50%);
   color: #757380;
   font-size: 1.5rem;
 }
@@ -192,10 +206,49 @@
   }
 
 }
+
+
+
+
 @media (max-width: 525px){
   .navbar{
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     height: min-content;
-    gap: 30px;
+    gap: 1rem;
+    margin-left: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+  .o1 { order: 1; }
+  .o2 { order: 3; }
+  .o3 { order: 2; }
+
+  .topContainer .inputBox{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px;
+  }
+  .container .inputBox input{
+    padding: 0.5rem;
+    
+
+  }
+  .profileContainer .go-pro-btn{
+    padding: 0.5rem 1rem;
+  }
+  .bars{
+    padding: 1rem;
+  }
+ 
+
+  .searchbtn{
+    position: relative;
+    width: auto;
+
   }
 }
