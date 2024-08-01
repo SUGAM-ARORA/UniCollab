@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const multer = require('multer');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
 
 const app = express();
 const port = 3000;
@@ -17,41 +18,80 @@ const upload = multer({ dest: 'uploads/' });
 let profileData = { username: "", bio: "", profilePic: "" };
 let accountData = { email: "", password: "", language: "en" };
 
-app.post('/send', upload.single('attachments'), (req, res) => {
-    const { name, email, issue, message } = req.body;
-    const attachment = req.file;
+// Connect to MongoDB
+mongoose.connect('mongodb://localhost:27017/stopwatch', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
-    console.log('Received:', { name, email, issue, message, attachment });
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', () => {
+  console.log('Connected to MongoDB');
+});
 
-    // Simulate processing the data
-    if (name && email && issue && message) {
-        res.json({ success: true });
-    } else {
-        res.json({ success: false });
-    }
+// Define a schema and model for recording times
+const recordingSchema = new mongoose.Schema({
+  time: Number,
+  date: { type: Date, default: Date.now },
+});
+
+const Recording = mongoose.model('Recording', recordingSchema);
+
+// Endpoint to save recording time
+app.post('/api/recordings', async (req, res) => {
+  const { time } = req.body;
+
+  const newRecording = new Recording({ time });
+  try {
+    const savedRecording = await newRecording.save();
+    res.status(201).json(savedRecording);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
 });
 
 // Profile settings endpoint
 app.get('/api/profile', (req, res) => {
-    res.json(profileData);
+  res.json(profileData);
 });
 
 app.put('/api/profile', (req, res) => {
-    profileData = req.body;
-    res.json({ message: 'Profile settings updated successfully!' });
+  profileData = req.body;
+  res.json({ message: 'Profile settings updated successfully!' });
 });
 
 // Account settings endpoint
 app.get('/api/account', (req, res) => {
-    res.json(accountData);
+  res.json(accountData);
 });
 
 app.put('/api/account', (req, res) => {
-    accountData = req.body;
-    res.json({ message: 'Account settings updated successfully!' });
+  accountData = req.body;
+  res.json({ message: 'Account settings updated successfully!' });
+});
+
+// Endpoint to handle file uploads
+app.post('/send', upload.single('attachments'), (req, res) => {
+  const { name, email, issue, message } = req.body;
+  const attachment = req.file;
+
+  console.log('Received:', { name, email, issue, message, attachment });
+
+  // Simulate processing the data
+  if (name && email && issue && message) {
+    res.json({ success: true });
+  } else {
+    res.json({ success: false });
+  }
+});
+
+// Add a root route to handle the root URL
+app.get('/', (req, res) => {
+  res.send('Welcome to the Stopwatch API!');
 });
 
 // Start the server
 app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
+  console.log(`Server running at http://localhost:${port}`);
 });
