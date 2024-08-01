@@ -26,6 +26,8 @@ import ResetPassword from "../Components/auth/resetPassword/ResetPassword";
 import Freelancer from "../Components/FreeLancer/Freelancer";
 import Feedbackform from "../Components/feedback/feedbackform";
 import ShoppingCart from "../Components/cart/cart";
+import testimonials from "../Components/Testimonials/Testimonials";
+import Testimonials from "../Components/Testimonials/Testimonials";
 import Contributors from "../Components/Contributors";
 
 
@@ -56,6 +58,7 @@ const router = createBrowserRouter([
     { path: "/freelancer", element: <Freelancer /> },
     { path: "/feedback", element: <Feedbackform /> },
     { path: "/cart", element: <ShoppingCart /> },
+    { path: "/Testimonials", element: <Testimonials /> },
     { path: "/contributors", element: <Contributors /> },
 
   ]);
