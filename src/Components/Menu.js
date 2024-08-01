@@ -75,7 +75,7 @@ function Menu() {
             background: '#19162c',
           }}
         >
-          <img src={logo} alt="Logo" className="logo" style={{ width: '90px' }} /> {/* Adjusted width */}
+          <img src={logo} alt="Logo" className="logo" style={{ width: '75px' }} /> {/* Adjusted width */}
         </div>
         <ul
           className="sidebar-menu"

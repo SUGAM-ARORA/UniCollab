@@ -3,7 +3,7 @@ import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
 import SubscribeMail from './footer_section/Mail/SubscribeMail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook, faUsersGear } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 const scrollToTop = () => {
@@ -33,6 +33,7 @@ const Footer = () => {
               <li><a href='/services'><FontAwesomeIcon icon={faBriefcase} /> Services</a></li>
               <li><a href='/careers'><FontAwesomeIcon icon={faUsers} /> Careers</a></li>
               <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact Us</a></li>
+              <li><a href='/contributors'><FontAwesomeIcon icon={faUsersGear} /> Our Contributors</a></li>
               <li><a href='/freelancer'><FontAwesomeIcon icon={faAddressBook} /> Hire a Freelancer</a></li>
             </ul>
           </div>
