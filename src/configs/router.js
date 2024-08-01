@@ -27,6 +27,7 @@ import Freelancer from "../Components/FreeLancer/Freelancer";
 import Feedbackform from "../Components/feedback/feedbackform";
 import ShoppingCart from "../Components/cart/cart";
 import Contributors from "../Components/Contributors";
+import Wallet from "../Components/wallet/Wallet";
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,7 @@ const router = createBrowserRouter([
     { path: "/feedback", element: <Feedbackform /> },
     { path: "/cart", element: <ShoppingCart /> },
     { path: "/contributors", element: <Contributors /> },
+    { path: "/wallet", element: <Wallet /> },
 
   ]);
 
