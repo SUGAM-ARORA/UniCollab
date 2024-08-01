@@ -11,6 +11,7 @@ import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
 import Readmore from "./Components/Readmore";
 import Login from "./Components/Login";
+import testimonials from "./Components/Testimonials/Testimonials";
 import Pricing from "./Components/footer_section/Pricing/pricing";
 import MyProjects from "./Components/menu_section/my_projects/MyProjects";
 import NewProject from "./Components/menu_section/new_project/NewProject";
