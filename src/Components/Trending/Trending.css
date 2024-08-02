@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #1f1c35;
+  color: white;
+}
+
+.trending-page {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.header {
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 3em;
+  margin: 10px 0;
+  color: #ff21bc;
+  font-family: 'Pacifico', cursive;
+}
+
+.header p {
+  font-size: 1.4em;
+  color: #bbb;
+}
+
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item-card {
+  background-color: #2a2551;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  width: 300px;
+  color: white;
+  text-align: center;
+  position: relative;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.item-card:hover {
+  box-shadow: 7px 7px 32px 20px #362c9f;
+  transform: scale(1.09);
+}
+
+.item-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.item-info {
+  padding: 10px 0;
+}
+
+.item-name {
+  font-size: 1.8em;
+  margin: 10px 0;
+  color: #ff21bc;
+  font-family: 'Pacifico', cursive;
+}
+
+.item-price {
+  font-size: 1.4em;
+  color: #ff21bc;
+  margin-bottom: 10px;
+}
+
+.item-sold,
+.item-purchases,
+.item-likes {
+  font-size: 1.1em;
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+.item-icon {
+  margin-right: 5px;
+}
