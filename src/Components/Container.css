@@ -30,9 +30,6 @@
   padding-right: 20px;
 }
 .searchbtn{
-  position: absolute;
-  top: 15px;
-  left: 10px;
   color: white;
   font-size: 22px;
   cursor: pointer;
