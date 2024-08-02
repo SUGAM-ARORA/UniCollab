@@ -1,0 +1,115 @@
+.heading1Wallet {
+    font-size: 80px;
+    font-weight: 600;
+    max-width: 1000px;
+    width: 85vw;
+    margin: auto;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff21bc;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.pointsandrupees {
+    display: flex;
+    width: 60vw;
+    margin: auto;
+    border: 3px solid #ff21bc;
+    height: 150px;
+    margin-bottom: 50px;
+    border-radius: 50px;
+    font-size: 24px;
+}
+
+.iconsWallet {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.quantity {
+    font-weight: 800;
+}
+
+.value {
+    font-weight: 600;
+}
+
+.iconsWallet svg {
+    height: 100px;
+    width: 100px;
+}
+
+.infoWallet {
+    width: 70vw;
+    height: 150px;
+    background-color: rgba(15, 20, 114, 0.362);
+    border-radius: 50px;
+    margin: auto;
+    margin-bottom: 50px;
+    display: flex;
+}
+
+.feedbackTopic {
+    width: 30%;
+}
+
+.descWallet1 {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 20px;
+}
+
+.heading2Wallet {
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    width: 75vw;
+    color: #ff21bc;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+.detailsPayment {
+    width: 75vw;
+    margin: auto;
+    outline: 2px solid #f72ab9;
+    margin-bottom: 50px;
+    display: flex;
+    margin-bottom: 35px;
+    padding: 20px;
+    border-radius: 30px;
+    transition: transform 0.15s ease-in-out;
+}
+
+.detailsPayment:hover {
+    transform: scale(1.08);
+    box-shadow: 0px 0px 11px 4px #ff21bc;
+}
+
+.detailsCardWallet {
+    width: 90%;
+    display: flex;
+    font-size: 20px;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.amountWallet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: greenyellow;
+    font-size: 20px;
+    font-weight: 700;
+}

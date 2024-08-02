@@ -91,7 +91,7 @@ function Menu() {
             { to: "/projects", icon: <FaList size={30} />, text: "My projects" },
             { to: "/Delicious", icon: <FaDelicious size={30} />, text: "Delicious" },
             { to: "/cart", icon: <FaShoppingCart size={30} />, text: "Cart" },
-            { to: "/", icon: <FaWallet size={30} />, text: "Wallet" },
+            { to: "/wallet", icon: <FaWallet size={30} />, text: "Wallet" },
             { to: "/Trending", icon: <FaChartLine size={30} />, text: "Trending" },
             { to: "#", icon: <FaRegClock size={30} />, text: "Speed", onClick: toggleStopwatch }
           ].map((item, index) => (
