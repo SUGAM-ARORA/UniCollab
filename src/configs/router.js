@@ -29,6 +29,7 @@ import ShoppingCart from "../Components/cart/cart";
 import testimonials from "../Components/Testimonials/Testimonials";
 import Testimonials from "../Components/Testimonials/Testimonials";
 import Contributors from "../Components/Contributors";
+import Delicious from "../Components/Delicious/Delicious"
 
 
 const router = createBrowserRouter([
@@ -60,6 +61,7 @@ const router = createBrowserRouter([
     { path: "/cart", element: <ShoppingCart /> },
     { path: "/Testimonials", element: <Testimonials /> },
     { path: "/contributors", element: <Contributors /> },
+    { path: "/Delicious", element: <Delicious /> },
 
   ]);
 
