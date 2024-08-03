@@ -110,33 +110,39 @@ function TopContainer() {
   return (
     <div className="topContainer">
       <div className="navbar">
-        <ul className="largeview">
-          <li className="nav-item"><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
-          <li className="nav-item"><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
-          <li className="nav-item"><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>
-          <li className="nav-item"><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>
-          <li className="nav-item"><a href="/freelancer"><FontAwesomeIcon icon={faUsers} /> Hire a Freelancer</a></li>
-          <li className="nav-item"><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
-          <li className="nav-item"><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
-          <li className="nav-item" style={{ marginRight: "10px" }}><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
-        </ul>
-
-        <div className="mobview o1">
+        <div className="mobview ">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
-            <ul className="open">
-              <li><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
-              <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
-              <li><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>
-              <li><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>
-              <li><a href='/freelancer'><FontAwesomeIcon icon={faUsers} /> Freelancer</a></li>
-              <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
-              <li><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
-              <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
-              <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
+            <ul className={`${mobMenu ? "open" : "largeview"}`}>
+              <li className="nav-item"><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
+              <li className="nav-item"><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>
+              <li className="nav-item"><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>
+              <li className="nav-item"><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>
+              <li className="nav-item"><a href="/freelancer"><FontAwesomeIcon icon={faUsers} /> Hire a Freelancer</a></li>
+              <li className="nav-item"><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>
+              <li className="nav-item"><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>
+              <li className="nav-item"><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>
+              <li className="nav-item" style={{ marginRight: "10px" }}><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
             </ul>
           </div>
         </div>
+
+        {/*<div className="mobview o1">*/}
+        {/*  <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>*/}
+        {/*  <div id="shortview" className={mobMenu ? 'show' : ''}>*/}
+        {/*    <ul className="open">*/}
+        {/*      <li><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>*/}
+        {/*      <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>*/}
+        {/*      <li><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>*/}
+        {/*      <li><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>*/}
+        {/*      <li><a href='/freelancer'><FontAwesomeIcon icon={faUsers} /> Freelancer</a></li>*/}
+        {/*      <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>*/}
+        {/*      <li><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>*/}
+        {/*      <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>*/}
+        {/*      <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>*/}
+        {/*    </ul>*/}
+        {/*  </div>*/}
+        {/*</div>*/}
 
         <div className="inputBox o2">
           <div className="input-div">
