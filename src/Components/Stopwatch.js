@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { FaRegClock, FaMicrophone, FaSave, FaStop, FaPlay } from "react-icons/fa";
 
 const Stopwatch = ({ onClose }) => {
@@ -27,10 +28,17 @@ const Stopwatch = ({ onClose }) => {
     }
   };
 
-  const handleSave = () => {
+  const handleSave = async () => {
     if (isRunning || time === 0) return; // Prevent saving while recording is running or if no time is recorded
-    setTime(0);
-    alert("Recording saved successfully!");
+
+    try {
+      await axios.post('http://localhost:5000/api/recordings', { time });
+      setTime(0);
+      alert("Recording saved successfully!");
+    } catch (error) {
+      console.error("There was an error saving the recording:", error);
+      alert("Failed to save the recording.");
+    }
   };
 
   const toggleMicrophone = () => {
