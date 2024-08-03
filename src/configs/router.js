@@ -31,7 +31,7 @@ import Testimonials from "../Components/Testimonials/Testimonials";
 import Contributors from "../Components/Contributors";
 import Wallet from "../Components/wallet/Wallet";
 import Delicious from "../Components/Delicious/Delicious"
-
+import Trending from "../Components/Trending/Trending"
 
 
 const router = createBrowserRouter([
@@ -65,6 +65,7 @@ const router = createBrowserRouter([
     { path: "/contributors", element: <Contributors /> },
     { path: "/wallet", element: <Wallet /> },
     { path: "/Delicious", element: <Delicious /> },
+    { path: "/Trending", element: <Trending /> },
 
   ]);
 
