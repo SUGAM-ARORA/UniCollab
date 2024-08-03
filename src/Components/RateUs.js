@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./RateUs.css";
 import TopContainer from "./TopContainer";
 import Menu from "./Menu";
+import { Link } from 'react-router-dom';
+import homeIcon from '../img/homeicon.png';
 
 function RateUsComponent({ previousContent }) {
   const [emoji, setEmoji] = useState("");
@@ -31,6 +33,10 @@ function RateUsComponent({ previousContent }) {
   return (
     <div>
       <div className="header">
+      <Link to="/">
+  <img src={homeIcon} alt="Home" className="home-icon" style={{ marginTop: '130px' }} />
+</Link>
+
         <TopContainer /></div>
       <div className="rateUsContainer">
         <Menu />
