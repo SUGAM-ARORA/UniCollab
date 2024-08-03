@@ -140,6 +140,7 @@
 .header {
   width: 90vw;
   margin: auto;
+  z-index: 100;
 }
 
 .rateUsContainer {
