@@ -16,7 +16,8 @@
   border-radius: 10px;
   /* Slightly increased border radius for a softer look */
   background-color: #322a5e;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid #6052ff;
+  box-shadow: 7px 7px 32px 0 #6052ff;
   /* Added box shadow for depth */
   display: flex;
   flex-direction: column;
@@ -24,12 +25,14 @@
   transition: box-shadow 0.3s, transform 0.3s;
   position: relative;
   overflow: hidden;
+
 }
 
 .rate-us-container:hover {
   box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
-  /* Adjusted shadow for hover */
   transform: scale(1.05);
+  background-color: #ff21bc; /* Changed background color on hover */
+  border: 2px solid #ff21bc; /* Adjusted border color to match hover background */
 }
 
 .rate-us-heading {

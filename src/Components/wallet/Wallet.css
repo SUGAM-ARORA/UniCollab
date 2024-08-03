@@ -55,6 +55,12 @@
     margin-bottom: 50px;
     display: flex;
 }
+  .infoWallet:hover {
+    background-color: #ff21bc; /* Change background color on hover */
+    border: 2px solid #ff21bc; /* Adjust border color to match hover background */
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); /* Adjust shadow for hover effect */
+  }
+  
 
 .feedbackTopic {
     width: 30%;
@@ -91,6 +97,10 @@
     border-radius: 30px;
     transition: transform 0.15s ease-in-out;
 }
+.detailsPayment:hover {
+    background-color: #ff21bc;
+}
+
 
 .detailsPayment:hover {
     transform: scale(1.08);
