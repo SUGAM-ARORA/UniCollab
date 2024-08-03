@@ -21,6 +21,7 @@
     "axios": "^1.7.2",
     "firebase": "^10.12.4",
     "lottie-react": "^2.4.0",
+    "mdn-data": "^2.9.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
