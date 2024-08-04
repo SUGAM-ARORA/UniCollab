@@ -35,7 +35,7 @@ function TopContainer() {
   useEffect(() => {
     if (input.length > 0) {
       const results = search.filter((item) =>
-        item.title.toLowerCase().includes(input.toLocaleLowerCase())
+        item.title.toLowerCase().includes(input.toLowerCase())
       );
       setSearchResult(results);
     } else {
@@ -91,14 +91,12 @@ function TopContainer() {
     setMobMenu(!mobMenu);
   };
 
-  // Function to handle sign out
   const handleSignOut = () => {
     localStorage.removeItem('username');
     setIsLoggedIn(false);
     setUsername('');
   };
 
-  // Check local storage for username on component mount
   useEffect(() => {
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
@@ -127,37 +125,18 @@ function TopContainer() {
           </div>
         </div>
 
-        {/*<div className="mobview o1">*/}
-        {/*  <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>*/}
-        {/*  <div id="shortview" className={mobMenu ? 'show' : ''}>*/}
-        {/*    <ul className="open">*/}
-        {/*      <li><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>*/}
-        {/*      <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>*/}
-        {/*      <li><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>*/}
-        {/*      <li><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>*/}
-        {/*      <li><a href='/freelancer'><FontAwesomeIcon icon={faUsers} /> Freelancer</a></li>*/}
-        {/*      <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>*/}
-        {/*      <li><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>*/}
-        {/*      <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>*/}
-        {/*      <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>*/}
-        {/*    </ul>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
-
         <div className="inputBox o2">
           <div className="input-div">
-          <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
-            <BiSearchAlt />
-          </i>
-
-          <input
-            ref={searchbar}
-            type="text"
-            placeholder="Search projects, users"
-            onChange={(e) => setInput(e.target.value)}
-          />
+            <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
+              <BiSearchAlt />
+            </i>
+            <input
+              ref={searchbar}
+              type="text"
+              placeholder="Search projects, users"
+              onChange={(e) => setInput(e.target.value)}
+            />
           </div>
-          
           
           {searchResult ? (
             <div id="search_results">
@@ -175,29 +154,25 @@ function TopContainer() {
           ) : null}
         </div>
 
-        <div className="profileContainer o3" >
+        <div className="profileContainer o3">
           <a href="/pricing">
             <button className="go-pro-btn">Go Pro</button>
           </a>
 
-
-          <div className="notification-container"  style={{ gap: "10px" }} ref={dropdownRef}>
+          <div className="notification-container" style={{ gap: "5px" }} ref={dropdownRef}>
             <div className="profileIcon" onClick={toggleDropdown}>
               <FaBell />
             </div>
             {isDropdownOpen && (
               <div className="dropdown-content">
                 <div className="notification-item">
-                  User "JohnDoe" has uploaded a new project titled "Introduction
-                  to Machine Learning." Check it out now!
+                  User "JohnDoe" has uploaded a new project titled "Introduction to Machine Learning." Check it out now!
                 </div>
                 <div className="notification-item">
-                  User "JaneSmith" has commented on your project "Data
-                  Visualization with D3.js." View the comment now.
+                  User "JaneSmith" has commented on your project "Data Visualization with D3.js." View the comment now.
                 </div>
                 <div className="notification-item">
-                  User "TechMaster" has updated the project "Building a RESTful
-                  API with Node.js." See what's new!
+                  User "TechMaster" has updated the project "Building a RESTful API with Node.js." See what's new!
                 </div>
               </div>
             )}
@@ -223,7 +198,7 @@ function TopContainer() {
               </div>
             </>
           ) : (
-            <Link to="/Login" className="profileIconlogin"style={{ marginRight: "20px" }}>
+            <Link to="/Login" className="profileIconlogin" style={{ marginRight: "20px" }}>
               Launch Your Journey
             </Link>
           )}
