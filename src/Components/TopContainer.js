@@ -3,7 +3,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
-import { FaBell, FaChevronDown } from "react-icons/fa";
+import {FaBell, FaChevronDown, FaSun} from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
@@ -109,6 +109,7 @@ function TopContainer() {
 
   return (
     <div className="topContainer">
+      <button className=" light"><FaSun/></button>
       <div className="navbar">
         <div className="mobview ">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
@@ -126,23 +127,6 @@ function TopContainer() {
             </ul>
           </div>
         </div>
-
-        {/*<div className="mobview o1">*/}
-        {/*  <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>*/}
-        {/*  <div id="shortview" className={mobMenu ? 'show' : ''}>*/}
-        {/*    <ul className="open">*/}
-        {/*      <li><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>*/}
-        {/*      <li><a href='/about'><FontAwesomeIcon icon={faInfoCircle} /> About Us</a></li>*/}
-        {/*      <li><a href='/services'><FontAwesomeIcon icon={faWrench} /> Services</a></li>*/}
-        {/*      <li><a href='/careers'><FontAwesomeIcon icon={faBriefcase} /> Careers</a></li>*/}
-        {/*      <li><a href='/freelancer'><FontAwesomeIcon icon={faUsers} /> Freelancer</a></li>*/}
-        {/*      <li><a href='/contacts'><FontAwesomeIcon icon={faEnvelope} /> Contact</a></li>*/}
-        {/*      <li><a href='/RateUs'><FontAwesomeIcon icon={faStar} /> RateUs</a></li>*/}
-        {/*      <li><a href='/blogs'><FontAwesomeIcon icon={faNewspaper} /> Blogs</a></li>*/}
-        {/*      <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>*/}
-        {/*    </ul>*/}
-        {/*  </div>*/}
-        {/*</div>*/}
 
         <div className="inputBox o2">
           <div className="input-div">

@@ -5,16 +5,16 @@ import { Link } from "react-router-dom";
 import Stopwatch from "./Stopwatch"; // Import the Stopwatch component
 
 import {
-  FaDelicious,
-  FaShoppingCart,
-  FaWallet,
-  FaChartLine,
-  FaRegClock,
-  FaCog,
-  FaSignOutAlt,
-  FaList,
-  FaCoffee, // New icon for sidebar open
-  FaBeer, // New icon for sidebar closed
+    FaDelicious,
+    FaShoppingCart,
+    FaWallet,
+    FaChartLine,
+    FaRegClock,
+    FaCog,
+    FaSignOutAlt,
+    FaList,
+    FaCoffee, // New icon for sidebar open
+    FaBeer, // New icon for sidebar closed
 } from "react-icons/fa";
 
 function Menu() {
@@ -146,7 +146,6 @@ function Menu() {
       >
         {sidebarOpen ? <FaBeer size={45} /> : <FaCoffee size={45} />}
       </button>
-
       {showStopwatch && <Stopwatch onClose={toggleStopwatch} />}
     </>
   );

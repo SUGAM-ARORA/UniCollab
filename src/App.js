@@ -29,8 +29,31 @@ import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import ChatbotIcon from './Components/ChatbotIcon';
 import GoToTop from './Components/gototop';
+import {useEffect, useState} from "react";
 
 function App() {
+
+    const [theme, setTheme] = useState('light')
+
+    useEffect(() => {
+        const saveItem = localStorage.getItem("theme")
+        if(saveItem){
+            setTheme(saveItem)
+        }else {
+            const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light'
+            setTheme(defaultTheme)
+        }
+    }, []);
+
+    useEffect(()=>{
+        document.body.className = theme;
+        localStorage.setItem("theme" , theme)
+    },[theme])
+
+    const toggleTheme = () => {
+        setTheme((prevTheme) => (prevTheme === 'dark' ? 'light' : 'dark' ))
+    }
+
   return (
     <>
       <Helmet>

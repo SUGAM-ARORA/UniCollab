@@ -22,7 +22,16 @@
   position: relative;
   top: 0;
   gap: 0.1rem;
-  margin-left: 120px;
+  /*margin-left: 120px;*/
+}
+
+.light{
+  width: auto;
+  margin-inline: 20px;
+  margin-left: 40px;
+  z-index: 999999999;
+  top: 20px;
+  left : 30px;
 }
 
 .profileContainer .go-pro-btn {
@@ -207,11 +216,18 @@
   .navbar {
     width: 80vw;
   }
+  .light{
+    position: absolute;
+  }
 }
 
 @media (max-width: 650px) {
   .navbar {
     width: 80vw;
+  }
+
+  .light{
+    position: absolute;
   }
 
   .profileIconlogin {
@@ -239,6 +255,10 @@
   .o1 { order: 1; }
   .o2 { order: 3; }
   .o3 { order: 2; }
+
+  .light{
+    position: absolute;
+  }
 
   .topContainer .inputBox{
     width: 100%;
