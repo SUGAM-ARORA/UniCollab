@@ -86,6 +86,18 @@ app.post('/send', upload.single('attachments'), (req, res) => {
   }
 });
 
+// Endpoint to handle feedback submission
+app.post('/api/submit-feedback', (req, res) => {
+  const { emoji, feedback } = req.body;
+
+  // Here you would typically save the feedback to a database
+  // For now, we'll just log it to the console
+  console.log(`Received feedback: Emoji: ${emoji}, Feedback: ${feedback}`);
+
+  // Send a success response
+  res.status(200).send({ message: 'Feedback received successfully!' });
+});
+
 // Add a root route to handle the root URL
 app.get('/', (req, res) => {
   res.send('Welcome to the Stopwatch API!');

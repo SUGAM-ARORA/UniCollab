@@ -1,3 +1,4 @@
+// RateUsComponent.js
 import React, { useState } from "react";
 import "./RateUs.css";
 import TopContainer from "./TopContainer";
@@ -18,36 +19,52 @@ function RateUsComponent({ previousContent }) {
     setFeedback(e.target.value);
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if (emoji !== "" && feedback.trim() !== "") {
-      // Reset the state after submitting
-      setEmoji("");
-      setFeedback("");
-      setSubmitted(true); // Hide the rating and feedback area
-      // Optionally handle success feedback, such as showing a thank you message
+      try {
+        const response = await fetch('/api/submit-feedback', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ emoji, feedback }),
+        });
+        
+        if (response.ok) {
+          // Reset the state after submitting
+          setEmoji("");
+          setFeedback("");
+          setSubmitted(true); // Hide the rating and feedback area
+        } else {
+          // Handle error response
+          console.error('Failed to submit feedback');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+      }
     } else {
       // Optionally handle error feedback
+      console.error('Please select an emoji and provide feedback');
     }
   };
 
   return (
     <div>
       <div className="header">
-      <Link to="/">
-  <img src={homeIcon} alt="Home" className="home-icon" style={{ marginTop: '130px' }} />
-</Link>
-
-        <TopContainer /></div>
+        <Link to="/">
+          <img src={homeIcon} alt="Home" className="home-icon" style={{ marginTop: '130px' }} />
+        </Link>
+        <TopContainer />
+      </div>
       <div className="rateUsContainer">
         <Menu />
         <div className={`rate-us-page ${previousContent ? 'animated' : ''}`}>
           <div className="rate-us-container">
-
             {!submitted ? (
               <>
                 <h2 className="rate-us-heading">Rate Our Website</h2>
                 <div className="emoji-selection">
-                  {["😡", "😞", "😐 ", "😊", "😍"].map((emojiOption) => (
+                  {["😡", "😞", "😐", "😊", "😍"].map((emojiOption) => (
                     <span
                       key={emojiOption}
                       className={`emoji ${emoji === emojiOption ? 'selected' : ''}`}
@@ -74,12 +91,7 @@ function RateUsComponent({ previousContent }) {
         </div>
       </div>
     </div>
-
   );
 }
 
 export default RateUsComponent;
-
-
-
-
