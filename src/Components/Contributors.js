@@ -1,6 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
-
+import { Link } from "react-router-dom";
+import homeIcon from '../img/homeicon.png';
 import axios from 'axios';
 import './Contributors.css';
 
@@ -24,6 +25,9 @@ function Contributors() {
   return (
     <div className="contributors-container">
       <h1 className="contributors-title">Our Contributors</h1>
+      <Link to="/">
+          <img src={homeIcon} alt="Home" className="home-icon" style={{ marginTop: '2px' }} />
+        </Link>
       <div className="contributors-grid">
         {contributors.map((contributor) => (
           <div key={contributor.id} className="contributor-card">

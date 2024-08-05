@@ -1,88 +1,88 @@
 .contributors-container {
-    width: 100%;
-    height: 100%;
-    padding-top: 0rem;
-    overflow: hidden;
-    margin-bottom: 90px;
-    margin-top: -37px;
-  }
-  
-  .contributors-title {
-    margin-top: 4rem;
-    text-align: center;
-    font-size: 2.5rem;
-    font-weight: 600;
-    color: #ff21bc; 
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-  }
-  
-  .contributors-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
-  
+  width: 100%;
+  height: 100%;
+  padding-top: 0rem;
+  overflow: hidden;
+  margin-bottom: 90px;
+  margin-top: -37px;
+}
+
+.contributors-title {
+  margin-top: 4rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ff21bc; 
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.contributors-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contributor-card {
+  width: 100%;
+  max-width: 25%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #17081e; 
+  border: 1px solid #ff21bc;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease; /* Added transition for background color */
+}
+
+.contributor-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+  background-color: #ff21bc; /* Change background color on hover */
+}
+
+.contributor-link {
+  display: block;
+}
+
+.contributor-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 2px solid #9416e9; 
+}
+
+.contributor-name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #f3f4f6; 
+  margin-bottom: 0.5rem;
+}
+
+.contributor-contributions {
+  color: #d1d5db; 
+}
+
+@media (max-width: 1200px) {
   .contributor-card {
-    width: 100%;
-    max-width: 25%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #17081e; 
-    border: 1px solid #ff21bc;
-    border-radius: 0.5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
-    padding: 1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .contributor-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
-  }
-  
-  .contributor-link {
-    display: block;
-  }
-  
-  .contributor-avatar {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border: 2px solid #9416e9; 
-  }
-  
-  .contributor-name {
-    font-size: 1rem;
-    font-weight: 500;
-    color: #f3f4f6; 
-    margin-bottom: 0.5rem;
-  }
-  
-  .contributor-contributions {
-    color: #d1d5db; 
-  }
-  
-  @media (max-width: 1200px) {
-    .contributor-card {
       max-width: 33.333%; 
-    }
   }
-  
-  @media (max-width: 992px) {
-    .contributor-card {
+}
+
+@media (max-width: 992px) {
+  .contributor-card {
       max-width: 50%; 
-    }
   }
-  
-  @media (max-width: 768px) {
-    .contributor-card {
+}
+
+@media (max-width: 768px) {
+  .contributor-card {
       max-width: 83%; 
-    }
   }
-  
+}
