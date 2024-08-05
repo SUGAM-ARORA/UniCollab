@@ -1,15 +1,4 @@
-.nav-item a span {
-  white-space: nowrap;
-  color: white;
-}
-
-.nav-item a:hover span {
-  color: #cf00a3; /* Pink color on hover */
-}
-.notification-item:hover {
-  background-color: #cf00a3;
-  color: white; /* Optional: Change text color for better contrast */
-}
+/* General navbar styles */
 .navbar {
   width: 100%;
   height: auto;
@@ -25,78 +14,68 @@
   margin-left: 120px;
 }
 
-.profileContainer .go-pro-btn {
-  padding: 10px 20px; /* Adjust padding to change the button size */
-}
-
+/* Navigation items container */
 .largeview {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
+  flex-direction: row; /* Ensure horizontal alignment */
 }
 
+/* Individual nav items */
 .largeview .nav-item {
   margin-right: 10px;
 }
 
+/* Nav item links */
 .largeview .nav-item a {
   color: #ffffff;
   text-decoration: none;
   transition: color 0.3s ease, font-size 0.3s ease;
-  align-self: right;
+  display: flex;
+  align-items: center; /* Center items vertically */
 }
 
+/* Hover effect for nav item links */
 .largeview .nav-item a:hover {
   color: #cf00a3;
   font-size: 1.05rem;
 }
 
+/* Input box styles */
 .inputBox {
   position: relative;
-}
-
-.o1 { order: 1; }
-.o2 { order: 2; }
-.o3 { order: 3; }
-
-.input-div{
   display: flex;
-  width: 100%;
-  justify-content: start;
   align-items: center;
-  gap: 0.5rem;
 }
 
-.container .inputBox input{
-  padding: 0.5rem 2rem;
-  
-
+.inputBox input {
+  padding: 0.5rem 2rem; /* Add padding to the right for the icon */
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-@media screen and (max-width: 1500px) {
-  .mobview .inputBox {
-    margin-top: 10px; /* Add 10px space above the search box */
-    padding: 5px 5px;
-  }
-
-  .mobview .searchbtn {
-    font-size: 1.3rem; /* Adjust the search button size */
-  }
-
-  .mobview #search_results {
-    top: 50px; /* Adjust position of search results */
-  }
+.inputBox input:focus {
+  outline: none; /* Remove default outline on focus */
+  border-color: #cf00a3; /* Change border color on focus */
 }
 
+/* Search button styles */
 .searchbtn {
+  position: absolute;
+  top: 10px;
+  right: 320px; /* Adjust to align with input padding */
   color: #757380;
   font-size: 1.5rem;
+  cursor: pointer; /* Ensure cursor indicates clickable */
 }
 
+/* Search results container */
 #search_results {
   position: absolute;
   top: 40px;
+  height: 200px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -109,15 +88,104 @@
   font-weight: bold;
 }
 
+/* Notification styles */
+.notification-item:hover {
+  background-color: #cf00a3;
+  color: white; /* Change text color for better contrast */
+}
+
+/* Mobile view adjustments */
+@media screen and (max-width: 1500px) {
+  .navbar {
+    margin-left: 0; /* Adjust margin for smaller screens */
+  }
+
+  .largeview {
+    flex-direction: row; /* Ensure horizontal alignment */
+    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+  }
+}
+
+@media (max-width: 830px) {
+  .navbar {
+    width: 80vw; /* Adjust navbar width for smaller screens */
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    width: 80vw;
+  }
+
+  .profileIconlogin {
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 525px) {
+  .topContainer {
+    z-index: 100;
+  }
+
+  .navbar {
+    flex-direction: row;
+    flex-wrap: wrap; /* Wrap items if needed on very small screens */
+    height: min-content;
+    gap: 1rem;
+    margin-left: 0;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .largeview {
+    flex-direction: row; /* Ensure horizontal alignment */
+  }
+
+  .inputBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px;
+  }
+  
+  .inputBox input {
+    padding: 0.5rem;
+  }
+  
+  .profileContainer .go-pro-btn {
+    padding: 0.5rem 1rem;
+  }
+  
+  .bars {
+    padding: 1rem;
+  }
+  
+  .searchbtn {
+    position: relative;
+    width: auto;
+    margin-top: 20px;
+  }
+}
+
+/* Additional styles */
+.nav-item a span {
+  white-space: nowrap;
+  color: white;
+}
+
+.nav-item a:hover span {
+  color: #cf00a3; /* Pink color on hover */
+}
+
 #list li {
   flex-shrink: 0; /* Prevent items from shrinking */
 }
 
-/*.mobview {*/
-/*  display: none;*/
-/*}*/
-
-.bars{
+.bars {
   display: none;
 }
 
@@ -200,70 +268,5 @@
     background: #19162c;
     color: #757380;
     transition: 0.3s;
-  }
-}
-
-@media (max-width: 830px) {
-  .navbar {
-    width: 80vw;
-  }
-}
-
-@media (max-width: 650px) {
-  .navbar {
-    width: 80vw;
-  }
-
-  .profileIconlogin {
-    width: 140px !important;
-    font-size: 12px !important;
-  }
-}
-
-
-
-@media (max-width: 525px){
-  .topContainer{
-    z-index: 100;
-  }
-  .navbar{
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: min-content;
-    gap: 1rem;
-    margin-left: 0;
-    border-radius: 1rem;
-    padding: 1rem;
-    width: 100%;
-  }
-  .o1 { order: 1; }
-  .o2 { order: 3; }
-  .o3 { order: 2; }
-
-  .topContainer .inputBox{
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 0px;
-  }
-  .container .inputBox input{
-    padding: 0.5rem;
-    
-
-  }
-  .profileContainer .go-pro-btn{
-    padding: 0.5rem 1rem;
-  }
-  .bars{
-    padding: 1rem;
-  }
- 
-
-  .searchbtn{
-    position: relative;
-    width: auto;
-
   }
 }
