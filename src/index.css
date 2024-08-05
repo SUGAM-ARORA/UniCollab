@@ -84,6 +84,18 @@ code {
   background:  #ff03b3;
 }
 
+*{
+  .light {
+    background: #E2DFD2 !important;
+    color: #000000 !important;
+  }
+
+  .dark {
+    background: #19162c !important;
+    color: #ffffff !important;
+  }
+}
+
 
 
 

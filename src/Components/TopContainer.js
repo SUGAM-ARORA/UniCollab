@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {useEffect, useState, useRef, useContext} from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
@@ -7,6 +7,7 @@ import {FaBell, FaChevronDown, FaSun} from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
+import {ThemeContext} from "../App"
 
 function TopContainer() {
   const [input, setInput] = useState("");
@@ -107,9 +108,11 @@ function TopContainer() {
     }
   }, []);
 
+  const { toggleTheme} = useContext(ThemeContext)
+
   return (
     <div className="topContainer">
-      <button className=" light"><FaSun/></button>
+      <button onClick={toggleTheme} className=" lightbutton"><FaSun/></button>
       <div className="navbar">
         <div className="mobview ">
           <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>

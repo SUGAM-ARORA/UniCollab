@@ -6,7 +6,7 @@ import Menu from "./Menu";
 
 function Container() {
   return (
-    <div className="container">
+    <div id="container"  className="container">
       <Menu />
       <div className="content">
         <TopContainer />

@@ -25,7 +25,7 @@
   /*margin-left: 120px;*/
 }
 
-.light{
+.lightbutton{
   width: auto;
   margin-inline: 20px;
   margin-left: 40px;
@@ -216,7 +216,7 @@
   .navbar {
     width: 80vw;
   }
-  .light{
+  .lightbutton{
     position: absolute;
   }
 }
@@ -226,7 +226,7 @@
     width: 80vw;
   }
 
-  .light{
+  .lightbutton{
     position: absolute;
   }
 
@@ -256,7 +256,7 @@
   .o2 { order: 3; }
   .o3 { order: 2; }
 
-  .light{
+  .lightbutton{
     position: absolute;
   }
 
