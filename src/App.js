@@ -30,6 +30,8 @@ import Freelancer from "./Components/FreeLancer/Freelancer";
 import ChatbotIcon from './Components/ChatbotIcon';
 import GoToTop from './Components/gototop';
 
+
+
 function App() {
   return (
     <>
