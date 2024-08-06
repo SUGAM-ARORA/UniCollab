@@ -50,6 +50,11 @@
   max-width: 800px; 
   min-height: 500px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.settings-content:hover {
+  background-color: darkturquoise; /* Hover effect color */
 }
 
 .form-group {
@@ -168,4 +173,13 @@ button:hover {
   .settings-content {
     width: 100%; 
   }
+}
+
+/* Add hover effect for other containers or elements as needed */
+.settings-content .form-group input[type="text"]:hover,
+.settings-content .form-group input[type="password"]:hover,
+.settings-content .form-group select:hover,
+.settings-content .form-group input[type="checkbox"]:hover,
+.settings-content button:hover {
+  background-color: #cf00a3;
 }

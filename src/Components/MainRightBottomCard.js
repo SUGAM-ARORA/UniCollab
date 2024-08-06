@@ -5,20 +5,20 @@ function MainRightBottomCard() {
   const [visibleSellers, setVisibleSellers] = useState(3);
   const [allSellersLoaded, setAllSellersLoaded] = useState(false);
   const [showMore, setShowMore] = useState(false);
+  const [hoveredSeller, setHoveredSeller] = useState(null);
   const profileListRef = useRef(null);
 
   const handleButton = (e) => {
     if (e.target.textContent === "Follow") {
-      e.target.textContent = "Following"
-      e.target.style.background = "rgb(25, 22, 44)"
-      e.target.style.border = "2px solid #443b78"
+      e.target.textContent = "Following";
+      e.target.style.background = "rgb(25, 22, 44)";
+      e.target.style.border = "2px solid #443b78";
+    } else if (e.target.textContent === "Following") {
+      e.target.textContent = "Follow";
+      e.target.style.background = "linear-gradient(#ff21bc, #b21783)";
+      e.target.style.border = "";
     }
-    else if (e.target.textContent === "Following") {
-      e.target.textContent = "Follow"
-      e.target.style.background = "linear-gradient(#ff21bc, #b21783)"
-      e.target.style.border = ""
-    }
-  }
+  };
 
   const loadMoreSellers = () => {
     setVisibleSellers((prevVisibleSellers) => {
@@ -58,6 +58,14 @@ function MainRightBottomCard() {
     setAllSellersLoaded(!showMore); // Reset scroll loading state when toggling
   };
 
+  const handleMouseEnter = (id) => {
+    setHoveredSeller(id);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredSeller(null);
+  };
+
   return (
     <div className="bottom_card" ref={profileListRef}>
       <div className="bottomCard_name">
@@ -68,7 +76,16 @@ function MainRightBottomCard() {
       </div>
 
       {TopSeller.slice(0, visibleSellers).map((seller) => (
-        <div className="topSeller fromTop" key={seller.id}>
+        <div
+          className="topSeller fromTop"
+          key={seller.id}
+          onMouseEnter={() => handleMouseEnter(seller.id)}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            backgroundColor: hoveredSeller === seller.id ? '#cf00a3' : 'initial',
+            transition: 'background-color 0.3s ease'
+          }}
+        >
           <div className="topSellerImg">
             <img src={seller?.imgSrc} alt="" />
           </div>
