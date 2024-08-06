@@ -197,7 +197,7 @@ const LogIn = () => {
   };
   const handleForgotPassword = () => {
     // Implement your forgot password logic here
-    navigate('/'); // Redirect to the main page
+    navigate('/forgot'); // Redirect to the main page
   };
   
 
@@ -295,7 +295,7 @@ const LogIn = () => {
               </button>
             </div>
             <div className="forgot-password-link">
-           <a href="#" onClick={handleForgotPassword}>
+           <a href="/forgot" onClick={handleForgotPassword}>
            Forgot Password?
           </a>
          </div>
