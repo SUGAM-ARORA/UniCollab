@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.container2 {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+.top {
+    position: absolute;
+    top: 30px;
+    left: 100px;
+    height: 200px;
+    border: 5px solid #cf00a3; /* Border around the image */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.bottom {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    height: 200px;
+    border: 5px solid #cf00a3; /* Border around the image */
+    border-radius: 15px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+}
+
+.top:hover, .bottom:hover {
+    transform: scale(1.1); /* Slightly enlarge the image on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glow effect */
+}
+
+/* For better alignment and layout */
+.header img {
+    width: 100px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+    text-align: center;
+}
+
+.header img:hover {
+    transform: scale(1.1); /* Slightly enlarge the logo on hover */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7); /* Glow effect */
+}
+.header h1 {
+    margin: 10px 0;
+    font-size: 2.5rem;
+    color: #cf00a3 ;
+    text-align: center;
+}
+
+.section {
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    background-color: #2c2c3e;
+    box-shadow: 7px 7px 32px 0 #6052ff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    text-align: justify;
+    border: 2px solid darkturquoise;
+}
+.section:hover {
+    background-color: #cf00a3;
+    transform: scale(1.05);
+}
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: darkturquoise;
+}
+
+.section p {
+    font-size: 1.0rem;
+    line-height: 1.6;
+    color: white;
+}
+
+.section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section ul li {
+    background: #333;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+.section:nth-of-type(3) ul li:hover {
+    background-color: darkturquoise;
+    color: #fff; /* Optional: change text color to contrast with darkturquoise */
+}
+/* Common hover effect for all specified sections */
+.key-features ul li:hover,
+.why-choose ul li:hover,
+.key-benefits ul li:hover {
+    background-color: darkturquoise;
+    color: #fff; /* Optional: change text color to contrast with darkturquoise */
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+
+@media screen and (min-width: 768px) {
+    .container1 {
+        display: flex;
+        flex-direction: column;
+        align-items: justify;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .header,
+    .footer1 {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container1 {
+        width: 70%;
+    }
+
+    .section {
+        margin: 20px auto;
+        padding: 20px 40px;
+    }
+}

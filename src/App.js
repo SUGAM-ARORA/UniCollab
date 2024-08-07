@@ -7,6 +7,7 @@ import Settings from "./Components/Settings/SettingsPage";
 import About_us from "./Components/footer_section/about_us/About_us";
 import BlogPage from "./Components/footer_section/BlogPage/BlogPage";
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
+import PortFolio from "./Components/PortFolio/PortFolio.js"; 
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
 import Readmore from "./Components/Readmore";

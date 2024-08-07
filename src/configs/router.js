@@ -1,4 +1,3 @@
-// router.js
 import { createBrowserRouter } from "react-router-dom";
 import Container from "../Components/Container";
 import Footer from "../Components/Footer";
@@ -13,6 +12,7 @@ import Readmore from "../Components/Readmore";
 import Login from "../Components/Login";
 import Pricing from "../Components/footer_section/Pricing/pricing";
 import MyProjects from "../Components/menu_section/my_projects/MyProjects";
+import PortFolio from "../Components/PortFolio/PortFolio"; // Corrected import for PortFolio component
 import NewProject from "../Components/menu_section/new_project/NewProject";
 import Error from "../Components/404_page/Error";
 import Profiles from "../Components/Profiles";
@@ -66,7 +66,8 @@ const router = createBrowserRouter([
   { path: "/wallet", element: <Wallet /> },
   { path: "/delicious", element: <Delicious /> },
   { path: "/trending", element: <Trending /> },
-  { path: "/forgot", element: <ForgotPassword /> }, // Add the ForgotPassword route
+  { path: "/forgot", element: <ForgotPassword /> },
+  { path: "/portfolio", element: <PortFolio /> }, // Corrected path for PortFolio
 ]);
 
 export default router;
