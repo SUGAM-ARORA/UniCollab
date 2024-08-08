@@ -465,8 +465,8 @@ const LogIn = () => {
           </div>
           <img src={logImg} className="image" alt="Log In" />
         </div>
-        <div className="panel right-panel">
-          <div className="content">
+        <div className="panel right-panel1">
+          <div className="content1">
             <h3>One of Us?</h3>
             <p>
               Log in to access your account and continue collaborating and
