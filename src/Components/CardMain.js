@@ -119,7 +119,7 @@ const features = [
     img: Card9,
     pro: icon,
     hearts: 55,
-    title: "GameOn",
+    title: "BBlocks",
     dev: "ChrisClark",
     type: "Gaming",
     role: "Game Developer, Animator",
@@ -226,7 +226,7 @@ function CardMain() {
           />
           <div className="card_main_name">
             <h2>{project.title}</h2>
-            <div className="card_main_icon">
+            <div className="card_main_icon" style={{ marginTop: '-18px' }}>
               <i>
                 <BsFillHeartFill /> <span>{project.hearts}</span>
               </i>
