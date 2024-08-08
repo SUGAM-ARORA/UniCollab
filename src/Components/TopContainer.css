@@ -1,3 +1,7 @@
+.topContainer{
+  width: 100%;
+}
+
 /* General navbar styles */
 .navbar {
   width: 100%;
@@ -11,7 +15,7 @@
   position: relative;
   top: 0;
   gap: 0.1rem;
-  margin-left: 120px;
+  /* margin-left: 120px; */
 }
 
 /* Navigation items container */
@@ -45,6 +49,7 @@
 
 /* Input box styles */
 .inputBox {
+  
   position: relative;
   display: flex;
   align-items: center;
@@ -192,7 +197,7 @@
 @media screen and (max-width: 1500px) {
   .mobview {
     display: flex;
-    margin-left: 80%;
+    /* margin-left: 80%; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -214,7 +219,7 @@
 
   .mobview #shortview {
     position: absolute;
-    right: 100%;
+    /* right: 100%; */
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
