@@ -12,8 +12,8 @@ const PortFolio = () => {
             <Link to="/" className="home-link">
               <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
-            <img src={Top} alt="Logo" className="top" style={{ width: '550px' }} />
-            <img src={Bottom} alt="Logo" className="bottom" style={{ width: '550px' }} />
+            <img src={Top} alt="Logo" className="top1" style={{ width: '550px' }} />
+            <img src={Bottom} alt="Logo" className="bottom1" style={{ width: '550px' }} />
             <header className="header">
                 <h1>UniCollab</h1>
                 <img 

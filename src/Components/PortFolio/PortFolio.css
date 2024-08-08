@@ -11,7 +11,7 @@ body {
     margin: 0 auto;
     padding: 20px;
 }
-.top {
+.top1 {
     position: absolute;
     top: 30px;
     left: 100px;
@@ -21,7 +21,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
 }
 
-.bottom {
+.bottom1 {
     position: absolute;
     top: 30px;
     right: 100px;
