@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
+import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper, faTimes } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
 import { FaBell, FaChevronDown } from "react-icons/fa";
 import women from "../img/women.jpg";
@@ -109,7 +109,7 @@ function TopContainer() {
     <div className="topContainer">
       <div className="navbar">
         <div className="mobview ">
-          <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
+          <div className="bars" onClick={toggleMenu}>{mobMenu?<FontAwesomeIcon icon={faTimes}/>:<FontAwesomeIcon icon={faBars} />}</div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
             <ul className={`${mobMenu ? "open" : "largeview"}`}>
               <li className="nav-item"><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>

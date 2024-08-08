@@ -44,7 +44,7 @@
 /* Hover effect for nav item links */
 .largeview .nav-item a:hover {
   color: #cf00a3;
-  font-size: 1.05rem;
+  font-size: 1.0rem;
 }
 
 /* Input box styles */
@@ -216,16 +216,27 @@
   .largeview {
     display: none;
   }
+  @keyframes shortvi {
+      from{
+        height: 0px;
+        opacity: 0;
+      }to{
+        height: 350px;
+        opacity: 0.9;
+      }
+  }
 
   .mobview #shortview {
     position: absolute;
     /* right: 100%; */
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
+
     border-radius: 10px;
     width: 200px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 100000;
+    width: 100vw;
     display: none;
     transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
   }
@@ -237,7 +248,6 @@
     height: 10px;
     background: hsl(190, 85%, 40%);
     top: -5px;
-    right: 20px;
     transform: rotate(45deg);
     z-index: 100000;
   }
