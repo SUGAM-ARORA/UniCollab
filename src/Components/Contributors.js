@@ -4,10 +4,14 @@ import { Link } from "react-router-dom";
 import homeIcon from '../img/homeicon.png';
 import axios from 'axios';
 import './Contributors.css';
+import { color, motion } from "framer-motion";
 
 function Contributors() {
   const [contributors, setContributors] = useState([]);
-
+  const eventVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
   useEffect(() => {
     async function fetchContributors() {
       try {
@@ -30,7 +34,12 @@ function Contributors() {
         </Link>
       <div className="contributors-grid">
         {contributors.map((contributor) => (
-          <div key={contributor.id} className="contributor-card">
+          <motion.div  initial="hidden"
+          whileInView="visible"
+          whileHover={{ scale: 1.06 }}
+          viewport={{ once: true }}
+          variants={eventVariants}
+          transition={{ duration: 0.2, ease: "easeInOut" }} key={contributor.id} className="contributor-card">
             <a
               href={contributor.html_url}
               className="contributor-link"
@@ -47,7 +56,7 @@ function Contributors() {
             <p className="contributor-contributions">
               Contributions: {contributor.contributions}
             </p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
