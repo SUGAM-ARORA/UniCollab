@@ -47,7 +47,8 @@
 
 .container2Careers {
     width: 100vw;
-    height: 700px;
+    height: auto;
+    min-height: 700px;
 }
 
 .headingCareers2 {
@@ -74,14 +75,18 @@
 }
 
 .boxes1Careers {
-    width: 92vw;
+    width: 100vw;
     margin: auto;
-    height: 450px;
+    height: auto;
+min-height: 425px;
+justify-content: center;
+flex-wrap: wrap;
     display: flex;
 }
 
 .box1Careers {
-    width: 100%;
+    width: auto;
+    max-width: 400px;
     padding: 45px;
     display: flex;
     flex-direction: column;
@@ -118,11 +123,35 @@
 }
 
 .box2aCareers {
-    height: 225px;
+    height: auto;
     display: flex;
     transition: transform 0.3s ease, background-color 0.3s ease;
 }
-
+@media only screen and (max-width:500px) {
+        .box2aCareers{
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        .box1Careers{
+            padding: 20px;
+            font-size: 15px;
+        }
+        .box1Careers{
+            align-items: center;
+        }
+        .headingCareers3,.descriptionCareers3{
+            font-size: 15px !important;
+        }
+        .Careeers2abdesc{
+            font-size: 15px !important;
+        }
+        .container4Careers{
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 50px !important;
+            margin-bottom: 50px;
+        }
+}
 .box2aCareers:hover {
     transform: scale(1.05);
     background-color: #3228a7;
@@ -130,6 +159,8 @@
 
 .Careers2aa {
     width: 100%;
+    min-width: 300px;
+    
     height: 140px;
     display: flex;
     flex-direction: column;
@@ -415,7 +446,7 @@
     }
 
     .boxes4Careers {
-        width: 250px;
+        width: 90%;
         padding: 15px;
         border-radius: 20px;
     }
@@ -429,7 +460,17 @@
     .box4desc {
         font-size: 12px;
     }
-
+.boxes3Careers{
+    flex-wrap: wrap;
+    height: auto;
+}
+.boxes3aCareers{
+    height: auto !important;
+    
+}
+.boxes3aCareers li{
+    font-size: 15px;
+}
     .box3adesc ul li {
         line-height: 25px;
     }
@@ -458,7 +499,7 @@
     }
 
     .box4desc {
-        font-size: 10px;
+        font-size: 16px;
     }
 
     .descriptionCareers3 {
@@ -471,7 +512,7 @@
     }
 
     .boxes4Careers {
-        width: 200px;
+        width: 90%;
         height: auto;
     }
 }

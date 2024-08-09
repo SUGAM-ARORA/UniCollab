@@ -1,3 +1,7 @@
+.topContainer{
+  width: 100%;
+}
+
 /* General navbar styles */
 .navbar {
   width: 100%;
@@ -11,7 +15,7 @@
   position: relative;
   top: 0;
   gap: 0.1rem;
-  margin-left: 120px;
+  /* margin-left: 120px; */
 }
 
 /* Navigation items container */
@@ -44,13 +48,13 @@
 }
 
 /* Input box styles */
-.inputBox {
-  position: relative;
+.inputBox { 
   display: flex;
   align-items: center;
 }
 
 .inputBox input {
+  position: relative;
   padding: 0.5rem 2rem; /* Add padding to the right for the icon */
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -65,7 +69,7 @@
 .searchbtn {
   position: absolute;
   top: 10px;
-  right: 320px; /* Adjust to align with input padding */
+  padding-left: 5px; /* Adjust to align with input padding */
   color: #757380;
   font-size: 1.5rem;
   cursor: pointer; /* Ensure cursor indicates clickable */
@@ -97,7 +101,7 @@
 /* Mobile view adjustments */
 @media screen and (max-width: 1500px) {
   .navbar {
-    margin-left: 0; /* Adjust margin for smaller screens */
+    margin-left: 50px; /* Adjust margin for smaller screens */
   }
 
   .largeview {
@@ -106,93 +110,10 @@
   }
 }
 
-@media (max-width: 830px) {
-  .navbar {
-    width: 80vw; /* Adjust navbar width for smaller screens */
-  }
-}
-
-@media (max-width: 650px) {
-  .navbar {
-    width: 80vw;
-  }
-
-  .profileIconlogin {
-    width: 140px !important;
-    font-size: 12px !important;
-  }
-}
-
-@media (max-width: 525px) {
-  .topContainer {
-    z-index: 100;
-  }
-
-  .navbar {
-    flex-direction: row;
-    flex-wrap: wrap; /* Wrap items if needed on very small screens */
-    height: min-content;
-    gap: 1rem;
-    margin-left: 0;
-    border-radius: 1rem;
-    padding: 1rem;
-    width: 100%;
-  }
-
-  .largeview {
-    flex-direction: row; /* Ensure horizontal alignment */
-  }
-
-  .inputBox {
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding: 0px;
-  }
-  
-  .inputBox input {
-    padding: 0.5rem;
-  }
-  
-  .profileContainer .go-pro-btn {
-    padding: 0.5rem 1rem;
-  }
-  
-  .bars {
-    padding: 1rem;
-  }
-  
-  .searchbtn {
-    position: relative;
-    width: auto;
-    margin-top: 20px;
-  }
-}
-
-/* Additional styles */
-.nav-item a span {
-  white-space: nowrap;
-  color: white;
-}
-
-.nav-item a:hover span {
-  color: #cf00a3; /* Pink color on hover */
-}
-
-#list li {
-  flex-shrink: 0; /* Prevent items from shrinking */
-}
-
-.bars {
-  display: none;
-}
-
 @media screen and (max-width: 1500px) {
   .mobview {
     display: flex;
-    margin-left: 80%;
+    /* margin-left: 80%; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -211,16 +132,28 @@
   .largeview {
     display: none;
   }
+  @keyframes shortvi {
+      from{
+        height: 0px;
+        opacity: 0;
+      }to{
+        height: 350px;
+        opacity: 0.9;
+      }
+  }
 
   .mobview #shortview {
     position: absolute;
-    right: 100%;
+    /* right: 100%; */
+    right: 10%;
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
+
     border-radius: 10px;
     width: 200px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 100000;
+    width: 100vw;
     display: none;
     transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
   }
@@ -232,7 +165,6 @@
     height: 10px;
     background: hsl(190, 85%, 40%);
     top: -5px;
-    right: 20px;
     transform: rotate(45deg);
     z-index: 100000;
   }
@@ -269,4 +201,93 @@
     color: #757380;
     transition: 0.3s;
   }
+  .profileIcon{
+    padding: 0;
+  }
+}
+
+@media (max-width: 830px) {
+  .navbar {
+    width: 80vw; /* Adjust navbar width for smaller screens */
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    width: 80vw;
+  }
+
+  .profileIconlogin {
+    width: 140px !important;
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 525px) {
+  .topContainer {
+    z-index: 100;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap; /* Wrap items if needed on very small screens */
+    height: min-content;
+    margin-left: 0;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    width: 100%;
+  }
+
+  .largeview {
+    flex-direction: row; /* Ensure horizontal alignment */
+  }
+
+  .inputBox {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0px;
+  }
+  
+  .inputBox input {
+    padding: 0.5rem;
+  }
+  
+  .profileContainer .go-pro-btn {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .bars {
+    padding: 1rem;
+  }
+  
+  .searchbtn {
+    top: 18px;
+  }
+}
+@media screen and (max-width:360px){
+  .profileContainer{
+    display: flex;
+    flex-direction: column;
+  }
+}
+/* Additional styles */
+.nav-item a span {
+  white-space: nowrap;
+  color: white;
+}
+
+.nav-item a:hover span {
+  color: #cf00a3; /* Pink color on hover */
+}
+
+#list li {
+  flex-shrink: 0; /* Prevent items from shrinking */
+}
+
+.bars {
+  display: none;
 }

@@ -20,6 +20,7 @@ function MainContainer() {
   const [projectSubDropdownOpen, setProjectSubDropdownOpen] = useState(false);
   const [developerSubDropdownOpen, setDeveloperSubDropdownOpen] = useState(false); // State for Developer sub-dropdown
   const [nameDropdownOpen, setNameDropdownOpen] = useState(false);
+  const [sortCriteria, setSortCriteria] = useState({key:"name", order: "asc"});
 
   const uploadImageHandler = () => {
     imageUploadInputRef?.current?.click();
@@ -57,9 +58,9 @@ function MainContainer() {
     setDeveloperSubDropdownOpen(!developerSubDropdownOpen); // Toggle Developer sub-dropdown
   };
 
-  const toggleNameDropdown = () => {
+   const toggleNameDropdown = () => {
     setNameDropdownOpen(!nameDropdownOpen);
-  };
+   };
 
   // Close dropdowns if clicked outside
   useEffect(() => {
@@ -78,6 +79,26 @@ function MainContainer() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+
+  const handleSortChange = (key, order) => {
+    setSortCriteria({ key, order });
+  };
+
+  const sortProjects = (projects) => {
+    return projects.sort((a, b) => {
+      if (sortCriteria.key === 'name') {
+        if (sortCriteria.order === 'asc') {
+          return a.title.localeCompare(b.title);
+        } else {
+          return b.title.localeCompare(a.title);
+        }
+      } else if (sortCriteria.key === 'hearts') {
+        return b.hearts - a.hearts; // descending order for hearts
+      }
+      return 0;
+    });
+  };
 
   return (
     <div className="maincontainer">
@@ -206,12 +227,11 @@ function MainContainer() {
                   <button className="dropdown-item" onClick={toggleNameDropdown}>
                     Name
                   </button>
-                  <button className="dropdown-item">Role</button>
-                  <button className="dropdown-item">Hearts</button>
+                  <button className="dropdown-item" onClick={() => handleSortChange("hearts", "desc")}>Hearts</button>
                   {nameDropdownOpen && (
                     <div className="sub-dropdown">
-                      <button className="dropdown-item">Ascending</button>
-                      <button className="dropdown-item">Descending</button>
+                      <button className="dropdown-item" onClick={() => handleSortChange("name", "asc")}>Ascending</button>
+                      <button className="dropdown-item" onClick={() => handleSortChange("name", "desc")}>Descending</button>
                     </div>
                   )}
                 </div>
@@ -221,7 +241,7 @@ function MainContainer() {
 
           <main className="fromBottom">
             {activeButton === "Feed" ? (
-              <CardMain />
+              <CardMain sortProjects={sortProjects}/>
             ) : (
               <Popular />
             )}

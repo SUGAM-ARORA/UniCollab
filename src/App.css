@@ -31,9 +31,31 @@
   color: #19162c ;
 }
 
+.a-feedback-btn{ 
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000; 
+}
+.feedback-btn{
+  background-color: #ff21bc;
+  font-size: 17px; 
+  width: 180px;
+  height: 45px;
+  padding: 0;
+  border: none;
+  border-radius: 5px;
+}
+
 @media only screen and (max-width: 525px) {
   .App-content {
     flex-direction: column;
+  }
+  .feedback-btn{
+    font-size: 13px;
+    width: 100%;
+    height: auto;
+    padding: 10px;
   }
 }
 /* Animations */

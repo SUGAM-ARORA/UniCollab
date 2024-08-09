@@ -164,7 +164,7 @@ const features = [
 },
 ];
 
-function CardMain() {
+function CardMain({sortProjects}) {
   const [isVisible, setIsVisible] = useState(
     new Array(features.length).fill(false)
   );
@@ -210,13 +210,15 @@ function CardMain() {
     });
   };
 
+  const sortedProjects = sortProjects([...features]);
+
   return (
     <div
       className="card"
       ref={containerRef}
       style={{ overflowY: "auto", maxHeight: "100vh" }}
     >
-      {features.map((project, index) => (
+      {sortedProjects.map((project, index) => (
         <div className="card_main" key={index}>
           <img
             src={project.img}
