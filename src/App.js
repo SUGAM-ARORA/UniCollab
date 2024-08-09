@@ -34,36 +34,40 @@ import {createContext, useEffect, useState} from "react";
 export const ThemeContext = createContext(null)
 function App() {
 
+    const getTheme = ()=>{
+        return  localStorage.getItem("theme")
+    }
 
-    const [theme, setTheme] = useState('dark')
+    const [theme, setTheme] = useState(getTheme)
 
-    useEffect(() => {
-        const saveItem = localStorage.getItem("theme")
-        if(saveItem){
-            setTheme(saveItem)
-        }else {
-            const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
-            setTheme(defaultTheme)
-        }
-        const bckground = document.getElementById("container")
-        if(bckground){
-            bckground.classList.add(theme)
-        }
-        // console.log(bckground.className)
-    }, []);
+    // useEffect(() => {
+    //     const saveItem = localStorage.getItem("theme")
+    //     if(saveItem) {
+    //         setTheme(saveItem)
+    //     }
+    //     // else {
+    //     //     const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
+    //     //     setTheme(defaultTheme)
+    //     // }
+    //     // const bckground = document.getElementById("container")
+    //     // if(bckground){
+    //     //     bckground.classList.add(theme)
+    //     // }
+    //     // console.log(bckground.className)
+    // }, []);
 
     useEffect(()=>{
-        const bckground = document.getElementById("container")
-        let existingTheme = bckground?.className
-        // let existingTheme = existingClass.trim().split(' ')
-        existingTheme = existingTheme?.substring(0,existingTheme.lastIndexOf(' '))
-        console.log(existingTheme)
-        if(bckground){
-            bckground.setAttribute('class' , `${existingTheme} ${theme}`)
-        }
-        // console.log(existingClass)
-
         localStorage.setItem("theme" , theme)
+        // const bckground = document.getElementById("container")
+        // let existingTheme = bckground?.className
+        // // let existingTheme = existingClass.trim().split(' ')
+        // existingTheme = existingTheme?.substring(0,existingTheme.lastIndexOf(' '))
+        // console.log(existingTheme)
+        // if(bckground){
+        //     bckground.setAttribute('class' , `${existingTheme} ${theme}`)
+        // }
+        // // console.log(existingClass)
+
     },[theme])
 
     const toggleTheme = () => {

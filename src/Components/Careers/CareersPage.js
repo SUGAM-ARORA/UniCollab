@@ -1,33 +1,38 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faRocket, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './careers.css'
 import homeIcon from '../../img/homeicon.png';
 import { Link } from 'react-router-dom';
+import {ThemeContext} from "../../App";
 
 
-const careers = () => {
+
+const Careers = () => {
   const handleResume = () => {
     var link = "mailto:abc@unicollab.com"
     window.location.href = link;
   }
+
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <>
+    <div className={theme}>
       <Link to="/">
         <img src={homeIcon} alt="Home" className="home-icon" />
       </Link>
       <div className='body'>
 
         <div className="container1Careers">
-          <div className="headingCareers1">Let's build from here, together</div>
-          <div className='descriptionCareers1'>Join our team and accelerate human progress through innovative developer collaboration.</div>
+          <div className={`headingCareers1 ${theme}`}>Let's build from here, together</div>
+          <div className={`descriptionCareers1 ${theme}`}>Join our team and accelerate human progress through innovative developer collaboration.</div>
           <div className="searchCareers1">
             <input type="text" placeholder='Search for jobs by keyword' />
             <button>Search</button>
           </div>
         </div>
         <div className="container3Careers">
-          <div className="headingCareers2"><span className='textCareers'>Who we are.</span> What we believe.</div>
+          <div className={`headingCareers2 ${theme}`}><span className='textCareers'>Who we are.</span> What we believe.</div>
           <div className="boxes2Careers">
             <div className="box2aCareers">
               <div className="Careers2aa">
@@ -35,14 +40,14 @@ const careers = () => {
                   <FontAwesomeIcon icon={faRocket} style={{ color: "#ffffff", fontSize: "30px" }} />
                   <span className='text2Careers'>What</span>
                 </div>
-                <div className="Careeers2abdesc">The premier developer platform for fostering collaboration and innovation.</div>
+                <div className={`Careeers2abdesc ${theme}`}>The premier developer platform for fostering collaboration and innovation.</div>
               </div>
               <div className="Careers2aa">
                 <div className="Careers2abHeading">
                   <FontAwesomeIcon icon={faSearch} style={{ color: "#ffffff", fontSize: "30px" }} />
                   <span className='text2Careers'>Why</span>
                 </div>
-                <div className="Careeers2abdesc">Accelerate human progress through developer collaboration.</div>
+                <div className={`Careeers2abdesc ${theme}`}>Accelerate human progress through developer collaboration.</div>
               </div>
             </div>
             <div className="box2bCareers">
@@ -51,54 +56,54 @@ const careers = () => {
                   <FontAwesomeIcon icon={faHeart} style={{ color: "#ffffff", fontSize: "30px" }} />
                   <span className='text2Careers'>How</span>
                 </div>
-                <div className="Careeers2abdesc">Our values guide our interactions, decision-making, and how we engage with each other.</div>
+                <div className={`Careeers2abdesc ${theme}`}>Our values guide our interactions, decision-making, and how we engage with each other.</div>
               </div>
             </div>
           </div>
           <div className="boxes3Careers">
             <div className="boxes3aCareers">
-              <div className="headingCareers3">UniCollab Values</div>
+              <div className={`headingCareers3 ${theme}`}>UniCollab Values</div>
               <div className="box3adesc">
-                <ul>
-                  <li>Students-obsessed</li>
-                  <li>Ship to learn</li>
-                  <li>Growth mindset</li>
-                  <li>Own the outcome</li>
-                  <li>Better together</li>
-                  <li>Diverse and inclusive</li>
+                <ul >
+                  <li className={theme}>Students-obsessed</li>
+                  <li className={theme}>Ship to learn</li>
+                  <li className={theme}>Growth mindset</li>
+                  <li className={theme}>Own the outcome</li>
+                  <li className={theme}>Better together</li>
+                  <li className={theme}>Diverse and inclusive</li>
                 </ul>
               </div>
             </div>
             <div className="boxes3aCareers">
-              <div className="headingCareers3">Manager fundamentals</div>
+              <div className={`headingCareers3 ${theme}`}>Manager fundamentals</div>
               <div className="box3adesc">
                 <ul>
-                  <li>Model</li>
-                  <li>Coach</li>
-                  <li>Care</li>
+                  <li className={theme}>Model</li>
+                  <li className={theme}>Coach</li>
+                  <li className={theme}>Care</li>
                 </ul>
               </div>
             </div>
             <div className="boxes3aCareers">
-              <div className="headingCareers3">Leadership principles</div>
+              <div className={`headingCareers3 ${theme}`}>Leadership principles</div>
               <div className="box3adesc">
                 <ul>
-                  <li>Create clarity</li>
-                  <li>Generate energy</li>
-                  <li>Deliver success</li>
+                  <li className={theme}>Create clarity</li>
+                  <li className={theme}>Generate energy</li>
+                  <li className={theme}>Deliver success</li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div className="container2Careers">
-          <div className="headingCareers2"><span className='textCareers'>UniCollab</span> is where the future works</div>
-          <div className="descriptionCareers2">Every day, we refine, iterate, and explore ways to improve work for everyone. Join us in creating a better future of work—one that is more connected, inclusive, and flexible.</div>
+          <div className={`headingCareers2 ${theme}`}><span className='textCareers'>UniCollab</span> is where the future works</div>
+          <div className={`descriptionCareers2 ${theme}`}>Every day, we refine, iterate, and explore ways to improve work for everyone. Join us in creating a better future of work—one that is more connected, inclusive, and flexible.</div>
           <div className="boxes1Careers">
             <div className="box1Careers">
-              <svg fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><g stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="m29.976 46.4039c9.0928 0 16.464-7.3711 16.464-16.4639 0-9.0929-7.3712-16.464-16.464-16.464s-16.464 7.3711-16.464 16.464c0 9.0928 7.3712 16.4639 16.464 16.4639z"></path><path d="m26.46 1.52405h-21.396c-1.93521 0-3.504 1.56879-3.504 3.504v21.39595c0 1.9353 1.56879 3.504 3.504 3.504h21.396c1.9352 0 3.504-1.5687 3.504-3.504v-21.39595c0-1.93521-1.5688-3.504-3.504-3.504z"></path></g></svg>
-              <div className="headingCareers3">Connected</div>
-              <div className="descriptionCareers3">We come together wherever we are - across time zones, regions, offices and screens.</div>
+              <svg  fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg"><g stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"><path d="m29.976 46.4039c9.0928 0 16.464-7.3711 16.464-16.4639 0-9.0929-7.3712-16.464-16.464-16.464s-16.464 7.3711-16.464 16.464c0 9.0928 7.3712 16.4639 16.464 16.4639z"></path><path d="m26.46 1.52405h-21.396c-1.93521 0-3.504 1.56879-3.504 3.504v21.39595c0 1.9353 1.56879 3.504 3.504 3.504h21.396c1.9352 0 3.504-1.5687 3.504-3.504v-21.39595c0-1.93521-1.5688-3.504-3.504-3.504z"></path></g></svg>
+              <div className={`headingCareers3 ${theme}`}>Connected</div>
+              <div className={`descriptionCareers3 ${theme}`}>We come together wherever we are - across time zones, regions, offices and screens.</div>
             </div>
             <div className="box1Careers">
               <svg width="48" height="48" fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
@@ -108,8 +113,8 @@ const careers = () => {
                 <path d="m39.92 26.94a3.69 3.69 0 0 0 -3.7-3.2 5.81 5.81 0 0 0 -2.48.64v-7.5a3.71 3.71 0 0 0 -2.88-3.65 3.82 3.82 0 0 0 -.89-.07 3.64 3.64 0 0 0 -6.2.27 3.82 3.82 0 0 0 -.85.13v-1.8a3.72 3.72 0 0 0 -3.05-3.68h-.11a3.64 3.64 0 0 0 -3.58-3.31 3.64 3.64 0 0 0 -6.18-.29 4.53 4.53 0 0 0 -.89.08 3.7 3.7 0 0 0 -2.9 3.65v7.5a5.88 5.88 0 0 0 -2.48-.64 3.69 3.69 0 0 0 -3.73 3.19 3.85 3.85 0 0 0 3.1 4.23c1.12.31 3.42 2.71 4.65 4.31a8.34 8.34 0 0 0 7.3 3.51 8 8 0 0 0 2-.37v.48a8.49 8.49 0 0 0 7.85 8.58h.49a8.37 8.37 0 0 0 6.8-3.52c1.42-1.85 3.6-4 4.66-4.32a3.85 3.85 0 0 0 3.07-4.22zm-37.7-8.38a1.49 1.49 0 0 1 1.51-1.29 6.56 6.56 0 0 1 3.12 1.38 1 1 0 0 0 1 .07 1 1 0 0 0 .54-.89v-9.62a1.5 1.5 0 0 1 1.17-1.5 1 1 0 0 1 .39 0v8.29a1 1 0 0 0 2 0v-9.47a1.43 1.43 0 0 1 2-.08v9.76a1 1 0 1 0 2 0v-8.21a1.57 1.57 0 0 1 .53 0 1.37 1.37 0 0 1 1 .8v6.86a1 1 0 1 0 2 0v-4.42h.12a1.49 1.49 0 0 1 1.18 1.5v3.46a3.66 3.66 0 0 0 -.52 1.54l-.29.05a3.71 3.71 0 0 0 -2.97 3.65v7.15a6 6 0 0 1 -2.11.52h-.36a6.15 6.15 0 0 1 -5-2.62c-.14-.18-3.42-4.46-5.84-5.14-1.22-.35-1.56-1.14-1.47-1.79zm17 1.88a1.5 1.5 0 0 1 1.12-1.5v5.94a1 1 0 1 0 2 0v-7.8a1.43 1.43 0 0 1 1.44-1.44h.21v9.22a1 1 0 1 0 2 0v-10.75a1.44 1.44 0 0 1 1.79-.06v10.83a1 1 0 1 0 2 0v-9.49a1.57 1.57 0 0 1 .61 0 1.5 1.5 0 0 1 1.13 1.49v9.63a1 1 0 0 0 1 1 1 1 0 0 0 .56-.18 6.45 6.45 0 0 1 3.12-1.39 1.49 1.49 0 0 1 1.51 1.3c.09.64-.25 1.46-1.47 1.8-2.42.67-5.7 5-5.84 5.14a6.15 6.15 0 0 1 -5.4 2.61 6.28 6.28 0 0 1 -5.79-6.37z" fill="#FFF"></path>
               </svg>
 
-              <div className="headingCareers3">Inclusive</div>
-              <div className="descriptionCareers3">Our teams reflect the rich diversity of our world, with equitable access to opportunity for everyone.</div>
+              <div className={`headingCareers3 ${theme}`}>Inclusive</div>
+              <div className={`descriptionCareers3 ${theme}`}>Our teams reflect the rich diversity of our world, with equitable access to opportunity for everyone.</div>
             </div>
             <div className="box1Careers">
               <svg fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
@@ -126,8 +131,8 @@ const careers = () => {
                 </g>
               </svg>
 
-              <div className="headingCareers3">Flexible</div>
-              <div className="descriptionCareers3">We believe in your freedom to work when and how you work best, to help us all thrive.</div>
+              <div className={`headingCareers3 ${theme}`}>Flexible</div>
+              <div className={`descriptionCareers3 ${theme}`}>We believe in your freedom to work when and how you work best, to help us all thrive.</div>
             </div>
           </div>
         </div>
@@ -142,30 +147,30 @@ const careers = () => {
           </div>
         </div>
         <div className="container5Careers">
-          <div className="headingCareers2"><span className='textCareers'>Open</span> Positions</div>
-          <div className='descriptionCareers1'>Explore our open roles for working totally remotely, from the office or somewhere in between.</div>
+          <div className={`headingCareers2 ${theme}`}><span className='textCareers'>Open</span> Positions</div>
+          <div className={`descriptionCareers1 ${theme}`}>Explore our open roles for working totally remotely, from the office or somewhere in between.</div>
           <div className="openingsCareers">
             <div className="openCareers">
-              <span>1. Software Engineer</span>
-              <span>-</span>
-              <span className='location'>Mumbai, India / Remote</span>
+              <span className={theme}>1. Software Engineer</span>
+              <span className={theme}>-</span>
+              <div className={`location ${theme}`}>Mumbai, India / Remote</div>
             </div>
             <div className="openCareers">
-              <span>2. Graphic Designer</span>
-              <span>-</span>
-              <span className='location'>Gurgaon, India / Remote</span>
+              <span className={theme} >2. Graphic Designer</span>
+              <span className={theme}>-</span>
+              <div className={`location ${theme}`}>Gurgaon, India / Remote</div>
             </div>
             <div className="openCareers">
-              <span>3. Data Analyst</span>
-              <span>-</span>
-              <span className='location'>Banglore, India / Remote</span>
+              <span className={theme}>3. Data Analyst</span>
+              <span className={theme}>-</span>
+              <div className={`location ${theme}`}>Banglore, India / Remote</div>
             </div>
           </div>
         </div>
         <button className='submitCareers' onClick={handleResume}>Send Your Job-Application @UniCollab</button>
       </div>
-    </>
+    </div>
   )
 }
 
-export default careers
+export default Careers

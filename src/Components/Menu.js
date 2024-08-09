@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useContext, useEffect, useState} from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
@@ -16,6 +16,7 @@ import {
     FaCoffee, // New icon for sidebar open
     FaBeer, // New icon for sidebar closed
 } from "react-icons/fa";
+import {ThemeContext} from "../App";
 
 function Menu() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -49,10 +50,12 @@ function Menu() {
     }, 3000);
   };
 
+  const { theme } = useContext(ThemeContext)
+
   return (
     <>
       <div
-        className={`sidebar ${sidebarOpen ? 'open' : ''}`}
+        className={`sidebar ${sidebarOpen ? 'open' : ''} ${theme}`}
         style={{
           width: '220px', // Adjusted width to fit the logo properly
           height: '100%',
@@ -62,7 +65,7 @@ function Menu() {
           background: '#19162c',
           color: 'white',
           transition: '0.3s',
-          zIndex: '1000',
+          zIndex: '10000',
         }}
       >
         <div
@@ -97,7 +100,7 @@ function Menu() {
           ].map((item, index) => (
             <li key={index} style={{ padding: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
               <Link to={item.to} onClick={item.onClick} style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
-                {item.icon}
+                  {item.icon}
                 <span className="tooltip" style={{ marginLeft: '10px', fontSize: '1.1rem', color: 'white' }}>{item.text}</span>
               </Link>
             </li>
@@ -140,7 +143,7 @@ function Menu() {
           color: 'white',
           fontSize: '1.5rem',
           cursor: 'pointer',
-          zIndex: '1100',
+          zIndex: '110000',
           marginLeft: '-15px',
         }}
       >

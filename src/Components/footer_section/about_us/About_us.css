@@ -37,7 +37,9 @@
     border-radius: 8px;
     margin-bottom: 21px;
     color: #F5F5DC;
+    background: #19162c !important;
 }
+
 
 .about-us-community {
     /* border: 2px solid rgba(128, 100, 162, 1);
@@ -50,7 +52,7 @@
 .about-us-community:hover {
     /* background: rgba(128, 100, 162, 1); */
     /* background: #6d469f; */
-    background: #3228a7;
+    background: #3228a7 !important;
     color: white;
 }
 
@@ -65,7 +67,7 @@
 .about-us-location:hover {
     /* background: rgba(128, 100, 162, 1); */
     /* background: #6d469f; */
-    background: #3228a7;
+    background: #3228a7 !important;
     color: white;
 }
 
@@ -79,7 +81,7 @@
 .about-us-product:hover {
     /* background: rgba(128, 100, 162, 1); */
     /* background: #6d469f; */
-    background: #3228a7;
+    background: #3228a7 !important;
     color: white;
 }
 
@@ -93,7 +95,7 @@
 .about-us-event:hover {
     /* background: rgba(128, 100, 162, 1); */
     /* background: #6d469f; */
-    background: #3228a7;
+    background: #3228a7 !important;
     color: white;
 }
 

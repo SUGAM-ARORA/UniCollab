@@ -148,3 +148,7 @@ button:hover {
         font-size: 40px;
     }
 }
+
+.light .formFeedback label{
+    color: #000000 !important;
+}

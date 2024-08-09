@@ -252,7 +252,6 @@ const LogIn = () => {
       displayAlert('Invalid OTP. Please try again.');
     }
   };
-
   return (
     <div className={`container1 ${isSignUpMode ? 'sign-up-mode' : ''}`}>
       <div className="forms-container">

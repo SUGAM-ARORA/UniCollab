@@ -1,16 +1,15 @@
-import { FaPlus } from 'react-icons/fa';
+import {FaPlus} from 'react-icons/fa';
 import Menu from '../../Menu';
 import './MyProjects.css'
-import { Link } from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import Card1 from "../../../img/card1.jpg";
 import Card2 from "../../../img/card2.jpg";
 import Card3 from "../../../img/card3.jpg";
 import Card4 from "../../../img/card4.jpg";
-import Card5 from "../../../img/card5.jpg";
-import Card6 from "../../../img/card6.jpg";
-import CardMain from '../../CardMain';
-import { BsHeartFill } from 'react-icons/bs';
+import {BsHeartFill} from 'react-icons/bs';
 import homeIcon from '../../../img/homeicon.png';
+import {useContext} from "react";
+import {ThemeContext} from "../../../App";
 
 
 const SampleData = [
@@ -57,17 +56,22 @@ const SampleData = [
 ]
 
 function MyProjects({showMenu = true}) {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
-        <div className="container my-projects-wrapper">
-            {showMenu && <Menu />}
+        <div className={`container my-projects-wrapper ${theme}`}>
+            {showMenu && <Menu/>}
             <div className="content">
                 <div className='top fromTop'>
                     <h1>My Projects</h1>
-                    <Link to='/new/project'><button><FaPlus size={15} /> New Project</button></Link>
+                    <Link to='/new/project'>
+                        <button><FaPlus size={15}/> New Project</button>
+                    </Link>
                 </div>
                 <Link to="/">
-  <img src={homeIcon} alt="Home" className="home-icon" style={{ marginLeft: '300px' }} />
-</Link>
+                    <img src={homeIcon} alt="Home" className="home-icon" style={{marginLeft: '300px'}}/>
+                </Link>
 
                 <div className='projects-wrapper zoomIn'>
 
@@ -95,24 +99,31 @@ function MyProjects({showMenu = true}) {
 export default MyProjects;
 
 
-function MyProjectCard({ project }) {
+function MyProjectCard({project}) {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
-        <div className='project-card'>
-            <img src={project.image} alt={project.name} />
+        <div className={`project-card ${theme}`}>
+            <img src={project.image} alt={project.name}/>
             <div className='details'>
                 <div className="top">
                     <h2>{project.name}</h2>
                     <div className="likes">
                         <i>
-                            <BsHeartFill /> <span>{project.noOfHearts}</span>
+                            <BsHeartFill/> <span>{project.noOfHearts}</span>
                         </i>
                     </div>
                 </div>
                 <p>{project.description.substring(0, 75)}...</p>
                 <small>{project.uploadedDate}</small>
                 <div className="btn-wrapper">
-                    <Link to="/"><button className='edit-btn'>Edit</button></Link>
-                    <Link to={project.github}><button className='github-btn'>GitHub</button></Link>
+                    <Link to="/">
+                        <button className='edit-btn'>Edit</button>
+                    </Link>
+                    <Link to={project.github}>
+                        <button className='github-btn'>GitHub</button>
+                    </Link>
                 </div>
             </div>
 

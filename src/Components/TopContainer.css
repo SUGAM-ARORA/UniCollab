@@ -130,6 +130,10 @@
   display: none;
 }
 
+.profileIcon{
+  background: #19162c !important;
+}
+
 @media screen and (max-width: 1500px) {
   .mobview {
     display: flex;
@@ -286,4 +290,9 @@
     width: auto;
 
   }
+}
+
+.light .notification-container div{
+  background: #F3CFC6;
+  color: #000000 !important;
 }

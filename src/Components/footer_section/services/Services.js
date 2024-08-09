@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './Services.css';
 import { Link } from 'react-router-dom';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import homeIcon from '../../../img/homeicon.png';
+import {ThemeContext} from "../../../App";
 
 const services = [
     {
@@ -42,12 +43,14 @@ const Services = () => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <div className="services-page">
+        <div className={`services-page ${theme}`}>
             <Link to="/">
                 <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
-            <h1>Our Services</h1>
+            <h1 className={theme}>Our Services</h1>
             <div className="services">
                 {services.map((service, index) => (
                     <React.Fragment key={index}>
@@ -61,7 +64,7 @@ const Services = () => {
                             </h2>
                             <p className="date"></p>
                         </div>
-                        <div className={`content ${activeIndex === index ? 'expand' : ''}`}>
+                        <div className={`content ${theme} ${activeIndex === index ? 'expand' : ''}`}>
                             {activeIndex === index ? service.content : ''}
                         </div>
                     </React.Fragment>

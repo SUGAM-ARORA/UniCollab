@@ -83,3 +83,8 @@ body {
   justify-content: flex-end; /* Aligns content (button) to the right */
   padding: 10px; /* Optional padding for the container */
 }
+
+.light .card{
+  background: #F3CFC6 !important;
+  color: #000000 !important;
+}

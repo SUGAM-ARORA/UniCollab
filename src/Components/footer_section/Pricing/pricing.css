@@ -81,6 +81,7 @@ li {
     opacity: 0;
     animation: slideUp 1s ease-in-out forwards;
     animation-delay: 1.5s;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
 .price2 {
@@ -187,4 +188,9 @@ li {
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+.light .cards_price div , .light .cards_price li{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
 }

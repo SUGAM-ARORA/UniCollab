@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import "./Settings.css";
 import { Link } from "react-router-dom";
 import homeIcon from '../../img/homeicon.png';
+import {ThemeContext} from "../../App";
 
 const SettingsPage = () => {
   const [activeTab, setActiveTab] = useState("profile");
+
+  const {theme} = useContext(ThemeContext)
 
   const renderTabContent = () => {
     switch (activeTab) {
       case "profile":
         return (
-          <div className="profile-settings settings-content">
+          <div className={`profile-settings settings-content ${theme}`}>
             <h2>Profile Settings</h2>
             <div className="form-group">
               <label htmlFor="username">Username</label>
@@ -29,7 +32,7 @@ const SettingsPage = () => {
         );
       case "account":
         return (
-          <div className="account-settings settings-content">
+          <div className={`account-settings settings-content ${theme}`}>
             <h2>Account Settings</h2>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -52,7 +55,7 @@ const SettingsPage = () => {
         );
       case "notifications":
         return (
-          <div className="notification-settings settings-content">
+          <div className={`notification-settings settings-content ${theme}`}>
             <h2>Notification Settings</h2>
             <div className="form-group checkbox-group">
               <label htmlFor="emailNotifications">Email Notifications</label>
@@ -71,7 +74,7 @@ const SettingsPage = () => {
         );
       case "privacy":
         return (
-          <div className="privacy-settings settings-content">
+          <div className={`privacy-settings settings-content ${theme}`}>
             <h2>Privacy Settings</h2>
             <div className="form-group">
               <label htmlFor="profileVisibility">Profile Visibility</label>
@@ -93,7 +96,7 @@ const SettingsPage = () => {
         );
       case "collaboration":
         return (
-          <div className="collaboration-settings settings-content">
+          <div className={`collaboration-settings settings-content ${theme}`}>
             <h2>Collaboration Settings</h2>
             <div className="form-group">
               <label htmlFor="inviteCollab">Invite to Collaborate</label>
@@ -115,7 +118,7 @@ const SettingsPage = () => {
         );
       case "application":
         return (
-          <div className="application-settings settings-content">
+          <div className={`application-settings settings-content ${theme}`}>
             <h2>Application Settings</h2>
             <div className="form-group">
               <label htmlFor="theme">Theme</label>
@@ -137,7 +140,7 @@ const SettingsPage = () => {
         );
       case "helpSupport":
         return (
-          <div className="help-support settings-content">
+          <div className={`help-support settings-content ${theme}`}>
             <h2>Help & Support</h2>
             <ul>
               <li className="help-support-list">FAQ</li>
@@ -159,7 +162,7 @@ const SettingsPage = () => {
         );
       case "legal":
         return (
-          <div className="legal-settings settings-content">
+          <div className={`legal-settings settings-content ${theme}`}>
             <h2>Legal Settings</h2>
             <ul>
               <li>Privacy Policy</li>
@@ -174,7 +177,7 @@ const SettingsPage = () => {
   };
 
   return (
-    <div className="settings">
+    <div className={`settings ${theme}`}>
       <div className="settings-header">
         <Link to="/">
           <img src={homeIcon} alt="Home" className="home-icon" />
