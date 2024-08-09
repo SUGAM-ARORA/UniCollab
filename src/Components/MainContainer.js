@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import DefaultBanner from "../img/1.jpg";
 import CardMain from "./CardMain";
-import Popular from "./Popular"; // Correctly import Popular component
+import Popular from "./Popular";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
@@ -11,10 +11,14 @@ const MAX_IMAGE_SIZE = 2185200; // 2MB
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
   const dropdownRef = useRef(null);
+  const typeDropdownRef = useRef(null);
   const [banner, setBanner] = useState(DefaultBanner);
   const [activeButton, setActiveButton] = useState("Feed");
   const [activeFilterButton, setActiveFilterButton] = useState("All");
   const [sortByOpen, setSortByOpen] = useState(false);
+  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
+  const [projectSubDropdownOpen, setProjectSubDropdownOpen] = useState(false);
+  const [developerSubDropdownOpen, setDeveloperSubDropdownOpen] = useState(false); // State for Developer sub-dropdown
   const [nameDropdownOpen, setNameDropdownOpen] = useState(false);
 
   const uploadImageHandler = () => {
@@ -37,21 +41,37 @@ function MainContainer() {
     setActiveFilterButton(buttonName);
     if (buttonName === "Sort By") {
       setSortByOpen(!sortByOpen);
+    } else if (buttonName === "Type") {
+      setTypeDropdownOpen(!typeDropdownOpen);
     } else {
       setSortByOpen(false);
+      setTypeDropdownOpen(false);
     }
+  };
+
+  const toggleProjectSubDropdown = () => {
+    setProjectSubDropdownOpen(!projectSubDropdownOpen);
+  };
+
+  const toggleDeveloperSubDropdown = () => {
+    setDeveloperSubDropdownOpen(!developerSubDropdownOpen); // Toggle Developer sub-dropdown
   };
 
   const toggleNameDropdown = () => {
     setNameDropdownOpen(!nameDropdownOpen);
   };
 
-  // Close dropdown if clicked outside
+  // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setSortByOpen(false);
         setNameDropdownOpen(false);
+      }
+      if (typeDropdownRef.current && !typeDropdownRef.current.contains(event.target)) {
+        setTypeDropdownOpen(false);
+        setProjectSubDropdownOpen(false);
+        setDeveloperSubDropdownOpen(false); // Close Developer sub-dropdown
       }
     };
 
@@ -140,6 +160,37 @@ function MainContainer() {
               >
                 Type
               </button>
+              {typeDropdownOpen && (
+                <div className="dropdown" ref={typeDropdownRef}>
+                  <button className="dropdown-item" onClick={toggleProjectSubDropdown}>
+                    Project
+                  </button>
+                  {projectSubDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">StockIT</button>
+                      <button className="dropdown-item">TakeNote</button>
+                      <button className="dropdown-item">TaRct</button>
+                      <button className="dropdown-item">To Do</button>
+                      <button className="dropdown-item">ArchiTect</button>
+                      <button className="dropdown-item">WeatherLy</button>
+                      <button className="dropdown-item">TypingTest</button>
+                      <button className="dropdown-item">Artisan</button>
+                      <button className="dropdown-item">ChrisClark</button>
+                      <button className="dropdown-item">ChrisMiller</button>
+                      <button className="dropdown-item">SearchEngine</button>
+                      <button className="dropdown-item">AIimage</button>
+                    </div>
+                  )}
+                  <button className="dropdown-item" onClick={toggleDeveloperSubDropdown}>
+                    Developer
+                  </button>
+                  {developerSubDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">X</button>
+                    </div>
+                  )}
+                </div>
+              )}
               <button
                 className="button2"
                 onClick={() => toggleFilterButtonHandler("Sort By")}
@@ -172,7 +223,7 @@ function MainContainer() {
             {activeButton === "Feed" ? (
               <CardMain />
             ) : (
-              <Popular /> // Use the Popular component here
+              <Popular />
             )}
           </main>
         </div>

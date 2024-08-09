@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import homeIcon from '../../img/homeicon.png';
 import carticon from './12.png';
 import Card1 from "../../img/card1.jpg";
@@ -8,7 +8,6 @@ import Card3 from "../../img/card3.jpg";
 import Card4 from "../../img/card4.jpg";
 import Card5 from "../../img/card5.jpg";
 import Card6 from "../../img/card6.jpg";
-import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
   const initialItems = [
@@ -214,9 +213,9 @@ const Cart = () => {
 `}</style>
 
       <div className="cart-top">
-        <a href="/index.html">
+        <Link to="/cart2">
           <img src={carticon} className="cart-icon" alt="Cart Icon" />
-        </a>
+        </Link>
         <span className="cart-count">{cartCount}</span>
       </div>
       <div className="card-container">

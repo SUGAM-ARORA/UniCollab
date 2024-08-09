@@ -540,6 +540,29 @@
   text-decoration: underline;
 }
 
+.dropdown {
+  position: absolute;
+  background-color: #19162c;
+  gap:0px;
+  z-index: 1000; /* Make sure dropdown appears above other elements */
+  width: 100px;
+  border-radius: 5px;
+}
+
+.sub-dropdown{
+  position: absolute;
+  background-color: #19162c;
+  z-index: 1000; /* Make sure dropdown appears above other elements */
+  width: 100px;
+  gap:0px;
+  border-radius: 5px;
+}
+.dropdown-item{
+  width: 150px;
+  z-index: 1000;
+  gap:0px;
+}
+
 .contBox {
   position: relative;
   top: -290px;
