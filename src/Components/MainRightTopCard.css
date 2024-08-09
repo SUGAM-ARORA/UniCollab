@@ -7,4 +7,19 @@
     background-color: #cf00a3;
     color: white;
   }
+
+
+  .topCard, .bottom_card{
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .light .topCard p, .light .topCard h2{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
+  }
+
+  .light .bottom_card div, .light .bottom_card h2, .light .bottom_card p{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
+  }
   
