@@ -23,8 +23,8 @@
   margin-inline: 20px;
   margin-left: 40px;
   z-index: 999999999;
-  top: 20px;
-  left : 30px;
+  top: 10px;
+  left : 20px;
 }
 
 .profileContainer .go-pro-btn {
@@ -243,6 +243,8 @@
     width: 80vw;
   }
 
+
+
   .profileIconlogin {
     width: 140px !important;
     font-size: 12px !important;
@@ -252,6 +254,10 @@
 @media (max-width: 525px) {
   .topContainer {
     z-index: 100;
+  }
+
+  .lightbutton{
+    position: absolute;
   }
 
   .navbar {
