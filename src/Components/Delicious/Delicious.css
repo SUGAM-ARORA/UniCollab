@@ -78,4 +78,9 @@ body {
     color: #555;
     margin-bottom: 5px;
   }
+
+.light .delicious-page header p{
+  background: #F3CFC6 !important;
+  color: #000000 !important;
+}
   

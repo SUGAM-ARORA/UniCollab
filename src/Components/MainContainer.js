@@ -1,10 +1,11 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useRef, useState, useEffect, useContext} from "react";
 import DefaultBanner from "../img/1.jpg";
 import CardMain from "./CardMain";
 import Popular from "./Popular"; // Correctly import Popular component
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
+import {ThemeContext} from "../App";
 
 const MAX_IMAGE_SIZE = 2185200; // 2MB
 
@@ -60,6 +61,8 @@ function MainContainer() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const {theme} = useContext(ThemeContext)
+
 
   const handleSortChange = (key, order) => {
     setSortCriteria({ key, order });
@@ -81,7 +84,7 @@ function MainContainer() {
   };
 
   return (
-    <div className="maincontainer">
+    <div className={`maincontainer ${theme}`}>
       <div className="left">
         <div
           className="banner zoomIn"

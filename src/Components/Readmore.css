@@ -94,3 +94,7 @@
         padding: 30px;
     }
 }
+
+.light .head span , .light .head p, .light .text span{
+    color: #000000 !important;
+}

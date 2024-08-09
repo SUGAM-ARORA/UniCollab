@@ -1,5 +1,6 @@
-import React, { useState } from "react";
-import './MainRightTopCard.css'; // Ensure this is imported
+import React, {useContext, useState} from "react";
+import './MainRightTopCard.css';
+import {ThemeContext} from "../App"; // Ensure this is imported
 
 function MainRightTopCard() {
   const [showMore, setShowMore] = useState(false);
@@ -8,8 +9,10 @@ function MainRightTopCard() {
     setShowMore(!showMore);
   };
 
+  const {theme} = useContext(ThemeContext)
+
   return (
-    <div className="topCard">
+    <div className={`topCard ${theme}`}>
       <div className="topCard_name">
         <h2>Statistics</h2>
         <a href="#" onClick={handleViewMore}>
