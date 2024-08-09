@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, {useState, useEffect, useRef, useContext} from 'react';
 import TopSeller from './TopSeller';
+import {ThemeContext} from "../App";
+import './MainRightTopCard.css';
+
 
 function MainRightBottomCard() {
   const [visibleSellers, setVisibleSellers] = useState(3);
@@ -66,8 +69,10 @@ function MainRightBottomCard() {
     setHoveredSeller(null);
   };
 
+  const {theme} = useContext(ThemeContext)
+
   return (
-    <div className="bottom_card" ref={profileListRef}>
+    <div className={`bottom_card ${theme}`} ref={profileListRef}>
       <div className="bottomCard_name">
         <h2>Top Contributor</h2>
         <a href="#" onClick={handleViewMore}>

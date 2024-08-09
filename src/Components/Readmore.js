@@ -1,21 +1,24 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { useParams } from 'react-router-dom'
 import { features } from './projects'
 import './Readmore.css'
 import { Link } from 'react-router-dom'
 import Arrow from '../Components/projects/arrow.png'
+import {ThemeContext} from "../App";
 
 const Readmore = () => {
     const { id } = useParams();
     const feature = features.find((item) => item.id === parseInt(id));
-  
-    return (
-        <div className='readmore'>
-            <Link className='arrow' to="/"><img src={Arrow} alt="back" /></Link>
-            <div className="title">{feature.title}</div>
-            <div className="image">
-                <img src={feature.img} height={480} alt={feature.title} />
-            </div>
+
+    const {theme} = useContext(ThemeContext)
+
+  return (
+    <div className={`readmore ${theme}`}>
+      <Link className='arrow' to="/"><img src={Arrow} alt="back" /></Link>
+      <div className="title">{feature.title}</div>
+      <div className="image">
+      <img src={feature.img} height={480} alt={feature.title} />
+      </div>
 
             <div className="head">
                 <span className='project-type'>  Type of Project: </span>

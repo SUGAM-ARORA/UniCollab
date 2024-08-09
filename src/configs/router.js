@@ -27,6 +27,7 @@ import ResetPassword from "../Components/auth/resetPassword/ResetPassword";
 import Freelancer from "../Components/FreeLancer/Freelancer";
 import Feedbackform from "../Components/feedback/feedbackform";
 import ShoppingCart from "../Components/cart/cart";
+import ShoppingCart1 from "../Components/cart/cart2.js";
 import Testimonials from "../Components/Testimonials/Testimonials";
 import Contributors from "../Components/Contributors";
 import Wallet from "../Components/wallet/Wallet";
@@ -61,6 +62,7 @@ const router = createBrowserRouter([
   { path: "/freelancer", element: <Freelancer /> },
   { path: "/feedback", element: <Feedbackform /> },
   { path: "/cart", element: <ShoppingCart /> },
+  { path: "/cart2", element: <ShoppingCart1 /> },
   { path: "/testimonials", element: <Testimonials /> },
   { path: "/contributors", element: <Contributors /> },
   { path: "/wallet", element: <Wallet /> },
