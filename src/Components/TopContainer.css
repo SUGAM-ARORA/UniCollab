@@ -29,7 +29,7 @@
 
 /* Individual nav items */
 .largeview .nav-item {
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 /* Nav item links */
@@ -38,6 +38,7 @@
   text-decoration: none;
   transition: color 0.3s ease, font-size 0.3s ease;
   display: flex;
+  gap: 5px;
   align-items: center; /* Center items vertically */
 }
 
