@@ -566,3 +566,8 @@ flex-wrap: wrap;
         font-size: 12px;
     }
 }
+
+.light .body div{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
+}

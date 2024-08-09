@@ -39,7 +39,7 @@
     background-color: #1f1c35;
 }
 .service-post.active * {
-    color: #ff21bc;
+    color: #ff21bc !important;
 }
 .service-post .date {
     font-size: 13px;
@@ -70,4 +70,9 @@
     opacity: 1;
     transform: scaleY(1);
     padding: 20px;
+}
+
+.light .services div, .light .services h2{
+    background: #F3CFC6 !important;
+    color: #000000 ;
 }

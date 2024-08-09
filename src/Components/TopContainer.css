@@ -38,6 +38,7 @@
   margin: 0;
   padding: 0;
   flex-direction: row; /* Ensure horizontal alignment */
+  gap: 7px;
 }
 
 /* Individual nav items */
@@ -66,6 +67,13 @@
   position: relative;
   display: flex;
   align-items: center;
+  margin-left: 10px;
+}
+
+.input-div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .inputBox input {
@@ -81,12 +89,13 @@
 
 /* Search button styles */
 .searchbtn {
-  position: absolute;
+  /*position: absolute;*/
   top: 10px;
-  right: 320px; /* Adjust to align with input padding */
+  /*right: 320px; !* Adjust to align with input padding *!*/
   color: #757380;
   font-size: 1.5rem;
   cursor: pointer; /* Ensure cursor indicates clickable */
+  /*margin-left: 30%;*/
 }
 
 /* Search results container */
@@ -128,6 +137,7 @@
   .navbar {
     width: 80vw; /* Adjust navbar width for smaller screens */
   }
+
 }
 
 @media (max-width: 650px) {
@@ -138,6 +148,10 @@
   .profileIconlogin {
     width: 140px !important;
     font-size: 12px !important;
+  }
+
+  .lightbutton{
+    position: absolute;
   }
 }
 
