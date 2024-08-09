@@ -82,3 +82,8 @@ color: gray;
     flex-direction: column;
     gap: 10px;
 }
+
+.light .project-card h2 , .light .project-card p{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
+}

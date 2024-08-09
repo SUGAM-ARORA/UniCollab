@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './BlogPage.css';
-import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import {FaAngleDown, FaAngleUp} from 'react-icons/fa';
+import {Link} from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
+import {ThemeContext} from "../../../App";
 
 const blogs = [
     {
@@ -45,15 +46,17 @@ const blogs = [
 const BlogPage = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
+    const {theme} = useContext(ThemeContext)
+
     const toggleBlog = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
     return (
-        <div className="blog-page">
+        <div className={`blog-page ${theme}`}>
             <Link to="/">
-            <img src={homeIcon} alt="Home" className="home-icon" />
-        </Link>
+                <img src={homeIcon} alt="Home" className="home-icon"/>
+            </Link>
             <h1>Our Blogs</h1>
             <div className="blogs">
                 {blogs.map((blog, index) => (
@@ -64,7 +67,7 @@ const BlogPage = () => {
                             onClick={() => toggleBlog(index)}
                         >
                             <h2>
-                                {blog.title} 
+                                {blog.title}
                                 <span>{activeIndex === index ? <FaAngleUp/> : <FaAngleDown/>}</span>
                             </h2>
                             <p className="date">{blog.date}</p>

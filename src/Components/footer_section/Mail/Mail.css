@@ -59,3 +59,7 @@ p {
         width: 90%;
     }
 }
+
+.light .subscribe-mail p{
+    color: #000000 !important;
+}
