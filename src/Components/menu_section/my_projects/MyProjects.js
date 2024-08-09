@@ -2,94 +2,39 @@ import {FaPlus} from 'react-icons/fa';
 import Menu from '../../Menu';
 import './MyProjects.css'
 import {Link} from 'react-router-dom';
-import Card1 from "../../../img/card1.jpg";
-import Card2 from "../../../img/card2.jpg";
-import Card3 from "../../../img/card3.jpg";
-import Card4 from "../../../img/card4.jpg";
-import {BsHeartFill} from 'react-icons/bs';
+import {features} from '../../projects/index.js';
+import { BsHeartFill } from 'react-icons/bs';
 import homeIcon from '../../../img/homeicon.png';
 import {useContext} from "react";
 import {ThemeContext} from "../../../App";
 
 
-const SampleData = [
-    {
-        id: 1,
-        name: "ToDo app",
-        noOfHearts: "10",
-        github: "/",
-        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
-        skills: ['HTML', 'CSS', 'JavaScript'],
-        uploadedDate: '2023-10-15',
-        image: Card1
-    },
-    {
-        id: 2,
-        name: "Weather app",
-        noOfHearts: "10",
-        github: "/",
-        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
-        skills: ['HTML', 'CSS', 'JavaScript'],
-        uploadedDate: '2023-10-15',
-        image: Card2
-    },
-    {
-        id: 3,
-        name: "Expense tracker",
-        noOfHearts: "10",
-        github: "/",
-        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
-        skills: ['HTML', 'CSS', 'JavaScript'],
-        uploadedDate: '2023-10-15',
-        image: Card3
-    },
-    {
-        id: 4,
-        name: "E commerce website",
-        noOfHearts: "10",
-        github: "/",
-        description: "This is an awesome project. I have used bla blaaaa. This is an awesome project. I have used bla blaaaa",
-        skills: ['HTML', 'CSS', 'JavaScript'],
-        uploadedDate: '2023-10-15',
-        image: Card4
-    }
-]
-
 function MyProjects({showMenu = true}) {
-
     const {theme} = useContext(ThemeContext)
-
     return (
         <div className={`container my-projects-wrapper ${theme}`}>
             {showMenu && <Menu/>}
             <div className="content">
+                <div className='nav'>
                 <div className='top fromTop'>
-                    <h1>My Projects</h1>
-                    <Link to='/new/project'>
-                        <button><FaPlus size={15}/> New Project</button>
-                    </Link>
+                    <h2 className='main-title'><a href='#'>Projects</a></h2>
+                    <h2><a href='#'>My Projects</a></h2> {/*In future, Based on User Login, data can be added here in "href"*/}
                 </div>
                 <Link to="/">
-                    <img src={homeIcon} alt="Home" className="home-icon" style={{marginLeft: '300px'}}/>
+                    <img src={homeIcon} alt="Home" className="home-icon"/>
                 </Link>
-
+                <Link to='/new/project'>
+                        <button className='button-np'><FaPlus size={15}/> New Project</button>
+                </Link>
+                </div>
                 <div className='projects-wrapper zoomIn'>
-
                     {
-                        SampleData.map(project => {
-                            return (
+                        features.map(project => {
+                            return(
                                 <MyProjectCard project={project}/>
-                            )
+                            );
                         })
                     }
-                    {
-                        SampleData.map(project => {
-                            return (
-                                <MyProjectCard project={project}/>
-                            )
-                        })
-                    }
-
                 </div>
             </div>
         </div>
@@ -101,22 +46,21 @@ export default MyProjects;
 
 function MyProjectCard({project}) {
 
-    const {theme} = useContext(ThemeContext)
+    const {theme} = useContext(ThemeContext);
 
     return (
         <div className={`project-card ${theme}`}>
-            <img src={project.image} alt={project.name}/>
+            <img src={project.img} alt={project.title}/>
             <div className='details'>
                 <div className="top">
-                    <h2>{project.name}</h2>
+                    <h2>{project.title}</h2>
                     <div className="likes">
                         <i>
-                            <BsHeartFill/> <span>{project.noOfHearts}</span>
+                            <BsHeartFill/> <span>{project.hearts}</span>
                         </i>
                     </div>
                 </div>
-                <p>{project.description.substring(0, 75)}...</p>
-                <small>{project.uploadedDate}</small>
+                <p>{project.about}</p>
                 <div className="btn-wrapper">
                     <Link to="/">
                         <button className='edit-btn'>Edit</button>
@@ -128,5 +72,5 @@ function MyProjectCard({project}) {
             </div>
 
         </div>
-    )
+    );
 }
