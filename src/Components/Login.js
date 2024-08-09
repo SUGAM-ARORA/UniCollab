@@ -197,7 +197,7 @@ const LogIn = () => {
   };
   const handleForgotPassword = () => {
     // Implement your forgot password logic here
-    navigate('/'); // Redirect to the main page
+    navigate('/forgot'); // Redirect to the main page
   };
   
 
@@ -294,7 +294,7 @@ const LogIn = () => {
               </button>
             </div>
             <div className="forgot-password-link">
-           <a href="#" onClick={handleForgotPassword}>
+           <a href="/forgot" onClick={handleForgotPassword}>
            Forgot Password?
           </a>
          </div>
@@ -464,8 +464,8 @@ const LogIn = () => {
           </div>
           <img src={logImg} className="image" alt="Log In" />
         </div>
-        <div className="panel right-panel">
-          <div className="content">
+        <div className="panel right-panel1">
+          <div className="content1">
             <h3>One of Us?</h3>
             <p>
               Log in to access your account and continue collaborating and

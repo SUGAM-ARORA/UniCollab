@@ -20,32 +20,32 @@ const Readmore = () => {
       <img src={feature.img} height={480} alt={feature.title} />
       </div>
 
-      <div className="head">
-        <span className='upload'>Uploaded On: </span>
-         dd:mm:yy
-      </div>
-      <div className="head">
-        <img src={feature.pro} alt={feature.dev} />
-        <div className='abc'>
-          <div className="details1">
-            <p className="name">@{feature.dev}</p>
-            <p className="occupation">{feature.role}</p>
-          </div>
-          <div className="dtex">
-            {feature.about}
-          </div>
-          </div>
-      </div>
-      <div className="text">
-        <span className='description'>Description:</span><br />
-        <div className='dtex'>{feature.text}</div>
-      </div>
-      <div className="developer">
-        Developer-X
-      </div>
-
-    </div>
-  )
+            <div className="head">
+                <span className='project-type'>  Type of Project: </span>
+                 {feature.type}
+                 <br></br>
+            </div>
+            <div className="head">
+                <img src={feature.pro} alt={feature.dev} />
+                <div className='abc'>
+                    <div className="details1">
+                        <p className="name">@{feature.dev}</p>
+                        <p className="occupation">{feature.role}</p>
+                    </div>
+                    <div className="dtex">
+                        {feature.about}
+                    </div>
+                </div>
+            </div>
+            <div className="text">
+                <span className='description'>Description:</span><br />
+                <div className='dtex'>{feature.text}</div>
+            </div>
+            <div className="developer">
+                Developer-X
+            </div>
+        </div>
+    )
 }
 
 export default Readmore

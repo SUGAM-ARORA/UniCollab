@@ -1,7 +1,7 @@
 import React, {useEffect, useState, useRef, useContext} from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper } from '@fortawesome/fontawesome-free-solid';
+import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper, faTimes } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
 import {FaBell, FaChevronDown, FaSun} from "react-icons/fa";
 import women from "../img/women.jpg";
@@ -36,7 +36,7 @@ function TopContainer() {
   useEffect(() => {
     if (input.length > 0) {
       const results = search.filter((item) =>
-        item.title.toLowerCase().includes(input.toLocaleLowerCase())
+        item.title.toLowerCase().includes(input.toLowerCase())
       );
       setSearchResult(results);
     } else {
@@ -92,14 +92,12 @@ function TopContainer() {
     setMobMenu(!mobMenu);
   };
 
-  // Function to handle sign out
   const handleSignOut = () => {
     localStorage.removeItem('username');
     setIsLoggedIn(false);
     setUsername('');
   };
 
-  // Check local storage for username on component mount
   useEffect(() => {
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
@@ -115,7 +113,7 @@ function TopContainer() {
       <button onClick={toggleTheme} className=" lightbutton"><FaSun/></button>
       <div className="navbar">
         <div className="mobview ">
-          <div className="bars" onClick={toggleMenu}><FontAwesomeIcon icon={faBars} /></div>
+          <div className="bars" onClick={toggleMenu}>{mobMenu?<FontAwesomeIcon icon={faTimes}/>:<FontAwesomeIcon icon={faBars} />}</div>
           <div id="shortview" className={mobMenu ? 'show' : ''}>
             <ul className={`${mobMenu ? "open" : "largeview"}`}>
               <li className="nav-item"><a href='/'><FontAwesomeIcon icon={faHome} /> Home</a></li>
@@ -133,18 +131,16 @@ function TopContainer() {
 
         <div className="inputBox o2">
           <div className="input-div">
-          <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
-            <BiSearchAlt />
-          </i>
-
-          <input
-            ref={searchbar}
-            type="text"
-            placeholder="Search projects, users"
-            onChange={(e) => setInput(e.target.value)}
-          />
+            <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
+              <BiSearchAlt />
+            </i>
+            <input
+              ref={searchbar}
+              type="text"
+              placeholder="Search projects, users"
+              onChange={(e) => setInput(e.target.value)}
+            />
           </div>
-          
           
           {searchResult ? (
             <div id="search_results">
@@ -162,29 +158,25 @@ function TopContainer() {
           ) : null}
         </div>
 
-        <div className="profileContainer o3" >
+        <div className="profileContainer o3">
           <a href="/pricing">
             <button className="go-pro-btn">Go Pro</button>
           </a>
 
-
-          <div className="notification-container"  style={{ gap: "10px" }} ref={dropdownRef}>
+          <div className="notification-container" style={{ gap: "5px" }} ref={dropdownRef}>
             <div className="profileIcon" onClick={toggleDropdown}>
               <FaBell />
             </div>
             {isDropdownOpen && (
               <div className="dropdown-content">
                 <div className="notification-item">
-                  User "JohnDoe" has uploaded a new project titled "Introduction
-                  to Machine Learning." Check it out now!
+                  User "JohnDoe" has uploaded a new project titled "Introduction to Machine Learning." Check it out now!
                 </div>
                 <div className="notification-item">
-                  User "JaneSmith" has commented on your project "Data
-                  Visualization with D3.js." View the comment now.
+                  User "JaneSmith" has commented on your project "Data Visualization with D3.js." View the comment now.
                 </div>
                 <div className="notification-item">
-                  User "TechMaster" has updated the project "Building a RESTful
-                  API with Node.js." See what's new!
+                  User "TechMaster" has updated the project "Building a RESTful API with Node.js." See what's new!
                 </div>
               </div>
             )}
@@ -210,7 +202,7 @@ function TopContainer() {
               </div>
             </>
           ) : (
-            <Link to="/Login" className="profileIconlogin"style={{ marginRight: "20px" }}>
+            <Link to="/Login" className="profileIconlogin" style={{ marginRight: "20px" }}>
               Launch Your Journey
             </Link>
           )}

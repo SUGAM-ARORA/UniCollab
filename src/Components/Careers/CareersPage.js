@@ -10,7 +10,7 @@ import {ThemeContext} from "../../App";
 
 const Careers = () => {
   const handleResume = () => {
-    var link = "mailto:abc@unicollab.com"
+    var link = "mailto:abc@unicollab.com";
     window.location.href = link;
   }
 
@@ -21,13 +21,14 @@ const Careers = () => {
       <Link to="/">
         <img src={homeIcon} alt="Home" className="home-icon" />
       </Link>
-      <div className='body'>
-
+      <div className="body">
         <div className="container1Careers">
           <div className={`headingCareers1 ${theme}`}>Let's build from here, together</div>
-          <div className={`descriptionCareers1 ${theme}`}>Join our team and accelerate human progress through innovative developer collaboration.</div>
+          <div className={`descriptionCareers1 ${theme}`}>
+              Join our team and accelerate human progress through innovative
+              developer collaboration.</div>
           <div className="searchCareers1">
-            <input type="text" placeholder='Search for jobs by keyword' />
+            <input type="text" placeholder="Search for jobs by keyword" />
             <button>Search</button>
           </div>
         </div>
@@ -37,15 +38,28 @@ const Careers = () => {
             <div className="box2aCareers">
               <div className="Careers2aa">
                 <div className="Careers2abHeading">
-                  <FontAwesomeIcon icon={faRocket} style={{ color: "#ffffff", fontSize: "30px" }} />
-                  <span className='text2Careers'>What</span>
+                  <FontAwesomeIcon
+                    icon={faRocket}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
+                  <span className="text2Careers">What</span>
+                </div>
+                <div className="Careeers2abdesc">
+                  The premier developer platform for fostering collaboration and
+                  innovation.
                 </div>
                 <div className={`Careeers2abdesc ${theme}`}>The premier developer platform for fostering collaboration and innovation.</div>
               </div>
               <div className="Careers2aa">
                 <div className="Careers2abHeading">
-                  <FontAwesomeIcon icon={faSearch} style={{ color: "#ffffff", fontSize: "30px" }} />
-                  <span className='text2Careers'>Why</span>
+                  <FontAwesomeIcon
+                    icon={faSearch}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
+                  <span className="text2Careers">Why</span>
+                </div>
+                <div className="Careeers2abdesc">
+                  Accelerate human progress through developer collaboration.
                 </div>
                 <div className={`Careeers2abdesc ${theme}`}>Accelerate human progress through developer collaboration.</div>
               </div>
@@ -53,8 +67,15 @@ const Careers = () => {
             <div className="box2bCareers">
               <div className="Careers2aa">
                 <div className="Careers2abHeading">
-                  <FontAwesomeIcon icon={faHeart} style={{ color: "#ffffff", fontSize: "30px" }} />
-                  <span className='text2Careers'>How</span>
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{ color: "#ffffff", fontSize: "30px" }}
+                  />
+                  <span className="text2Careers">How</span>
+                </div>
+                <div className="Careeers2abdesc">
+                  Our values guide our interactions, decision-making, and how we
+                  engage with each other.
                 </div>
                 <div className={`Careeers2abdesc ${theme}`}>Our values guide our interactions, decision-making, and how we engage with each other.</div>
               </div>
@@ -106,19 +127,49 @@ const Careers = () => {
               <div className={`descriptionCareers3 ${theme}`}>We come together wherever we are - across time zones, regions, offices and screens.</div>
             </div>
             <div className="box1Careers">
-              <svg width="48" height="48" fill="none" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
-                <path d="m27.29 8.2a1 1 0 0 0 .33.05 1 1 0 0 0 .94-.66l1.19-3.44a1 1 0 0 0 -.05-.76.92.92 0 0 0 -.56-.5 1 1 0 0 0 -1.27.61l-1.19 3.43a1 1 0 0 0 0 .76 1 1 0 0 0 .61.51z" fill="#FFF"></path>
-                <path d="m23.65 7.93h.07a1 1 0 0 0 .68-.34 1 1 0 0 0 .24-.72l-.27-3.87a1 1 0 0 0 -1.06-.92 1 1 0 0 0 -.68.34 1 1 0 0 0 -.24.72l.27 3.86a1 1 0 0 0 .99.93z" fill="#FFF"></path>
-                <path d="m30.93 10.46a1 1 0 0 0 .74-.33l2.6-2.85a1 1 0 0 0 -.07-1.41 1 1 0 0 0 -1.4.07l-2.6 2.85a1 1 0 0 0 .06 1.41 1 1 0 0 0 .67.26z" fill="#FFF"></path>
-                <path d="m39.92 26.94a3.69 3.69 0 0 0 -3.7-3.2 5.81 5.81 0 0 0 -2.48.64v-7.5a3.71 3.71 0 0 0 -2.88-3.65 3.82 3.82 0 0 0 -.89-.07 3.64 3.64 0 0 0 -6.2.27 3.82 3.82 0 0 0 -.85.13v-1.8a3.72 3.72 0 0 0 -3.05-3.68h-.11a3.64 3.64 0 0 0 -3.58-3.31 3.64 3.64 0 0 0 -6.18-.29 4.53 4.53 0 0 0 -.89.08 3.7 3.7 0 0 0 -2.9 3.65v7.5a5.88 5.88 0 0 0 -2.48-.64 3.69 3.69 0 0 0 -3.73 3.19 3.85 3.85 0 0 0 3.1 4.23c1.12.31 3.42 2.71 4.65 4.31a8.34 8.34 0 0 0 7.3 3.51 8 8 0 0 0 2-.37v.48a8.49 8.49 0 0 0 7.85 8.58h.49a8.37 8.37 0 0 0 6.8-3.52c1.42-1.85 3.6-4 4.66-4.32a3.85 3.85 0 0 0 3.07-4.22zm-37.7-8.38a1.49 1.49 0 0 1 1.51-1.29 6.56 6.56 0 0 1 3.12 1.38 1 1 0 0 0 1 .07 1 1 0 0 0 .54-.89v-9.62a1.5 1.5 0 0 1 1.17-1.5 1 1 0 0 1 .39 0v8.29a1 1 0 0 0 2 0v-9.47a1.43 1.43 0 0 1 2-.08v9.76a1 1 0 1 0 2 0v-8.21a1.57 1.57 0 0 1 .53 0 1.37 1.37 0 0 1 1 .8v6.86a1 1 0 1 0 2 0v-4.42h.12a1.49 1.49 0 0 1 1.18 1.5v3.46a3.66 3.66 0 0 0 -.52 1.54l-.29.05a3.71 3.71 0 0 0 -2.97 3.65v7.15a6 6 0 0 1 -2.11.52h-.36a6.15 6.15 0 0 1 -5-2.62c-.14-.18-3.42-4.46-5.84-5.14-1.22-.35-1.56-1.14-1.47-1.79zm17 1.88a1.5 1.5 0 0 1 1.12-1.5v5.94a1 1 0 1 0 2 0v-7.8a1.43 1.43 0 0 1 1.44-1.44h.21v9.22a1 1 0 1 0 2 0v-10.75a1.44 1.44 0 0 1 1.79-.06v10.83a1 1 0 1 0 2 0v-9.49a1.57 1.57 0 0 1 .61 0 1.5 1.5 0 0 1 1.13 1.49v9.63a1 1 0 0 0 1 1 1 1 0 0 0 .56-.18 6.45 6.45 0 0 1 3.12-1.39 1.49 1.49 0 0 1 1.51 1.3c.09.64-.25 1.46-1.47 1.8-2.42.67-5.7 5-5.84 5.14a6.15 6.15 0 0 1 -5.4 2.61 6.28 6.28 0 0 1 -5.79-6.37z" fill="#FFF"></path>
+              <svg
+                width="48"
+                height="48"
+                fill="none"
+                viewBox="0 0 40 40"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m27.29 8.2a1 1 0 0 0 .33.05 1 1 0 0 0 .94-.66l1.19-3.44a1 1 0 0 0 -.05-.76.92.92 0 0 0 -.56-.5 1 1 0 0 0 -1.27.61l-1.19 3.43a1 1 0 0 0 0 .76 1 1 0 0 0 .61.51z"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="m23.65 7.93h.07a1 1 0 0 0 .68-.34 1 1 0 0 0 .24-.72l-.27-3.87a1 1 0 0 0 -1.06-.92 1 1 0 0 0 -.68.34 1 1 0 0 0 -.24.72l.27 3.86a1 1 0 0 0 .99.93z"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="m30.93 10.46a1 1 0 0 0 .74-.33l2.6-2.85a1 1 0 0 0 -.07-1.41 1 1 0 0 0 -1.4.07l-2.6 2.85a1 1 0 0 0 .06 1.41 1 1 0 0 0 .67.26z"
+                  fill="#FFF"
+                ></path>
+                <path
+                  d="m39.92 26.94a3.69 3.69 0 0 0 -3.7-3.2 5.81 5.81 0 0 0 -2.48.64v-7.5a3.71 3.71 0 0 0 -2.88-3.65 3.82 3.82 0 0 0 -.89-.07 3.64 3.64 0 0 0 -6.2.27 3.82 3.82 0 0 0 -.85.13v-1.8a3.72 3.72 0 0 0 -3.05-3.68h-.11a3.64 3.64 0 0 0 -3.58-3.31 3.64 3.64 0 0 0 -6.18-.29 4.53 4.53 0 0 0 -.89.08 3.7 3.7 0 0 0 -2.9 3.65v7.5a5.88 5.88 0 0 0 -2.48-.64 3.69 3.69 0 0 0 -3.73 3.19 3.85 3.85 0 0 0 3.1 4.23c1.12.31 3.42 2.71 4.65 4.31a8.34 8.34 0 0 0 7.3 3.51 8 8 0 0 0 2-.37v.48a8.49 8.49 0 0 0 7.85 8.58h.49a8.37 8.37 0 0 0 6.8-3.52c1.42-1.85 3.6-4 4.66-4.32a3.85 3.85 0 0 0 3.07-4.22zm-37.7-8.38a1.49 1.49 0 0 1 1.51-1.29 6.56 6.56 0 0 1 3.12 1.38 1 1 0 0 0 1 .07 1 1 0 0 0 .54-.89v-9.62a1.5 1.5 0 0 1 1.17-1.5 1 1 0 0 1 .39 0v8.29a1 1 0 0 0 2 0v-9.47a1.43 1.43 0 0 1 2-.08v9.76a1 1 0 1 0 2 0v-8.21a1.57 1.57 0 0 1 .53 0 1.37 1.37 0 0 1 1 .8v6.86a1 1 0 1 0 2 0v-4.42h.12a1.49 1.49 0 0 1 1.18 1.5v3.46a3.66 3.66 0 0 0 -.52 1.54l-.29.05a3.71 3.71 0 0 0 -2.97 3.65v7.15a6 6 0 0 1 -2.11.52h-.36a6.15 6.15 0 0 1 -5-2.62c-.14-.18-3.42-4.46-5.84-5.14-1.22-.35-1.56-1.14-1.47-1.79zm17 1.88a1.5 1.5 0 0 1 1.12-1.5v5.94a1 1 0 1 0 2 0v-7.8a1.43 1.43 0 0 1 1.44-1.44h.21v9.22a1 1 0 1 0 2 0v-10.75a1.44 1.44 0 0 1 1.79-.06v10.83a1 1 0 1 0 2 0v-9.49a1.57 1.57 0 0 1 .61 0 1.5 1.5 0 0 1 1.13 1.49v9.63a1 1 0 0 0 1 1 1 1 0 0 0 .56-.18 6.45 6.45 0 0 1 3.12-1.39 1.49 1.49 0 0 1 1.51 1.3c.09.64-.25 1.46-1.47 1.8-2.42.67-5.7 5-5.84 5.14a6.15 6.15 0 0 1 -5.4 2.61 6.28 6.28 0 0 1 -5.79-6.37z"
+                  fill="#FFF"
+                ></path>
               </svg>
 
               <div className={`headingCareers3 ${theme}`}>Inclusive</div>
               <div className={`descriptionCareers3 ${theme}`}>Our teams reflect the rich diversity of our world, with equitable access to opportunity for everyone.</div>
             </div>
             <div className="box1Careers">
-              <svg fill="none" height="48" viewBox="0 0 48 48" width="48" xmlns="http://www.w3.org/2000/svg">
-                <g clipPath="url(#a)" stroke="#fff" strokeLinecap="round" strokeLinejoin="round" strokeWidth="3">
+              <svg
+                fill="none"
+                height="48"
+                viewBox="0 0 48 48"
+                width="48"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g
+                  clipPath="url(#a)"
+                  stroke="#fff"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="3"
+                >
                   <path d="m24 1.5c-4.4501 0-8.8002 1.3196-12.5003 3.79194-3.70013 2.47233-6.58401 5.98636-8.28698 10.09766-1.70297 4.1114-2.14855 8.6354-1.28038 12.9999.86817 4.3646 3.01109 8.3737 6.15777 11.5204 3.14669 3.1467 7.15579 5.2896 11.52039 6.1578 4.3646.8681 8.8885.4226 12.9999-1.2804 4.1113-1.703 7.6253-4.5869 10.0977-8.287 2.4723-3.7001 3.7919-8.0502 3.7919-12.5003.0016-2.9552-.5793-5.8817-1.7095-8.6122-1.1302-2.7306-2.7874-5.2116-4.8771-7.30122-2.0896-2.08963-4.5706-3.74691-7.3011-4.87708-2.7306-1.13017-5.6571-1.71107-8.6123-1.7095z"></path>
                   <path d="m24 8.86804v2.29196"></path>
                   <path d="m13.296 13.2959 1.632 1.632"></path>
@@ -138,11 +189,24 @@ const Careers = () => {
         </div>
         <div className="container4Careers">
           <div className="boxes4Careers">
-            <div className="box4desc">"Working at UniCollab has been transformative. The platform's commitment to fostering collaboration among students from different universities is inspiring. UniCollab values innovation and nurtures a supportive environment where ideas flourish. It's a privilege to shape the future of student collaboration here."</div>
+            <div className="box4desc">
+              "Working at UniCollab has been transformative. The platform's
+              commitment to fostering collaboration among students from
+              different universities is inspiring. UniCollab values innovation
+              and nurtures a supportive environment where ideas flourish. It's a
+              privilege to shape the future of student collaboration here."
+            </div>
             <div className="writerCareers">- Taylor, Engineer</div>
           </div>
           <div className="boxes4Careers">
-            <div className="box4desc">"Joining UniCollab has been rewarding. The platform's dedication to breaking down barriers between universities and promoting knowledge sharing is unmatched. UniCollab's emphasis on creativity and teamwork has empowered me to grow both personally and professionally. It's exciting to contribute to revolutionizing how students learn and innovate together."</div>
+            <div className="box4desc">
+              "Joining UniCollab has been rewarding. The platform's dedication
+              to breaking down barriers between universities and promoting
+              knowledge sharing is unmatched. UniCollab's emphasis on creativity
+              and teamwork has empowered me to grow both personally and
+              professionally. It's exciting to contribute to revolutionizing how
+              students learn and innovate together."
+            </div>
             <div className="writerCareers">- Stanley, Designer</div>
           </div>
         </div>
@@ -167,10 +231,12 @@ const Careers = () => {
             </div>
           </div>
         </div>
-        <button className='submitCareers' onClick={handleResume}>Send Your Job-Application @UniCollab</button>
+        <button className="submitCareers" onClick={handleResume}>
+          Send Your Job-Application @UniCollab
+        </button>
       </div>
     </div>
   )
 }
 
-export default Careers
+export default Careers;

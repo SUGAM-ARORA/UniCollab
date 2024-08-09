@@ -50,6 +50,11 @@
   max-width: 800px; 
   min-height: 500px;
   box-sizing: border-box;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.settings-content:hover {
+  background-color: darkturquoise; /* Hover effect color */
 }
 
 .form-group {
@@ -168,6 +173,15 @@ button:hover {
   .settings-content {
     width: 100%; 
   }
+}
+
+/* Add hover effect for other containers or elements as needed */
+.settings-content .form-group input[type="text"]:hover,
+.settings-content .form-group input[type="password"]:hover,
+.settings-content .form-group select:hover,
+.settings-content .form-group input[type="checkbox"]:hover,
+.settings-content button:hover {
+  background-color: #cf00a3;
 }
 
 .light .settings-tabs,.light .profile-settings h2, .light .profile-settings label, .light .account-settings h2, .light .account-settings label, .light .notification-settings h2, .light .notification-settings label , .light .privacy-settings h2, .light .privacy-settings label,  .light .collaboration-settings h2, .light .collaboration-settings label, .light .application-settings h2, .light .application-settings label, .light .help-support li, .light .help-support p, .light .help-support h2, .light .legal-settings li, .light .legal-settings h2 {

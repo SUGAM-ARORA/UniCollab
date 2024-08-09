@@ -13,7 +13,7 @@ function Pricing() {
         <div className={`pricing ${theme}`}>
             <div className="header">
             <Link to="/" className="home-link">
-              <img src={homeIcon} alt="Home" className="home-icon" />
+              <img src={homeIcon} alt="Home" className="home-icon" style={{ height: '60px', width: '60px' }} />
             </Link>
                 <div className="headingHeader">Start your 7 day free trial today</div>
                 <div className="description">Unlock Advanced Features and Maximize Your Potential with UniCollab Pro.</div>

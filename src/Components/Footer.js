@@ -46,7 +46,7 @@ const Footer = () => {
             <ul className='footer-links'>
               <li><a href='/blogs'><FontAwesomeIcon icon={faBlog} /> Blogs</a></li>
               <li><a href='/Testimonials'><FontAwesomeIcon icon={faStar} /> Testimonials</a></li>
-              <li><a href='#'><FontAwesomeIcon icon={faClipboardList} /> Portfolio</a></li>
+              <li><a href='/PortFolio'><FontAwesomeIcon icon={faClipboardList} /> Portfolio</a></li>
               <li><a href='/faq'><FontAwesomeIcon icon={faQuestionCircle} /> FAQ</a></li>
               <li><a href='/rateus'><FontAwesomeIcon icon={faStar} /> Rate-Us</a></li>
             </ul>
