@@ -56,18 +56,8 @@ function App() {
         <GoToTop />
         <Footer />
         <ChatbotIcon />
-        <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px', zIndex: '1000' }}>
-  <button
-    style={{
-      backgroundColor: '#ff21bc',
-      fontSize: '17px', // Optional: sets text size
-      width: '180px',  // Adjust width as needed
-      height: '45px',  // Adjust height as needed
-      padding: '0',    // Reset padding if needed
-      border: 'none',  // Remove border if any
-      borderRadius: '5px', // Optional: adds rounded corners
-    }}
-  >
+        <a href="/feedback" className="a-feedback-btn">
+  <button className="feedback-btn">
     Help Us Improve!
   </button>
 </a>

@@ -4,11 +4,11 @@ import logo from '../img/apple-touch-icon.png';
 import SubscribeMail from './footer_section/Mail/SubscribeMail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook, faUsersGear } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
 
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-};
+// const scrollToTop = () => {
+//   window.scrollTo({ top: 0, behavior: 'smooth' });
+// };
 
 const Footer = () => {
   const today = new Date();
@@ -59,16 +59,16 @@ const Footer = () => {
       </div>
       <SubscribeMail />
       <div className='footer-icons footer-icons-md'>
-        <a href="#" target="_blank" rel='noreferrer'>
+        <a href="/" target="_blank" rel='noreferrer'>
           <FontAwesomeIcon icon={faLinkedin} />
         </a>
         <a href="https://github.com/SUGAM-ARORA/UniCollab" target="_blank" rel='noreferrer'>
           <FontAwesomeIcon icon={faGithub} />
         </a>
-        <a href="#" target="_blank" rel='noreferrer'>
+        <a href="/" target="_blank" rel='noreferrer'>
           <FontAwesomeIcon icon={faFacebook} />
         </a>
-        <a href="#" target="_blank" rel='noreferrer'>
+        <a href="/" target="_blank" rel='noreferrer'>
         <i class="fa-brands fa-square-x-twitter"></i>  
               </a>
       </div>
