@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from "react-router-dom";
 import homeIcon from '../../img/homeicon.png';
 import './Wallet.css';
+import {ThemeContext} from "../../App";
 
 const Wallet = () => {
     const pointsHistory = [
@@ -42,8 +43,10 @@ const Wallet = () => {
         }
     ];
 
+    const {theme} = useContext(ThemeContext)
+
     return (
-        <div>
+        <div className={theme}>
             <div className="heading1Wallet">Balance and Rewards</div>
             <Link to="/">
                 <img src={homeIcon} alt="Home" className="home-icon" />

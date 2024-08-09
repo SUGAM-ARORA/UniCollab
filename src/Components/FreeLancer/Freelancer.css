@@ -302,48 +302,56 @@
     background-color: rgb(31, 31, 31);
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #two div {
     background-color: burlywood;
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #three div {
     background-color: rgb(143, 222, 24);
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #four div {
     background-color: brown;
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #five div {
     background-color: rgb(248, 180, 98);
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #six div {
     background-color: grey;
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #seven div {
     background-color: rgb(194, 128, 227);
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 #eight div {
     background-color: rgb(0, 85, 255);
     padding: 15px;
     border-radius: 20px;
+    color: #ffffff;
 }
 
 .containerbox4Freelancer:hover{
@@ -415,4 +423,8 @@
 }
 #lastboxfreelancer{
     margin-bottom: 20rem;
+}
+
+.light div{
+    color: #000000 ;
 }

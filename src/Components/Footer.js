@@ -1,10 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './Footer.css';
 import logo from '../img/apple-touch-icon.png';
 import SubscribeMail from './footer_section/Mail/SubscribeMail';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faInfoCircle, faBriefcase, faEnvelope, faUsers, faBlog, faClipboardList, faQuestionCircle, faFileAlt, faGavel, faAddressBook, faUsersGear } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-icons';
+import {ThemeContext} from "../App";
 
 // const scrollToTop = () => {
 //   window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -13,8 +14,11 @@ import { faLinkedin, faGithub, faFacebook } from '@fortawesome/free-brands-svg-i
 const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
+
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <div className='footer'>
+    <div className={`footer ${theme}`}>
       <div className='footer-container footer-container-md'>
         <div className='footer-1'>
           <img src={logo} alt="logo" />

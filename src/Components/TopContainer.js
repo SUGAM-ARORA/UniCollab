@@ -1,12 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, {useEffect, useState, useRef, useContext} from "react";
 import { BiSearchAlt } from "react-icons/bi";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faInfoCircle, faWrench, faBriefcase, faStar, faUsers, faEnvelope, faQuestionCircle, faNewspaper, faTimes } from '@fortawesome/fontawesome-free-solid';
 import { Link } from 'react-router-dom';
-import { FaBell, FaChevronDown } from "react-icons/fa";
+import {FaBell, FaChevronDown, FaMoon, FaSun} from "react-icons/fa";
 import women from "../img/women.jpg";
 import search from "./searchResults";
 import "./TopContainer.css";
+import {ThemeContext} from "../App"
 
 function TopContainer() {
   const [input, setInput] = useState("");
@@ -105,8 +106,15 @@ function TopContainer() {
     }
   }, []);
 
+  const {theme, toggleTheme} = useContext(ThemeContext)
+
   return (
     <div className="topContainer">
+      <button onClick={toggleTheme} className=" lightbutton">
+        {
+          theme === "dark" ? <FaSun/> : <FaMoon/>
+        }
+        </button>
       <div className="navbar">
         <div className="mobview ">
           <div className="bars" onClick={toggleMenu}>{mobMenu?<FontAwesomeIcon icon={faTimes}/>:<FontAwesomeIcon icon={faBars} />}</div>

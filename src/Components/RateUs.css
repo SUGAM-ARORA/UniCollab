@@ -35,6 +35,10 @@
   border: 2px solid #ff21bc; /* Adjusted border color to match hover background */
 }
 
+.rate-us-container:hover div, .rate-us-container:hover h2{
+  background-color: #ff21bc;
+}
+
 .rate-us-heading {
   text-align: center;
   margin-bottom: 20px;
@@ -145,4 +149,9 @@
 
 .rateUsContainer {
   display: flex;
+}
+
+.light .rate-us-container ,.light .rate-us-container h2{
+  background: #F3CFC6 ;
+  color: #000000 ;
 }

@@ -1,15 +1,18 @@
 // RateUsComponent.js
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import "./RateUs.css";
 import TopContainer from "./TopContainer";
 import Menu from "./Menu";
 import { Link } from 'react-router-dom';
 import homeIcon from '../img/homeicon.png';
+import {ThemeContext} from "../App";
 
 function RateUsComponent({ previousContent }) {
   const [emoji, setEmoji] = useState("");
   const [feedback, setFeedback] = useState("");
   const [submitted, setSubmitted] = useState(false);
+
+  const { theme } = useContext(ThemeContext)
 
   const handleEmojiClick = (selectedEmoji) => {
     setEmoji(selectedEmoji);
@@ -49,7 +52,7 @@ function RateUsComponent({ previousContent }) {
   };
 
   return (
-    <div>
+    <div >
       <div className="header">
         <Link to="/">
           <img src={homeIcon} alt="Home" className="home-icon" style={{ marginTop: '130px' }} />
@@ -58,7 +61,7 @@ function RateUsComponent({ previousContent }) {
       </div>
       <div className="rateUsContainer">
         <Menu />
-        <div className={`rate-us-page ${previousContent ? 'animated' : ''}`}>
+        <div className={`rate-us-page ${theme} ${previousContent ? 'animated' : ''}`}>
           <div className="rate-us-container">
             {!submitted ? (
               <>

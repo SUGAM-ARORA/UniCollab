@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './FAQPage.css';
 import { FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
+import {ThemeContext} from "../../../App";
 
 const faqs = [
     {
@@ -50,12 +51,14 @@ const faqs = [
 const FAQPage = () => {
     const [activeIndex, setActiveIndex] = useState(null);
 
+    const { theme } = useContext(ThemeContext)
+
     const toggleFaq = (index) => {
         setActiveIndex(activeIndex === index ? null : index);
     };
 
     return (
-        <div className="faq-page">
+        <div className={`faq-page ${theme}`}>
             <Link to="/">
                 <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>

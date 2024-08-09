@@ -99,16 +99,23 @@ flex-wrap: wrap;
     background-color: #3228a7;
 }
 
+.box1Careers:hover .headingCareers3, .box1Careers:hover .descriptionCareers3{
+    background-color: #3228a7 !important;
+    color: #cccccc !important;;
+}
+
 .headingCareers3 {
     font-size: 25px;
     font-weight: bold;
     text-decoration: underline;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .descriptionCareers3 {
     line-height: 26px;
     font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .container3Careers {
@@ -154,8 +161,14 @@ flex-wrap: wrap;
 }
 .box2aCareers:hover {
     transform: scale(1.05);
-    background-color: #3228a7;
+    background-color: #3228a7 !important;
 }
+.box2aCareers:hover .Careeers2abdesc{
+    background: #3228a7 !important;
+    color: #cccccc !important;
+}
+
+
 
 .Careers2aa {
     width: 100%;
@@ -184,6 +197,7 @@ flex-wrap: wrap;
     font-size: 20px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .boxes3Careers {
@@ -202,6 +216,11 @@ flex-wrap: wrap;
 .box2bCareers:hover {
     transform: scale(1.05);
     background-color: #3228a7;
+}
+
+.box2bCareers:hover .Careeers2abdesc{
+    background: #3228a7 !important;
+    color: #cccccc !important;
 }
 
 .boxes3aCareers {
@@ -290,7 +309,7 @@ flex-wrap: wrap;
 }
 
 .location {
-    color: #cccccc !important;
+    color: #cccccc;
     font-style: italic;
 }
 
@@ -546,4 +565,9 @@ flex-wrap: wrap;
     .writerCareers {
         font-size: 12px;
     }
+}
+
+.light .body div{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
 }

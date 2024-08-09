@@ -1,11 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './contact_us.css';
+import {ThemeContext} from "../../../App";
 
 function ContactUs() {
+
+    const { theme } = useContext(ThemeContext)
+
     const handleSubmit = async (event) => {
         event.preventDefault();
 
@@ -76,7 +80,7 @@ function ContactUs() {
     };
 
     return (
-        <div className='box'>
+        <div className={`box ${theme}`}>
             <Link to="/">
                 <img src={homeIcon} alt="Home" className="home-icon" />
             </Link>
