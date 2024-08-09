@@ -1,10 +1,10 @@
-import Card1 from "../img/card1.jpg";
-import Card2 from "../img/card2.jpg";
-import Card3 from "../img/card3.jpg";
-import Card4 from "../img/card4.jpg";
-import Card5 from "../img/card5.jpg";
-import Card6 from "../img/card6.jpg";
-import Card7 from "./projects/card7.png";
+import Card1 from "./projects/card1.jpg";
+import Card2 from "./projects/card7.png";
+import Card3 from "./projects/card8.png";
+import Card4 from "./projects/card9.png";
+import Card5 from "./projects/card10.png";
+import Card6 from "./projects/card11.png";
+import Card7 from "./projects/card12.png";
 import Cardcontainer from "./Cardcontainer";
 
 const Popularitems = [
@@ -76,5 +76,6 @@ const Popularitems = [
 function Popular() {
   return <Cardcontainer features={Popularitems} />;
 }
+
 
 export default Popular;

@@ -7,6 +7,7 @@ import Settings from "./Components/Settings/SettingsPage";
 import About_us from "./Components/footer_section/about_us/About_us";
 import BlogPage from "./Components/footer_section/BlogPage/BlogPage";
 import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
+import PortFolio from "./Components/PortFolio/PortFolio.js";
 import Services from "./Components/footer_section/services/Services";
 import ContactUs from "./Components/footer_section/ContactUs/contact_us";
 import Readmore from "./Components/Readmore";
@@ -29,10 +30,51 @@ import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import ChatbotIcon from './Components/ChatbotIcon';
 import GoToTop from './Components/gototop';
+import {createContext, useEffect, useState} from "react";
 
-
-
+export const ThemeContext = createContext(null)
 function App() {
+
+    const getTheme = ()=>{
+        return  localStorage.getItem("theme")
+    }
+
+    const [theme, setTheme] = useState(getTheme)
+
+    // useEffect(() => {
+    //     const saveItem = localStorage.getItem("theme")
+    //     if(saveItem) {
+    //         setTheme(saveItem)
+    //     }
+    //     // else {
+    //     //     const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
+    //     //     setTheme(defaultTheme)
+    //     // }
+    //     // const bckground = document.getElementById("container")
+    //     // if(bckground){
+    //     //     bckground.classList.add(theme)
+    //     // }
+    //     // console.log(bckground.className)
+    // }, []);
+
+    useEffect(()=>{
+        localStorage.setItem("theme" , theme)
+        // const bckground = document.getElementById("container")
+        // let existingTheme = bckground?.className
+        // // let existingTheme = existingClass.trim().split(' ')
+        // existingTheme = existingTheme?.substring(0,existingTheme.lastIndexOf(' '))
+        // console.log(existingTheme)
+        // if(bckground){
+        //     bckground.setAttribute('class' , `${existingTheme} ${theme}`)
+        // }
+        // // console.log(existingClass)
+
+    },[theme])
+
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"))
+    }
+
   return (
     <>
       <Helmet>
@@ -47,31 +89,32 @@ function App() {
         <meta property="og:url" content="https://uni-collab.vercel.app/" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
-      <div className="App">
-        <div className="App-content"></div>
-        <div>
-          <RouterProvider router={router} />
-        </div>
-        <GoToTop />
-        <Footer />
-        <ChatbotIcon />
-        <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px', zIndex: '1000' }}>
-  <button
-    style={{
-      backgroundColor: '#ff21bc',
-      fontSize: '17px', // Optional: sets text size
-      width: '180px',  // Adjust width as needed
-      height: '45px',  // Adjust height as needed
-      padding: '0',    // Reset padding if needed
-      border: 'none',  // Remove border if any
-      borderRadius: '5px', // Optional: adds rounded corners
-    }}
-  >
-    Help Us Improve!
-  </button>
-</a>
-
-      </div>
+      <ThemeContext.Provider value={{theme, toggleTheme}}>
+          <div className="App">
+            <div className="App-content"></div>
+            <div>
+              <RouterProvider router={router} />
+            </div>
+            <GoToTop />
+            <Footer />
+            <ChatbotIcon />
+            <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px', zIndex: '1000' }}>
+              <button
+                style={{
+                  backgroundColor: '#ff21bc',
+                  fontSize: '17px', // Optional: sets text size
+                  width: '180px',  // Adjust width as needed
+                  height: '45px',  // Adjust height as needed
+                  padding: '0',    // Reset padding if needed
+                  border: 'none',  // Remove border if any
+                  borderRadius: '5px', // Optional: adds rounded corners
+                }}
+              >
+                Help Us Improve!
+              </button>
+            </a>
+          </div>
+      </ThemeContext.Provider>
     </>
   );
 }

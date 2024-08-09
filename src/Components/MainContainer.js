@@ -1,21 +1,27 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, {useRef, useState, useEffect, useContext} from "react";
 import DefaultBanner from "../img/1.jpg";
 import CardMain from "./CardMain";
-import Popular from "./Popular"; // Correctly import Popular component
+import Popular from "./Popular";
 import "./MainContainer.css";
 import MainRightBottomCard from "./MainRightBottomCard";
 import MainRightTopCard from "./MainRightTopCard";
+import {ThemeContext} from "../App";
 
 const MAX_IMAGE_SIZE = 2185200; // 2MB
 
 function MainContainer() {
   const imageUploadInputRef = useRef(null);
   const dropdownRef = useRef(null);
+  const typeDropdownRef = useRef(null);
   const [banner, setBanner] = useState(DefaultBanner);
   const [activeButton, setActiveButton] = useState("Feed");
   const [activeFilterButton, setActiveFilterButton] = useState("All");
   const [sortByOpen, setSortByOpen] = useState(false);
+  const [typeDropdownOpen, setTypeDropdownOpen] = useState(false);
+  const [projectSubDropdownOpen, setProjectSubDropdownOpen] = useState(false);
+  const [developerSubDropdownOpen, setDeveloperSubDropdownOpen] = useState(false); // State for Developer sub-dropdown
   const [nameDropdownOpen, setNameDropdownOpen] = useState(false);
+  const [sortCriteria, setSortCriteria] = useState({key:"name", order: "asc"});
 
   const uploadImageHandler = () => {
     imageUploadInputRef?.current?.click();
@@ -37,21 +43,37 @@ function MainContainer() {
     setActiveFilterButton(buttonName);
     if (buttonName === "Sort By") {
       setSortByOpen(!sortByOpen);
+    } else if (buttonName === "Type") {
+      setTypeDropdownOpen(!typeDropdownOpen);
     } else {
       setSortByOpen(false);
+      setTypeDropdownOpen(false);
     }
   };
 
-  const toggleNameDropdown = () => {
-    setNameDropdownOpen(!nameDropdownOpen);
+  const toggleProjectSubDropdown = () => {
+    setProjectSubDropdownOpen(!projectSubDropdownOpen);
   };
 
-  // Close dropdown if clicked outside
+  const toggleDeveloperSubDropdown = () => {
+    setDeveloperSubDropdownOpen(!developerSubDropdownOpen); // Toggle Developer sub-dropdown
+  };
+
+   const toggleNameDropdown = () => {
+    setNameDropdownOpen(!nameDropdownOpen);
+   };
+
+  // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setSortByOpen(false);
         setNameDropdownOpen(false);
+      }
+      if (typeDropdownRef.current && !typeDropdownRef.current.contains(event.target)) {
+        setTypeDropdownOpen(false);
+        setProjectSubDropdownOpen(false);
+        setDeveloperSubDropdownOpen(false); // Close Developer sub-dropdown
       }
     };
 
@@ -59,8 +81,30 @@ function MainContainer() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const {theme} = useContext(ThemeContext)
+
+
+  const handleSortChange = (key, order) => {
+    setSortCriteria({ key, order });
+  };
+
+  const sortProjects = (projects) => {
+    return projects.sort((a, b) => {
+      if (sortCriteria.key === 'name') {
+        if (sortCriteria.order === 'asc') {
+          return a.title.localeCompare(b.title);
+        } else {
+          return b.title.localeCompare(a.title);
+        }
+      } else if (sortCriteria.key === 'hearts') {
+        return b.hearts - a.hearts; // descending order for hearts
+      }
+      return 0;
+    });
+  };
+
   return (
-    <div className="maincontainer">
+    <div className={`maincontainer ${theme}`}>
       <div className="left">
         <div
           className="banner zoomIn"
@@ -140,6 +184,37 @@ function MainContainer() {
               >
                 Type
               </button>
+              {typeDropdownOpen && (
+                <div className="dropdown" ref={typeDropdownRef}>
+                  <button className="dropdown-item" onClick={toggleProjectSubDropdown}>
+                    Project
+                  </button>
+                  {projectSubDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">StockIT</button>
+                      <button className="dropdown-item">TakeNote</button>
+                      <button className="dropdown-item">TaRct</button>
+                      <button className="dropdown-item">To Do</button>
+                      <button className="dropdown-item">ArchiTect</button>
+                      <button className="dropdown-item">WeatherLy</button>
+                      <button className="dropdown-item">TypingTest</button>
+                      <button className="dropdown-item">Artisan</button>
+                      <button className="dropdown-item">ChrisClark</button>
+                      <button className="dropdown-item">ChrisMiller</button>
+                      <button className="dropdown-item">SearchEngine</button>
+                      <button className="dropdown-item">AIimage</button>
+                    </div>
+                  )}
+                  <button className="dropdown-item" onClick={toggleDeveloperSubDropdown}>
+                    Developer
+                  </button>
+                  {developerSubDropdownOpen && (
+                    <div className="sub-dropdown">
+                      <button className="dropdown-item">X</button>
+                    </div>
+                  )}
+                </div>
+              )}
               <button
                 className="button2"
                 onClick={() => toggleFilterButtonHandler("Sort By")}
@@ -155,12 +230,11 @@ function MainContainer() {
                   <button className="dropdown-item" onClick={toggleNameDropdown}>
                     Name
                   </button>
-                  <button className="dropdown-item">Role</button>
-                  <button className="dropdown-item">Hearts</button>
+                  <button className="dropdown-item" onClick={() => handleSortChange("hearts", "desc")}>Hearts</button>
                   {nameDropdownOpen && (
                     <div className="sub-dropdown">
-                      <button className="dropdown-item">Ascending</button>
-                      <button className="dropdown-item">Descending</button>
+                      <button className="dropdown-item" onClick={() => handleSortChange("name", "asc")}>Ascending</button>
+                      <button className="dropdown-item" onClick={() => handleSortChange("name", "desc")}>Descending</button>
                     </div>
                   )}
                 </div>
@@ -170,9 +244,9 @@ function MainContainer() {
 
           <main className="fromBottom">
             {activeButton === "Feed" ? (
-              <CardMain />
+              <CardMain sortProjects={sortProjects}/>
             ) : (
-              <Popular /> // Use the Popular component here
+              <Popular />
             )}
           </main>
         </div>

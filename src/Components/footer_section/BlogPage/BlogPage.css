@@ -39,7 +39,7 @@
     background-color: #1f1c35;
 }
 .blog-post.active * {
-    color: #ff21bc;
+    color: #ff21bc !important;
 }
 .blog-post .date {
     font-size: 13px;
@@ -70,6 +70,11 @@
     opacity: 1;
     transform: scaleY(1);
     padding: 20px;
+}
+
+.light .blogs div, .light .blogs h2, .light .blogs p, .light h1{
+    background: #F3CFC6 ;
+    color: #000000 ;
 }
 
 

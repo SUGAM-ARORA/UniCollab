@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, {useContext, useEffect} from 'react';
 import { Link } from "react-router-dom";
 import homeIcon from '../../img/homeicon.png';
 import Card1 from "../../img/card1.jpg";
@@ -8,6 +8,7 @@ import Card4 from "../../img/card4.jpg";
 import Card5 from "../../img/card5.jpg";
 import Card6 from "../../img/card6.jpg";
 import './Trending.css';
+import {ThemeContext} from "../../App";
 
 const Trending = () => {
   const items = [
@@ -32,8 +33,10 @@ const Trending = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const {theme  } = useContext(ThemeContext)
+
   return (
-    <div className="trending-page">
+    <div className={`trending-page ${theme}`}>
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Pacifico&display=swap');
 
@@ -130,7 +133,7 @@ const Trending = () => {
         }
       `}</style>
 
-      <header className="header">
+      <header className={`header ${theme}`}>
         <h1>Trending Tools and Apps</h1>
         <p>Check out the most popular tools and apps trending right now!</p>
       </header>

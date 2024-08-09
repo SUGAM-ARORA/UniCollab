@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, {useContext, useState} from 'react';
 import './feedback.css';
 import { Link } from 'react-router-dom';
 import homeIcon from './homeicon.png';
+import {ThemeContext} from "../../App";
 
 const Feedbackform = () => {
   const [formData, setFormData] = useState({
@@ -38,8 +39,10 @@ const Feedbackform = () => {
     }
   };
 
+  const {theme} = useContext(ThemeContext)
+
   return (
-    <div>
+    <div className={theme}>
       <Link to="/">
         <img src={homeIcon} alt="Home" className="home-icon" />
       </Link>

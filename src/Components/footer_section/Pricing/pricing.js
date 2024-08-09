@@ -1,15 +1,19 @@
 // pricing.js
-import React from "react";
+import React, {useContext} from "react";
 import './pricing.css';
 import { Link } from "react-router-dom";
 import homeIcon from '../../../img/homeicon.png';
+import {ThemeContext} from "../../../App";
 
 function Pricing() {
+
+    const {theme} = useContext(ThemeContext)
+
     return (
-        <div className="pricing">
+        <div className={`pricing ${theme}`}>
             <div className="header">
             <Link to="/" className="home-link">
-              <img src={homeIcon} alt="Home" className="home-icon" />
+              <img src={homeIcon} alt="Home" className="home-icon" style={{ height: '60px', width: '60px' }} />
             </Link>
                 <div className="headingHeader">Start your 7 day free trial today</div>
                 <div className="description">Unlock Advanced Features and Maximize Your Potential with UniCollab Pro.</div>

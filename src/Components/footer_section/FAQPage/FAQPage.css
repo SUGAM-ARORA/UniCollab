@@ -40,6 +40,7 @@
 }
 .faq-item.active * {
     color: #ff21bc;
+    background-color: #1f1c35;
 }
 .faqs .answer {
     line-height: 1.6;
@@ -66,4 +67,9 @@
     opacity: 1;
     transform: scaleY(1);
     padding: 20px;
+}
+
+.light .faqs div, .light .faqs h2, .light .faqs p, .light .faqs span{
+    background: #F3CFC6 !important;
+    color: #000000 !important;
 }
