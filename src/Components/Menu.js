@@ -91,7 +91,7 @@ function Menu() {
           }}
         >
           {[
-            { to: "/projects", icon: <FaList size={30} />, text: "My projects" },
+            { to: "/projects", icon: <FaList size={30} />, text: "Projects" },
             { to: "/Delicious", icon: <FaDelicious size={30} />, text: "Delicious" },
             { to: "/cart", icon: <FaShoppingCart size={30} />, text: "Cart" },
             { to: "/wallet", icon: <FaWallet size={30} />, text: "Wallet" },

@@ -1,6 +1,6 @@
-import React, {useEffect, useRef, useState} from "react";
-import {BsFillHeartFill} from "react-icons/bs";
-import {Link} from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { BsFillHeartFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import Card1 from "../img/card1.jpg";
 import Card2 from "../img/card2.jpg";
 import Card3 from "../img/card3.jpg";
@@ -164,12 +164,12 @@ const features = [
     },
 ];
 
-function CardMain() {
-    const [isVisible, setIsVisible] = useState(
-        new Array(features.length).fill(false)
-    );
-    const containerRef = useRef(null);
-    let hideTimeout;
+function CardMain({sortProjects}) {
+  const [isVisible, setIsVisible] = useState(
+    new Array(features.length).fill(false)
+  );
+  const containerRef = useRef(null);
+  let hideTimeout;
 
     useEffect(() => {
         return () => {
@@ -210,60 +210,62 @@ function CardMain() {
         });
     };
 
-    return (
-        <div
-            className="card"
-            ref={containerRef}
-            style={{overflowY: "auto", maxHeight: "100vh"}}
-        >
-            {features.map((project, index) => (
-                <div className="card_main" key={index}>
-                    <img
-                        src={project.img}
-                        alt=""
-                        className="card_main_img"
-                        title={project.title}
-                    />
-                    <div className="card_main_name">
-                        <h2>{project.title}</h2>
-                        <div className="card_main_icon" style={{marginTop: '-18px'}}>
-                            <i>
-                                <BsFillHeartFill/> <span>{project.hearts}</span>
-                            </i>
-                        </div>
-                    </div>
-                    <div className="stat">
-                        <div>
-                            <p>
-                                Developer<span>X</span>
-                            </p>
-                        </div>
-                        <div>
-                            <p>
-                                Type of Project<span>{project.type}</span>
-                            </p>
-                        </div>
-                    </div>
-                    <div className="author" style={{marginTop: '-12px'}}>
-                        <div className="nameAuthor">
-                            <p>By : &nbsp; </p>
-                            <p
-                                id="author_name"
-                                onMouseOver={() => handleMouseOver(index)}
-                                onMouseOut={() => handleMouseOut(index)}
-                            >
-                                {project.dev}
-                            </p>
-                        </div>
-                    </div>
-                    <div className="card_main_button" style={{marginTop: '-16px'}}>
-                        <Link to={`/readmore/${project.id}`} className="button btn">
-                            Read More
-                        </Link>
-                        <a href="#" className="button2 btn">
-                            Source Code
-                        </a>
-                    </div>
+  const sortedProjects = sortProjects([...features]);
+
+  return (
+    <div
+      className="card"
+      ref={containerRef}
+      style={{ overflowY: "auto", maxHeight: "100vh" }}
+    >
+      {sortedProjects.map((project, index) => (
+        <div className="card_main" key={index}>
+          <img
+            src={project.img}
+            alt=""
+            className="card_main_img"
+            title={project.title}
+          />
+          <div className="card_main_name">
+            <h2>{project.title}</h2>
+            <div className="card_main_icon" style={{ marginTop: '-18px' }}>
+              <i>
+                <BsFillHeartFill /> <span>{project.hearts}</span>
+              </i>
+            </div>
+          </div>
+          <div className="stat">
+            <div>
+              <p>
+                Developer<span>X</span>
+              </p>
+            </div>
+            <div>
+              <p>
+                Type of Project<span>{project.type}</span>
+              </p>
+            </div>
+          </div>
+          <div className="author" style={{ marginTop: '-12px' }}>
+            <div className="nameAuthor">
+              <p>By : &nbsp; </p>
+              <p
+                id="author_name"
+                onMouseOver={() => handleMouseOver(index)}
+                onMouseOut={() => handleMouseOut(index)}
+              >
+                {project.dev}
+              </p>
+            </div>
+          </div>
+          <div className="card_main_button" style={{ marginTop: '-16px' }}>
+  <Link to={`/readmore/${project.id}`} className="button btn">
+    Read More
+  </Link>
+  <a href="#" className="button2 btn">
+    Source Code
+  </a>
+</div>
 
                     <div
                         className={`contBox ${isVisible[index] ? "visible" : "hidden"}`}
