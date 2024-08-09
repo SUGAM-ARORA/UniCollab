@@ -465,7 +465,7 @@ const LogIn = () => {
           </div>
           <img src={logImg} className="image" alt="Log In" />
         </div>
-        <div className="panel right-panel1">
+        <div className="panel right-panel1" style={{position:"fixed",right:`${isSignUpMode?"100px":"40%"}` ,height:"80%",width:"500px"}}>
           <div className="content1">
             <h3>One of Us?</h3>
             <p>
