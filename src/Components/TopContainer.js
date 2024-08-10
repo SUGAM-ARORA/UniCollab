@@ -136,12 +136,12 @@ function TopContainer() {
 
   return (
     <div className="topContainer">
-<button
+      <button
   onClick={toggleTheme}
   className="lightbutton"
   style={{ 
     marginRight: '200px', 
-    position: 'relative' // Apply relative positioning here
+    position: 'relative' 
   }}
 >
   {theme === "dark" ? <FaSun /> : <FaMoon />}
