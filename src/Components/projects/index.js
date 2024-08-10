@@ -1,5 +1,5 @@
 import Card1 from "./card1.jpg";
-import Card2 from "./card2.jpg";
+import Card2 from "./card2.png";
 import Card3 from "./card3.jpg";
 import Card4 from "./card4.png";
 import Card5 from "./card5.jpg";
@@ -33,8 +33,9 @@ export const features = [
     pro: icon1,
     hearts: 65,
     title: "TakeNote",
-    dev: "JohnDoe",
+    dev: "Saketh D.Surya",
     type: "Productivity",
+    github: "https://github.com/saketh-05/Dev-Notes-App",
     role: "Full Stack Developer, Cloud Engineer",
     about: "I'm a versatile professional skilled in full stack development and cloud engineering, building robust applications and scalable cloud solutions.",
     text: "TakeNote is a powerful and intuitive note-taking app specifically designed for developers. It combines the simplicity of traditional note-taking with advanced features tailored to the unique needs of coding professionals. With TakeNote, developers can effortlessly organize their thoughts, code snippets, project documentation, and technical diagrams in one centralized location. The app supports syntax highlighting for multiple programming languages, making it easy to write and review code within notes. Markdown support allows for seamless formatting, while integrated version control ensures that all changes are tracked and recoverable. TakeNote also offers robust search functionality, enabling users to quickly find specific notes or code snippets. Collaboration features allow team members to share and edit notes in real-time, fostering better communication and project coordination. Whether used for brainstorming sessions, meeting notes, or personal code repositories, TakeNote is the ideal companion for developers seeking to enhance productivity and organization in their workflow."

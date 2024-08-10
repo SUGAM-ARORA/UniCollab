@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import homeIcon from '../../img/homeicon.png';
 import carticon from './12.png';
 import Card1 from "../../img/card1.jpg";
-import Card2 from "../../img/card2.jpg";
+import Card2 from "../../img/card2.png";
 import Card3 from "../../img/card3.jpg";
 import Card4 from "../../img/card4.png";
 import Card5 from "../../img/card5.jpg";
