@@ -168,12 +168,11 @@ function TopContainer() {
           </div>
         </div>
 
-        <div className="inputBox o2" style={{width:"252px "}}>
+        <div className="inputBox o2" >
           <div className="input-div">
             <i
               style={{
                 cursor: isMobile ? 'pointer' : 'default',
-                marginRight: '-30px'
               }}
               onClick={searchbtnclick}
               className="searchbtn"
