@@ -159,7 +159,7 @@ function TopContainer() {
           </div>
         </div>
 
-        <div className="inputBox o2">
+        <div className="inputBox o2" style={{width:"252px "}}>
           <div className="input-div">
             <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
               <BiSearchAlt />
@@ -202,7 +202,7 @@ function TopContainer() {
 
         <div className="profileContainer o3">
           <a href="/pricing">
-            <button className="go-pro-btn">Go Pro</button>
+            <button className="go-pro-btn" style={{marginRight:"0px"}}>Go Pro</button>
           </a>
 
           <div className="notification-container" style={{ gap: "5px" }} ref={dropdownRef}>
