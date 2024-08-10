@@ -1,4 +1,5 @@
-.topContainer{
+/* Top container styles */
+.topContainer {
   width: 100%;
 }
 
@@ -8,30 +9,33 @@
   height: auto;
   background: #19162c;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  
   align-items: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
-  position: relative;
-  top: 0;
+  position: fixed;
+  top: 30px;
+  margin-left: 60px;
   gap: 0.1rem;
-  /* margin-left: 120px; */
 }
+
+/* Search results styles */
 #search_results a:hover div {
-  background-color: #cf00a3; /* This will change the text color to white for better contrast */
+  background-color: #cf00a3;
 }
 
-.lightbutton{
+/* Light button styles */
+.lightbutton {
   width: auto;
-  margin-inline: 20px;
-  margin-left: 40px;
+  position: relative;
+  margin: 0 1180px; /* Adjust margin to fit spacing requirements */
   z-index: 999999999;
-  top: 10px;
-  left : 20px;
+  position: static; /* Ensure it's not positioned absolutely */
+  order: 2; /* Ensure it appears after other elements */
 }
 
+/* Profile button styles */
 .profileContainer .go-pro-btn {
-  padding: 10px 20px; /* Adjust padding to change the button size */
+  padding: 10px 20px;
 }
 
 /* Navigation items container */
@@ -40,7 +44,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  flex-direction: row; /* Ensure horizontal alignment */
+  flex-direction: row;
   gap: 7px;
 }
 
@@ -57,7 +61,6 @@
   display: flex;
   gap: 5px;
   align-items: center; /* Center items vertically */
-}
 
 /* Hover effect for nav item links */
 .largeview .nav-item a:hover {
@@ -72,7 +75,7 @@
   margin-left: 10px;
 }
 
-.input-div{
+.input-div {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -80,25 +83,24 @@
 
 .inputBox input {
   position: relative;
-  padding: 0.5rem 2rem; /* Add padding to the right for the icon */
+  padding: 0.5rem 2rem;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
 
 .inputBox input:focus {
-  outline: none; /* Remove default outline on focus */
-  border-color: #cf00a3; /* Change border color on focus */
+  outline: none;
+  border-color: #cf00a3;
 }
 
 /* Search button styles */
 .searchbtn {
-  /*position: absolute;*/
   top: 10px;
-  padding-left: 5px; /* Adjust to align with input padding */
+  right: 40px;
+  padding-left: 5px;
   color: #757380;
   font-size: 1.5rem;
-  cursor: pointer; /* Ensure cursor indicates clickable */
-  /*margin-left: 30%;*/
+  cursor: pointer;
 }
 
 /* Search results container */
@@ -122,29 +124,28 @@
 /* Notification styles */
 .notification-item:hover {
   background-color: #cf00a3;
-  color: white; /* Change text color for better contrast */
+  color: white;
 }
 
 /* Mobile view adjustments */
 @media screen and (max-width: 1500px) {
   .navbar {
-    margin-left: 50px; /* Adjust margin for smaller screens */
+    margin-left: 50px;
   }
 
   .largeview {
-    flex-direction: row; /* Ensure horizontal alignment */
-    flex-wrap: nowrap; /* Prevent wrapping to the next line */
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 }
 
-.profileIcon{
-    background: #19162c !important;
+.profileIcon {
+  background: #19162c !important;
 }
 
 @media screen and (max-width: 1500px) {
   .mobview {
     display: flex;
-    /* margin-left: 80%; */
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -163,27 +164,24 @@
   .largeview {
     display: none;
   }
+
   @keyframes shortvi {
-      from{
-        height: 0px;
-        opacity: 0;
-      }to{
-        height: 350px;
-        opacity: 0.9;
-      }
+    from {
+      height: 0px;
+      opacity: 0;
+    }
+    to {
+      height: 350px;
+      opacity: 0.9;
+    }
   }
 
   .mobview #shortview {
     position: absolute;
-    /* right: 100%; */
     right: 10%;
     top: 60px;
     background: rgba(0, 0, 0, 0.8);
-
     border-radius: 10px;
-    width: 200px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-    z-index: 100000;
     width: 100vw;
     display: none;
     transition: transform 0.3s cubic-bezier(0.17, 0.81, 0.38, 1.39);
@@ -197,14 +195,12 @@
     background: hsl(190, 85%, 40%);
     top: -5px;
     transform: rotate(45deg);
-    z-index: 100000;
   }
 
   #shortview.show {
     display: flex;
     flex-direction: column;
     align-items: center;
-    z-index: 100000;
   }
 
   .mobview #shortview ul {
@@ -212,7 +208,6 @@
     height: 100%;
     margin: 0;
     padding: 0;
-    z-index: 100000;
   }
 
   .mobview #shortview ul li {
@@ -224,7 +219,6 @@
     color: #757380;
     text-align: center;
     font-size: 14px;
-    z-index: 100000;
   }
 
   .mobview #shortview ul li:hover {
@@ -232,14 +226,15 @@
     color: #757380;
     transition: 0.3s;
   }
-  .profileIcon{
+
+  .profileIcon {
     padding: 0;
   }
 }
 
 @media (max-width: 830px) {
   .navbar {
-    width: 80vw; /* Adjust navbar width for smaller screens */
+    width: 80vw;
   }
 }
 
@@ -247,8 +242,6 @@
   .navbar {
     width: 80vw;
   }
-
-
 
   .profileIconlogin {
     width: 140px !important;
@@ -261,14 +254,15 @@
     z-index: 100;
   }
 
-  .lightbutton{
-    position: absolute;
+  .lightbutton {
+    position: static; /* Reset position for small screens */
+    margin: 0 auto; /* Center align the button */
   }
 
   .navbar {
     display: flex;
     flex-direction: column-reverse;
-    flex-wrap: wrap; /* Wrap items if needed on very small screens */
+    flex-wrap: wrap;
     height: min-content;
     margin-left: 0;
     border-radius: 1rem;
@@ -277,7 +271,7 @@
   }
 
   .largeview {
-    flex-direction: row; /* Ensure horizontal alignment */
+    flex-direction: row;
   }
 
   .inputBox {
@@ -305,12 +299,14 @@
     top: 18px;
   }
 }
-@media screen and (max-width:360px){
-  .profileContainer{
+
+@media screen and (max-width: 360px) {
+  .profileContainer {
     display: flex;
     flex-direction: column;
   }
 }
+
 /* Additional styles */
 .nav-item a span {
   white-space: nowrap;
@@ -318,19 +314,18 @@
 }
 
 .nav-item a:hover span {
-  color: #cf00a3; /* Pink color on hover */
+  color: #cf00a3;
 }
 
 #list li {
-  flex-shrink: 0; /* Prevent items from shrinking */
+  flex-shrink: 0;
 }
 
 .bars {
   display: none;
 }
 
-
-.light .notification-container div{
-    background: #F3CFC6;
-    color: #000000 !important;
+.light .notification-container div {
+  background: #F3CFC6;
+  color: #000000 !important;
 }
