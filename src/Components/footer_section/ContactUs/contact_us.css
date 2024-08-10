@@ -163,6 +163,6 @@
 }
 
 .light .containerContact div, .light .containerContact h2, .light .containerContact p, .light .containerContact label, .light .containerContact a{
-    background: #F3CFC6 !important;
+    background:  lightblue  !important;
     color: #000000 !important;
 }

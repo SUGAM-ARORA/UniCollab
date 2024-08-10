@@ -85,7 +85,7 @@ color: gray;
 }
 
 .light .project-card h2 , .light .project-card p{
-    background: #F3CFC6 !important;
+    background:  lightblue  !important;
     color: #000000 !important;
 }
 .home-icon{
