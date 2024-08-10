@@ -88,8 +88,9 @@ const features = [
     pro: icon1,
     hearts: 77,
     title: "WeatherLy",
-    dev: "AlexJohnson",
+    dev: "Saketh D.Surya",
     type: "Weather",
+    github: "https://github.com/saketh-05/WeatherLy",
     role: "Full Stack Developer, UX Specialist",
     about:
       "I'm a dynamic professional skilled in both front-end and back-end development, with a keen eye for designing intuitive user interfaces and user experiences.",
