@@ -102,8 +102,9 @@ const features = [
     pro: icon,
     hearts: 90,
     title: "TypingTest",
-    dev: "SophiaWilson",
+    dev: "Saketh D.Surya",
     type: "Education",
+    github: "https://github.com/saketh-05/TypingTest",
     role: "Web Developer, SEO Specialist",
     about:
       "I'm a proficient web developer and SEO specialist, dedicated to creating optimized, high-performance websites. I focus on both the technical and strategic aspects of web development to enhance visibility and user engagement.",
