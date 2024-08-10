@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { FaBell, FaChevronDown, FaMoon, FaSun } from "react-icons/fa";
 import women from "../img/women.jpg";
 import Card1 from "./projects/card1.jpg";
-import Card2 from "./projects/card2.jpg";
+import Card2 from "./projects/card2.png";
 import Card3 from "./projects/card3.jpg";
 import Card4 from "./projects/card4.png";
 import Card5 from "./projects/card5.jpg";

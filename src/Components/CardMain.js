@@ -1,5 +1,5 @@
 import Card1 from "../img/card1.jpg";
-import Card2 from "../img/card2.jpg";
+import Card2 from "../img/card2.png";
 import Card3 from "../img/card3.jpg";
 import Card4 from "../img/card4.png";
 import Card5 from "../img/card5.jpg";
@@ -34,8 +34,9 @@ const features = [
     pro: icon1,
     hearts: 65,
     title: "TakeNote",
-    dev: "JohnDoe",
+    dev: "Saketh D.Surya",
     type: "Productivity",
+    github: "https://github.com/saketh-05/Dev-Notes-App",
     role: "Full Stack Developer, Cloud Engineer",
     about:
       "I'm a versatile professional skilled in full stack development and cloud engineering, building robust applications and scalable cloud solutions.",
