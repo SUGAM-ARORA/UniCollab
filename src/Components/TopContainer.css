@@ -17,6 +17,57 @@
   margin-left: 60px;
   gap: 0.1rem;
 }
+/* Theme Styles */
+
+/* Dark Theme */
+.dark .navbar,
+.dark .inputBox,
+.dark .dropdown-content,
+.dark #search_results,
+.dark .menuContainer {
+  background-color: #19162c;
+  color: #ffffff;
+}
+
+/* Light Theme */
+.light .navbar,
+.light .inputBox,
+.light .dropdown-content,
+.light #search_results,
+.light .menuContainer {
+  background-color: lightblue;
+  color: #19162c;
+}
+
+/* Search Bar Icon Hover */
+.searchbtn:hover {
+  color: #cf00a3;
+}
+
+/* Go Pro Button Hover */
+.go-pro-btn:hover {
+  background-color: #a3007a;
+}
+
+/* Notification Item Hover */
+.notification-item:hover {
+  background-color: rgba(207, 0, 163, 0.1);
+}
+
+/* Menu Chevron Hover */
+.menuChevron:hover {
+  transform: rotate(180deg);
+}
+
+/* Profile Dropdown Menu Item Hover */
+.menuContainer ul li:hover {
+  background-color: rgba(207, 0, 163, 0.1);
+}
+
+/* Toggle Button Hover */
+.lightbutton:hover {
+  color: #cf00a3;
+}
 
 /* Search results styles */
 #search_results a:hover div {
