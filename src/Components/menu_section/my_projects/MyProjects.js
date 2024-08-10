@@ -8,6 +8,12 @@ import homeIcon from '../../../img/homeicon.png';
 import {useContext} from "react";
 import {ThemeContext} from "../../../App";
 
+const truncateText = (text) =>{
+    if (text.length <= 70) {
+        return text;
+    }
+    return text.slice(0, 70) + '...';
+} 
 
 function MyProjects({showMenu = true}) {
     const {theme} = useContext(ThemeContext)
@@ -60,11 +66,8 @@ function MyProjectCard({project}) {
                         </i>
                     </div>
                 </div>
-                <p>{project.about}</p>
+                <p>{truncateText(project.text)}</p>
                 <div className="btn-wrapper">
-                    <Link to="/">
-                        <button className='edit-btn'>Edit</button>
-                    </Link>
                     <Link to={project.github}>
                         <button className='github-btn'>GitHub</button>
                     </Link>
