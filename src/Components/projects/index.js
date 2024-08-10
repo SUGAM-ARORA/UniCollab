@@ -95,8 +95,9 @@ export const features = [
     pro: icon,
     hearts: 90,
     title: "TypingTest",
-    dev: "SophiaWilson",
+    dev: "Saketh D.Surya",
     type: "Education",
+    github: "https://github.com/saketh-05/TypingTest",
     role: "Web Developer, SEO Specialist",
     about: "I'm a proficient web developer and SEO specialist, dedicated to creating optimized, high-performance websites. I focus on both the technical and strategic aspects of web development to enhance visibility and user engagement.",
     text: "TypingTest is a comprehensive platform designed to help users improve their typing speed and accuracy. This intuitive and user-friendly application offers a range of typing tests and practice exercises to suit different skill levels. With TypingTest, users can track their progress over time, identify areas for improvement, and achieve their typing goals. The platform features real-time feedback, detailed performance analytics, and personalized training plans to enhance the learning experience. TypingTest supports multiple languages and keyboard layouts, making it accessible to a global audience. Whether you're a beginner looking to learn touch typing or an experienced typist aiming to increase your speed, TypingTest provides the tools and resources to help you succeed."
