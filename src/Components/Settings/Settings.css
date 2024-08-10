@@ -185,6 +185,6 @@ button:hover {
 }
 
 .light .settings-tabs,.light .profile-settings h2, .light .profile-settings label, .light .account-settings h2, .light .account-settings label, .light .notification-settings h2, .light .notification-settings label , .light .privacy-settings h2, .light .privacy-settings label,  .light .collaboration-settings h2, .light .collaboration-settings label, .light .application-settings h2, .light .application-settings label, .light .help-support li, .light .help-support p, .light .help-support h2, .light .legal-settings li, .light .legal-settings h2 {
-  background: #F3CFC6 !important;
+  background:  lightblue  !important;
   color: #000000 !important;
 }

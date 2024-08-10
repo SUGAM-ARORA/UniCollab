@@ -61,6 +61,7 @@
   display: flex;
   gap: 5px;
   align-items: center; /* Center items vertically */
+}
 
 /* Hover effect for nav item links */
 .largeview .nav-item a:hover {
@@ -326,6 +327,6 @@
 }
 
 .light .notification-container div {
-  background: #F3CFC6;
+  background:  lightblue ;
   color: #000000 !important;
 }
