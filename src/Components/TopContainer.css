@@ -17,6 +17,22 @@
   gap: 0.1rem;
   /* margin-left: 120px; */
 }
+#search_results a:hover div {
+  background-color: #cf00a3; /* This will change the text color to white for better contrast */
+}
+
+.lightbutton{
+  width: auto;
+  margin-inline: 20px;
+  margin-left: 40px;
+  z-index: 999999999;
+  top: 10px;
+  left : 20px;
+}
+
+.profileContainer .go-pro-btn {
+  padding: 10px 20px; /* Adjust padding to change the button size */
+}
 
 /* Navigation items container */
 .largeview {
@@ -25,6 +41,7 @@
   margin: 0;
   padding: 0;
   flex-direction: row; /* Ensure horizontal alignment */
+  gap: 7px;
 }
 
 /* Individual nav items */
@@ -49,8 +66,15 @@
 }
 
 /* Input box styles */
-.inputBox { 
+.inputBox {
   display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.input-div{
+  display: flex;
+  flex-direction: row;
   align-items: center;
 }
 
@@ -68,12 +92,13 @@
 
 /* Search button styles */
 .searchbtn {
-  position: absolute;
+  /*position: absolute;*/
   top: 10px;
   padding-left: 5px; /* Adjust to align with input padding */
   color: #757380;
   font-size: 1.5rem;
   cursor: pointer; /* Ensure cursor indicates clickable */
+  /*margin-left: 30%;*/
 }
 
 /* Search results container */
@@ -82,6 +107,7 @@
   top: 40px;
   height: 200px;
   background: white;
+  color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 10;
@@ -109,6 +135,10 @@
     flex-direction: row; /* Ensure horizontal alignment */
     flex-wrap: nowrap; /* Prevent wrapping to the next line */
   }
+}
+
+.profileIcon{
+    background: #19162c !important;
 }
 
 @media screen and (max-width: 1500px) {
@@ -218,6 +248,8 @@
     width: 80vw;
   }
 
+
+
   .profileIconlogin {
     width: 140px !important;
     font-size: 12px !important;
@@ -227,6 +259,10 @@
 @media (max-width: 525px) {
   .topContainer {
     z-index: 100;
+  }
+
+  .lightbutton{
+    position: absolute;
   }
 
   .navbar {
@@ -252,11 +288,11 @@
     justify-content: start;
     padding: 0px;
   }
-  
+
   .inputBox input {
     padding: 0.5rem;
   }
-  
+
   .profileContainer .go-pro-btn {
     padding: 0.5rem 0.7rem;
   }
@@ -264,7 +300,7 @@
   .bars {
     padding: 1rem;
   }
-  
+
   .searchbtn {
     top: 18px;
   }
@@ -291,4 +327,10 @@
 
 .bars {
   display: none;
+}
+
+
+.light .notification-container div{
+    background: #F3CFC6;
+    color: #000000 !important;
 }

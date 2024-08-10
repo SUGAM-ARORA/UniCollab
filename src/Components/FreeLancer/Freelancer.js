@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom';
 import './Freelancer.css'
 import homeIcon from './homeicon.png';
+import {ThemeContext} from "../../App";
 
 const Freelancer = () => {
+
+    const { theme } = useContext(ThemeContext)
+
     return (
-        <div className='freelancer'>
+        <div className={`freelancer ${theme}`}>
             <div className="box1Freelancer">
                 <div className='heading1freelancerbox1'>Hire the India's Best Freelancers on UniCollab</div>
                 <div className="desc1freelancerbox1">Connect with Skilled Freelancers for Your Projects</div>

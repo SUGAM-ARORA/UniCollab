@@ -4,6 +4,7 @@
   padding: 2.5rem 2.5rem 1rem 2.5rem;
   z-index: 900;
   height: auto;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 .scrolltop{
   size: 20px;
@@ -236,4 +237,9 @@
     margin-top: 10px;
     justify-content: center;
   }
+}
+
+.light .footer-container p, .light .footer-container a, .light .footer-container, .light .footer-icons a{
+    color: #000000 !important;
+
 }

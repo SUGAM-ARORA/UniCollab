@@ -60,7 +60,7 @@ body {
   background: #19162c;
   color: #fff;
   transition: 0.3s;
-  z-index: 1001; /* Higher than the navbar */
+  z-index: 10001; /* Higher than the navbar */
 }
 
 .sidebar.open {
@@ -109,9 +109,14 @@ body {
 }
 
 .sidebar ul li:hover {
-  background-color: #cf00a3; /* Change the background color on hover */
+  background-color: #cf00a3 ; /* Change the background color on hover */
   border-radius: 5px; /* Optional: Add rounded corners for a smoother look */
 }
+
+.sidebar ul li:hover span{
+  background-color: #cf00a3 !important;
+}
+
 
 .sidebar ul li:hover a {
   color: white; /* Ensure text color is readable on hover */
@@ -134,4 +139,14 @@ body {
   margin-left: 10px;
   font-size: 1.1rem;
   color: white;
+}
+
+.light .sidebar li span{
+  background: #F3CFC6 ;
+  color: #000000 !important;
+}
+
+.light .sidebar-header{
+  background: #F3CFC6 !important;
+  color: #000000 !important;
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Link } from "react-router-dom";
 import homeIcon from '../../img/homeicon.png';
 import Card1 from "../../img/card1.jpg";
@@ -7,6 +7,7 @@ import Card3 from "../../img/card3.jpg";
 import Card4 from "../../img/card4.jpg";
 import Card5 from "../../img/card5.jpg";
 import Card6 from "../../img/card6.jpg";
+import {ThemeContext} from "../../App";
 
 const Delicious = () => {
   const items = [
@@ -24,8 +25,10 @@ const Delicious = () => {
     { id: 12, name: 'Alimage', price: 20, image: '/static/media/card12.093d95181352dfd0126b.png', soldInRegion: 'sometimes', purchases: 130, likes: 290, icon: '🖼️' },
   ];
 
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <div className="delicious-page">
+    <div className={`delicious-page ${theme}`}>
       <style>{`
         body {
           font-family: Arial, sans-serif;
