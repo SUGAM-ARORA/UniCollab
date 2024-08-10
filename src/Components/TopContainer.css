@@ -316,10 +316,12 @@
     flex-direction: column-reverse;
     flex-wrap: wrap;
     height: min-content;
-    margin-left: 0;
+    margin-left: -1rem;
     border-radius: 1rem;
-    padding: 2.5rem;
-    width: 100%;
+    padding: 2rem;
+    padding-top: 3rem;
+    width: 95%;
+    z-index: 999;
   }
 
   .largeview {
@@ -331,12 +333,31 @@
     height: auto;
     display: flex;
     align-items: center;
-    justify-content: start;
+    justify-content: space-between;
     padding: 0px;
+  }
+  .input-div{
+    display: flex;
+    align-items: center;
+    width: 100%;
   }
 
   .inputBox input {
     padding: 0.5rem;
+    flex-grow: 1;
+  }
+
+  .inputBox input{
+    padding: 0.5rem 0.5rem 0.5rem 2rem;
+    margin-left: -1rem;
+  }
+
+  .input-div i{
+    background-color: #75738045;
+    opacity: 100%;
+    padding: 0.4rem    ;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
   }
 
   .profileContainer .go-pro-btn {
