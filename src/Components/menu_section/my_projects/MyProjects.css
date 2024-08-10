@@ -20,10 +20,11 @@ button {
    gap: 20px;
    margin: 20px 0;
 }
-.top h1 {
-    margin-left: 70px;
+.top a {
+    font-size: 30px;
+    margin-left: 20px;
+    margin-right: 40px;
 }
-
 .project-card {
     /* background-color: rgb(23, 23, 83); */
     color: white;
@@ -86,4 +87,37 @@ color: gray;
 .light .project-card h2 , .light .project-card p{
     background:  lightblue  !important;
     color: #000000 !important;
+}
+.home-icon{
+    margin-left: 5%;
+    cursor: pointer;  
+}
+.nav{
+    display: flex;
+    justify-content: space-around;
+}
+.top a:hover{
+    background-color: rgb(1, 1, 147);
+    border-radius: 10px;
+}
+.main-title{
+    text-decoration: underline;
+}
+
+@media screen and (max-width:560px) {
+    .nav{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: 1;       
+    }
+    .top{
+        flex-direction: column;
+    }
+    .home-icon{
+        margin-left: 15%;
+    }
+    .top a{
+        font-size: 20px;
+    }
 }
