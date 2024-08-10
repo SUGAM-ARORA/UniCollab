@@ -1,0 +1,92 @@
+
+body{
+    margin: 0;
+    background-color: rgb(32, 54, 151);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5%;
+}
+
+.inputForm{
+    margin: 5%;
+}
+.display{
+    position: relative;
+    font-size: 2rem;
+    background:linear-gradient(rgb(216, 202, 202),crimson);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2% 7% 2% 7%;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px 1px rgb(10, 224, 231),
+                5px 5px 5px 0px rgb(215, 53, 13) ,
+                1px 1px 10px 5px rgb(181, 26, 26) inset;
+}
+
+.city{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+}
+
+.humidityDisp{
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode';
+    font-size: 35px;
+}
+
+.descrip{
+    font-family: 'Lucida Sans Regular', 'Lucida Grande';
+    font-size: 35px;
+}
+
+.emoji{
+    font-size: 400%;
+    margin: 0;
+}
+
+.inputcity{
+    font-size: 1.8rem;
+    color: brown;
+    max-width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+}
+
+.errorDisplay{
+    font-size: 1.8rem;
+    color: rgb(255, 255, 1);
+    font-weight: bold;
+    font-style: italic;
+}
+
+button[type="submit"]{
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.8rem;
+    background-color: rgb(1, 255, 242);
+    color: rgb(83, 13, 83);
+    padding: 5px 10px 5px 10px;
+    font-family: 'Gill Sans MT';
+    border-radius: 7px;
+}
+button[type="submit"]:hover{
+    background-color: rgb(40, 172, 161);
+    transition: .25s ease-in-out;
+}
+
+.footer{
+    font-size: 30px;
+    color: rgb(255, 255, 0);
+    margin: 2%;
+}
+
+@media screen and (max-width: 700px){
+    .inputForm{
+        margin:5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+}

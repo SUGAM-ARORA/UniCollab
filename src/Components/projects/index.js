@@ -83,8 +83,9 @@ export const features = [
     pro: icon1,
     hearts: 77,
     title: "WeatherLy",
-    dev: "AlexJohnson",
+    dev: "Saketh D.Surya",
     type: "Weather",
+    github: "https://github.com/saketh-05/WeatherLy",
     role: "Full Stack Developer, UX Specialist",
     about: "I'm a dynamic professional skilled in both front-end and back-end development, with a keen eye for designing intuitive user interfaces and user experiences.",
     text: "WeatherLy is your ultimate destination for accurate and up-to-date weather information. This sleek and user-friendly website offers comprehensive weather forecasts and real-time data to help you plan your day with confidence. With WeatherLy, you can quickly access current conditions, including temperature, humidity, wind speed, and visibility. Detailed hourly, daily, and weekly forecasts keep you prepared for any weather changes. The platform also provides timely severe weather alerts, ensuring your safety during extreme conditions. Interactive maps let you explore weather patterns with dynamic radar visuals showing precipitation, cloud cover, and temperature variations. Additionally, WeatherLy allows you to save custom locations, making it easy to check the weather for your favorite places. Whether on a desktop or mobile device, WeatherLy delivers reliable and precise weather data, helping you make informed decisions and stay prepared for whatever the weather brings."
