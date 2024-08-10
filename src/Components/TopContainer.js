@@ -136,9 +136,18 @@ function TopContainer() {
 
   return (
     <div className="topContainer">
-      <button onClick={toggleTheme} className="lightbutton">
-        {theme === "dark" ? <FaSun /> : <FaMoon />}
-      </button>
+<button
+  onClick={toggleTheme}
+  className="lightbutton"
+  style={{ 
+    marginRight: '200px', 
+    position: 'relative' // Apply relative positioning here
+  }}
+>
+  {theme === "dark" ? <FaSun /> : <FaMoon />}
+</button>
+
+
       <div className="navbar">
         <div className="mobview">
           <div className="bars" onClick={toggleMenu}>
@@ -161,7 +170,14 @@ function TopContainer() {
 
         <div className="inputBox o2">
           <div className="input-div">
-            <i style={{ cursor: isMobile ? 'pointer' : 'default' }} onClick={searchbtnclick} className="searchbtn">
+            <i
+              style={{
+                cursor: isMobile ? 'pointer' : 'default',
+                marginRight: '-30px'
+              }}
+              onClick={searchbtnclick}
+              className="searchbtn"
+            >
               <BiSearchAlt />
             </i>
             <input

@@ -116,7 +116,7 @@ const features = [
         id: 9,
         img: Card9,
         pro: icon,
-        hearts: 55,
+        hearts: 110,
         title: "BBlocks",
         dev: "ChrisClark",
         type: "Gaming",
