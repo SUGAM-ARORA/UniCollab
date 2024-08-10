@@ -42,7 +42,7 @@ const Readmore = () => {
                 <div className='dtex'>{feature.text}</div>
             </div>
             <div className="developer">
-                Developer-X
+                Developer-{feature.dev}
             </div>
         </div>
     )

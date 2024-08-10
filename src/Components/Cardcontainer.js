@@ -73,7 +73,7 @@ const Cardcontainer = ({features}) => {
           <div className="stat">
             <div>
               <p>
-                Developer<span>X</span>
+                Developer<span>{project.dev}</span>
               </p>
             </div>
             <div>
@@ -98,7 +98,7 @@ const Cardcontainer = ({features}) => {
             <Link to={`/readmore/${project.id}`} className="button btn">
               Read More
             </Link>
-            <a href="#" className="button2 btn">
+            <a href={project.github} className="button2 btn">
               Source Code
             </a>
           </div>
