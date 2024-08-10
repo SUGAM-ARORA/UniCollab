@@ -14,12 +14,12 @@
   }
 
   .light .topCard p, .light .topCard h2{
-    background: #F3CFC6 !important;
+    background:  lightblue  !important;
     color: #000000 !important;
   }
 
   .light .bottom_card div, .light .bottom_card h2, .light .bottom_card p{
-    background: #F3CFC6 !important;
+    background:  lightblue  !important;
     color: #000000 !important;
   }
   
