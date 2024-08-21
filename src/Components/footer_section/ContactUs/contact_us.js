@@ -1,24 +1,28 @@
-import React, {useContext} from 'react';
+import React, { useContext, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import homeIcon from '../../../img/homeicon.png';
 import { ToastContainer, toast, Bounce } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import emailjs from '@emailjs/browser';
 import './contact_us.css';
-import {ThemeContext} from "../../../App";
+import { ThemeContext } from "../../../App";
 
 function ContactUs() {
+    const { theme } = useContext(ThemeContext);
+    // Individual state hooks for each input field
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [issue, setIssue] = useState('Bug');
+    const [message, setMessage] = useState('');
+    const [attachment, setAttachment] = useState(null);
+    const fileInputRef = useRef(null);
 
-    const { theme } = useContext(ThemeContext)
+    const handleFileChange = (event) => {
+        setAttachment(event.target.files[0]);
+    };
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
-
-        const formData = new FormData();
-        const email = document.getElementById("email").value;
-        const name = document.getElementById("flname").value;
-        const issue = document.getElementById("issue").value;
-        const message = document.getElementById("message").value;
-        const attachment = document.getElementById("attachments").files[0];
 
         const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
 
@@ -30,32 +34,40 @@ function ContactUs() {
             return;
         }
 
-        // Append data to FormData object
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('issue', issue);
-        formData.append('message', message);
-        if (attachment) {
-            formData.append('attachments', attachment);
-        }
-
         const sendButton = document.querySelector('button[type="submit"]');
         sendButton.disabled = true;
         sendButton.textContent = 'Sending...';
 
-        try {
-            const response = await fetch('http://localhost:3000/send', {
-                method: 'POST',
-                body: formData, // Send FormData object
-            });
+        const serviceID = 'service_va3y68b'; // Replace with your Email.js service ID
+        const templateID = 'template_7veyod4'; // Replace with your Email.js template ID
+        const userID = 'fA8eH-MWu5ilIq2Xl'; // Replace with your Email.js user ID
 
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
+        const templateParams = {
+            from_name: name,
+            email_id: email,
+            message: message
+        }
 
-            const result = await response.json();
+        const form = new FormData();
+        form.append('name', name);
+        form.append('email', email);
+        form.append('issue', issue);
+        form.append('message', message);
 
-            if (result.success) {
+        // If there's an attachment, add it to the email's attachments
+        if (attachment) {
+            form.append('attachment', attachment, attachment.name);
+        }
+
+        emailjs.send(serviceID, templateID, templateParams, userID)
+            .then((result) => {
+                // Reset the form after successful submission
+                setName('');
+                setEmail('');
+                setIssue('Bug');
+                setMessage('');
+                setAttachment(null);
+                fileInputRef.current.value = null; // Clear the file input
                 toast.success("Sent Successfully!", {
                     position: "top-center",
                     autoClose: 3000,
@@ -67,16 +79,14 @@ function ContactUs() {
                     theme: "dark",
                     transition: Bounce,
                 });
-            } else {
+            }, (error) => {
+                console.error("Error sending message:", error);
                 toast.error("Failed to send message. Please try again later.");
-            }
-        } catch (error) {
-            console.error("Error sending message:", error);
-            toast.error("Failed to send message. Please try again later.");
-        } finally {
-            sendButton.disabled = false;
-            sendButton.textContent = 'Submit';
-        }
+            })
+            .finally(() => {
+                sendButton.disabled = false;
+                sendButton.textContent = 'Submit';
+            });
     };
 
     return (
@@ -120,20 +130,56 @@ function ContactUs() {
                     <h2>Facing any Issue? Help Us Improve!</h2>
                     <p>Use the form below to get in touch. We attempt to respond to support requests within 1 business day.</p>
                     <form onSubmit={handleSubmit}>
-                        <label htmlFor="flname">Name :</label>
-                        <input type='text' placeholder='Name' id='flname' name='flname' required />
+                        <label htmlFor="name">Name :</label>
+                        <input
+                            type='text'
+                            placeholder='Name'
+                            id='name'
+                            name='name'
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            required
+                        />
                         <label htmlFor="email">Email :</label>
-                        <input type='email' placeholder='Email' id='email' name='email' required />
+                        <input
+                            type='email'
+                            placeholder='Email'
+                            id='email'
+                            name='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            required
+                        />
                         <label htmlFor="issue">Issue Type:</label>
-                        <select name='issue' id='issue' className='select-issue' required>
+                        <select
+                            name='issue'
+                            id='issue'
+                            className='select-issue'
+                            value={issue}
+                            onChange={(e) => setIssue(e.target.value)}
+                            required
+                        >
                             <option value='Bug'>Bug</option>
                             <option value='Suggestion'>Suggestion</option>
                             <option value='Other'>Other</option>
                         </select>
                         <label htmlFor="message">Message :</label>
-                        <textarea id='message' placeholder='Message' name='message' required></textarea>
+                        <textarea
+                            id='message'
+                            placeholder='Message'
+                            name='message'
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                            required
+                        ></textarea>
                         <label htmlFor="attachments">Any Attachments :</label>
-                        <input type='file' id='attachments' name='attachments' />
+                        <input
+                            type='file'
+                            id='attachments'
+                            name='attachments'
+                            ref={fileInputRef}
+                            onChange={handleFileChange}
+                        />
                         <button type='submit'>Submit</button>
                     </form>
                 </div>

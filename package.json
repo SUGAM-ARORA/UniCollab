@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.11.5",
     "@fortawesome/fontawesome": "^1.1.8",
@@ -22,6 +23,7 @@
     "firebase": "^10.13.0",
     "lottie-react": "^2.4.0",
     "mdn-data": "^2.9.0",
+    "nodemon": "^3.1.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-helmet": "^6.1.0",
