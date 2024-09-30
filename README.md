@@ -31,11 +31,23 @@ UniCollab is more than just a platform; it's a gateway to a world where students
 
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=SUGAM-ARORA/Unicollab%20&style=badge&logo=openai)
 
+## 🏅 Hacktoberfest 2024
+
+Join us for Hacktoberfest 2024! This October, we welcome contributions to improve UniCollab. Your contributions could be anything from enhancing existing features to introducing new ones. This is your chance to make an impact and earn swag while contributing to open source!
+
+![image](https://github.com/user-attachments/assets/1658543e-73c6-4a45-a955-074fe17a6458)
+
+![Screenshot from 2024-09-30 11-38-06](https://github.com/user-attachments/assets/8ba6671c-7063-4a1f-86f8-2bab9f584797)
+
+![Screenshot from 2024-09-30 13-07-06](https://github.com/user-attachments/assets/cad355a1-37e7-4cb6-9910-f250df43bc45)
+
+
 ## 🏅 Featured in 
 
 <p align="center">
-  <img src="gssoc-banner.png">
+  <img src="gssoc-banner.png" style="width: 80%; height: auto;">
 </p>
+
 
 ## 🖌️ Scope of the Project 
 
@@ -185,8 +197,7 @@ Ready to embark on a journey of collaborative learning? Join UniCollab now and b
 Thank you for contributing to our open-source project! We appreciate your support 🚀
 Don't forget to leave a star ⭐
 
-![image](https://github.com/user-attachments/assets/a6c43df5-3552-48dc-8d65-1e4711bc6376)
 
-
+![image](https://github.com/user-attachments/assets/34d63e02-a533-4249-9a97-d8338f6cc0a2)
 
 <p align="right">{<a href="#top">Back to top</a>}</p>
