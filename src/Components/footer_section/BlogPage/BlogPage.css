@@ -24,6 +24,10 @@
     max-width: 800px;
     overflow: hidden;
     box-shadow: 7px 7px 32px 0 #6052ff;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .blog-post:not(.active):hover {
     box-shadow: 0 0px 10px rgba(193, 193, 193, 0.3);
@@ -70,6 +74,10 @@
     opacity: 1;
     transform: scaleY(1);
     padding: 20px;
+    margin-top: 5px;
+    margin-bottom: 20px !important;
+    border-radius: 20px;
+    text-align: left;
 }
 
 .light .blogs div, .light .blogs h2, .light .blogs p, .light h1{
@@ -77,4 +85,14 @@
     color: #000000 ;
 }
 
+.blog-post-heading{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    padding: 20px 0;
+}
 
+.blog-post-heading h2, p{
+    margin-bottom: 5px !important;
+}
