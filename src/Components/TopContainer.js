@@ -274,7 +274,7 @@ function TopContainer() {
 
         <div className="p-td">
         <li className="nav-item">
-                <Link to="/blogs">
+                <Link to="/pricing">
                 Go Pro
                 </Link>
               </li>
@@ -283,7 +283,7 @@ function TopContainer() {
 
         <div className="p-tf">
         <li className="nav-item">
-                <Link to="/blogs">
+                <Link to="/login">
                 launch your journey
                 </Link>
               </li>
