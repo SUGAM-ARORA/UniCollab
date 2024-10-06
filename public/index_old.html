@@ -5,7 +5,10 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link
       rel="stylesheet"
@@ -73,7 +76,7 @@
       /* Optionally, you can change the background color of the dropdown */
       #google_element .goog-te-combo {
         background-color: #333 !important; /* Change background color */
-        color: #333 !important; /* Change text color */
+        color: #333 !important; /* Change text color to white */
       }
 
       /* Change the dropdown button background color */
@@ -99,7 +102,6 @@
     </style>
   </head>
   <body>
-    <!-- Progress Bar -->
     <div id="progressBar"></div>
     <script>
       window.onscroll = function () {
@@ -113,13 +115,14 @@
       };
     </script>
 
-    <!-- Google Translate Element -->
     <div id="google_element"></div>
+    <!-- Load Google Translate script over HTTPS and handle errors -->
     <script
       type="text/javascript"
       src="https://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"
       onerror="handleError(this)"
     ></script>
+
     <script type="text/javascript">
       function loadGoogleTranslate() {
         new google.translate.TranslateElement(
@@ -136,12 +139,24 @@
         console.error("Error loading Google Translate script:", error);
       }
     </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/66891af8eaf3bd8d4d18ca2d/1i24gr9s5";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
 
-    <!-- Chatbot Root Element -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- Circle container for animations -->
     <div class="circle-container">
       <div class="circle"></div>
       <div class="circle"></div>

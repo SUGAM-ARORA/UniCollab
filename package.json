@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.10.1",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.11.5",
@@ -14,6 +15,7 @@
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@google/generative-ai": "^0.21.0",
     "@mui/icons-material": "^6.1.2",
     "@react-oauth/google": "^0.12.1",
     "@testing-library/jest-dom": "^6.5.0",
