@@ -131,10 +131,10 @@ const Feedbackform = () => {
               value={formData.issue}
               onChange={handleChange}
             >
-              <option value="select">Select Issue Type</option>
-              <option value="bug">Bug</option>
-              <option value="suggestion">Suggestion</option>
-              <option value="other">Other</option>
+              <option value="select" className="componentsFormFeedbackValues">Select Issue Type</option>
+              <option value="bug" className="componentsFormFeedbackValues">Bug</option>
+              <option value="suggestion" className="componentsFormFeedbackValues">Suggestion</option>
+              <option value="other" className="componentsFormFeedbackValues">Other</option>
             </select>
           </div>
           <div className="componentsFormFeedback">

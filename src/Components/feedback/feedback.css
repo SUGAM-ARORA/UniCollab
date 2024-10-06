@@ -1,3 +1,11 @@
+.home-icon {
+    display: block;
+    margin-left: 0;
+    margin-top: 1px;
+    width: 20px;
+    height: auto;
+}
+
 .headingFeedback {
     font-size: 80px;
     font-family: Arial, Helvetica, sans-serif; /* Update font family */
@@ -5,9 +13,9 @@
     width: 85vw;
     margin: auto;
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     color: white;
-    margin-top: 40px;
+    margin-top: 80px;
     font-weight: bold; /* Make text bold */
     animation: fadeIn 1.5s ease-in-out forwards;
 }
@@ -149,6 +157,28 @@ button:hover {
     }
 }
 
+/* light mode styles */
 .light .formFeedback label{
-    color: #000000 !important;
+    color: #6052ff;
 }
+
+.light .formFeedback select{
+    background: white !important;
+    color: rgb(82, 82, 82);
+  }
+
+.light .formFeedback input,
+.light .formFeedback textarea{
+    background:white;
+    color: black;
+    border: 1px solid black;
+}
+
+.light .star-rating input[type="radio"]:checked~label {
+    color: #ff21bc;
+  }
+
+
+.light .componentsFormFeedbackValues{
+    background: #cecece;
+  }
