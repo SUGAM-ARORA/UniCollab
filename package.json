@@ -22,6 +22,7 @@
     "axios": "^1.7.4",
     "firebase": "^10.13.0",
     "lottie-react": "^2.4.0",
+    "marketplace-dashboard": "file:",
     "mdn-data": "^2.9.0",
     "nodemon": "^3.1.4",
     "react": "^18.0.0",
