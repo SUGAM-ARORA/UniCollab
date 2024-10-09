@@ -9,16 +9,56 @@
   height: auto;
   background: #19162c;
   display: flex;
-  
+  margin-bottom:10rem;
   align-items: center;
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   position: fixed;
-  top: 30px;
-  margin-left: 60px;
+  top: 20px;
+  margin-left: 50px;
   gap: 0.1rem;
 }
 /* Theme Styles */
 
+.p-td{
+  background-color: #cf00a3; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 4px 16px; /* Reduce padding for a smaller button */
+  font-size: 14px;
+  padding-left: 23px; /* Reduce font size */
+  transition: background-color 0.3s;
+  margin-left: 30px; 
+
+}
+.p-tf{
+  background-color: #cf00a3; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 2px 18px; /* Reduce padding for a smaller button */
+  font-size: 14px;
+  width: 100%;
+  padding-left: 10px;
+  transition: background-color 0.3s;
+  margin-left: 20px;
+}
+
+.p-tg{
+  background-color: #cf00a3; /* Background color */
+  color: white; /* Text color */
+  border: none; /* Remove default border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  padding: 12px 16px; /* Reduce padding for a smaller button */
+  font-size: 14px;
+  padding-left: 23px; /* Reduce font size */
+  transition: background-color 0.3s;
+  margin-left: 30px; 
+
+}
 /* Dark Theme */
 .dark .navbar,
 .dark .inputBox,
@@ -78,10 +118,12 @@
 .lightbutton {
   width: auto;
   position: relative;
-  margin: 0 1180px; /* Adjust margin to fit spacing requirements */
-  z-index: 999999999;
+  margin: 0 380px; /* Adjust margin to fit spacing requirements */
+  z-index: 11111;
   position: static; /* Ensure it's not positioned absolutely */
   order: 2; /* Ensure it appears after other elements */
+  margin-bottom: 10px;
+
 }
 
 /* Profile button styles */
@@ -148,7 +190,7 @@
 /* Search button styles */
 .searchbtn {
   top: 10px;
-  right: 40px;
+  right: 20px;
   padding-left: 5px;
   color: #757380;
   font-size: 1.5rem;
@@ -178,6 +220,7 @@
   background-color: #cf00a3;
   color: white;
 }
+
 
 /* Mobile view adjustments */
 @media screen and (max-width: 1500px) {
@@ -329,7 +372,7 @@
   }
 
   .inputBox {
-    width: 100%;
+    width: 40px;
     height: auto;
     display: flex;
     align-items: center;

@@ -3,6 +3,7 @@
   height: calc(100% - 45px);
   max-height: 100vh;
   display: flex;
+  margin-top: 30px;
   padding-top: 15px;
 }
 
