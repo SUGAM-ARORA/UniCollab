@@ -59,9 +59,9 @@
   font-size: 0.8rem;
 }
 .topContainer .inputBox input {
-  width: 100%;
+  width: auto;
   height: 100%;
-  /* padding: 0px 40px; */
+
   font-size: 16px;
   color: #d0cfd4;
   background: #75738045;
