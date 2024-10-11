@@ -29,6 +29,7 @@ import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
 import Freelancer from "./Components/FreeLancer/Freelancer";
 import ChatbotIcon from './Components/ChatbotIcon';
+import ChatbotIconOriginal from './Components/ChatbotIconOriginal';
 import GoToTop from './Components/gototop';
 import {createContext, useEffect, useState} from "react";
 
@@ -98,6 +99,7 @@ function App() {
             <GoToTop />
             <Footer />
             <ChatbotIcon />
+            <ChatbotIconOriginal />
             <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px', zIndex: '1000' }}>
               <button
                 style={{
