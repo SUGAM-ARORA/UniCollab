@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useMemo, useState} from "react";
 import "./Menu.css";
 import logo from "../img/logo.png";
 import { Link } from "react-router-dom";
@@ -22,6 +22,7 @@ function Menu() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 524);
   const [showStopwatch, setShowStopwatch] = useState(false); // State to handle stopwatch visibility
+  const [isUserLoggedIn, setIsUserLoggedIn] = useState(localStorage.getItem('user') ? true : false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -30,10 +31,12 @@ function Menu() {
 
     window.addEventListener("resize", handleResize);
 
+    const user = localStorage.getItem('user');
+    setIsUserLoggedIn(user ? true : false);
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []);
+  }, [isUserLoggedIn]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -44,10 +47,8 @@ function Menu() {
   };
 
   const handleSignOut = () => {
-    console.log("User signed out");
-    setTimeout(() => {
-      // Handle any additional sign-out logic here
-    }, 3000);
+    localStorage.removeItem('user');
+    setIsUserLoggedIn(false);
   };
 
   const { theme } = useContext(ThemeContext)
@@ -122,12 +123,14 @@ function Menu() {
               <span className="tooltip" style={{ marginLeft: '10px', fontSize: '1.1rem', color: 'white' }}>Settings</span>
             </Link>
           </li>
-          <li style={{ padding: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
+          {isUserLoggedIn && (
+            <li style={{ padding: '1rem', display: 'flex', alignItems: 'center', gap: '10px' }}>
             <Link to="/" style={{ color: 'white', textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
               <FaSignOutAlt size={30} />
-              <span className="tooltip" style={{ marginLeft: '10px', fontSize: '1.1rem', color: 'white' }}>Sign Out</span>
+              <span className="tooltip" style={{ marginLeft: '10px', fontSize: '1.1rem', color: 'white' }} onClick={handleSignOut}>SignOut</span>
             </Link>
           </li>
+          )}
         </ul>
       </div>
 
