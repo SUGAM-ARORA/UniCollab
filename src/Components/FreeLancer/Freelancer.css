@@ -1,7 +1,6 @@
 .box1Freelancer {
     width: 100vw;
-    height: 420px;
-    margin-bottom: 2px;
+    margin-bottom: 28px;
 }
 .home-icon {
     position: absolute;
@@ -12,7 +11,7 @@
 }
 .freelancer {
     margin: 50px 0px;
-    height: 3300px;
+    height: 100%;
 }
 .footer{
     margin-bottom: 0px;
@@ -421,9 +420,9 @@
         font-size: 30px;
     }
 }
-#lastboxfreelancer{
+/* #lastboxfreelancer{
     margin-bottom: 20rem;
-}
+} */
 
 .light div{
     color: #000000 ;
