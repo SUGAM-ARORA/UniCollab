@@ -1,100 +1,182 @@
-.readmore{
+.readmore {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 100px;
+  font-family: sans-serif;
+}
+.readmore .arrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  width: 90px;
+}
+
+.readmore .heading {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #e9e9ec;
+  text-align: center;
+  margin-bottom: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.readmore .wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3rem;
+}
+
+.readmore .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+.readmore .top:hover,
+.readmore .bottom:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.readmore .user-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.readmore .name-cont {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.readmore .user-details .title {
+  font-size: x-large;
+  margin: 0;
+
+  text-align: start;
+}
+
+.readmore .title-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.readmore .type {
+  margin: 0;
+  font-size: small;
+
+  border: 1px solid white;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.readmore .code {
+  width: 10rem;
+}
+
+.readmore .code a {
+  font-size: medium;
+  margin: 0;
+}
+
+.readmore .user-details,
+.readmore .thumbnail {
+  flex: 1;
+}
+
+.readmore .thumbnail {
+  flex: 1.5;
+}
+
+.readmore .name-cont .img-cont {
+  width: 3rem;
+}
+
+.readmore .thumbnail .img-cont {
+  width: 50vw;
+}
+
+.readmore .img-cont img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.readmore .bottom {
+  width: 100%;
+}
+
+.readmore .description {
+  font-size: large;
+  font-weight: bold;
+  color: #e9e9ec;
+}
+
+.readmore .description h1,
+.readmore .about-ath h1 {
+  text-align: start;
+
+  padding: 1rem;
+}
+
+.readmore .description p,
+.readmore .about-ath p {
+  text-align: start;
+  padding-left: 1rem;
+}
+
+@media (max-width: 786px) {
+  .readmore {
+    padding: 30px 50px;
+  }
+
+  .readmore .top {
+    flex-direction: column-reverse;
+    gap: 1rem;
+    margin-left: 0;
+  }
+
+  .readmore .thumbnail {
+    flex: 1.5;
+  }
+
+  .readmore .thumbnail .img-cont {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px 100px;
-    font-family: sans-serif;
+  }
 }
-.readmore .arrow{
-    position: fixed;
-    top: 0;
-    left: 0;
-    padding: 20px;
-    width: 90px;
-}
-.readmore .image{
-    display: flex;
-    justify-content: center;
-}
-.readmore img{
-    width: 100%;
-    border-radius: 8px;
-}
-.readmore .head{
-    padding-top: 40px;
-    color: #0db5cb;
-    font-weight: bold;
-    font-size: large;
-    line-height: 30px;   
-}
-.head img{
-    width: 100px;
-}
-.upload{
-    color: #e9e9ec;
-    text-transform: uppercase;
-}
-.title{  
-    color: #e9e9ec;
-    text-align: center;
-    font-weight: bolder;
-    font-size: 2rem;
-    padding: 10px;
-    text-transform: uppercase;
-}
-.description{
-    font-size: large;
-    font-weight: bold;
-    color: #e9e9ec;
-    text-transform: uppercase;
-}
-.text{
-    padding-top: 40px;
-}
-.dtex{
-    padding: 15px;
-    color: #e9e9ec;
-    text-transform: none;
-    line-height: 27px;
-    font-size: large;
-    word-spacing: 2px;
-    font-weight: normal;
-}
-.developer{
-    color: #0db5cb;
-    padding-top: 30px;
-    font-weight: bold;
-    font-size: large;
-}
-.abc{
-    padding: 10px;
-    font-size: large;
-    display: flex;
-    flex-direction: column ;
+@media (max-width: 425px) {
+  .readmore {
+    padding: 0;
+  }
+
+  .readmore .bottom {
+    margin-bottom: 3rem;
+  }
 }
 
-.readmore .btn button{
-    background-color: #0db5cb;
-    margin-right: 20px;
-    margin-top: 20px;
-}
-.readmore .occupation{
-    color: #e9e9ec;
-    
-}
-
-@media (max-width:786px) {
-    .readmore{
-        padding: 30px 50px;
-    }
-}
-@media (max-width:425px) {
-    .readmore{
-        padding: 30px;
-    }
-}
-
-.light .head span , .light .head p, .light .text span{
-    color: #000000 !important;
+.light .head span,
+.light .head p,
+.light .text span {
+  color: #000000 !important;
 }
