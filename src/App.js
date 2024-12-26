@@ -1,35 +1,8 @@
 import "./App.css";
 import { RouterProvider } from "react-router-dom";
 import router from "./configs/router";
-import Container from "./Components/Container";
 import Footer from "./Components/Footer";
-import Settings from "./Components/Settings/SettingsPage";
-import About_us from "./Components/footer_section/about_us/About_us";
-import BlogPage from "./Components/footer_section/BlogPage/BlogPage";
-import FAQPage from "./Components/footer_section/FAQPage/FAQPage";
-import PortFolio from "./Components/PortFolio/PortFolio.js";
-import Services from "./Components/footer_section/services/Services";
-import ContactUs from "./Components/footer_section/ContactUs/contact_us";
-import Readmore from "./Components/Readmore";
-import Login from "./Components/Login";
-import testimonials from "./Components/Testimonials/Testimonials";
-import Pricing from "./Components/footer_section/Pricing/pricing";
-import MyProjects from "./Components/menu_section/my_projects/MyProjects";
-import NewProject from "./Components/menu_section/new_project/NewProject";
-import Error from "./Components/404_page/Error";
-import Profiles from "./Components/Profiles";
-import Profile from "./Components/Profile/profile";
-import Licensing from "./Components/footer_section/Legal/Licensing";
-import TermsConditions from "./Components/footer_section/Legal/TermsandConditions";
-import PrivacyPolicy from "./Components/footer_section/Legal/PrivacyPolicy";
-import Careers from "./Components/Careers/CareersPage";
-import EmailVerification from "./Components/auth/resetPassword/EmailVerification";
-import OTPVerification from "./Components/auth/resetPassword/OTPVerification";
-import ResetPassword from "./Components/auth/resetPassword/ResetPassword";
 import Helmet from "react-helmet";
-import Freelancer from "./Components/FreeLancer/Freelancer";
-import ChatbotIcon from './Components/ChatbotIcon';
-import ChatbotIconOriginal from './Components/ChatbotIconOriginal';
 import GoToTop from './Components/gototop';
 import {createContext, useEffect, useState} from "react";
 
@@ -42,33 +15,33 @@ function App() {
 
     const [theme, setTheme] = useState(getTheme)
 
-    // useEffect(() => {
-    //     const saveItem = localStorage.getItem("theme")
-    //     if(saveItem) {
-    //         setTheme(saveItem)
-    //     }
-    //     // else {
-    //     //     const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
-    //     //     setTheme(defaultTheme)
-    //     // }
-    //     // const bckground = document.getElementById("container")
-    //     // if(bckground){
-    //     //     bckground.classList.add(theme)
-    //     // }
-    //     // console.log(bckground.className)
-    // }, []);
+    useEffect(() => {
+        const saveItem = localStorage.getItem("theme")
+        if(saveItem) {
+            setTheme(saveItem)
+        }
+        // else {
+        //     const defaultTheme = window.matchMedia('prefers-color-scheme: dark').matches ? 'dark' : 'light';
+        //     setTheme(defaultTheme)
+        // }
+        // const bckground = document.getElementById("container")
+        // if(bckground){
+        //     bckground.classList.add(theme)
+        // }
+        // console.log(bckground.className)
+    }, []);
 
     useEffect(()=>{
         localStorage.setItem("theme" , theme)
-        // const bckground = document.getElementById("container")
-        // let existingTheme = bckground?.className
-        // // let existingTheme = existingClass.trim().split(' ')
-        // existingTheme = existingTheme?.substring(0,existingTheme.lastIndexOf(' '))
-        // console.log(existingTheme)
-        // if(bckground){
-        //     bckground.setAttribute('class' , `${existingTheme} ${theme}`)
-        // }
-        // // console.log(existingClass)
+        const bckground = document.getElementById("container")
+        let existingTheme = bckground?.className
+        // let existingTheme = existingClass.trim().split(' ')
+        existingTheme = existingTheme?.substring(0,existingTheme.lastIndexOf(' '))
+        console.log(existingTheme)
+        if(bckground){
+            bckground.setAttribute('class' , `${existingTheme} ${theme}`)
+        }
+        // console.log(existingClass)
 
     },[theme])
 
@@ -98,8 +71,6 @@ function App() {
             </div>
             <GoToTop />
             <Footer />
-            <ChatbotIcon />
-            <ChatbotIconOriginal />
             <a href="/feedback" style={{ position: 'fixed', bottom: '20px', left: '30px', zIndex: '1000' }}>
               <button
                 style={{
