@@ -219,57 +219,56 @@ function TopContainer() {
           </div>
         </div>
 
-        <div className="inputBox o2">
-          <div className="input-div">
-            <i
-              style={{
-                cursor: isMobile ? "pointer" : "default",
-              }}
-              onClick={searchbtnclick}
-              className="searchbtn"
-            >
-              <BiSearchAlt />
-            </i>
-            <input
-              ref={searchbar}
-              type="text"
-              placeholder="Search projects, users"
-              onChange={(e) => setInput(e.target.value)}
-            />
-          </div>
+  <div className="inputBox o2">
+  <div className="input-div" style={{ display: "flex", alignItems: "center", borderRadius: "5px", padding: "0px", width: "100%" }}>
+    <input
+      ref={searchbar}
+      type="text"
+      placeholder="Search projects, users"
+      onChange={(e) => setInput(e.target.value)}
+      style={{ flex: 1, border: "none", outline: "none", padding: "5px" , width: "200px"}}
+    />
+    <i
+      style={{
+        cursor: isMobile ? "pointer" : "default",
+        padding: "0 10px",
+        display: "flex",
+        alignItems: "center",
+      }}
+      onClick={searchbtnclick}
+      className="searchbtn"
+    >
+      <BiSearchAlt />
+    </i>
+  </div>
 
-          {searchResult ? (
-            <div id="search_results" style={{ color: "white" }}>
-              {searchResult.map((item, index) => (
-                <Link to={`/readmore/${item.id}`} key={index}>
-                  <div>
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      style={{
-                        width: "200px",
-                        height: "80px",
-                        display: "block",
-                        margin: "0 auto",
-                      }}
-                    />
-                    <p
-                      id="search_result_title"
-                      style={{ color: "white" }}
-                      key={`title${index}`}
-                    >
-                      {item.title}
-                    </p>
-                    <span
-                      style={{ color: "white" }}
-                      key={`category${index}`}
-                    >
-                      {item.category}
-                    </span>
-                  </div>
-                </Link>
-              ))}
+  {searchResult ? (
+    <div id="search_results" style={{ color: "white" }}>
+      {searchResult.map((item, index) => (
+        <Link to={`/readmore/${item.id}`} key={index}>
+          <div style={{ display: "flex", alignItems: "center", margin: "10px 0" }}>
+            <img
+              src={item.image}
+              alt={item.title}
+              style={{ width: "50px", height: "50px", borderRadius: "5px", marginRight: "10px" }}
+            />
+            <div>
+              <p
+                id="search_result_title"
+                style={{ color: "cyan", margin: "0" }}
+              >
+                {item.title}
+              </p>
+              <span
+                style={{ color: "white", fontSize: "0.9em" }}
+              >
+                {item.category}
+              </span>
             </div>
+          </div>
+        </Link>
+      ))}
+    </div>
           ) : null}
 
         <div className="p-td">
@@ -284,7 +283,7 @@ function TopContainer() {
         <div className="p-tf">
         <li className="nav-item">
                 <Link to="/login">
-                launch your journey
+                Launch your Journey
                 </Link>
               </li>
         </div>

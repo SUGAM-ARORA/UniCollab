@@ -14,51 +14,64 @@
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
   position: fixed;
   top: 20px;
-  margin-left: 50px;
+  margin-left: 60px;
   gap: 0.1rem;
 }
 /* Theme Styles */
 
-.p-td{
+.p-td {
   background-color: #cf00a3; /* Background color */
   color: white; /* Text color */
   border: none; /* Remove default border */
-  border-radius: 4px; /* Rounded corners */
+  border-radius: 15px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
   padding: 4px 16px; /* Reduce padding for a smaller button */
   font-size: 14px;
-  padding-left: 23px; /* Reduce font size */
-  transition: background-color 0.3s;
-  margin-left: 30px; 
-
+  transition: background-color 0.3s, transform 0.3s; /* Add transition for smooth scaling */
+  margin-left: -40px;
 }
-.p-tf{
+
+.p-td:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+}
+
+.p-tf {
+  display: inline-block; /* Ensures that the text stays on the same line */
+  white-space: nowrap;
+  gap: 10px;
   background-color: #cf00a3; /* Background color */
+  height: 40px; /* Increased height for better button size */
+  width: 200px; /* Increased width */
   color: white; /* Text color */
   border: none; /* Remove default border */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  padding: 2px 18px; /* Reduce padding for a smaller button */
+  border-radius: 15px; /* Rounded corners */
   font-size: 14px;
-  width: 100%;
-  padding-left: 10px;
-  transition: background-color 0.3s;
+  text-align: center; /* Center align text horizontally */
+  line-height: 40px; /* Vertically align text */
+  transition: background-color 0.3s, transform 0.3s; /* Add transform transition */
   margin-left: 20px;
 }
 
-.p-tg{
+.p-tf:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+}
+
+.p-tg {
   background-color: #cf00a3; /* Background color */
   color: white; /* Text color */
   border: none; /* Remove default border */
   border-radius: 4px; /* Rounded corners */
   cursor: pointer; /* Pointer cursor on hover */
-  padding: 12px 16px; /* Reduce padding for a smaller button */
+  padding: 12px 16px; /* Padding for button size */
   font-size: 14px;
-  padding-left: 23px; /* Reduce font size */
-  transition: background-color 0.3s;
-  margin-left: 30px; 
-
+  transition: background-color 0.3s, transform 0.3s; /* Add transform transition */
+  margin-left: 5px;
 }
+
+.p-tg:hover {
+  transform: scale(1.1); /* Increase size by 10% on hover */
+}
+
 /* Dark Theme */
 .dark .navbar,
 .dark .inputBox,
@@ -82,6 +95,9 @@
 /* Search Bar Icon Hover */
 .searchbtn:hover {
   color: #cf00a3;
+}
+.go-pro-btn{
+  margin-left: -10px;
 }
 
 /* Go Pro Button Hover */
@@ -177,7 +193,7 @@
 
 .inputBox input {
   position: relative;
-  padding: 0.5rem 2rem;
+  padding: 0.5rem 5rem;
   border-radius: 4px;
   border: 1px solid #ccc;
 }
@@ -190,8 +206,7 @@
 /* Search button styles */
 .searchbtn {
   top: 10px;
-  right: 20px;
-  padding-left: 5px;
+  right: 1220px;
   color: #757380;
   font-size: 1.5rem;
   cursor: pointer;
@@ -202,8 +217,6 @@
   position: absolute;
   top: 40px;
   height: 200px;
-  background: white;
-  color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
   z-index: 10;
