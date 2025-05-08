@@ -33,7 +33,7 @@
     "react-router-dom": "^7.2.0",
     "react-scripts": "^5.0.1",
     "react-toastify": "^11.0.5",
-    "styled-components": "^6.1.14",
+    "styled-components": "^6.1.18",
     "web-vitals": "^4.2.4"
   },
   "scripts": {
